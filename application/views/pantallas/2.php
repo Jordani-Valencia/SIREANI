@@ -3,49 +3,13 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Curso de Materialize</title>
-	<link rel="stylesheet" href="css/materialize.min.css">
-	<link rel="stylesheet" href="css/index.css">
-
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/materialize.min.css">
+	<link rel="stylesheet" href="<?php echo base_url();?>assets/css/index.css">
 </head>
 <body>
-	
-	<!-- Dropdown Structure -->
-<ul id="dropdown1" class="dropdown-content">
-  <li><a href="#!">one</a></li>
-  <li><a href="#!">two</a></li>
-  <li class="divider"></li>
-  <li><a href="#!">three</a></li>
-</ul>
-
-<ul id="dropdown2" class="dropdown-content">
-  <li><a href="#!">one</a></li>
-  <li><a href="#!">two</a></li>
-  <li class="divider"></li>
-  <li><a href="#!">three</a></li>
-</ul>
-
-<ul class="sidenav" id="mobile-demo">
-    <li><a href="sass.html">Inicio<i class="material-icons left">home</i></a></li>
-    <li><a href="badges.html">Contacto<i class="material-icons left">call</i></a></li>
-    <li><a class="dropdown-trigger" href="#!" data-target="dropdown2">Correo<i class="material-icons left">email</i><i class="material-icons right">arrow_drop_down</i></a></li>
-  </ul>
-
-<nav>
-  <div class="nav-wrapper light-blue accent-2">
-    <a href="#!" class="brand-logo">Logo</a>
-    <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-    <ul class="right hide-on-med-and-down">
-      <li><a href="sass.html">Inicio<i class="material-icons left">home</i></a></li>
-      <li><a href="badges.html">Contacto<i class="material-icons left">call</i></a></li>
-      <!-- Dropdown Trigger -->
-      <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Correo<i class="material-icons left">email</i><i class="material-icons right">arrow_drop_down</i></a></li>
-    </ul>
-  </div>
-</nav>
 
 	<div class="container">
 		<div class="row">
-
 	      <ul class="collection with-header">
 	        <li class="collection-header grey"><h5 class="center">DATOS DE LA MADRE</h5>
 			<!--Inicio del formulario-->
@@ -53,7 +17,7 @@
 				<!--Inicio Fila 1-->
 				<div class="row">
 					<div class="input-field col s4">
-						<input class="validate" id="nom" type="text" name="nombre2" required>
+						<input class="validate" id="nom3" type="text" name="nombre3" required>
 						<label for="nombre">Nombre</label>
 						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
 					</div>
@@ -94,8 +58,8 @@
 				<!--Inicio Fila 3-->
 				<div class="row">
 					<div class="input-field col s4">
-    					<input type="text" id="ent" class="autocomplete validate" name="entidad1" required>
-			          <label for="ent">Entidad Federativa</label>
+    					<input type="text" id="ent3" class="autocomplete validate" name="entidad3" required>
+			          <label for="ent3">Entidad Federativa</label>
 			          <span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
     				</div>
 
@@ -109,225 +73,196 @@
     					<label>País</label>
     				</div>
 
-    				<div class="input-field col s4">
-						<input class="validate" id="curp" type="text">
-						<label for="curp">CURP</label>
-					</div>
+						<div class="input-field col s4">
+							<input class="validate" id="cur" name="curp2" type="text" pattern="([A-Z]{4}([0-9]{2})(0[1-9]|1[0-2])(0[1-9]|1[0-9]|2[0-9]|3[0-1])[HM](AS|BC|BS|CC|CL|CM|CS|CH|DF|DG|GT|GR|HG|JC|MC|MN|MS|NT|NL|OC|PL|QT|QR|SP|SL|SR|TC|TS|TL|VZ|YN|ZS|NE)[A-Z]{3}[0-9A-Z]\d)" data-length="18" maxlength="18" required onkeyup="mayus(this);">
+							<label for="cur">CURP</label>
+							<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
+						</div>
 				</div>
-
+				<!--Fin Fila 3-->
+				<!--Inicio Fila 4-->
 				<div class="row">
 					<div class="input-field col s3">
-    					<p>
-					      <label>
-					        <input class="with-gap" name="group1" type="radio"  />
+    					<p><label>
+					        <input class="with-gap" name="grupo1" type="radio"  />
 					        <span>Sin estudios</span>
-					      </label>
-					    </p>
+					      </label></p>
 
-					    <p>
-					      <label>
-					        <input class="with-gap" name="group1" type="radio"  />
+					    <p><label>
+					        <input class="with-gap" name="grupo1" type="radio"  />
 					        <span>Primaria incompleta</span>
-					      </label>
-					    </p>
+					      </label></p>
 
-					    <p>
-					      <label>
-					        <input class="with-gap" name="group1" type="radio"  />
+					    <p><label>
+					        <input class="with-gap" name="grupo1" type="radio"  />
 					        <span>Primaria concluida</span>
-					      </label>
-					    </p>
+					      </label></p>
 
-					    <p>
-					      <label>
-					        <input class="with-gap" name="group1" type="radio"  />
+					    <p><label>
+					        <input class="with-gap" name="grupo1" type="radio"  />
 					        <span>Secundaria incompleta</span>
-					      </label>
-					    </p>
+					      </label></p>
     				</div>
-					
+
 					<div class="input-field col s3">
-    					<p>
-					      <label>
-					        <input class="with-gap" name="group1" type="radio"  />
+    					<p><label>
+					        <input class="with-gap" name="grupo1" type="radio"  />
 					        <span>Secundaria concluida</span>
-					      </label>
-					    </p>
+					      </label></p>
 
-					    <p>
-					      <label>
-					        <input class="with-gap" name="group1" type="radio"  />
+					    <p><label>
+					        <input class="with-gap" name="grupo1" type="radio"  />
 					        <span>Carrera Técnica</span>
-					      </label>
-					    </p>
+					      </label></p>
 
-					    <p>
-					      <label>
-					        <input class="with-gap" name="group1" type="radio"  />
+					    <p><label>
+					        <input class="with-gap" name="grupo1" type="radio"  />
 					        <span>Bachillerato incompleto</span>
-					      </label>
-					    </p>
+					      </label></p>
 
-					    <p>
-					      <label>
-					        <input class="with-gap" name="group1" type="radio"  />
+					    <p><label>
+					        <input class="with-gap" name="grupo1" type="radio"  />
 					        <span>Bachillerato concluido</span>
-					      </label>
-					    </p>
+					      </label></p>
     				</div>
 
     				<div class="input-field col s3">
-    					<p>
-					      <label>
-					        <input class="with-gap" name="group1" type="radio"  />
+    					<p><label>
+					        <input class="with-gap" name="grupo1" type="radio"  />
 					        <span>Tec. Sup. Universitario</span>
-					      </label>
-					    </p>
+					      </label></p>
 
-					    <p>
-					      <label>
-					        <input class="with-gap" name="group1" type="radio"  />
+					    <p><label>
+					        <input class="with-gap" name="grupo1" type="radio"  />
 					        <span>Licenciatura incompleta</span>
-					      </label>
-					    </p>
+					      </label></p>
 
-					    <p>
-					      <label>
-					        <input class="with-gap" name="group1" type="radio"  />
+					    <p><label>
+					        <input class="with-gap" name="grupo1" type="radio"  />
 					        <span>Licenciatura concluida</span>
-					      </label>
-					    </p>
+					      </label></p>
 
-					    <p>
-					      <label>
-					        <input class="with-gap" name="group1" type="radio"  />
+					    <p><label>
+					        <input class="with-gap" name="grupo1" type="radio"  />
 					        <span>Especialidad</span>
-					      </label>
-					    </p>
+					      </label></p>
     				</div>
 
     				<div class="input-field col s3">
-    					<p>
-					      <label>
-					        <input class="with-gap" name="group1" type="radio"  />
+    					<p><label>
+					        <input class="with-gap" name="grupo1" type="radio"  />
 					        <span>Maestría</span>
-					      </label>
-					    </p>
+					      </label></p>
 
-					    <p>
-					      <label>
-					        <input class="with-gap" name="group1" type="radio"  />
+					    <p><label>
+					        <input class="with-gap" name="grupo1" type="radio"  />
 					        <span>Doctorado</span>
-					      </label>
-					    </p>
+					      </label></p>
 
-					    <p>
-					      <label>
-					        <input class="with-gap" name="group1" type="radio"  />
+					    <p><label>
+					        <input class="with-gap" name="grupo1" type="radio"  />
 					        <span>Otro</span>
-					      </label>
-					    </p>
-						
+					      </label></p>
+
 						<!--<div class="input-field cols3">
 							<input class="validate" id="gradoesp" type="text">
 							<label for="gradoesp">Especificar</label>
 						</div>-->
     				</div>
 				</div>
-
+				<!--Fin Fila 4-->
+				<!--Inicio Fila 5-->
 				<div class="row">
-					<div class="input-field col s4">
-							<h7>¿Trabaja?</h7>
-						 <div class="switch">
-					    <label>
-					      No
-					      <input type="checkbox">
-					      <span class="lever"></span>
-					      Sí
-					    </label>
+					<div class="col s4">
+						<h7>¿Trabaja?</h7>
+							<div class="switch">
+					    	<label>No
+					      	<input type="checkbox" name="trabaja2">
+					      	<span class="lever"></span>
+					      Sí</label>
 					  </div>
-	    			</div>
+	    		</div>
 
-	    			<div class="input-field col s2">
-						<p class="range-field">
-      						<input type="range" id="hrsemana" min="0" max="24" />
-      						<label for="hrsemana">Número de horas a la semana</label>
+	    			<div class="col s2">
+							<p class="range-field">
+      					<input type="range" id="hrsemana" min="0" max="24" name="semana"/>
+      					<label for="hrsemana">Número de horas a la semana</label>
     					</p>
-					</div>
+						</div>
 				</div>
-
+				<!--Fin Fila 5-->
+				<!--Inicio Fila 6-->
 				<div class="row">
 					<div class="input-field col s4">
-						<input class="validate" id="tel" type="tel">
-						<label for="tel">Teléfono de casa:</label>	
+						<input class="validate" id="tel2" type="tel" name="telefono2" data-length="12" maxlength="12">
+						<label for="tel2">Teléfono de casa</label>
+						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
 					</div>
 
 					<div class="input-field col s4">
-						<input class="validate" id="cel" type="tel">
-						<label for="cel">Teléfono del trabajo</label>
+						<input class="validate" id="tel3" type="tel" name="telefono3" data-length="12" maxlength="12">
+						<label for="tel3">Teléfono de trabajo</label>
+						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
 					</div>
 
 					<div class="input-field col s4">
-						<input class="validate" id="cel" type="tel">
-						<label for="cel">Teléfono de celular</label>
+						<input class="validate" id="cel2" type="tel" name="celular2" data-length="10" maxlength="10">
+						<label for="cel2">Teléfono de celular</label>
+						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
 					</div>
 				</div>
-					
+				<!--Fin Fila 7-->
+				<!--Encabezado-->
 				<ul class="collection with-header">
 	        	<li class="collection-header grey"><h5 class="center">DATOS DEL PADRE</h5></li></ul>
-
+				<!--Inicio Fila 8-->
 				<div class="row">
 					<div class="input-field col s4">
-						<input class="validate" id="nombre" type="text">
-						<label for="nombre">Nombre</label>
-						<span class="helper-text" data-error="wrong" data-success="right">Mensaje</span>
+						<input class="validate" id="nom4" type="text" name="nombre4" required>
+						<label for="nom4">Nombre</label>
+						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
 					</div>
+
 					<div class="input-field col s4">
-						<input class="validate" id="ap" type="text">
-						<label for="ap">Apellido Paterno</label>
+						<input class="validate" id="ap3"  name="paterno3" type="text" required>
+						<label for="ap3">Apellido Paterno</label>
+						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
 					</div>
+
 					<div class="input-field col s4">
-						<input class="validate" id="am" type="text">
-						<label for="nombre">Apellido Materno</label>
+						<input class="validate" id="am3" name="materno3" type="text">
+						<label for="am3">Apellido Materno</label>
+						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
 					</div>
 				</div>
-
+				<!--Fin Fila 8-->
+				<!--Inicio Fila 9-->
 				<div class="row">
 					<div class="input-field col s4">
-  						<input type="text" class="datepicker">
-						<label for="nacimiento">Fecha de Nacimiento</label>
+  					<input type="text" class="datepicker" id="nac3" name="nacimiento3" required>
+						<label for="nac3">Fecha de Nacimiento</label>
+						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
 					</div>
 
     				<div class="input-field col s4">
-    					<select>
-      						<option value="" disabled selected>Elige una opción</option>
-      						<option value="1">Option 1</option>
-					      	<option value="2">Option 2</option>
-					      	<option value="3">Option 3</option>
-					    </select>
-    					<label>Lugar de Nacimiento</label>
+							<input class="validate" id="lug3" type="text" name="lugar3" required>
+							<label for="lug3">Lugar de Nacimiento</label>
+							<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
     				</div>
 
     				<div class="input-field col s4">
-    					<select>
-      						<option value="" disabled selected>Elige una opción</option>
-      						<option value="1">Option 1</option>
-					      	<option value="2">Option 2</option>
-					      	<option value="3">Option 3</option>
-					    </select>
-    					<label>Delegación o Municipio</label>
+							<input class="validate" id="mun5" type="text" name="municipio5" required>
+							<label for="mun5">Delegación o Municipio</label>
+							<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
     				</div>
 				</div>
-
+				<!--Fin Fila 9-->
+				<!--Inicio Fila 10-->
 				<div class="row">
 					<div class="input-field col s4">
-    					<select>
-      						<option value="" disabled selected>Elige una opción</option>
-      						<option value="1">Option 1</option>
-					      	<option value="2">Option 2</option>
-					      	<option value="3">Option 3</option>
-					    </select>
-    					<label>Entidad Federativa</label>
+						<input type="text" id="ent4" class="autocomplete validate" name="entidad4" required>
+						<label for="ent4">Entidad Federativa</label>
+						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
     				</div>
 
 					<div class="input-field col s4">
@@ -341,206 +276,184 @@
     				</div>
 
     				<div class="input-field col s4">
-						<input class="validate" id="curp" type="text">
-						<label for="curp">CURP</label>
+							<input class="validate" id="cu" name="curp3" type="text" pattern="([A-Z]{4}([0-9]{2})(0[1-9]|1[0-2])(0[1-9]|1[0-9]|2[0-9]|3[0-1])[HM](AS|BC|BS|CC|CL|CM|CS|CH|DF|DG|GT|GR|HG|JC|MC|MN|MS|NT|NL|OC|PL|QT|QR|SP|SL|SR|TC|TS|TL|VZ|YN|ZS|NE)[A-Z]{3}[0-9A-Z]\d)" data-length="18" maxlength="18" required onkeyup="mayus(this);">
+							<label for="cu">CURP</label>
+							<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
 					</div>
 				</div>
-
+				<!--Fin Fila 10-->
+				<!--Inicio Fila 11-->
 				<div class="row">
 					<div class="input-field col s3">
-    					<p>
-					      <label>
-					        <input class="with-gap" name="group1" type="radio"  />
+    					<p><label>
+					        <input class="with-gap" name="grupo0" type="radio"  />
 					        <span>Sin estudios</span>
-					      </label>
-					    </p>
+					      </label></p>
 
-					    <p>
-					      <label>
-					        <input class="with-gap" name="group1" type="radio"  />
+					    <p><label>
+					        <input class="with-gap" name="grupo2" type="radio"  />
 					        <span>Primaria incompleta</span>
-					      </label>
-					    </p>
+					      </label></p>
 
-					    <p>
-					      <label>
-					        <input class="with-gap" name="group1" type="radio"  />
+					    <p><label>
+					        <input class="with-gap" name="grupo2" type="radio"  />
 					        <span>Primaria concluida</span>
-					      </label>
-					    </p>
+					      </label></p>
 
-					    <p>
-					      <label>
-					        <input class="with-gap" name="group1" type="radio"  />
+					    <p><label>
+					        <input class="with-gap" name="grupo2" type="radio"  />
 					        <span>Secundaria incompleta</span>
-					      </label>
-					    </p>
+					      </label></p>
     				</div>
-					
+
 					<div class="input-field col s3">
-    					<p>
-					      <label>
-					        <input class="with-gap" name="group1" type="radio"  />
+    					<p><label>
+					        <input class="with-gap" name="grupo2" type="radio"  />
 					        <span>Secundaria concluida</span>
-					      </label>
-					    </p>
+					      </label></p>
 
-					    <p>
-					      <label>
-					        <input class="with-gap" name="group1" type="radio"  />
+					    <p><label>
+					        <input class="with-gap" name="grupo2" type="radio"  />
 					        <span>Carrera Técnica</span>
-					      </label>
-					    </p>
+					      </label></p>
 
-					    <p>
-					      <label>
-					        <input class="with-gap" name="group1" type="radio"  />
+					    <p><label>
+					        <input class="with-gap" name="grupo2" type="radio"  />
 					        <span>Bachillerato incompleto</span>
-					      </label>
-					    </p>
+					      </label></p>
 
-					    <p>
-					      <label>
-					        <input class="with-gap" name="group1" type="radio"  />
+					    <p><label>
+					        <input class="with-gap" name="grupo2" type="radio"  />
 					        <span>Bachillerato concluido</span>
-					      </label>
-					    </p>
+					      </label></p>
     				</div>
 
     				<div class="input-field col s3">
-    					<p>
-					      <label>
-					        <input class="with-gap" name="group1" type="radio"  />
+    					<p><label>
+					        <input class="with-gap" name="grupo2" type="radio"  />
 					        <span>Tec. Sup. Universitario</span>
-					      </label>
-					    </p>
+					      </label></p>
 
-					    <p>
-					      <label>
-					        <input class="with-gap" name="group1" type="radio"  />
+					    <p><label>
+					        <input class="with-gap" name="grupo2" type="radio"  />
 					        <span>Licenciatura incompleta</span>
-					      </label>
-					    </p>
+					      </label></p>
 
-					    <p>
-					      <label>
-					        <input class="with-gap" name="group1" type="radio"  />
+					    <p><label>
+					        <input class="with-gap" name="grupo2" type="radio"  />
 					        <span>Licenciatura concluida</span>
-					      </label>
-					    </p>
+					      </label></p>
 
-					    <p>
-					      <label>
-					        <input class="with-gap" name="group1" type="radio"  />
+					    <p><label>
+					        <input class="with-gap" name="grup02" type="radio"  />
 					        <span>Especialidad</span>
-					      </label>
-					    </p>
+					      </label></p>
     				</div>
 
     				<div class="input-field col s3">
-    					<p>
-					      <label>
-					        <input class="with-gap" name="group1" type="radio"  />
+    					<p><label>
+					        <input class="with-gap" name="grupo2" type="radio"  />
 					        <span>Maestría</span>
-					      </label>
-					    </p>
+					      </label></p>
 
-					    <p>
-					      <label>
-					        <input class="with-gap" name="group1" type="radio"  />
+					    <p><label>
+					        <input class="with-gap" name="grupo2" type="radio"  />
 					        <span>Doctorado</span>
-					      </label>
-					    </p>
+					      </label></p>
 
-					    <p>
-					      <label>
-					        <input class="with-gap" name="group1" type="radio"  />
+					    <p><label>
+					        <input class="with-gap" name="grupo2" type="radio"  />
 					        <span>Otro</span>
-					      </label>
-					    </p>
-						
+					      </label></p>
+
 						<!--<div class="input-field cols3">
 							<input class="validate" id="gradoesp" type="text">
 							<label for="gradoesp">Especificar</label>
 						</div>-->
     				</div>
 				</div>
-
+				<!--Fin Fila 11-->
+				<!--Inicio Fila 12-->
 				<div class="row">
-					<div class="input-field col s4">
-							<h7>¿Trabaja?</h7>
-						 <div class="switch">
-					    <label>
-					      No
-					      <input type="checkbox">
+					<div class="col s4">
+						<h7>¿Trabaja?</h7>
+						 	<div class="switch">
+					    	<label>No
+					      <input type="checkbox" name="trabaja3">
 					      <span class="lever"></span>
-					      Sí
-					    </label>
-					  </div>
+								Sí</label>
+					  	</div>
 	    			</div>
 
 	    			<div class="input-field col s2">
-						<p class="range-field">
-      						<input type="range" id="hrsemana" min="0" max="24" />
-      						<label for="hrsemana">Número de horas a la semana</label>
+							<p class="range-field">
+      					<input type="range" id="hrsemana2" min="0" max="24" name="semana2"/>
+      					<label for="hrsemana2">Número de horas a la semana</label>
     					</p>
 					</div>
 				</div>
-
+				<!--Fin Fila 12-->
+				<!--Inicio Fila 13-->
 				<div class="row">
 					<div class="input-field col s4">
-						<input class="validate" id="tel" type="tel">
-						<label for="tel">Teléfono de casa</label>	
+						<input class="validate" id="tel4" type="tel" name="telefono4" data-length="12" maxlength="12">
+						<label for="tel4">Teléfono de casa</label>
+						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
 					</div>
 
 					<div class="input-field col s4">
-						<input class="validate" id="cel" type="tel">
-						<label for="cel">Teléfono del trabajo</label>
+						<input class="validate" id="tel5" type="tel" name="telefono5" data-length="12" maxlength="12">
+						<label for="tel">Teléfono del trabajo</label>
+						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
 					</div>
 
 					<div class="input-field col s4">
-						<input class="validate" id="cel" type="tel">
-						<label for="cel">Teléfono de celular</label>
+						<input class="validate" id="cel3" type="tel" name="celular3" data-length="10" maxlength="10">
+						<label for="cel3">Teléfono de celular</label>
+						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
 					</div>
 				</div>
-
+				<!--Fin Fila 13-->
+				<!--Encabezado-->
 				<ul class="collection with-header">
 	        	<li class="collection-header grey"><h5 class="center">INGRESOS FAMILIARES</h5></li></ul>
-				
+				<!--Inicio Fila 14-->
 				<div class="row">
 					<div class="input-field col s12">
-						<select>
-      						<option value="" disabled selected>Elige una opción</option>
-      						<option value="1">1</option>
-					      	<option value="2">2</option>
-					      	<option value="3">3</option>
-					      	<option value="3">4</option>
-					      	<option value="3">5 o más</option>
+						<select name="ingresos1">
+      					<option value="" disabled selected>Elige una opción</option>
+      					<option value="1">1</option>
+					      <option value="2">2</option>
+					      <option value="3">3</option>
+					      <option value="4">4</option>
+					      <option value="5+">5 o más</option>
 					    </select>
     					<label>¿Cuántas personas que viven en su casa tienen ingresos?</label>
 					</div>
 				</div>
-
+				<!--Fin Fila 14-->
+				<!--Inicio Fila 15-->
 				<div class="row">
 					<div class="input-field col s8">
-						<select>
-	      						<option value="" disabled selected>Elige una opción</option>
-	      						<option value="padre">Padre</option>
-						      	<option value="madre">Madre</option>
-						      	<option value="hermano">Hermano</option>
-						      	<option value="otro">Otro</option>
+						<select name="economico1">
+	      				<option value="" disabled selected>Elige una opción</option>
+	      				<option value="padre">Padre</option>
+						    <option value="madre">Madre</option>
+						    <option value="hermano">Hermano</option>
+						    <option value="otro">Otro</option>
 						</select>
-	    				<label>¿De quién depende económicamente?</label>
+	    			<label>¿De quién depende económicamente?</label>
     				</div>
 
 					<div class="input-field col s4">
-						<input class="validate" id="otro" type="text">
-						<label for="otro">Otro, especificar</label>
+						<input class="validate" id="esp3" name="especificar3" type="text">
+						<label for="esp3">Otro, especificar</label>
 					</div>
 				</div>
-
+				<!--Fin Fila 15-->
+				<!--Encabezado-->
 				<ul class="collection with-header">
-	        	<li class="collection-header grey"><h5 class="center">INGRESOS FAMILIARES MENSUALES   <a class="btn-floating btn-large waves-effect waves-light teal accent-3"><i class="material-icons">add</i></a></h5></li></ul>
+	        	<li class="collection-header grey"><h5 class="center">INGRESOS FAMILIARES MENSUALES   <a href="#ingreso" class="btn-floating btn-large waves-effect waves-light teal accent-3 modal-trigger"><i class="material-icons">add</i></a></h5></li></ul>
 
 				<table class="responsive-table">
 			        <thead class="orange">
@@ -569,27 +482,61 @@
 			          </tr>
 			        </tbody>
       			</table>
-
-			</form>
+			</form> <!--Fin del fomulario-->
 		</ul>
-
 		</div>
 
 		<ul class="pagination center">
 		    <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
-		    <li class="active"><a href="#!">1</a></li>
-		    <li class="waves-effect"><a href="2.php">2</a></li>
-		    <li class="waves-effect"><a href="3.php">3</a></li>
+		    <li class="waves-effect"><a href="<?php base_url()?>uno">1</a></li>
+		    <li class="active"><a href="#!">2</a></li>
+		    <li class="waves-effect"><a href="<?php base_url()?>tres">3</a></li>
 		    <li class="waves-effect"><a href="#!">4</a></li>
 		    <li class="waves-effect"><a href="#!">5</a></li>
 		    <li class="waves-effect"><a href="#!">6</a></li>
 		    <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
-		</ul>	
+		</ul>
 	</div> <!--Fin del contenedor-->
 
-	<script src="js/jquery-3.3.1.min.js"></script>
-	<script src="js/init.js"></script>
-	<script type="text/javascript" src="js/materialize.min.js"></script>
+	<div class="modal" id="ingreso">
+	  <h5 class="modal-close right">&#10005;</h5>
+	  <div class="modal-content center">
+	    <h4>Ingresos Familiares Mensuales</h4><br>
+	      <?php echo form_open(""); ?>
+	      <div class="input-field">
+	        <i class="material-icons prefix">person</i>
+	        <input class="validate" type="text" id="ing2" name="ingresos2" required>
+	        <label for="ing2">Persona con ingresos</label>
+					<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
+	      </div><br>
+
+				<i class="material-icons prefix left">attach_money</i>
+				<select class="left" name="ingresos3">
+						<option value="" disabled selected>Elige una opción</option>
+						<option value="padre">Hasta $2,000</option>
+						<option value="madre">$2,0001 a $6,000</option>
+						<option value="hermano">$6,0001 a $10,000</option>
+						<option value="otro">$10,0001 a $20,000</option>
+						<option value="">$20,001 a $30,000</option>
+						<option value="">Más de $30,000</option>
+				</select>
+				<label>¿De quién depende económicamente?</label>
+
+				<div class="input-field">
+	        <i class="material-icons prefix">pie_chart</i>
+	        <input class="validate" type="number" id="por" name="porcentaje" min="0" max="100" required>
+	        <label for="por">Porcentaje destinado al gasto familiar</label>
+					<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
+	      </div><br>
+
+	      <input type="submit" value="Guardar" class="btn btn-large">
+	    <?php echo form_close(); ?>
+	  </div>
+	</div>
+
+			<script type="text/javascript" src="<?php echo base_url();?>/assets/js/jquery-3.3.1.min.js"></script>
+			<script type="text/javascript" src="<?php echo base_url();?>/assets/js/init.js"></script>
+			<script type="text/javascript" src="<?php echo base_url();?>/assets/js/materialize.min.js"></script>
     </body>
 </body>
 </html>

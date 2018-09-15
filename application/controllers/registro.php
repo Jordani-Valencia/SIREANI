@@ -2,9 +2,13 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Registro extends CI_Controller {
-	
+
 	public function uno()
 	{
 		$this->load->view('pantallas/1');
+	}
+
+	public function dos(){
+		$this->load->view('pantallas/2');
 	}
 }
