@@ -3,11 +3,8 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Curso de Materialize</title>
-	<!--<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">-->
-	<!--<link rel="stylesheet" href="assets/css/materialize.min.css">-->
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/materialize.min.css">
 	<link rel="stylesheet" href="<?php echo base_url();?>assets/css/index.css">
-	<!--<link rel="stylesheet" href="assets/css/index.css">-->
 </head>
 <body>
 	<div class="container">
@@ -15,9 +12,7 @@
 	      <ul class="collection with-header">
 	        <li class="collection-header grey"><h4 class="center">DATOS GENERALES DEL ESTUDIANTE</h4>
 	        	<p class="center">Los datos que proporcione será utilizados únicamente en el área de Orientación</p></li>
-	        
-
-			<!--Inicio del formulario-->	        	
+			<!--Inicio del formulario-->
 			<form action="" class="col s12">
 				<!-- Inicio Fila 1-->
 				<div class="row">
@@ -62,13 +57,6 @@
     				</div>
 
     				<div class="input-field col s4">
-    					<!--<select>
-      						<option value="" disabled selected>Elige una opción</option>
-      						<option value="1">Option 1</option>
-					      	<option value="2">Option 2</option>
-					      	<option value="3">Option 3</option>
-					    </select>
-    					<label>Lugar de Nacimiento</label>-->
     					<input class="validate" id="lug" type="text" name="lugar1" required>
 						<label for="am">Lugar de Nacimiento</label>
 						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
@@ -77,29 +65,13 @@
 				<!--Fin Fila 2-->
 				<!--Inicio Fila 3-->
 				<div class="row">
-					<!--<div class="input-field col s4">
-    					<select>
-      						<option value="" disabled selected>Elige una opción</option>
-      						<option value="1">Option 1</option>
-					      	<option value="2">Option 2</option>
-					      	<option value="3">Option 3</option>
-					    </select>
-    					<label>Delegación o Municipio</label>
-    				</div> -->
     				<div class="input-field col s4">
     					<input class="validate" id="mun" type="text" name="municipio1" required>
 						<label for="mun">Delegación o Municipio</label>
 						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
     				</div>
-					
+
 					<div class="input-field col s4">
-    					<!--<select>
-      						<option value="" disabled selected>Elige una opción</option>
-      						<option value="1">Option 1</option>
-					      	<option value="2">Option 2</option>
-					      	<option value="3">Option 3</option>
-					    </select>
-    					<label>Entidad Federativa</label>-->
 			          <input type="text" id="ent" class="autocomplete validate" name="entidad1" required>
 			          <label for="ent">Entidad Federativa</label>
 			          <span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
@@ -456,11 +428,11 @@
 					      	<option value="Macedonio">Macedonio</option>
 					      	<option value="Malgache">Malgache</option>-->
 					      	<option value="Mexicano">México</option>
-					      	
+
 					    </select>
     					<label>Nacionalidad</label>
     				</div>
-					
+
 					<div class="input-field col s4">
 						<input class="validate" id="curp" name="curp1" type="text" pattern="([A-Z]{4}([0-9]{2})(0[1-9]|1[0-2])(0[1-9]|1[0-9]|2[0-9]|3[0-1])[HM](AS|BC|BS|CC|CL|CM|CS|CH|DF|DG|GT|GR|HG|JC|MC|MN|MS|NT|NL|OC|PL|QT|QR|SP|SL|SR|TC|TS|TL|VZ|YN|ZS|NE)[A-Z]{3}[0-9A-Z]\d)" data-length="18" maxlength="18" required onkeyup="mayus(this);">
 						<label for="curp">CURP</label>
@@ -510,7 +482,7 @@
 					    </select>
     					<label>Turno</label>
     				</div>
-					
+
 					<div class="input-field col s8">
     					<select name="promedio1">
       						<option value="" disabled selected>Elige una opción</option>
@@ -569,7 +541,7 @@
 						<label for="emp">Nombre de la empresa</label>
 						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
 					</div>
-				
+
 					<div class="input-field col s2">
 						<input class="validate" id="ocu" type="text" name="ocupacion">
 						<label for="ocu">Puesto u ocupación</label>
@@ -586,7 +558,7 @@
 						<input type="text" id="fin" class="timepicker" name="horaFin">
   						<label for="fin">Hora de fin</label>
 					</div>
-					
+
 					<div class="col s2">
 						<p class="range-field">
       						<input type="range" id="numh" min="0" max="24" name="horas" />
@@ -615,18 +587,18 @@
 					<div class="input-field col s2">
 						<input class="validate" id="int" type="number" name="interior1">
 						<label for="int">No. Interior</label>
-						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>	
+						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
 					</div>
 
 					<div class="input-field col s2">
 						<input class="validate" id="col" type="text" name="colonia1">
-						<label for="col">Colonia</label>	
+						<label for="col">Colonia</label>
 						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
 					</div>
 
 					<div class="input-field col s3">
 						<input class="validate" id="mun3" type="text" name="municipio3" required>
-						<label for="mun3">Delegación o Municipio</label>	
+						<label for="mun3">Delegación o Municipio</label>
 						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
 					</div>
 				</div>
@@ -647,7 +619,7 @@
 
 					<div class="input-field col s3">
 						<input class="validate" id="tel" type="tel" name="telefono1" data-length="12" maxlength="12">
-						<label for="tel">Teléfono de casa</label>	
+						<label for="tel">Teléfono de casa</label>
 						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
 					</div>
 
@@ -659,7 +631,7 @@
 				</div>
 				<!--Fin Fila 11-->
 				<!--Encabezado-->
-				<ul class="collection with-header"><li class="collection-header grey"><h5 class="center">DATOS FAMILIARES   <a class="btn-floating btn-large waves-effect waves-light teal accent-3"><i class="material-icons">add</i></a>       </h5><p class="center">(Únicamente proporcione los datos de las personas que viven en la misma casa)</p></li></ul>
+				<ul class="collection with-header"><li class="collection-header grey"><h5 class="center">DATOS FAMILIARES   <a href="#datosFamiliares" class="btn-floating btn-large waves-effect waves-light teal accent-3 modal-trigger"><i class="material-icons">add</i></a>       </h5><p class="center">(Únicamente proporcione los datos de las personas que viven en la misma casa)</p></li></ul>
 				<table class="responsive-table">
 			        <thead class="orange">
 			          <tr>
@@ -700,42 +672,74 @@
 		<ul class="pagination center">
 		    <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
 		    <li class="active"><a href="#!">1</a></li>
-		    <li class="waves-effect"><a href="2.php">2</a></li>
+		    <li class="waves-effect"><a href="<?php base_url()?>dos">2</a></li>
 		    <li class="waves-effect"><a href="3.php">3</a></li>
 		    <li class="waves-effect"><a href="#!">4</a></li>
 		    <li class="waves-effect"><a href="#!">5</a></li>
 		    <li class="waves-effect"><a href="#!">6</a></li>
 		    <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
-		</ul>	
+		</ul>
 	</div> <!--Fin del contenedor-->
 
-	<!--<script src="assets/js/jquery-3.3.1.min.js"></script>
-	<script src="assets/js/init.js"></script>
-	<script type="text/javascript" src="assets/js/materialize.min.js"></script>-->
-
 	<div class="modal" id="datosFamiliares">
-    <h5 class="modal-close right">&#10005;</h5>
-    <div class="modal-content center">
-      <h4>Login form</h4><br>
-      <!--<form action="">-->
-        <?php echo form_open(""); ?>
-        <div class="input-field">
-          <i class="material-icons prefix">person</i>
-          <input type="text" id="username">
-          <label for="username">Usuario</label>
-        </div><br>
+	  <h5 class="modal-close right">&#10005;</h5>
+	  <div class="modal-content center">
+	    <h4>Datos familiares</h4><br>
+	      <?php echo form_open(""); ?>
+	      <div class="input-field">
+	        <i class="material-icons prefix">person</i>
+	        <input type="text" id="ape" name="apellidos">
+	        <label for="ape">Apellidos</label>
+	      </div><br>
 
-        <div class="input-field">
-          <i class="material-icons prefix">lock</i>
-          <input type="password" id="pass">
-          <label for="pass">Contraseña</label>
-        </div><br>
+	      <div class="input-field">
+	        <i class="material-icons prefix">perm_identity</i>
+	        <input type="password" id="nom2" name="nombre2">
+	        <label for="nom2">Nombres</label>
+	      </div><br>
 
-        <input type="submit" value="Login" class="btn btn-large">
-      <!--</form>-->
-      <?php echo form_close(); ?>
-    </div>
-  </div>
+	      <div class="input-field">
+	        <i class="material-icons prefix">timer</i>
+	        <input type="password" id="ed" name="edad1">
+	        <label for="ed">Edad</label>
+	      </div><br>
+
+	      <div class="input-field">
+	        <i class="material-icons prefix">work</i>
+	        <input type="password" id="ocu2" name="ocupacion2">
+	        <label for="ocu2">Ocupacion</label>
+	      </div><br>
+
+	      <div class="input-field">
+	        <i class="material-icons prefix">group</i>
+	        <input type="password" id="par" name="parentesco1">
+	        <label for="par">Parentesco</label>
+	      </div><br>
+
+	      <div class="input-field">
+	        <i class="material-icons prefix">school</i>
+	        <input type="password" id="est" name="estudios1">
+	        <label for="est">Grado máximo de estudios</label>
+	      </div><br>
+
+	      <div>
+	        <i class="material-icons prefix">wc</i><br />
+	        <p><label>
+	              <input class="with-gap" name="sexo2" type="radio" value="F"/>
+	              <span>Femenino</span>
+	            </label></p>
+
+	            <p><label>
+	              <input class="with-gap" name="sexo2" type="radio" value="M"/>
+	              <span>Masculino</span>
+	            </label></p>
+	      </div><br />
+
+	      <input type="submit" value="Guardar" class="btn btn-large">
+	    <?php echo form_close(); ?>
+	  </div>
+	</div>
+
 	<script type="text/javascript" src="<?php echo base_url();?>/assets/js/jquery-3.3.1.min.js"></script>
 	<script type="text/javascript" src="<?php echo base_url();?>/assets/js/init.js"></script>
 	<script type="text/javascript" src="<?php echo base_url();?>/assets/js/materialize.min.js"></script>
