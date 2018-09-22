@@ -119,13 +119,13 @@
         <?php echo form_open("admin/index"); ?>
         <div class="input-field">
           <i class="material-icons prefix">person</i>
-          <input type="text" id="username">
+          <input type="text" id="username" name="username">
           <label for="username">Usuario</label>
         </div><br>
 
         <div class="input-field">
           <i class="material-icons prefix">lock</i>
-          <input type="password" id="pass">
+          <input type="password" id="pass" name="pass">
           <label for="pass">Contraseña</label>
         </div><br>
 
