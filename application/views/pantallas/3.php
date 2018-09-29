@@ -402,13 +402,14 @@
 					</div>
 				</div>
 				<!--Fin Fila15-->
+				<!--Inicio Fila16-->
 				<div class="row">
 					<div class="col s4 center">
 						<h5 class="collection">¿Con qué frecuencia asiste al médico?</h5>
 					</div>
 
-					<div class="input-field col s8">
-						<select>
+					<div class="col s8">
+						<select name="medico">
 							<option value="" disabled selected>Elige una opción</option>
 							<option value="">Cada semana</option>
 							<option value="">Cada mes</option>
@@ -418,14 +419,15 @@
 						</select>
 					</div>
 				</div>
-
+				<!--Fin Fila16-->
+				<!--Inicio Fila17-->
 				<div class="row">
 					<div class="col s4 center">
 						<h5 class="collection">¿Con qué frecuencia asiste al dentista?</h5>
 					</div>
 
-					<div class="input-field col s8">
-						<select>
+					<div class="col s8">
+						<select name="dentista">
 							<option value="" disabled selected>Elige una opción</option>
 							<option value="">Cada semana</option>
 							<option value="">Cada mes</option>
@@ -435,14 +437,15 @@
 						</select>
 					</div>
 				</div>
-
+				<!--Fin Fila17-->
+				<!--Inicio Fila18-->
 				<div class="row">
 					<div class="col s4 center">
 						<h5 class="collection">¿Necesita anteojos?</h5>
 					</div>
 
-					<div class="input-field col s8">
-						<select>
+					<div class="col s8">
+						<select name="anteojos">
 							<option value="" disabled selected>Elige una opción</option>
 							<option value="">No los necesito</option>
 							<option value="">Sólo para leer</option>
@@ -452,37 +455,37 @@
 						</select>
 					</div>
 				</div>
-
+				<!--Fin Fila18-->
+				<!--Inicio Fila19-->
 				<div class="row">
 					<div class="col s8 center">
 						<h5 class="collection">¿Actualmente se encuentra bajo tratamiento?</h5>
 					</div>
 
-					<div class="input-field col s4">
-						<h7></h7>
+					<div class="col s4">
 							<div class="switch">
-					    		<label>
-					      		No
-					      		<input type="checkbox">
+					    		<label>No
+					      		<input type="checkbox" name="tratamiento">
 					      		<span class="lever"></span>
-					      		Sí
-					    	</label>
-						</div>
+					      		Sí</label>
+							</div>
 					</div>
 				</div>
-
+				<!--Fin Fila19-->
+				<!--Inicio Fila20-->
 				<div class="row">
 					<div class="col s8 center">
 						<h5 class="collection">En caso afirmativo ¿Cuál?</h5>
 					</div>
 
 					<div class="input-field col s4">
-						<input class="validate" id="otro" type="text">
-						<label for="otro">Especifique</label>
-						<span class="helper-text" data-error="wrong" data-success="right">Mensaje</span>
+						<input class="validate" id="esp6" type="text" name="especificar6">
+						<label for="esp6">Especifique</label>
+						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
 					</div>
 				</div>
-
+				<!--Fin Fila20-->
+				<!--Inicio Fila21-->
 				<div class="row">
 					<div class="col s4">
 						<h5 class="collection">¿Tiene alguna discapacidad física?</h5>
@@ -490,58 +493,57 @@
 
 					<div class="col s4">
 						<div class="switch">
-					    <label>
-					      No
-					      <input type="checkbox">
+					    <label>No
+					      <input type="checkbox" name="discapacidad">
 					      <span class="lever"></span>
-					      Sí
-					    </label>
+					      Sí</label>
 					  </div>
 					</div>
 
-					<div class="col s4">
-						<input class="validate" id="otro" type="text">
-						<label for="otro">¿Cuál?</label>
-						<span class="helper-text" data-error="wrong" data-success="right">Mensaje</span>
+					<div class="input-field col s4">
+						<input class="validate" id="esp7" type="text" name="especificar7">
+						<label for="esp7">¿Cuál?</label>
+						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
 					</div>
 				</div>
-
+				<!--Fin Fila21-->
+				<!--Inicio Fila22-->
 				<div class="row">
 					<div class="col s12">
-						<h5 class="collection">¿Ha asistido o asiste a tratamiento psicológico o psiquiátrico?</h5>
+						<h5 class="collection center">¿Ha asistido o asiste a tratamiento psicológico o psiquiátrico?</h5>
 					</div>
 				</div>
-
+				<!--Fin Fila22-->
+				<!--Inicio Fila23-->
 				<div class="row">
 					<div class="col s2">
 						<div class="switch">
-					    <label>
-					      No
-					      <input type="checkbox">
+					    <label>No
+					      <input type="checkbox" name="psicologico">
 					      <span class="lever"></span>
-					      Sí
-					    </label>
+					      Sí</label>
 					  </div>
 					</div>
 
 					<div class="col s3">
-						<input type="text" class="datepicker">
+						<input type="text" class="datepicker" name="desde">
 						<label for="nacimiento">Desde</label>
 					</div>
 
 					<div class="col s3">
-						<input type="text" class="datepicker">
+						<input type="text" class="datepicker" name="hasta">
 						<label for="nacimiento">Hasta</label>
 					</div>
 
-					<div class="col s4">
-						<input class="validate" id="donde" type="text">
+					<div class="input-field col s4">
+						<input class="validate" id="donde" type="text" name="donde">
 						<label for="donde">¿Dónde?</label>
-						<span class="helper-text" data-error="wrong" data-success="right"></span>
+						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
 					</div>
 				</div>
-			</form>
-		</ul>
+				<!--Fin Fila23-->
+			</form> <!--Termina el formulario-->
+		</ul>s
 
 		</div>
 
@@ -550,7 +552,7 @@
 		    <li class="waves-effect"><a href="<?php base_url()?>uno">1</a></li>
 		    <li class="waves-effect"><a href="<?php base_url()?>dos">2</a></li>
 		    <li class="active"><a href="#!">3</a></li>
-		    <li class="waves-effect"><a href="#!">4</a></li>
+		    <li class="waves-effect"><a href="<?php base_url()?>cuatro">4</a></li>
 		    <li class="waves-effect"><a href="#!">5</a></li>
 		    <li class="waves-effect"><a href="#!">6</a></li>
 		    <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
