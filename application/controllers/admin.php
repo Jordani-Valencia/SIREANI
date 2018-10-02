@@ -5,6 +5,7 @@ class Admin extends CI_Controller {
 	function __construct(){
 		parent::__construct();
 		$this->load->model('MLogin');
+		$this->load->library('session');
 	}
 
 	public function index()
@@ -13,7 +14,22 @@ class Admin extends CI_Controller {
       'username'=> $this->input->post('username'),
       'pass' =>  crypt($this->input->post('pass'),'hola')
     );
-    $vista = $this->MLogin->seleccionUsuario($data);
-    $this->load->view($vista);
+    $res = $this->MLogin->seleccionUsuario($data);
+		if ($res) {
+			$data=[
+				"id"=>$res->idLogin,
+				"usuario"=>$res->usuario,
+				"login"=>TRUE
+			];
+
+			 $this->session->set_userdata($data);
+			echo "no error";
+		}else{
+			echo "error";
+		}
+	}
+
+	public function prinAdmin(){
+		$this->load->view('pantallas/principalAdmin');
 	}
 }

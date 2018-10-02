@@ -5,6 +5,7 @@ class Registro extends CI_Controller {
 
 	public function uno()
 	{
+		
 		$this->load->view('pantallas/1');
 	}
 

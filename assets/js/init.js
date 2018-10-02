@@ -55,3 +55,21 @@
 function mayus(e){
     e.value=e.value.toUpperCase();
 }
+
+//login
+$("#loginF").submit(function(event){
+  event.preventDefault();
+  $.ajax({
+    url:$(this).attr("action"),
+    type:$(this).attr("method"),
+    data:$(this).serialize(),
+    success:function(resp){
+      if (resp=="error") {
+        M.toast({html: 'Usuario o contraseña equivocados'});
+      }else{
+        window.location.href="http://localhost:8181/SIREANI/admin/prinAdmin";
+      }
+    }
+  });
+});
+//
