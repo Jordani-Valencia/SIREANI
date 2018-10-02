@@ -58,7 +58,7 @@
 
     				<div class="input-field col s4">
     					<input class="validate" id="lug" type="text" name="lugar1" required>
-						<label for="am">Lugar de Nacimiento</label>
+						<label for="lug">Lugar de Nacimiento</label>
 						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
     				</div>
 				</div>
