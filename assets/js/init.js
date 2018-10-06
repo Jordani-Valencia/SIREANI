@@ -65,7 +65,7 @@ $("#loginF").submit(function(event){
     data:$(this).serialize(),
     success:function(resp){
       if (resp=="error") {
-        M.toast({html: 'Usuario o contraseña equivocados'});
+        M.toast({html: 'Usuario o contraseña incorrectos'});
       }else{
         window.location.href="http://localhost:8181/SIREANI/admin/prinAdmin";
       }
