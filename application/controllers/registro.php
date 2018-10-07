@@ -23,4 +23,8 @@ class Registro extends CI_Controller {
 	public function cinco(){
 		$this->load->view('pantallas/5');
 	}
+
+	public function seis(){
+		$this->load->view('pantallas/6');
+	}
 }

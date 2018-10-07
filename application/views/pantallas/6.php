@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Curso de Materialize</title>
-	<link rel="stylesheet" href="css/materialize.min.css">
-	<link rel="stylesheet" href="css/index.css">
-
+	<title>SIREANI</title>
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="<?php echo base_url();?>assets/img/ce.ico">
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/materialize.min.css">
+	<link rel="stylesheet" href="<?php echo base_url();?>assets/css/index.css">
 </head>
 <body>
-	
+
 	<!-- Dropdown Structure -->
 <ul id="dropdown1" class="dropdown-content">
   <li><a href="#!">one</a></li>
@@ -187,7 +187,7 @@
 						<label for="que">¿Qué?</label>
 					</div>
 				</div>
-					
+
 				<ul class="collection with-header">
 	        	<li class="collection-header grey"><h5 class="center">PERFIL PERSONAL Y ACADÉMICO DE LOS ESTUDIANTES</h5></li></ul>
 
@@ -232,7 +232,7 @@
 						</div>
 	        		</div>
 	        	</div>
-				
+
 				<div class="row">
 	        		<div class="col s12">
 	        			<h7>4.- Asisto a la eduación media superior porque creo que me será muy útil.</h7>
@@ -260,7 +260,7 @@
 						</div>
 	        		</div>
 	        	</div>
-				
+
 				<div class="row">
 	        		<div class="col s12">
 	        			<h7>6.- Soy bueno para estudiar.</h7>
@@ -423,12 +423,12 @@
 		    <li class="waves-effect"><a href="#!">5</a></li>
 		    <li class="waves-effect"><a href="#!">6</a></li>
 		    <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
-		</ul>	
+		</ul>
 	</div> <!--Fin del contenedor-->
 
-	<script src="js/jquery-3.3.1.min.js"></script>
-	<script src="js/init.js"></script>
-	<script type="text/javascript" src="js/materialize.min.js"></script>
+	<script type="text/javascript" src="<?php echo base_url();?>/assets/js/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="<?php echo base_url();?>/assets/js/init.js"></script>
+	<script type="text/javascript" src="<?php echo base_url();?>/assets/js/materialize.min.js"></script>
     </body>
 </body>
 </html>

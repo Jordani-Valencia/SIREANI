@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Curso de Materialize</title>
+	<title>SIREANI</title>
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="<?php echo base_url();?>assets/img/ce.ico">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/materialize.min.css">
 	<link rel="stylesheet" href="<?php echo base_url();?>assets/css/index.css">
 </head>
@@ -241,117 +242,110 @@
 				<!--Fin Fila8-->
 				<!--Inicio Fila9-->
 				<div class="row">
-					<div class="col s12"><h5 class="collection">¿Cómo es la relación con sus hermanos? (Seleccione al menos 2 opciones)</h5></div>
+					<div class="col s12"><h5 class="collection">¿Cómo es la relación con sus hermanos? (Seleccione al menos 2 opciones)<br /></h5></div>
 				</div>
 				<!--Fin Fila9-->
 				<!--Inicio Fila10-->
 				<div class="row">
 					<div class="col s4">
-						<p><label>
+						<label>
 					   <input type="checkbox" name="plat"/>
-					   <span>Platicamos</span></label></p>
+					   <span>Platicamos</span></label>
 					</div>
 
 					<div class="col s4">
-						<p><label>
+						<label>
 					   <input type="checkbox" name="respeto"/>
-					   <span>Hay respeto</span></label></p>
+					   <span>Hay respeto</span></label>
 					</div>
 
 					<div class="col s4">
-						<p><label>
+						<label>
 					   <input type="checkbox" name="apoyo"/>
-					   <span>Nos apoyamos</span></label></p>
+					   <span>Nos apoyamos</span></label>
 					</div>
 				</div>
 				<!--Fin Fila10-->
-				
+				<!--Inicio Fila11-->
 				<div class="row">
 					<div class="col s4">
-						<p>
-					    	<label>
-					    		<input type="checkbox" />
-					        	<span>Jugamos</span>
-					    	</label>
-						</p>
+						<label>
+					  <input type="checkbox" name="jugar"/>
+					  <span>Jugamos</span></label>
 					</div>
 
 					<div class="col s4">
-						<p>
-					    	<label>
-					    		<input type="checkbox" />
-					        	<span>No nos llevamos</span>
-					    	</label>
-						</p>
+						<label>
+					  <input type="checkbox" name="no"/>
+					  <span>No nos llevamos</span></label>
 					</div>
 
 					<div class="col s4">
-						<p>
-					    	<label>
-					    		<input type="checkbox" />
-					        	<span>Siempre estamos peleando</span>
-					    	</label>
-						</p>
+						<label>
+					  <input type="checkbox" name="pelear"/>
+					  <span>Siempre estamos peleando</span></label>
 					</div>
 				</div>
-
+				<!--Fin Fila11-->
+				<!--Inicio Fila12-->
 				<div class="row">
 					<div class="input-field col s4">
-						<input class="validate" id="novio" type="number">
+						<input class="validate" id="novio" type="number" step="1" max="100" min="1">
 						<label for="novio">¿A qué edad tuvo su primer noviazgo?</label>
-						<span class="helper-text" data-error="wrong" data-success="right">Mensaje</span>
+						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
 					</div>
 
 					<div class="col s3 center">
 						<h7>Actualmente tiene novio</h7>
 							<div class="switch">
-					    		<label>
-					      		No
-					      		<input type="checkbox">
+					    		<label>No
+					      		<input type="checkbox" name="novio">
 					      		<span class="lever"></span>
-					      		Sí
-					    	</label>
-						</div>
+					      		Sí</label>
+							</div>
 					</div>
 
 					<div class="input-field col s5">
-						<input class="validate" id="tiempo" type="text">
-						<label for="tiempo">¿Cuánto tiempo llevas con él (ella)?</label>
-						<span class="helper-text" data-error="wrong" data-success="right">Mensaje</span>
+						<input class="validate" id="tie" type="text" name="tiempo">
+						<label for="tie">¿Cuánto tiempo llevas con él (ella)?</label>
+						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
 					</div>
 				</div>
-
+				<!--Fin Fila12-->
+				<!--Inicio Fila13-->
 				<div class="row">
 					<div class="input-field col s6">
-						<input type="text" class="validate" id="prom">
-						<label for="prom">En promedio ¿Cuánto tiempo ha durado con sus parejas?</label>
-						<span class="helper-text" data-error="wrong" data-success="right"></span>
+						<input type="text" class="validate" id="pro" name="promedio2">
+						<label for="pro">En promedio ¿Cuánto tiempo ha durado con sus parejas?</label>
+						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
 					</div>
 
 					<div class="input-field col s6">
-						<input type="text" class="validate" id="ruptura">
-						<label for="ruptura">¿Cuál ha sido el principal motivo de ruptura?</label>
-						<span class="helper-text" data-error="wrong" data-success="right"></span>
+						<input type="text" class="validate" id="rup" name="ruptura">
+						<label for="rup">¿Cuál ha sido el principal motivo de ruptura?</label>
+						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
 					</div>
 				</div>
-
+				<!--Fin Fila13-->
+				<!--Inicio Fila14-->
 				<div class="row">
 					<div class="input-field col s6">
-						<input type="text" class="validate" id="persona">
-						<label for="persona">La persona a la que más confianza le tiene es</label>
-						<span class="helper-text" data-error="wrong" data-success="right"></span>
+						<input type="text" class="validate" id="per" name="persona" required>
+						<label for="per">La persona a la que más confianza le tiene es</label>
+						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
 					</div>
 
 					<div class="input-field col s6">
-						<input type="text" class="validate" id="confianza">
-						<label for="confianza">¿Por qué le tiene confianza?</label>
-						<span class="helper-text" data-error="wrong" data-success="right"></span>
+						<input type="text" class="validate" id="con" name="confianza" required>
+						<label for="con">¿Por qué le tiene confianza?</label>
+						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
 					</div>
 				</div>
-
+				<!--Fin Fila14-->
+				<!--Inicio Fila15-->
 				<div class="row">
 					<div class="input-field col s4 center">
-						<select>
+						<select name="decision">
       						<option value="" disabled selected>Elige una opción</option>
       						<option value="1">Papá</option>
 					      	<option value="2">Mamá</option>
@@ -362,7 +356,7 @@
 					</div>
 
 					<div class="input-field col s4 center">
-						<select>
+						<select name="flexible">
       						<option value="" disabled selected>Elige una opción</option>
       						<option value="1">Papá</option>
 					      	<option value="2">Mamá</option>
@@ -372,7 +366,7 @@
 					</div>
 
 					<div class="input-field col s4 center">
-						<select>
+						<select name="comunicacion">
       						<option value="" disabled selected>Elige una opción</option>
       						<option value="1">Papá</option>
 					      	<option value="2">Mamá</option>
@@ -381,8 +375,8 @@
     					<label>¿Con quién hay más problemas de comunicación?</label>
 					</div>
 				</div>
-
-
+				<!--Fin Fila15-->
+				<!--Encabezado-->
 	        	<h5 class="center">Agregar integrante   <a class="btn-floating btn-large waves-effect waves-light teal accent-3"><i class="material-icons">add</i></a></h5>
 
 				<table class="responsive-table">
@@ -412,11 +406,12 @@
 			          </tr>
 			        </tbody>
       			</table>
-
+						<!--Encabezado-->
       			<div class="row">
       				<div class="col s12"><h5 class="collection center">¿Quién realiza las siguientes actividades en el hogar?</h5></div>
       			</div>
 
+						<!--Inicio Fila16-->
       			<div class="row center">
       				<div class="col s3"></div>
       				<div class="col s2"><h5>Papá</h5></div>
@@ -425,6 +420,7 @@
       				<div class="col s1"><h5>Yo</h5></div>
       				<div class="col s2"><h5>Persona de servicio</h5></div>
       			</div>
+						<!--Fin Fila16-->
 
       			<div class="row center">
       				<div class="col s3">
@@ -432,48 +428,38 @@
       				</div>
 
       				<div class="col s2">
-      					<p>
 					      <label>
 					        <input type="checkbox" />
 					        <span></span>
 					      </label>
-					    </p>
       				</div>
 
       				<div class="col s2">
-      					<p>
 					      <label>
 					        <input type="checkbox" />
 					        <span></span>
 					      </label>
-					    </p>
       				</div>
 
       				<div class="col s2">
-      					<p>
 					      <label>
 					        <input type="checkbox" />
 					        <span></span>
 					      </label>
-					    </p>
       				</div>
 
       				<div class="col s1">
-      					<p>
 					      <label>
 					        <input type="checkbox" />
 					        <span></span>
 					      </label>
-					    </p>
       				</div>
 
       				<div class="col s2">
-      					<p>
 					      <label>
 					        <input type="checkbox" />
 					        <span></span>
 					      </label>
-					    </p>
       				</div>
       			</div>
 
@@ -484,48 +470,38 @@
       				</div>
 
       				<div class="col s2">
-      					<p>
 					      <label>
 					        <input type="checkbox" />
 					        <span></span>
 					      </label>
-					    </p>
       				</div>
 
       				<div class="col s2">
-      					<p>
 					      <label>
 					        <input type="checkbox" />
 					        <span></span>
 					      </label>
-					    </p>
       				</div>
 
       				<div class="col s2">
-      					<p>
 					      <label>
 					        <input type="checkbox" />
 					        <span></span>
 					      </label>
-					    </p>
       				</div>
 
       				<div class="col s1">
-      					<p>
 					      <label>
 					        <input type="checkbox" />
 					        <span></span>
 					      </label>
-					    </p>
       				</div>
 
       				<div class="col s2">
-      					<p>
 					      <label>
 					        <input type="checkbox" />
 					        <span></span>
 					      </label>
-					    </p>
       				</div>
       			</div>
 
@@ -536,48 +512,38 @@
       				</div>
 
       				<div class="col s2">
-      					<p>
 					      <label>
 					        <input type="checkbox" />
 					        <span></span>
 					      </label>
-					    </p>
       				</div>
 
       				<div class="col s2">
-      					<p>
 					      <label>
 					        <input type="checkbox" />
 					        <span></span>
 					      </label>
-					    </p>
       				</div>
 
       				<div class="col s2">
-      					<p>
 					      <label>
 					        <input type="checkbox" />
 					        <span></span>
 					      </label>
-					    </p>
       				</div>
 
       				<div class="col s1">
-      					<p>
 					      <label>
 					        <input type="checkbox" />
 					        <span></span>
 					      </label>
-					    </p>
       				</div>
 
       				<div class="col s2">
-      					<p>
 					      <label>
 					        <input type="checkbox" />
 					        <span></span>
 					      </label>
-					    </p>
       				</div>
       			</div>
 
@@ -588,51 +554,40 @@
       				</div>
 
       				<div class="col s2">
-      					<p>
 					      <label>
 					        <input type="checkbox" />
 					        <span></span>
 					      </label>
-					    </p>
       				</div>
 
       				<div class="col s2">
-      					<p>
 					      <label>
 					        <input type="checkbox" />
 					        <span></span>
 					      </label>
-					    </p>
       				</div>
 
       				<div class="col s2">
-      					<p>
 					      <label>
 					        <input type="checkbox" />
 					        <span></span>
 					      </label>
-					    </p>
       				</div>
 
       				<div class="col s1">
-      					<p>
 					      <label>
 					        <input type="checkbox" />
 					        <span></span>
 					      </label>
-					    </p>
       				</div>
 
       				<div class="col s2">
-      					<p>
 					      <label>
 					        <input type="checkbox" />
 					        <span></span>
 					      </label>
-					    </p>
       				</div>
       			</div>
-
 			</form>
 		</ul>
 
@@ -645,7 +600,7 @@
 		    <li class="waves-effect"><a href="3.php">3</a></li>
 		    <li class="waves-effect"><a href="#!">4</a></li>
 		    <li class="waves-effect"><a href="#!">5</a></li>
-		    <li class="waves-effect"><a href="#!">6</a></li>
+		    <li class="waves-effect"><a href="<?php base_url()?>seis">6</a></li>
 		    <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
 		</ul>
 	</div> <!--Fin del contenedor-->
