@@ -116,7 +116,7 @@
     <div class="modal-content center">
       <h4>Login form</h4><br>
       <!--<form action="">-->
-        <?php echo form_open("admin/index"); ?>
+        <?php echo form_open("admin/index"," id=loginF"); ?>
         <div class="input-field">
           <i class="material-icons prefix">person</i>
           <input type="text" id="username" name="username">
@@ -129,7 +129,7 @@
           <label for="pass">Contraseña</label>
         </div><br>
 
-        <input type="submit" value="Login" class="btn btn-large">
+        <input type="submit" id="btnlogin"  value="Login" class="btn btn-large">
       <!--</form>-->
       <?php echo form_close(); ?>
     </div>

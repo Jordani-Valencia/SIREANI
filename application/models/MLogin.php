@@ -19,9 +19,9 @@ class MLogin extends CI_Model
     $query =$this->db->get('login');
 
     if ($query->num_rows()>0) {
-      return 'pantallas/principalAdmin';
+      return $query->row();
     }else{
-      return '';
+      return false;
     }
   }
 }
