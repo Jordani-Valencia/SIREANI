@@ -7,9 +7,6 @@ class Admin extends CI_Controller {
 		parent::__construct();
 		$this->load->model('MLogin');
 		$this->load->library('session');
-		if ($this->session->userdata('login')==FALSE) {
-			regresar();
-		}
 	}
 	public function regresar(){
 		$this->load->view('principal');
@@ -33,12 +30,8 @@ class Admin extends CI_Controller {
 			
 			echo "no error";
 			}else{
-				$data=[
-				"id"=>$res->NULL,
-				"usuario"=>$res->NULL,
-				"login"=>FALSE
-			];
-			echo "error";}
+			echo "error";
+		}
 		}
 	
 
