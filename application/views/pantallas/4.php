@@ -11,7 +11,7 @@
 	<div class="container">
 		<div class="row">
 	      <ul class="collection with-header">
-	        <li class="collection-header grey"><h5 class="center">EJERICIO Y DEPORTES</h5>
+	        <li class="collection-header grey lighten-2"><h5 class="center">EJERICIO Y DEPORTES</h5>
 				<!--Inicio del formulario-->
 				<form action="" class="col s12">
 				<!--Inicio Fila1-->
@@ -49,102 +49,87 @@
 				<!--Inicio Fila3-->
 				<div class="row">
 					<div class="col s3">
-						<p><label>
-					  <input type="checkbox" name="futbol"/>
-					  <span>Futbol</span></label></p>
+					 	<label><input type="checkbox" name="futbol"/>
+					  	<span>Futbol</span></label>
 					</div>
 
 					<div class="col s3">
-						<p><label>
-					  <input type="checkbox" name="beisbol"/>
-					  <span>Béisbol</span></label></p>
+						<label><input type="checkbox" name="beisbol"/>
+					  	<span>Béisbol</span></label>
 					</div>
 
 					<div class="col s3">
-						<p><label>
-					  <input type="checkbox" name="basquetbol"/>
-					  <span>Basquetbol</span></label></p>
+						<label><input type="checkbox" name="basquetbol"/>
+					  	<span>Basquetbol</span></label>
 					</div>
 
 					<div class="col s3">
-						<p><label>
-					  <input type="checkbox" name="natacion"/>
-					  <span>Natación</span></label></p>
+					  <label><input type="checkbox" name="natacion"/>
+					  <span>Natación</span></label>
 					</div>
 				</div>
 				<!--Fin Fila3-->
 				<!--Inicio Fila4-->
 				<div class="row">
 					<div class="col s3">
-						<p><label>
-					  <input type="checkbox" name="atletismo"/>
-					  <span>Atletismo</span></label></p>
+					  <label><input type="checkbox" name="atletismo"/>
+					  <span>Atletismo</span></label>
 					</div>
 
 					<div class="col s3">
-						<p><label>
-					  <input type="checkbox" name="tenis"/>
-					  <span>Tenis</span></label></p>
+					  <label><input type="checkbox" name="tenis"/>
+					  <span>Tenis</span></label>
 					</div>
 
 					<div class="col s3">
-						<p><label>
-					  <input type="checkbox" name="gimnasia"/>
-					  <span>Gimnasia</span></label></p>
+					  <label><input type="checkbox" name="gimnasia"/>
+					  <span>Gimnasia</span></label>
 					</div>
 
 					<div class="col s3">
-						<p><label>
-					  <input type="checkbox" name="judo"/>
-					  <span>Judo</span></label></p>
+					  <label><input type="checkbox" name="judo"/>
+					  <span>Judo</span></label>
 					</div>
 				</div>
 				<!--Fin Fila4-->
 				<!--Inicio Fila5-->
 				<div class="row">
 					<div class="col s3">
-						<p><label>
-					  <input type="checkbox" name="karate"/>
-					  <span>Karate</span></label></p>
+					  <label><input type="checkbox" name="karate"/>
+					  <span>Karate</span></label>
 					</div>
 
 					<div class="col s3">
-						<p><label>
-					  <input type="checkbox" name="halterofilia"/>
-					  <span>Halterofilia</span></label></p>
+					  <label><input type="checkbox" name="halterofilia"/>
+					  <span>Halterofilia</span></label>
 					</div>
 
 					<div class="col s3">
-						<p><label>
-					  <input type="checkbox"name="boxeo"/>
-					  <span>Boxeo</span></label></p>
+					  <label><input type="checkbox"name="boxeo"/>
+					  <span>Boxeo</span></label>
 					</div>
 
 					<div class="col s3">
-						<p><label>
-					  <input type="checkbox" name="lucha"/>
-					  <span>Lucha</span></label></p>
+					  <label><input type="checkbox" name="lucha"/>
+					  <span>Lucha</span></label>
 					</div>
 				</div>
 				<!--Fin Fila5-->
 				<!--Inicio Fila6-->
 				<div class="row">
 					<div class="col s3">
-						<p><label>
-					  <input type="checkbox" name="ciclismo"/>
-					  <span>Ciclismo</span></label></p>
+					  <label><input type="checkbox" name="ciclismo"/>
+					  <span>Ciclismo</span></label>
 					</div>
 
 					<div class="col s3">
-						<p><label>
-					  <input type="checkbox" name="charreria"/>
-					  <span>Charrería</span></label></p>
+					  <label><input type="checkbox" name="charreria"/>
+					  <span>Charrería</span></label>
 					</div>
 
 					<div class="col s3">
-						<p><label>
-					  <input type="checkbox" name="otro"/>
-					  <span>Otro</span></label></p>
+					  <label><input type="checkbox" name="otro"/>
+					  <span>Otro</span></label>
 					</div>
 
 					<div class="input-field col s3">
@@ -155,7 +140,7 @@
 				</div>
 				<!--Fin Fila6-->
 				<!--Encabezado-->
-				<li class="collection-header grey"><h5 class="center">HÁBITOS DE CONSUMO</h5></li>
+				<li class="collection-header grey lighten-2"><h5 class="center">HÁBITOS DE CONSUMO</h5></li>
 				<!--Inicio Fila7-->
 				<div class="row">
 					<div class="col s4 center">
@@ -343,103 +328,89 @@
 				</div>
 				<!--Fin Fila18-->
 				<!--Encabezado-->
-				<li class="collection-header grey"><h5 class="center">RECREACIÓN Y TIEMPO LIBRE</h5></li>
+				<li class="collection-header grey lighten-2"><h5 class="center">RECREACIÓN Y TIEMPO LIBRE</h5></li>
 				<!--Inicio Fila19-->
 				<div class="row">
 					<div class="col s4">
-						<p><label>
-					  <input type="checkbox" name="parque"/>
-					  <span>Ir al parque</span></label></p>
+					  <label><input type="checkbox" name="parque"/>
+					  <span>Ir al parque</span></label>
 					</div>
 
 					<div class="col s4">
-						<p><label>
-					  <input type="checkbox" name="deporte1"/>
-					  <span>Hacer deporte</span></label></p>
+					  <label><input type="checkbox" name="deporte1"/>
+					  <span>Hacer deporte</span></label>
 					</div>
 
 					<div class="col s4">
-						<p><label>
-					  <input type="checkbox" name="tele"/>
-					  <span>Ver televisión</span></label></p>
+					  <label><input type="checkbox" name="tele"/>
+					  <span>Ver televisión</span></label>
 					</div>
 				</div>
 				<!--Fin Fila19-->
 				<!--Inicio Fila20-->
 				<div class="row">
 					<div class="col s4">
-						<p><label>
-					  <input type="checkbox" name="cine"/>
-					  <span>Ir al cine</span></label></p>
+					  <label><input type="checkbox" name="cine"/>
+					  <span>Ir al cine</span></label>
 					</div>
 
 					<div class="col s4">
-						<p><label>
-					  <input type="checkbox" name="amigos"/>
-					  <span>Reunirse con amigos</span></label></p>
+					  <label><input type="checkbox" name="amigos"/>
+					  <span>Reunirse con amigos</span></label>
 					</div>
 
 					<div class="col s4">
-						<p><label>
-					  <input type="checkbox" name="peliculas"/>
-					  <span>Ver películas en casa</span></label></p>
+					  <label><input type="checkbox" name="peliculas"/>
+					  <span>Ver películas en casa</span></label>
 					</div>
 				</div>
 				<!--Fin Fila20-->
 				<!--Inicio Fila21-->
 				<div class="row">
 					<div class="col s4">
-						<p><label>
-					  <input type="checkbox" name="bailar"/>
-					  <span>Ir a bailar</span></label></p>
+					  <label><input type="checkbox" name="bailar"/>
+					  <span>Ir a bailar</span></label>
 					</div>
 
 					<div class="col s4">
-						<p><label>
-					  <input type="checkbox" name="pareja"/>
-					  <span>Salir con mi pareja</span></label></p>
+					  <label><input type="checkbox" name="pareja"/>
+					  <span>Salir con mi pareja</span></label>
 					</div>
 
 					<div class="col s4">
-						<p><label>
-					  <input type="checkbox" name="leer"/>
-					  <span>Leer</span></label></p>
+					  <label><input type="checkbox" name="leer"/>
+					  <span>Leer</span></label>
 					</div>
 				</div>
 				<!--Fin Fila21-->
 				<!--Inicio Fila22-->
 				<div class="row">
 					<div class="col s4">
-						<p><label>
-					  <input type="checkbox" name="videojuegos"/>
-					  <span>Jugar videojuegos</span></label></p>
+					  <label><input type="checkbox" name="videojuegos"/>
+					  <span>Jugar videojuegos</span></label>
 					</div>
 
 					<div class="col s4">
-						<p><label>
-					  <input type="checkbox" name="musica"/>
-					  <span>Escuchar música</span></label></p>
+					  <label><input type="checkbox" name="musica"/>
+					  <span>Escuchar música</span></label>
 					</div>
 
 					<div class="col s4">
-						<p><label>
-					  <input type="checkbox" name="compras"/>
-					  <span>Ir de compras</span></label></p>
+					  <label><input type="checkbox" name="compras"/>
+					  <span>Ir de compras</span></label>
 					</div>
 				</div>
 				<!--Fin Fila22-->
 				<!--Inicio Fila23-->
 				<div class="row">
 					<div class="col s4">
-						<p><label>
-					  <input type="checkbox" name="computadora"/>
-					  <span>Usar la computadora</span></label></p>
+					  <label><input type="checkbox" name="computadora"/>
+					  <span>Usar la computadora</span></label>
 					</div>
 
 					<div class="col s4">
-						<p><label>
-					  <input type="checkbox" name="otro2"/>
-					  <span>Otro</span></label></p>
+					  <label><input type="checkbox" name="otro2"/>
+					  <span>Otro</span></label>
 					</div>
 
 					<div class="input-field col s4">
@@ -450,7 +421,7 @@
 				</div>
 				<!--Fin Fila23-->
 				<!--Encabezado-->
-				<li class="collection-header grey"><h5 class="center">GUSTOS E INTERESES</h5></li>
+				<li class="collection-header grey lighten-2"><h5 class="center">GUSTOS E INTERESES</h5></li>
 				<!--Inicio Fila24-->
 				<div class="row">
 					<div class="input-field col s12">
@@ -563,7 +534,7 @@
 				</div>
 				<!--Fin Fila30-->
 				<!--Encabezado-->
-				<li class="collection-header grey"><h5 class="center">PARTICIPACIÓN SOCIAL</h5></li>
+				<li class="collection-header grey lighten-2"><h5 class="center">PARTICIPACIÓN SOCIAL</h5></li>
 				<!--Inicio Fila31-->
 				<div class="row">
 					<div class="col s10 center"><h5 class="collection">¿Actualmente participa en alguna organización, asociación, equipo o grupo?</h5></div>
@@ -581,48 +552,41 @@
 				<!--Inicio Fila32-->
 				<div class="row">
 					<div class="col s3">
-						<p><label>
-					  <input type="checkbox" name="estudiantil"/>
-					  <span>Estudiantil</span></label></p>
+					  <label><input type="checkbox" name="estudiantil"/>
+					  <span>Estudiantil</span></label>
 					</div>
 
 					<div class="col s3">
-						<p><label>
-					  <input type="checkbox" name="beneficiencia"/>
-					  <span>Beneficiencia</span></label></p>
+					  <label><input type="checkbox" name="beneficiencia"/>
+					  <span>Beneficiencia</span></label>
 					</div>
 
 					<div class="col s3">
-						<p><label>
-					  <input type="checkbox" name="politico"/>
-					  <span>Político</span></label></p>
+					  <label><input type="checkbox" name="politico"/>
+					  <span>Político</span></label>
 					</div>
 
 					<div class="col s3">
-						<p><label>
-					  <input type="checkbox" name="otro3"/>
-					  <span>Otro</span></label></p>
+					  <label><input type="checkbox" name="otro3"/>
+					  <span>Otro</span></label>
 					</div>
 				</div>
 				<!--Fin Fila32-->
 				<!--Inicio Fila33-->
 				<div class="row">
 					<div class="col s3">
-						<p><label>
-					  <input type="checkbox" name="deportivo"/>
-					  <span>Deportivo</span></label></p>
+					  <label><input type="checkbox" name="deportivo"/>
+					  <span>Deportivo</span></label>
 					</div>
 
 					<div class="col s3">
-						<p><label>
-					  <input type="checkbox" name="religioso"/>
-					  <span>Religioso</span></label></p>
+					  <label><input type="checkbox" name="religioso"/>
+					  <span>Religioso</span></label>
 					</div>
 
 					<div class="col s3">
-						<p><label>
-					  <input type="checkbox" name="academico"/>
-					  <span>Académico</span></label></p>
+					  <label><input type="checkbox" name="academico"/>
+					  <span>Académico</span></label>
 					</div>
 
 					<div class="input-field col s3">
@@ -633,7 +597,7 @@
 				</div>
 				<!--Fin Fila33-->
 				<!--Encabezado-->
-				<li class="collection-header grey"><h5 class="center">INTERNET</h5></li>
+				<li class="collection-header grey lighten-2"><h5 class="center">INTERNET</h5></li>
 				<!--Inicio Fila34-->
 				<div class="row">
 					<div class="col s4 center"><h5 class="collection">¿Sabes usar internet?</h5></div>
@@ -668,42 +632,36 @@
 				<!--Inicio Fila36-->
 				<div class="row">
 					<div class="col s4">
-						<p><label>
-					  <input type="checkbox" name="casa"/>
-					  <span>Casa</span></label></p>
+					  <label><input type="checkbox" name="casa"/>
+					  <span>Casa</span></label>
 					</div>
 
 					<div class="col s4">
-						<p><label>
-					  <input type="checkbox" name="escuela"/>
-					  <span>Escuela</span></label></p>
+					  <label><input type="checkbox" name="escuela"/>
+					  <span>Escuela</span></label>
 					</div>
 
 					<div class="col s4">
-						<p><label>
-					  <input type="checkbox" name="trabajo"/>
-					  <span>Trabajo</span></label></p>
+					  <label><input type="checkbox" name="trabajo"/>
+					  <span>Trabajo</span></label>
 					</div>
 				</div>
 				<!--Fin Fila36-->
 				<!--Inicio Fila37-->
 				<div class="row">
 					<div class="col s4">
-						<p><label>
-					  <input type="checkbox" name="cafe"/>
-					  <span>Café Internet</span></label></p>
+					  <label><input type="checkbox" name="cafe"/>
+					  <span>Café Internet</span></label>
 					</div>
 
 					<div class="col s4">
-						<p><label>
-					  <input type="checkbox" name="casa2"/>
-					  <span>Casa de algún amigo o familiar</span></label></p>
+					  <label><input type="checkbox" name="casa2"/>
+					  <span>Casa de algún amigo o familiar</span></label>
 					</div>
 
 					<div class="col s2">
-						<p><label>
-					  <input type="checkbox" name="otro4"/>
-					  <span>Otro</span></label></p>
+					  <label><input type="checkbox" name="otro4"/>
+					  <span>Otro</span></label>
 					</div>
 
 					<div class="input-field col s2">
