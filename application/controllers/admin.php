@@ -1,4 +1,5 @@
 <?php
+
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Admin extends CI_Controller {
@@ -6,6 +7,12 @@ class Admin extends CI_Controller {
 		parent::__construct();
 		$this->load->model('MLogin');
 		$this->load->library('session');
+		if ($this->session->userdata('login')==FALSE) {
+			regresar();
+		}
+	}
+	public function regresar(){
+		$this->load->view('principal');
 	}
 
 	public function index()
@@ -23,11 +30,17 @@ class Admin extends CI_Controller {
 			];
 
 			 $this->session->set_userdata($data);
+			
 			echo "no error";
-		}else{
-			echo "error";
+			}else{
+				$data=[
+				"id"=>$res->NULL,
+				"usuario"=>$res->NULL,
+				"login"=>FALSE
+			];
+			echo "error";}
 		}
-	}
+	
 
 	public function prinAdmin(){
 		$this->load->view('pantallas/principalAdmin');
