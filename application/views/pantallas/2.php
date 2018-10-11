@@ -12,7 +12,7 @@
 	<div class="container">
 		<div class="row">
 	      <ul class="collection with-header">
-	        <li class="collection-header grey lighten-2"><h5 class="center">DATOS DE LA MADRE</h5>
+	        <li class="collection-header grey"><h5 class="center">DATOS DE LA MADRE</h5>
 			<!--Inicio del formulario-->
 			<form action="" class="col s12">
 				<!--Inicio Fila 1-->
@@ -49,14 +49,10 @@
 						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
     				</div>
 
-    				<div class="input-field col s4" id="mun4">
-    					<!--<input class="validate" id="mun4" type="text" name="municipio4" required>
+    				<div class="input-field col s4">
+    					<input class="validate" id="mun4" type="text" name="municipio4" required>
 						<label for="mun4">Delegación o Municipio</label>
-						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>-->
-						<select name="municipio4" required>
-							<option value="" disabled selected>Elige una opción</option>
-						</select>
-						<label>Delegación o municipio</label>	
+						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
     				</div>
 				</div>
 				<!--Fin Fila 2-->
@@ -68,9 +64,12 @@
 			          <span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
     				</div>
 
-					<div class="input-field col s4" id="pais2">
+					<div class="input-field col s4">
     					<select>
       						<option value="" disabled selected>Elige una opción</option>
+      						<option value="1">Option 1</option>
+					      	<option value="2">Option 2</option>
+					      	<option value="3">Option 3</option>
 					    </select>
     					<label>País</label>
     				</div>
@@ -84,87 +83,87 @@
 				<!--Fin Fila 3-->
 				<!--Inicio Fila 4-->
 				<div class="row">
-					<div class="col s3">
-    					<label>
+					<div class="input-field col s3">
+    					<p><label>
 					        <input class="with-gap" name="grupo1" type="radio"  />
 					        <span>Sin estudios</span>
-					      </label>
+					      </label></p>
 
-					    <label>
+					    <p><label>
 					        <input class="with-gap" name="grupo1" type="radio"  />
 					        <span>Primaria incompleta</span>
-					      </label>
+					      </label></p>
 
-					    <label>
+					    <p><label>
 					        <input class="with-gap" name="grupo1" type="radio"  />
 					        <span>Primaria concluida</span>
-					      </label>
+					      </label></p>
 
-					    <label>
+					    <p><label>
 					        <input class="with-gap" name="grupo1" type="radio"  />
 					        <span>Secundaria incompleta</span>
-					      </label>
+					      </label></p>
     				</div>
 
-					<div class="col s3">
-    					<label>
+					<div class="input-field col s3">
+    					<p><label>
 					        <input class="with-gap" name="grupo1" type="radio"  />
 					        <span>Secundaria concluida</span>
-					      </label>
+					      </label></p>
 
-					    <label>
+					    <p><label>
 					        <input class="with-gap" name="grupo1" type="radio"  />
 					        <span>Carrera Técnica</span>
-					      </label>
+					      </label></p>
 
-					    <label>
+					    <p><label>
 					        <input class="with-gap" name="grupo1" type="radio"  />
 					        <span>Bachillerato incompleto</span>
-					      </label>
+					      </label></p>
 
-					    <label>
+					    <p><label>
 					        <input class="with-gap" name="grupo1" type="radio"  />
 					        <span>Bachillerato concluido</span>
-					      </label>
+					      </label></p>
     				</div>
 
-    				<div class="col s3">
-    					<label>
+    				<div class="input-field col s3">
+    					<p><label>
 					        <input class="with-gap" name="grupo1" type="radio"  />
 					        <span>Tec. Sup. Universitario</span>
-					      </label>
+					      </label></p>
 
-					    <label>
+					    <p><label>
 					        <input class="with-gap" name="grupo1" type="radio"  />
 					        <span>Licenciatura incompleta</span>
-					      </label>
+					      </label></p>
 
-					    <label>
+					    <p><label>
 					        <input class="with-gap" name="grupo1" type="radio"  />
 					        <span>Licenciatura concluida</span>
-					      </label>
+					      </label></p>
 
-					    <label>
+					    <p><label>
 					        <input class="with-gap" name="grupo1" type="radio"  />
 					        <span>Especialidad</span>
-					      </label>
+					      </label></p>
     				</div>
 
-    				<div class="col s3">
-    					<label>
+    				<div class="input-field col s3">
+    					<p><label>
 					        <input class="with-gap" name="grupo1" type="radio"  />
-					        <span>Maestría</span><br>
-					      </label>
+					        <span>Maestría</span>
+					      </label></p>
 
-					    <label>
+					    <p><label>
 					        <input class="with-gap" name="grupo1" type="radio"  />
-					        <span>Doctorado</span><br>
-					      </label>
+					        <span>Doctorado</span>
+					      </label></p>
 
-					    <label>
+					    <p><label>
 					        <input class="with-gap" name="grupo1" type="radio"  />
 					        <span>Otro</span>
-					      </label>
+					      </label></p>
 
 						<!--<div class="input-field cols3">
 							<input class="validate" id="gradoesp" type="text">
@@ -175,23 +174,23 @@
 				<!--Fin Fila 4-->
 				<!--Inicio Fila 5-->
 				<div class="row">
-					<div class="input-field col s6 center">
+					<div class="col s4">
 						<h7>¿Trabaja?</h7>
 							<div class="switch">
-					    		<label>No
-					      		<input type="checkbox" name="trabaja">
-					      		<span class="lever"></span>
-					      		Sí</label>
-							</div>
+					    	<label>No
+					      	<input type="checkbox" name="trabaja2">
+					      	<span class="lever"></span>
+					      Sí</label>
+					  </div>
 	    		</div>
 
-	    			<div class="col s6">
-						<p class="range-field">
+	    			<div class="col s2">
+							<p class="range-field">
       					<input type="range" id="hrsemana" min="0" max="24" name="semana"/>
       					<label for="hrsemana">Número de horas a la semana</label>
     					</p>
 						</div>
-			</div>
+				</div>
 				<!--Fin Fila 5-->
 				<!--Inicio Fila 6-->
 				<div class="row">
@@ -216,7 +215,7 @@
 				<!--Fin Fila 7-->
 				<!--Encabezado-->
 				<ul class="collection with-header">
-	        	<li class="collection-header grey lighten-2"><h5 class="center">DATOS DEL PADRE</h5></li></ul>
+	        	<li class="collection-header grey"><h5 class="center">DATOS DEL PADRE</h5></li></ul>
 				<!--Inicio Fila 8-->
 				<div class="row">
 					<div class="input-field col s4">
@@ -253,15 +252,9 @@
     				</div>
 
     				<div class="input-field col s4">
-							<!--<input class="validate" id="mun5" type="text" name="municipio5" required>
+							<input class="validate" id="mun5" type="text" name="municipio5" required>
 							<label for="mun5">Delegación o Municipio</label>
-							<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>-->
-							<div id="mun5">
-							<select name="municipio5" required>
-								<option value="" disabled selected>Elige una opción</option>
-							</select>
-							<label>Delegación o municipio</label>	
-						</div>
+							<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
     				</div>
 				</div>
 				<!--Fin Fila 9-->
@@ -292,87 +285,88 @@
 				<!--Fin Fila 10-->
 				<!--Inicio Fila 11-->
 				<div class="row">
-					<div class="col s3">
-    					<label>
+					<div class="input-field col s3">
+    					<p><label>
 					        <input class="with-gap" name="grupo0" type="radio"  />
 					        <span>Sin estudios</span>
-					      </label>
+					      </label></p>
 
-					    <label>
+					    <p><label>
 					        <input class="with-gap" name="grupo2" type="radio"  />
 					        <span>Primaria incompleta</span>
-					      </label>
+					      </label></p>
 
-					    <label>
+					    <p><label>
 					        <input class="with-gap" name="grupo2" type="radio"  />
 					        <span>Primaria concluida</span>
-					      </label>
+					      </label></p>
 
-					    <label>
+					    <p><label>
 					        <input class="with-gap" name="grupo2" type="radio"  />
 					        <span>Secundaria incompleta</span>
-					      </label>
+					      </label></p>
     				</div>
-					
-					<div class="col s3">
-    					<label>
+
+					<div class="input-field col s3">
+    					<p><label>
 					        <input class="with-gap" name="grupo2" type="radio"  />
 					        <span>Secundaria concluida</span>
-					      </label>
+					      </label></p>
 
-					    <label>
+					    <p><label>
 					        <input class="with-gap" name="grupo2" type="radio"  />
 					        <span>Carrera Técnica</span>
-					      </label>
+					      </label></p>
 
-					    <label>
+					    <p><label>
 					        <input class="with-gap" name="grupo2" type="radio"  />
 					        <span>Bachillerato incompleto</span>
-					      </label>
+					      </label></p>
 
-					    <label>
+					    <p><label>
 					        <input class="with-gap" name="grupo2" type="radio"  />
 					        <span>Bachillerato concluido</span>
-					      </label>
+					      </label></p>
     				</div>
-    				
-    				<div class="col s3">
-    					<label>
+
+    				<div class="input-field col s3">
+    					<p><label>
 					        <input class="with-gap" name="grupo2" type="radio"  />
 					        <span>Tec. Sup. Universitario</span>
-					      </label>
+					      </label></p>
 
-					    <label>
+					    <p><label>
 					        <input class="with-gap" name="grupo2" type="radio"  />
 					        <span>Licenciatura incompleta</span>
-					      </label>
+					      </label></p>
 
-					    <label>
+					    <p><label>
 					        <input class="with-gap" name="grupo2" type="radio"  />
 					        <span>Licenciatura concluida</span>
-					      </label>
+					      </label></p>
 
-					    <label>
-					        <input class="with-gap" name="grupo2" type="radio"  />
+					    <p><label>
+					        <input class="with-gap" name="grup02" type="radio"  />
 					        <span>Especialidad</span>
-					      </label>
+					      </label></p>
     				</div>
 
-    				<div class="col s3">
-    					<label>
+    				<div class="input-field col s3">
+    					<p><label>
 					        <input class="with-gap" name="grupo2" type="radio"  />
-					        <span>Maestría</span><br>
-					      </label>
+					        <span>Maestría</span>
+					      </label></p>
 
-					    <label>
+					    <p><label>
 					        <input class="with-gap" name="grupo2" type="radio"  />
-					        <span>Doctorado</span><br>
-					      </label>
+					        <span>Doctorado</span>
+					      </label></p>
 
-					    <label>
+					    <p><label>
 					        <input class="with-gap" name="grupo2" type="radio"  />
 					        <span>Otro</span>
-					      </label>
+					      </label></p>
+
 						<!--<div class="input-field cols3">
 							<input class="validate" id="gradoesp" type="text">
 							<label for="gradoesp">Especificar</label>
@@ -382,7 +376,7 @@
 				<!--Fin Fila 11-->
 				<!--Inicio Fila 12-->
 				<div class="row">
-					<div class="col s6 center">
+					<div class="col s4">
 						<h7>¿Trabaja?</h7>
 						 	<div class="switch">
 					    	<label>No
@@ -392,7 +386,7 @@
 					  	</div>
 	    			</div>
 
-	    			<div class="input-field col s6">
+	    			<div class="input-field col s2">
 							<p class="range-field">
       					<input type="range" id="hrsemana2" min="0" max="24" name="semana2"/>
       					<label for="hrsemana2">Número de horas a la semana</label>
@@ -423,7 +417,7 @@
 				<!--Fin Fila 13-->
 				<!--Encabezado-->
 				<ul class="collection with-header">
-	        	<li class="collection-header grey lighten-2"><h5 class="center">INGRESOS FAMILIARES</h5></li></ul>
+	        	<li class="collection-header grey"><h5 class="center">INGRESOS FAMILIARES</h5></li></ul>
 				<!--Inicio Fila 14-->
 				<div class="row">
 					<div class="input-field col s12">
@@ -460,7 +454,7 @@
 				<!--Fin Fila 15-->
 				<!--Encabezado-->
 				<ul class="collection with-header">
-	        	<li class="collection-header grey lighten-2"><h5 class="center">INGRESOS FAMILIARES MENSUALES   <a href="#ingreso" class="btn-floating btn-large waves-effect waves-light teal accent-3 modal-trigger"><i class="material-icons">add</i></a></h5></li></ul>
+	        	<li class="collection-header grey"><h5 class="center">INGRESOS FAMILIARES MENSUALES   <a href="#ingreso" class="btn-floating btn-large waves-effect waves-light teal accent-3 modal-trigger"><i class="material-icons">add</i></a></h5></li></ul>
 
 				<table class="responsive-table">
 			        <thead class="orange">

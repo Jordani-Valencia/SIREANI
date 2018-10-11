@@ -12,7 +12,7 @@
 	<div class="container">
 		<div class="row">
 	    <ul class="collection with-header">
-	      <li class="collection-header grey lighten-2"><h5 class="center">AMBIENTE SOCIOECONÓMICO</h5>
+	      <li class="collection-header grey"><h5 class="center">AMBIENTE SOCIOECONÓMICO</h5>
 
 			<form action="" class="col s12">
 				<!--Inicio Fila 1-->
@@ -251,7 +251,7 @@
 				</div>
 				<!--Fin Fila6-->
 				<ul class="collection with-header">
-	        	<li class="collection-header grey lighten-2"><h5 class="center">SALUD</h5></li></ul>
+	        	<li class="collection-header grey"><h5 class="center">SALUD</h5></li></ul>
 				<!--Inicio Fila7-->
 				<div class="row">
 					<div class="col s2"></div>
@@ -312,6 +312,7 @@
 					</div>
 
 					<div class="col s4 center">
+						<h7></h7>
 							<div class="switch">
 					    		<label>No
 					      		<input type="checkbox" name="enfermo">
@@ -334,49 +335,65 @@
 				<!--Inicio Fila12-->
 				<div class="row">
 					<div class="col s4">
-						<label><input type="checkbox" name="imss"/>
-					    <span>IMSS</span></label>
+						<p><label>
+					        <input type="checkbox" name="imss"/>
+					        <span>IMSS</span>
+					      </label></p>
 					</div>
 
 					<div class="col s4">
-						<label><input type="checkbox" name="ejercito"/>
-					    <span>Ejército o Marina</span></label>
+						<p><label>
+					        <input type="checkbox" name="ejercito"/>
+					        <span>Ejército o Marina</span>
+					      </label></p>
 					</div>
 
 					<div class="col s4">
-						<label><input type="checkbox" name="privado"/>
-					    <span>Médico privado</span></label>
+						<p><label>
+					        <input type="checkbox" name="privado"/>
+					        <span>Médico privado</span>
+					      </label></p>
 					</div>
 				</div>
 				<!--Fin Fila12-->
 				<!--Inicio Fila13-->
 				<div class="row">
 					<div class="col s4">
-						<label><input type="checkbox" name="isste"/>
-					    <span>ISSTE</span></label>
+						<p><label>
+					        <input type="checkbox" name="isste"/>
+					        <span>ISSTE</span>
+					      </label></p>
 					</div>
 
 					<div class="col s4">
-						<label><input type="checkbox" name="sec_salud"/>
-					    <span>Secretaría de Salud</span></label>
+						<p><label>
+					        <input type="checkbox" name="sec_salud"/>
+					        <span>Secretaría de Salud</span>
+					      </label></p>
 					</div>
 
 					<div class="col s4">
-						<label><input type="checkbox" name="otro"/>
-					    <span>Otro</span></label>
+						<p><label>
+					        <input type="checkbox" name="otro"/>
+					        <span>Otro</span>
+					      </label></p>
 					</div>
 				</div>
 				<!--Fin Fila14-->
 				<!--Inicio Fila15-->
 				<div class="row">
 					<div class="col s4">
-						<label><input type="checkbox" name="pemex"/>
-					    <span>PEMEX</span></label>
+						<p><label>
+					        <input type="checkbox" name="pemex"/>
+					        <span>PEMEX</span>
+					      </label></p>
 					</div>
 
 					<div class="col s4">
-						<label><input type="checkbox" name="seg_popular"/>
-					    <span>Seguro Popular</span></label>
+						<p><label>
+					        <input type="checkbox" name="seg_popular"/>
+					        <span>Seguro Popular</span>
+					      </label></p>
 					</div>
 
 					<div class="input-field col s4">
@@ -387,7 +404,7 @@
 				</div>
 				<!--Fin Fila15-->
 				<!--Inicio Fila16-->
-				<div class="center row">
+				<div class="row">
 					<div class="col s4 center">
 						<h5 class="collection">¿Con qué frecuencia asiste al médico?</h5>
 					</div>
