@@ -38,25 +38,29 @@
 				<!--Fin Fila 1-->
 				<!--Inicio Fila 2-->
 				<div class="row">
-					<div class="input-field col s4">
+					<div class="input-field col s3">
   						<input type="text" class="datepicker" id="nac2" name="nacimiento2">
 						<label for="nac2">Fecha de Nacimiento</label>
 					</div>
 
-    				<div class="input-field col s4">
+    				<div class="input-field col s3">
     					<input class="validate" id="lug2" type="text" name="lugar2" required>
 						<label for="lug2">Lugar de Nacimiento</label>
 						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
     				</div>
 
-    				<div class="input-field col s4" id="mun4">
-    					<!--<input class="validate" id="mun4" type="text" name="municipio4" required>
-						<label for="mun4">Delegación o Municipio</label>
-						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>-->
+    				<div class="input-field col s3" id="mun4">
 						<select name="municipio4" required>
 							<option value="" disabled selected>Elige una opción</option>
 						</select>
-						<label>Delegación o municipio</label>	
+						<label>Municipio</label>	
+    				</div>
+
+    				<div class="input-field col s3" id="del4">
+						<select name="delegacion4" required>
+							<option value="" disabled selected>Elige una opción</option>
+						</select>
+						<label>Delegación</label>	
     				</div>
 				</div>
 				<!--Fin Fila 2-->
@@ -71,6 +75,19 @@
 					<div class="input-field col s4" id="pais2">
     					<select>
       						<option value="" disabled selected>Elige una opción</option>
+      						<option value="Alemania">Alemania</option>
+      						<option value="Francia">Francia</option>
+      						<option value="Estados Unidos">Estados Unidos</option>
+      						<option value="Inglaterra">Inglaterra</option>
+      						<option value="México">México</option>
+      						<option value="Guatemala">Guatemala</option>
+      						<option value="Honduras">Honduras</option>
+      						<option value="Argentina">Argentina</option>
+      						<option value="Brasil">Brasil</option>
+      						<option value="Italia">Italia</option>
+      						<option value="Japón">Japón</option>
+      						<option value="China">China</option>
+      						<option value="Espana">España</option>
 					    </select>
     					<label>País</label>
     				</div>
@@ -240,28 +257,30 @@
 				<!--Fin Fila 8-->
 				<!--Inicio Fila 9-->
 				<div class="row">
-					<div class="input-field col s4">
+					<div class="input-field col s3">
   					<input type="text" class="datepicker" id="nac3" name="nacimiento3" required>
 						<label for="nac3">Fecha de Nacimiento</label>
 						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
 					</div>
 
-    				<div class="input-field col s4">
+    				<div class="input-field col s3">
 							<input class="validate" id="lug3" type="text" name="lugar3" required>
 							<label for="lug3">Lugar de Nacimiento</label>
 							<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
     				</div>
 
-    				<div class="input-field col s4">
-							<!--<input class="validate" id="mun5" type="text" name="municipio5" required>
-							<label for="mun5">Delegación o Municipio</label>
-							<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>-->
-							<div id="mun5">
-							<select name="municipio5" required>
-								<option value="" disabled selected>Elige una opción</option>
-							</select>
-							<label>Delegación o municipio</label>	
-						</div>
+    				<div class="input-field col s3" id="mun5">
+						<select name="municipio5" required>
+							<option value="" disabled selected>Elige una opción</option>
+						</select>
+						<label>Municipio</label>	
+    				</div>
+
+    				<div class="input-field col s3" id="del5">
+						<select name="delegacion5" required>
+							<option value="" disabled selected>Elige una opción</option>
+						</select>
+						<label>Delegación</label>	
     				</div>
 				</div>
 				<!--Fin Fila 9-->
@@ -276,9 +295,19 @@
 					<div class="input-field col s4">
     					<select>
       						<option value="" disabled selected>Elige una opción</option>
-      						<option value="1">Option 1</option>
-					      	<option value="2">Option 2</option>
-					      	<option value="3">Option 3</option>
+      						<option value="Alemania">Alemania</option>
+      						<option value="Francia">Francia</option>
+      						<option value="Estados Unidos">Estados Unidos</option>
+      						<option value="Inglaterra">Inglaterra</option>
+      						<option value="México">México</option>
+      						<option value="Guatemala">Guatemala</option>
+      						<option value="Honduras">Honduras</option>
+      						<option value="Argentina">Argentina</option>
+      						<option value="Brasil">Brasil</option>
+      						<option value="Italia">Italia</option>
+      						<option value="Japón">Japón</option>
+      						<option value="China">China</option>
+      						<option value="Espana">España</option>
 					    </select>
     					<label>País</label>
     				</div>
