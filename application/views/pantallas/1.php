@@ -404,51 +404,57 @@
 	      <?php echo form_open(""); ?>
 	      <div class="input-field">
 	        <i class="material-icons prefix">person</i>
-	        <input type="text" id="ape" name="apellidos">
+	        <input type="text" id="ape" name="apellidos" class="validate" required>
 	        <label for="ape">Apellidos</label>
+	        <span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
 	      </div><br>
 
 	      <div class="input-field">
 	        <i class="material-icons prefix">perm_identity</i>
-	        <input type="password" id="nom2" name="nombre2">
+	        <input type="text" id="nom2" name="nombre2" class="validate" required>
 	        <label for="nom2">Nombres</label>
+	        <span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
 	      </div><br>
 
 	      <div class="input-field">
 	        <i class="material-icons prefix">timer</i>
-	        <input type="password" id="ed" name="edad1">
+	        <input type="number" id="ed" name="edad1" max="100" min="1" required step="1" class="validate">
 	        <label for="ed">Edad</label>
+	        <span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
 	      </div><br>
 
 	      <div class="input-field">
 	        <i class="material-icons prefix">work</i>
-	        <input type="password" id="ocu2" name="ocupacion2">
+	        <input type="text" id="ocu2" name="ocupacion2" class="validate" required>
 	        <label for="ocu2">Ocupacion</label>
+	        <span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
 	      </div><br>
 
 	      <div class="input-field">
 	        <i class="material-icons prefix">group</i>
-	        <input type="password" id="par" name="parentesco1">
+	        <input type="text" id="par" name="parentesco1" class="validate" required>
+	        <span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
 	        <label for="par">Parentesco</label>
 	      </div><br>
 
 	      <div class="input-field">
 	        <i class="material-icons prefix">school</i>
-	        <input type="password" id="est" name="estudios1">
+	        <input type="text" id="est" name="estudios1" class="validate" required>
 	        <label for="est">Grado máximo de estudios</label>
+	        <span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
 	      </div><br>
 
 	      <div>
 	        <i class="material-icons prefix">wc</i><br />
-	        <p><label>
+	        <label>
 	              <input class="with-gap" name="sexo2" type="radio" value="F"/>
 	              <span>Femenino</span>
-	            </label></p>
+	            </label>
 
-	            <p><label>
+	            <label>
 	              <input class="with-gap" name="sexo2" type="radio" value="M"/>
 	              <span>Masculino</span>
-	            </label></p>
+	            </label>
 	      </div><br />
 
 	      <input type="submit" value="Guardar" class="btn btn-large">
