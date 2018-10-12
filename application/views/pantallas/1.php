@@ -341,7 +341,7 @@
 				<!--Fin Fila 11-->
 				<!--Encabezado-->
 				<ul class="collection with-header"><li class="collection-header grey lighten-2"><h5 class="center">DATOS FAMILIARES   <a href="#datosFamiliares" class="btn-floating btn-large waves-effect waves-light teal accent-3 modal-trigger"><i class="material-icons">add</i></a>       </h5><p class="center">(Únicamente proporcione los datos de las personas que viven en la misma casa)</p></li></ul>
-				<table class="responsive-table">
+				<table class="responsive-table" id="tablaFamiliares">
 			        <thead class="orange">
 			          <tr>
 			              <th>Apellido Paterno</th>
