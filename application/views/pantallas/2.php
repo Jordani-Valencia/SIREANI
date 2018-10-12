@@ -491,7 +491,7 @@
 				<ul class="collection with-header">
 	        	<li class="collection-header grey lighten-2"><h5 class="center">INGRESOS FAMILIARES MENSUALES   <a href="#ingreso" class="btn-floating btn-large waves-effect waves-light teal accent-3 modal-trigger"><i class="material-icons">add</i></a></h5></li></ul>
 
-				<table class="responsive-table">
+				<table class="responsive-table" id="tablaIngresos">
 			        <thead class="orange">
 			          <tr>
 			              <th>Persona con ingresos económicos</th>
