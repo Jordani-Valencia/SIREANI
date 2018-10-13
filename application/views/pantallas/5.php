@@ -11,7 +11,7 @@
 	<div class="container">
 		<div class="row">
 	      <ul class="collection with-header">
-	        <li class="collection-header grey"><h5 class="center">TELEFONÍA MÓVIL</h5>
+	        <li class="collection-header grey lighten-2"><h5 class="center">TELEFONÍA MÓVIL</h5>
 			<form action="" class="col s12">
 				<!--Inicio Fila1-->
 				<div class="row">
@@ -52,15 +52,15 @@
 				<div class="row">
 					<div class="section">
 						<div class="divider black"></div>
-						<h5 class="center">¡ATENCIÓN!</h5>
-						<h6 class="center">Si no vives con alguno de tus padres: completa el siguiente apartado (Pueden ser Abuelos, tíos, hermanos, etc.)</h6>
+						<h5 class="center orange-text">¡ATENCIÓN!</h5>
+						<h6 class="center red-text accent-3">Si no vives con alguno de tus padres: completa el siguiente apartado (Pueden ser Abuelos, tíos, hermanos, etc.)</h6>
 						<div class="divider black"></div>
 					</div>
 				</div>
 				<!--Fin Fila3-->
 				<!--Encabezado-->
 				<ul class="collection with-header">
-	        	<li class="collection-header grey"><h5 class="center">DATOS DEL TUTOR</h5></li></ul>
+	        	<li class="collection-header grey lighten-2"><h5 class="center">DATOS DEL TUTOR</h5></li></ul>
 				<!--Inicio Fila4-->
 				<div class="row">
 					<div class="input-field col s4">
@@ -84,21 +84,29 @@
 				<!--Fin Fila4-->
 				<!--Inicio Fila5-->
 				<div class="row">
-					<div class="input-field col s4">
+					<div class="input-field col s3">
   					<input type="text" id="nac4" class="datepicker" name="nacimiento4" required>
 						<label for="nac4">Fecha de Nacimiento</label>
 					</div>
 
-    				<div class="input-field col s4">
+    				<div class="input-field col s3">
 							<input class="validate" id="lug4" type="text" name="lugar4" required>
 							<label for="lug4">Lugar de Nacimiento</label>
 							<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
     				</div>
 
-    				<div class="input-field col s4">
-							<input class="validate" id="mun6" type="text" name="municipio6" required>
-							<label for="mun6">Delegación o Municipio</label>
-							<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
+    				<div class="input-field col s3" id="mun6">
+						<select name="municipio6" required>
+							<option value="" disabled selected>Elige una opción</option>
+						</select>
+						<label>Municipio</label>	
+    				</div>
+
+    				<div class="input-field col s3" id="del6">
+						<select name="delegacion6" required>
+							<option value="" disabled selected>Elige una opción</option>
+						</select>
+						<label>Delegación</label>	
     				</div>
 				</div>
 				<!--Fin Fila5-->
@@ -110,12 +118,23 @@
 						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
     			</div>
 
-					<div class="input-field col s4">
+					<div class="input-field col s4" id="pais3">
     					<select>
       						<option value="" disabled selected>Elige una opción</option>
-      						<option value="1">Option 1</option>
-					      	<option value="2">Option 2</option>
-					      	<option value="3">Option 3</option>
+      						<option value="Alemania">Alemania</option>
+      						<option value="Francia">Francia</option>
+      						<option value="Estados Unidos">Estados Unidos</option>
+      						<option value="Inglaterra">Inglaterra</option>
+      						<option value="México">México</option>
+      						<option value="Guatemala">Guatemala</option>
+      						<option value="Honduras">Honduras</option>
+      						<option value="Argentina">Argentina</option>
+      						<option value="Brasil">Brasil</option>
+      						<option value="Italia">Italia</option>
+      						<option value="Japón">Japón</option>
+      						<option value="China">China</option>
+      						<option value="Espana">España</option>
+					    <label>País</label>
 					    </select>
     					<label>País</label>
     				</div>
@@ -130,71 +149,56 @@
 				<!--Inicio Fila7-->
 				<div class="row">
 					<div class="col s3">
-    					<p><label>
-					     <input class="with-gap" name="grupo4" type="radio"  />
-					     <span>Sin estudios</span></label></p>
+    					<label><input class="with-gap" name="grupo4" type="radio"  />
+					     <span>Sin estudios</span></label>
 
-					    <p><label>
-					     <input class="with-gap" name="grupo4" type="radio"  />
-					     <span>Primaria incompleta</span></label></p>
+					    <label><input class="with-gap" name="grupo4" type="radio"  />
+					     <span>Primaria incompleta</span></label>
 
-					    <p><label>
-					     <input class="with-gap" name="grupo4" type="radio"  />
-					     <span>Primaria concluida</span></label></p>
+					    <label><input class="with-gap" name="grupo4" type="radio"  />
+					     <span>Primaria concluida</span></label>
 
-					    <p><label>
-					     <input class="with-gap" name="grupo4" type="radio"  />
-					     <span>Secundaria incompleta</span></label></p>
+					    <label><input class="with-gap" name="grupo4" type="radio"  />
+					     <span>Secundaria incompleta</span></label>
     				</div>
 
 					<div class="col s3">
-    					<p><label>
-					     <input class="with-gap" name="group4" type="radio"  />
-					     <span>Secundaria concluida</span></label></p>
+    					<label><input class="with-gap" name="grupo4" type="radio"  />
+					     <span>Secundaria concluida</span></label>
 
-					    <p><label>
-					     <input class="with-gap" name="group4" type="radio"  />
-					     <span>Carrera Técnica</span></label></p>
+					    <label><input class="with-gap" name="grupo4" type="radio"  />
+					     <span>Carrera Técnica</span></label>
 
-					    <p><label>
-					     <input class="with-gap" name="group4" type="radio"  />
-					     <span>Bachillerato incompleto</span></label></p>
+					    <label><input class="with-gap" name="grupo4" type="radio"  />
+					     <span>Bachillerato incompleto</span></label>
 
-					    <p><label>
-					     <input class="with-gap" name="group4" type="radio"  />
-					     <span>Bachillerato concluido</span></label></p>
+					    <label><input class="with-gap" name="grupo4" type="radio"  />
+					     <span>Bachillerato concluido</span></label>
     				</div>
 
     				<div class="col s3">
-    					<p><label>
-					     <input class="with-gap" name="group4" type="radio"  />
-					     <span>Tec. Sup. Universitario</span></label></p>
+    					<label><input class="with-gap" name="grupo4" type="radio"  />
+					     <span>Tec. Sup. Universitario</span></label>
 
-					    <p><label>
-					     <input class="with-gap" name="group4" type="radio"  />
-					     <span>Licenciatura incompleta</span></label></p>
+					    <label><input class="with-gap" name="grupo4" type="radio"  />
+					     <span>Licenciatura incompleta</span></label>
 
-					    <p><label>
-					     <input class="with-gap" name="group4" type="radio"  />
-					     <span>Licenciatura concluida</span></label></p>
+					    <label><input class="with-gap" name="grupo4" type="radio"  />
+					     <span>Licenciatura concluida</span></label>
 
-					    <p><label>
-					     <input class="with-gap" name="group4" type="radio"  />
-					     <span>Especialidad</span></label></p>
+					    <label><input class="with-gap" name="grupo4" type="radio"  />
+					     <span>Especialidad</span></label>
     				</div>
 
     				<div class="col s3">
-    					<p><label>
-					     <input class="with-gap" name="group1" type="radio"  />
-					     <span>Maestría</span></label></p>
+    					<label><input class="with-gap" name="group1" type="radio"  />
+					     <span>Maestría</span></label><br>
 
-					    <p><label>
-					     <input class="with-gap" name="group1" type="radio"  />
-					     <span>Doctorado</span></label></p>
+					    <label><input class="with-gap" name="group1" type="radio"  />
+					     <span>Doctorado</span></label><br>
 
-					    <p><label>
-					     <input class="with-gap" name="group1" type="radio"  />
-					     <span>Otro</span></label></p>
+					    <label><input class="with-gap" name="group1" type="radio"  />
+					     <span>Otro</span></label>
 
 							<div class="input-field cols3">
 								<input class="validate" id="gradoesp" type="text" name="especificar14">
@@ -204,8 +208,8 @@
 				</div>
 				<!--Fin Fila7-->
 				<!--Inicio Fila8-->
-				<div class="row">
-					<div class="input-field col s4">
+				<div class="center row">
+					<div class="input-field col s6">
 						<h7>¿Trabaja?</h7>
 						 <div class="switch">
 					    <label>No
@@ -215,7 +219,7 @@
 					  	</div>
 	    			</div>
 
-	    			<div class="col s2">
+	    			<div class="col s6">
 						<p class="range-field">
       				<input type="range" id="hrsemana3" min="0" max="24" name="semana3"/>
       				<label for="hrsemana3">Número de horas a la semana</label>
@@ -225,7 +229,7 @@
 				<!--Fin Fila8-->
 				<!--Encabezado-->
 				<ul class="collection with-header">
-	        	<li class="collection-header grey"><h5 class="center">RELACIONES/ASPECTOS INTERPERSONALES</h5></li></ul>
+	        	<li class="collection-header grey lighten-2"><h5 class="center">RELACIONES/ASPECTOS INTERPERSONALES</h5></li></ul>
 				<!--inicio Fila9-->
 				<div class="row">
 					<div class="input-field col s12">
@@ -248,42 +252,36 @@
 				<!--Inicio Fila10-->
 				<div class="row">
 					<div class="col s4">
-						<label>
-					   <input type="checkbox" name="plat"/>
-					   <span>Platicamos</span></label>
+						<label><input type="checkbox" name="plat"/>
+					   	<span>Platicamos</span></label>
 					</div>
 
 					<div class="col s4">
-						<label>
-					   <input type="checkbox" name="respeto"/>
-					   <span>Hay respeto</span></label>
+						<label><input type="checkbox" name="respeto"/>
+					   	<span>Hay respeto</span></label>
 					</div>
 
 					<div class="col s4">
-						<label>
-					   <input type="checkbox" name="apoyo"/>
-					   <span>Nos apoyamos</span></label>
+						<label><input type="checkbox" name="apoyo"/>
+					   	<span>Nos apoyamos</span></label>
 					</div>
 				</div>
 				<!--Fin Fila10-->
 				<!--Inicio Fila11-->
 				<div class="row">
 					<div class="col s4">
-						<label>
-					  <input type="checkbox" name="jugar"/>
-					  <span>Jugamos</span></label>
+						<label><input type="checkbox" name="jugar"/>
+					  	<span>Jugamos</span></label>
 					</div>
 
 					<div class="col s4">
-						<label>
-					  <input type="checkbox" name="no"/>
-					  <span>No nos llevamos</span></label>
+						<label><input type="checkbox" name="no"/>
+					  	<span>No nos llevamos</span></label>
 					</div>
 
 					<div class="col s4">
-						<label>
-					  <input type="checkbox" name="pelear"/>
-					  <span>Siempre estamos peleando</span></label>
+						<label><input type="checkbox" name="pelear"/>
+					  	<span>Siempre estamos peleando</span></label>
 					</div>
 				</div>
 				<!--Fin Fila11-->
@@ -377,9 +375,9 @@
 				</div>
 				<!--Fin Fila15-->
 				<!--Encabezado-->
-	        	<h5 class="center">Agregar integrante   <a class="btn-floating btn-large waves-effect waves-light teal accent-3"><i class="material-icons">add</i></a></h5>
+	        	<h5 class="center">Agregar integrante   <a class="btn-floating btn-large waves-effect waves-light teal accent-3 modal-trigger" href="#datosAdiccion"><i class="material-icons">add</i></a></h5>
 
-				<table class="responsive-table">
+				<table class="responsive-table" id="integrante">
 			        <thead class="orange">
 			          <tr>
 			              <th>Algún integrante de su familia consume</th>
@@ -406,12 +404,12 @@
 			          </tr>
 			        </tbody>
       			</table>
-						<!--Encabezado-->
+				<!--Encabezado-->
       			<div class="row">
       				<div class="col s12"><h5 class="collection center">¿Quién realiza las siguientes actividades en el hogar?</h5></div>
       			</div>
 
-						<!--Inicio Fila16-->
+				<!--Inicio Fila16-->
       			<div class="row center">
       				<div class="col s3"></div>
       				<div class="col s2"><h5>Papá</h5></div>
@@ -420,7 +418,7 @@
       				<div class="col s1"><h5>Yo</h5></div>
       				<div class="col s2"><h5>Persona de servicio</h5></div>
       			</div>
-						<!--Fin Fila16-->
+				<!--Fin Fila16-->
 
       			<div class="row center">
       				<div class="col s3">
@@ -590,8 +588,81 @@
       			</div>
 			</form>
 		</ul>
-
 		</div>
+
+		<!--Modal-->
+		<div class="modal" id="datosAdiccion">
+	  <h5 class="modal-close right">&#10005;</h5>
+	  <div class="modal-content center">
+	    <h4>Datos adicciones</h4><br>
+	      <?php echo form_open(""); ?>
+	      <div class="input-field">
+			<select name="sustancia" required>
+				<option value="" disabled selected>Elige una opción</option>
+				<option value="Alcohol">Alcohol</option>
+				<option value="Cigarros">Cigarros</option>
+				<option value="Algun droga">Algún droga</option>
+			</select>
+			<label>Algún integrante de su familia consume:</label>
+
+
+	        <i class="material-icons prefix">person</i>
+	        <input type="text" id="ape" name="apellidos" class="validate" required>
+	        <label for="ape">Integrante de la familia</label>
+	        <span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
+	      </div><br>
+
+	      <div class="input-field">
+	        <i class="material-icons prefix">perm_identity</i>
+	        <input type="text" id="nom2" name="nombre2" class="validate" required>
+	        <label for="nom2">Nombres</label>
+	        <span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
+	      </div><br>
+
+	      <div class="input-field">
+	        <i class="material-icons prefix">timer</i>
+	        <input type="number" id="ed" name="edad1" max="100" min="1" required step="1" class="validate">
+	        <label for="ed">Edad</label>
+	        <span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
+	      </div><br>
+
+	      <div class="input-field">
+	        <i class="material-icons prefix">work</i>
+	        <input type="text" id="ocu2" name="ocupacion2" class="validate" required>
+	        <label for="ocu2">Ocupacion</label>
+	        <span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
+	      </div><br>
+
+	      <div class="input-field">
+	        <i class="material-icons prefix">group</i>
+	        <input type="text" id="par" name="parentesco1" class="validate" required>
+	        <span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
+	        <label for="par">Parentesco</label>
+	      </div><br>
+
+	      <div class="input-field">
+	        <i class="material-icons prefix">school</i>
+	        <input type="text" id="est" name="estudios1" class="validate" required>
+	        <label for="est">Grado máximo de estudios</label>
+	        <span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
+	      </div><br>
+
+	      <div>
+	        <i class="material-icons prefix">wc</i><br />
+	        <label>
+	              <input class="with-gap" name="sexo2" type="radio" value="F"/>
+	              <span>Femenino</span>
+	            </label>
+
+	            <label>
+	              <input class="with-gap" name="sexo2" type="radio" value="M"/>
+	              <span>Masculino</span>
+	            </label>
+	      </div><br />
+
+	      <input type="submit" value="Guardar" class="btn btn-large">
+	    <?php echo form_close(); ?>
+	  </div>
 
 		<ul class="pagination center">
 		    <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
