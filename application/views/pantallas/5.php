@@ -99,14 +99,14 @@
 						<select name="municipio6" required>
 							<option value="" disabled selected>Elige una opción</option>
 						</select>
-						<label>Municipio</label>	
+						<label>Municipio</label>
     				</div>
 
     				<div class="input-field col s3" id="del6">
 						<select name="delegacion6" required>
 							<option value="" disabled selected>Elige una opción</option>
 						</select>
-						<label>Delegación</label>	
+						<label>Delegación</label>
     				</div>
 				</div>
 				<!--Fin Fila5-->
@@ -150,7 +150,7 @@
 				<div class="row">
 					<div class="col s3">
     					<label><input class="with-gap" name="grupo4" type="radio"  />
-					     <span>Sin estudios</span></label>
+					     <span>Sin estudios</span></label><br>
 
 					    <label><input class="with-gap" name="grupo4" type="radio"  />
 					     <span>Primaria incompleta</span></label>
@@ -381,8 +381,8 @@
 			        <thead class="orange">
 			          <tr>
 			              <th>Algún integrante de su familia consume</th>
-			              <th>Integrante de la familia</th>
-			              <th>Frecuencia</th>
+			              <th></th>
+			              <th></th>
 			          </tr>
 			        </thead>
 
@@ -419,90 +419,70 @@
       				<div class="col s2"><h5>Persona de servicio</h5></div>
       			</div>
 				<!--Fin Fila16-->
-
+				<!--Inicio Fila17-->
       			<div class="row center">
       				<div class="col s3">
       					<h7>Lavar, planchar su ropa</h7>
       				</div>
 
       				<div class="col s2">
-					      <label>
-					        <input type="checkbox" />
-					        <span></span>
-					      </label>
+					      <label><input type="checkbox" name="lavarpapa"/>
+					      <span></span></label>
       				</div>
 
       				<div class="col s2">
-					      <label>
-					        <input type="checkbox" />
-					        <span></span>
-					      </label>
+					      <label><input type="checkbox" name="lavarmama"/>
+					      <span></span></label>
       				</div>
 
       				<div class="col s2">
-					      <label>
-					        <input type="checkbox" />
-					        <span></span>
-					      </label>
+					      <label><input type="checkbox" name="lavarhermano"/>
+					      <span></span></label>
       				</div>
 
       				<div class="col s1">
-					      <label>
-					        <input type="checkbox" />
-					        <span></span>
-					      </label>
+					      <label><input type="checkbox" name="lavaryo"/>
+					      <span></span></label>
       				</div>
 
       				<div class="col s2">
-					      <label>
-					        <input type="checkbox" />
-					        <span></span>
-					      </label>
+					      <label><input type="checkbox" name="lavarpersona"/>
+					      <span></span></label>
       				</div>
       			</div>
-
-
+						<!--Fin Fila17-->
+						<!--Inicio Fila18-->
       			<div class="row center">
       				<div class="col s3">
       					<h7>Barrer, trapear (aseo general)</h7>
       				</div>
 
       				<div class="col s2">
-					      <label>
-					        <input type="checkbox" />
-					        <span></span>
-					      </label>
+					      <label><input type="checkbox" name="barrerpapa"/>
+					      <span></span></label>
       				</div>
 
       				<div class="col s2">
-					      <label>
-					        <input type="checkbox" />
-					        <span></span>
-					      </label>
+					      <label><input type="checkbox" name="barrermama"/>
+					      <span></span></label>
       				</div>
 
       				<div class="col s2">
-					      <label>
-					        <input type="checkbox" />
-					        <span></span>
-					      </label>
+					      <label><input type="checkbox" name="barrerhermano"/>
+					      <span></span></label>
       				</div>
 
       				<div class="col s1">
-					      <label>
-					        <input type="checkbox" />
-					        <span></span>
-					      </label>
+					      <label><input type="checkbox" name="barreryo"/>
+					      <span></span></label>
       				</div>
 
       				<div class="col s2">
-					      <label>
-					        <input type="checkbox" />
-					        <span></span>
-					      </label>
+					      <label><input type="checkbox" name="barrerpersona"/>
+					      <span></span></label>
       				</div>
       			</div>
-
+						<!--Fin Fila18-->
 
       			<div class="row center">
       				<div class="col s3">
@@ -510,38 +490,28 @@
       				</div>
 
       				<div class="col s2">
-					      <label>
-					        <input type="checkbox" />
-					        <span></span>
-					      </label>
+					      <label><input type="checkbox" name="cocinarpapa"/>
+					      <span></span></label>
       				</div>
 
       				<div class="col s2">
-					      <label>
-					        <input type="checkbox" />
-					        <span></span>
-					      </label>
+					      <label><input type="checkbox" name="cocinarmama"/>
+					      <span></span></label>
       				</div>
 
       				<div class="col s2">
-					      <label>
-					        <input type="checkbox" />
-					        <span></span>
-					      </label>
+					      <label><input type="checkbox" name="cocinarhermano"/>
+					      <span></span></label>
       				</div>
 
       				<div class="col s1">
-					      <label>
-					        <input type="checkbox" />
-					        <span></span>
-					      </label>
+					      <label><input type="checkbox" name="cocinaryo"/>
+					      <span></span></label>
       				</div>
 
       				<div class="col s2">
-					      <label>
-					        <input type="checkbox" />
-					        <span></span>
-					      </label>
+					      <label><input type="checkbox" name="cocinarpersonatraste"/>
+					      <span></span></label>
       				</div>
       			</div>
 
@@ -552,41 +522,31 @@
       				</div>
 
       				<div class="col s2">
-					      <label>
-					        <input type="checkbox" />
-					        <span></span>
-					      </label>
+					      <label><input type="checkbox" name="trastepapa"/>
+					      <span></span></label>
       				</div>
 
       				<div class="col s2">
-					      <label>
-					        <input type="checkbox" />
-					        <span></span>
-					      </label>
+					      <label><input type="checkbox" name="trastemama"/>
+					      <span></span></label>
       				</div>
 
       				<div class="col s2">
-					      <label>
-					        <input type="checkbox" />
-					        <span></span>
-					      </label>
+					      <label><input type="checkbox" name="trastehermano"/>
+					      <span></span></label>
       				</div>
 
       				<div class="col s1">
-					      <label>
-					        <input type="checkbox" />
-					        <span></span>
-					      </label>
+					      <label><input type="checkbox" name="trasteyo"/>
+					      <span></span></label>
       				</div>
 
       				<div class="col s2">
-					      <label>
-					        <input type="checkbox" />
-					        <span></span>
-					      </label>
+					      <label><input type="checkbox" name="trastepersona"/>
+					      <span></span></label>
       				</div>
       			</div>
-			</form>
+			</form> <!--Fin del formulario-->
 		</ul>
 		</div>
 
@@ -601,68 +561,36 @@
 				<option value="" disabled selected>Elige una opción</option>
 				<option value="Alcohol">Alcohol</option>
 				<option value="Cigarros">Cigarros</option>
-				<option value="Algun droga">Algún droga</option>
+				<option value="Alguna droga">Algúna droga</option>
 			</select>
 			<label>Algún integrante de su familia consume:</label>
 
-
-	        <i class="material-icons prefix">person</i>
-	        <input type="text" id="ape" name="apellidos" class="validate" required>
-	        <label for="ape">Integrante de la familia</label>
-	        <span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
-	      </div><br>
-
 	      <div class="input-field">
-	        <i class="material-icons prefix">perm_identity</i>
+
 	        <input type="text" id="nom2" name="nombre2" class="validate" required>
-	        <label for="nom2">Nombres</label>
+	        <label for="nom2">Integrante de la familia</label>
 	        <span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
-	      </div><br>
+	      </div>
 
 	      <div class="input-field">
-	        <i class="material-icons prefix">timer</i>
-	        <input type="number" id="ed" name="edad1" max="100" min="1" required step="1" class="validate">
-	        <label for="ed">Edad</label>
-	        <span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
-	      </div><br>
-
-	      <div class="input-field">
-	        <i class="material-icons prefix">work</i>
-	        <input type="text" id="ocu2" name="ocupacion2" class="validate" required>
-	        <label for="ocu2">Ocupacion</label>
-	        <span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
-	      </div><br>
-
-	      <div class="input-field">
-	        <i class="material-icons prefix">group</i>
-	        <input type="text" id="par" name="parentesco1" class="validate" required>
-	        <span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
-	        <label for="par">Parentesco</label>
-	      </div><br>
-
-	      <div class="input-field">
-	        <i class="material-icons prefix">school</i>
-	        <input type="text" id="est" name="estudios1" class="validate" required>
-	        <label for="est">Grado máximo de estudios</label>
-	        <span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
-	      </div><br>
-
-	      <div>
-	        <i class="material-icons prefix">wc</i><br />
-	        <label>
-	              <input class="with-gap" name="sexo2" type="radio" value="F"/>
-	              <span>Femenino</span>
-	            </label>
-
-	            <label>
-	              <input class="with-gap" name="sexo2" type="radio" value="M"/>
-	              <span>Masculino</span>
-	            </label>
-	      </div><br />
+					<select name="sustancia" required>
+						<option value="" disabled selected>Elige una opción</option>
+						<option value="Diario">Diario</option>
+						<option value="1 vez a la semana">1 vez a la semana</option>
+						<option value="3 veces a la semana">3 veces a la semana</option>
+						<option value="1 vez al mes">1 vez al mes</option>
+						<option value="Ocasionalmente">Ocasionalmente</option>
+						<option value="Casi nunca">Casi nunca</option>
+						<option value="Nunca">Nunca</option>
+					</select>
+					<label>Frecuencia:</label>
+	      </div>
 
 	      <input type="submit" value="Guardar" class="btn btn-large">
 	    <?php echo form_close(); ?>
 	  </div>
+	</div>
+</div>
 
 		<ul class="pagination center">
 		    <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
