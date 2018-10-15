@@ -1,13 +1,12 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-	<meta charset="UTF-8">
-	<title>SIREANI</title>
-	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="<?php echo base_url();?>assets/img/ce.ico">
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/materialize.min.css">
-	<link rel="stylesheet" href="<?php echo base_url();?>assets/css/index.css">
-</head>
-<body>
+	<nav>
+    <div class="nav-wrapper">
+      <div class="col s12 orange">
+        <a href="#" class="breadcrumb">Hoja 1</a>
+    	</a>
+      </div>
+    </div>
+  </nav>
+
 	<div class="container">
 		<div class="row">
 	      <ul class="collection with-header">
@@ -373,6 +372,10 @@
 			          </tr>
 			        </tbody>
       			</table>
+      			
+      			<div class="row center">
+					<input type="submit" value="Guardar/Siguiente" class="btn btn-large center">
+				</div>
 			</form><!------------------------------------------------------>
 			<!------------------------------------------------------>
 			<!------------------------------------------------------>
@@ -384,17 +387,6 @@
 			<!--Fin del formulario-->
 		</ul>
 		</div>
-
-		<ul class="pagination center">
-		    <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
-		    <li class="active"><a href="#!">1</a></li>
-		    <li class="waves-effect"><a href="<?php base_url()?>dos">2</a></li>
-		    <li class="waves-effect"><a href="3.php">3</a></li>
-		    <li class="waves-effect"><a href="#!">4</a></li>
-		    <li class="waves-effect"><a href="#!">5</a></li>
-		    <li class="waves-effect"><a href="#!">6</a></li>
-		    <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
-		</ul>
 	</div> <!--Fin del contenedor-->
 
 	<div class="modal" id="datosFamiliares">
@@ -459,12 +451,5 @@
 
 	      <input type="submit" value="Guardar" class="btn btn-large">
 	    <?php echo form_close(); ?>
-	  </div>
+	  </div>	  
 	</div>
-
-	<script type="text/javascript" src="<?php echo base_url();?>/assets/js/jquery-3.3.1.min.js"></script>
-	<script type="text/javascript" src="<?php echo base_url();?>/assets/js/init.js"></script>
-	<script type="text/javascript" src="<?php echo base_url();?>/assets/js/materialize.min.js"></script>
-    </body>
-</body>
-</html>

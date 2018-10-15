@@ -1,13 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>SIREANI</title>
-	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="<?php echo base_url();?>assets/img/ce.ico">
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/materialize.min.css">
-	<link rel="stylesheet" href="<?php echo base_url();?>assets/css/index.css">
-</head>
-<body>
+<nav>
+    <div class="nav-wrapper">
+      <div class="col s12 orange">
+      	<a href="#" class="breadcrumb">Hoja 1</a>
+        <a href="#" class="breadcrumb">Hoja 2</a>
+        <a href="#" class="breadcrumb">Hoja 3</a>
+        <a href="#" class="breadcrumb">Hoja 4</a>
+        <a href="#" class="breadcrumb">Hoja 5</a>
+        <a href="#" class="breadcrumb">Hoja 6</a>
+    	</a>
+      </div>
+    </div>
+  </nav>
+
 	<!--Inicio del contenedor-->
 	<div class="container">
 		<div class="row">
@@ -340,26 +344,11 @@
 					<a href="https://www.google.com.mx/maps" target="_blank">Google Maps</a>
 				</div>
 			</div>
+			<div class="row center">
+				<input type="submit" value="Guardar/Siguiente" class="btn btn-large center">
+			</div>
 			<!--Fin del formulario-->
 			</form>
 		</ul>
 		</div>
-
-		<ul class="pagination center">
-		    <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
-		    <li class="active"><a href="#!">1</a></li>
-		    <li class="waves-effect"><a href="2.php">2</a></li>
-		    <li class="waves-effect"><a href="3.php">3</a></li>
-		    <li class="waves-effect"><a href="#!">4</a></li>
-		    <li class="waves-effect"><a href="#!">5</a></li>
-		    <li class="waves-effect"><a href="#!">6</a></li>
-		    <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
-		</ul>
 	</div> <!--Fin del contenedor-->
-
-	<script type="text/javascript" src="<?php echo base_url();?>/assets/js/jquery-3.3.1.min.js"></script>
-	<script type="text/javascript" src="<?php echo base_url();?>/assets/js/init.js"></script>
-	<script type="text/javascript" src="<?php echo base_url();?>/assets/js/materialize.min.js"></script>
-    </body>
-</body>
-</html>

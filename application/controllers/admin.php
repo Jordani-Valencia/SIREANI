@@ -36,6 +36,25 @@ class Admin extends CI_Controller {
 	
 
 	public function prinAdmin(){
+		$this->load->view('pantallas/encabezado');
 		$this->load->view('pantallas/principalAdmin');
+		$this->load->view('pantallas/navbar');
+		$this->load->view('pantallas/footer');
+	}
+
+	public function generales(){
+		$this->load->view('pantallas/encabezado');
+		$this->load->view('pantallas/breadGeneral');
+		$this->load->view('pantallas/navbar');
+		$this->load->view('pantallas/datosGenerales');
+		$this->load->view('pantallas/footer');
+	}
+
+	public function domAlumno(){
+		$this->load->view('pantallas/encabezado');
+		$this->load->view('pantallas/breadGeneral');
+		$this->load->view('pantallas/navbar');
+		$this->load->view('pantallas/domicilioAlumno');
+		$this->load->view('pantallas/footer');	
 	}
 }
