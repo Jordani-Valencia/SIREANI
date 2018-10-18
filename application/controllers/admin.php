@@ -42,15 +42,15 @@ class Admin extends CI_Controller {
 		$this->load->view('pantallas/footer');
 	}
 
-	public function generales(){
+	public function adminUno(){
 		$this->load->view('pantallas/encabezado');
-		$this->load->view('pantallas/breadGeneral');
+		$this->load->view('pantallas/breadUno');
 		$this->load->view('pantallas/navbar');
-		$this->load->view('pantallas/datosGenerales');
+		$this->load->view('pantallas/datosUno');
 		$this->load->view('pantallas/footer');
 	}
 
-	public function domAlumno(){
+	public function adminDos(){
 		$this->load->view('pantallas/encabezado');
 		$this->load->view('pantallas/breadGeneral');
 		$this->load->view('pantallas/navbar');
