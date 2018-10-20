@@ -1,4 +1,15 @@
+<div class="row">
+    <div class="col s12">
+      <ul class="tabs">
+        <li class="tab col s4"><a href="#generales">Datos generales</a></li>
+				<li class="tab col s4"><a href="#dAlumno">Domicilio del alumno</a></li>
+        <li class="tab col s4"><a href="#dFamiliares">Datos familiares</a></li>
+      </ul>
+    </div>
+
+
 <div class="container">
+<div id="generales" class="col s12">
 		<div class="row">
 	      <ul class="collection with-header">
 	        <li class="collection-header grey lighten-2"><h4 class="center">DATOS GENERALES DEL ESTUDIANTE</h4>
@@ -66,14 +77,14 @@
 						<select name="municipio1" required>
 							<option value="" disabled selected>Elige una opción</option>
 						</select>
-						<label>Municipio</label>	
+						<label>Municipio</label>
     				</div>
 
     				<div class="input-field col s4" id="del">
 						<select name="delegacion1" required>
 							<option value="" disabled selected>Elige una opción</option>
 						</select>
-						<label>Delegación</label>	
+						<label>Delegación</label>
     				</div>
 				</div>
 				<!--Fin Fila 3-->
@@ -155,14 +166,14 @@
 						<select name="municipio2" required>
 							<option value="" disabled selected>Elige una opción</option>
 						</select>
-						<label>Municipio</label>	
+						<label>Municipio</label>
 					</div>
 
 					<div class="input-field col s4" id="del2">
 						<select name="delegacion2" required>
 							<option value="" disabled selected>Elige una opción</option>
 						</select>
-						<label>Delegación</label>	
+						<label>Delegación</label>
 					</div>
 				</div>
 				<!--Inicio Fila 6-->
@@ -258,189 +269,196 @@
 					</div>
 				</div>
 				<!--Fin Fila 9-->
-				<!--Encabezado-->
-				<ul class="collection with-header"><li class="collection-header grey lighten-2"><h5 class="center">DOMICILIO DEL ALUMNO</h5></li></ul>
-				<!--Fin Encabezado-->
-				<!--Inicio Fila 10-->
-	        	<div class="row">
-					<div class="input-field col s3">
-						<input class="validate" id="cal" type="text" name="calle1" required>
-						<label for="cal">Calle</label>
-						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
-					</div>
+      </div>
+		</div> <!--Tabs-->
 
-					<div class="input-field col s2">
-						<input class="validate" id="ext" type="number" name="exterior1" required>
-						<label for="ext">No. Exterior</label>
-						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
-					</div>
+<div id="dAlumno" class="col s12">
+  <ul class="collection with-header">
+	<ul class="collection with-header"><li class="collection-header grey lighten-2"><h5 class="center">DOMICILIO DEL ALUMNO</h5></li></ul>
+	<!--Fin Encabezado-->
+	<!--Inicio Fila 10-->
+	 <div class="row">
+	  <div class="input-field col s3">
+	    <input class="validate" id="cal" type="text" name="calle1" required>
+	    <label for="cal">Calle</label>
+	    <span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
+	  </div>
 
-					<div class="input-field col s2">
-						<input class="validate" id="int" type="number" name="interior1">
-						<label for="int">No. Interior</label>
-						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
-					</div>
+	  <div class="input-field col s2">
+	    <input class="validate" id="ext" type="number" name="exterior1" required>
+	    <label for="ext">No. Exterior</label>
+	    <span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
+	  </div>
 
-					<div class="input-field col s2">
-						<input class="validate" id="col" type="text" name="colonia1">
-						<label for="col">Colonia</label>
-						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
-					</div>
+	  <div class="input-field col s2">
+	    <input class="validate" id="int" type="number" name="interior1">
+	    <label for="int">No. Interior</label>
+	    <span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
+	  </div>
 
-					<div class="input-field col s3">
-						<input class="autocomplete validate" id="ent3" type="text" name="entidad3" required>
-						<label for="ent3">Entidad Federativa</label>
-						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
-					</div>
-				</div>
-				<!--Fin Fila 10-->
-				<!--Inicio Fila 11-->
-				<div class="row">
-					<div class="input-field col s2" id="mun3">
-						<select name="municipio3" required>
-							<option value="" disabled selected>Elige una opción</option>
-						</select>
-						<label>Municipio</label>	
-					</div>
+	  <div class="input-field col s2">
+	    <input class="validate" id="col" type="text" name="colonia1">
+	    <label for="col">Colonia</label>
+	    <span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
+	  </div>
 
-					<div class="input-field col s2" id="del3">
-						<select name="delegacion3" required>
-							<option value="" disabled selected>Elige una opción</option>
-						</select>
-						<label>Delegación</label>	
-					</div>
+	  <div class="input-field col s3">
+	    <input class="autocomplete validate" id="ent3" type="text" name="entidad3" required>
+	    <label for="ent3">Entidad Federativa</label>
+	    <span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
+	  </div>
+	</div>
+	<!--Fin Fila 10-->
+	<!--Inicio Fila 11-->
+	<div class="row">
+	  <div class="input-field col s2" id="mun3">
+	    <select name="municipio3" required>
+	      <option value="" disabled selected>Elige una opción</option>
+	    </select>
+	    <label>Municipio</label>
+	  </div>
 
-					<div class="input-field col s2">
-						<input class="validate" id="post" name="postal1" type="number" required>
-						<label for="post">Código Postal</label>
-						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
-					</div>
+	  <div class="input-field col s2" id="del3">
+	    <select name="delegacion3" required>
+	      <option value="" disabled selected>Elige una opción</option>
+	    </select>
+	    <label>Delegación</label>
+	  </div>
 
-					<div class="input-field col s3">
-						<input class="validate" id="tel" type="tel" name="telefono1" data-length="12" maxlength="12">
-						<label for="tel">Teléfono de casa</label>
-						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
-					</div>
+	  <div class="input-field col s2">
+	    <input class="validate" id="post" name="postal1" type="number" required>
+	    <label for="post">Código Postal</label>
+	    <span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
+	  </div>
 
-					<div class="input-field col s3">
-						<input class="validate" id="cel" type="tel" name="celular1" data-length="10" maxlength="10">
-						<label for="cel">Teléfono de celular</label>
-						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
-					</div>
-				</div>
-				<!--Fin Fila 11-->
-				<!--Encabezado-->
-				<ul class="collection with-header"><li class="collection-header grey lighten-2"><h5 class="center">DATOS FAMILIARES   <a href="#datosFamiliares" class="btn-floating btn-large waves-effect waves-light teal accent-3 modal-trigger"><i class="material-icons">add</i></a>       </h5><p class="center">(Únicamente proporcione los datos de las personas que viven en la misma casa)</p></li></ul>
-				<table class="responsive-table" id="tablaFamiliares">
-			        <thead class="orange">
-			          <tr>
-			              <th>Apellido Paterno</th>
-			              <th>Apellido Materno</th>
-			              <th>Nombre</th>
-			              <th>Sexo</th>
-			              <th>Edad</th>
-			              <th>Ocupación</th>
-			              <th>Parentesco</th>
-			              <th>Grado máx de estudios</th>
-			          </tr>
-			        </thead>
+	  <div class="input-field col s3">
+	    <input class="validate" id="tel" type="tel" name="telefono1" data-length="12" maxlength="12">
+	    <label for="tel">Teléfono de casa</label>
+	    <span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
+	  </div>
 
-			        <tbody>
-			          <tr>
-			            <td>Alvin</td>
-			            <td>Eclair</td>
-			            <td>$0.87</td>
-			          </tr>
-			          <tr>
-			            <td>Alan</td>
-			            <td>Jellybean</td>
-			            <td>$3.76</td>
-			          </tr>
-			          <tr>
-			            <td>Jonathan</td>
-			            <td>Lollipop</td>
-			            <td>$7.00</td>
-			          </tr>
-			        </tbody>
-      			</table>
-      			
-      			<div class="row center">
-					<input type="submit" value="Guardar/Siguiente" class="btn btn-large center">
-				</div>
-			</form><!------------------------------------------------------>
-			<!------------------------------------------------------>
-			<!------------------------------------------------------>
-			<!------------------------------------------------------>
-			<!------------------------------------------------------>
-			<!------------------------------------------------------>
-			<!------------------------------------------------------>
-			<!------------------------------------------------------>
-			<!--Fin del formulario-->
-		</ul>
-		</div>
+	  <div class="input-field col s3">
+	    <input class="validate" id="cel" type="tel" name="celular1" data-length="10" maxlength="10">
+	    <label for="cel">Teléfono de celular</label>
+	    <span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
+	  </div>
+	</div>
+	<!--Fin Fila 11-->
+	</ul>
+	</div>
+
+  <div id="dFamiliares" class="col s12">
+    <!--Encabezado-->
+  	<ul class="collection with-header"><li class="collection-header grey lighten-2"><h5 class="center">DATOS FAMILIARES   <a href="#datosFamiliares" class="btn-floating btn-large waves-effect waves-light teal accent-3 modal-trigger"><i class="material-icons">add</i></a>       </h5><p class="center">(Únicamente proporcione los datos de las personas que viven en la misma casa)</p></li></ul>
+  	<table class="responsive-table" id="tablaFamiliares">
+  	      <thead class="orange">
+  	        <tr>
+  	            <th>Apellido Paterno</th>
+  	            <th>Apellido Materno</th>
+  	            <th>Nombre</th>
+  	            <th>Sexo</th>
+  	            <th>Edad</th>
+  	            <th>Ocupación</th>
+  	            <th>Parentesco</th>
+  	            <th>Grado máx de estudios</th>
+  	        </tr>
+  	      </thead>
+
+  	      <tbody>
+  	        <tr>
+  	          <td>Alvin</td>
+  	          <td>Eclair</td>
+  	          <td>$0.87</td>
+  	        </tr>
+  	        <tr>
+  	          <td>Alan</td>
+  	          <td>Jellybean</td>
+  	          <td>$3.76</td>
+  	        </tr>
+  	        <tr>
+  	          <td>Jonathan</td>
+  	          <td>Lollipop</td>
+  	          <td>$7.00</td>
+  	        </tr>
+  	      </tbody>
+  	    </table>
+
+  	    <div class="row center">
+  	  <input type="submit" value="Guardar/Siguiente" class="btn btn-large center">
+  	</div>
+  	</form><!------------------------------------------------------>
+  	<!------------------------------------------------------>
+  	<!------------------------------------------------------>
+  	<!------------------------------------------------------>
+  	<!------------------------------------------------------>
+  	<!------------------------------------------------------>
+  	<!------------------------------------------------------>
+  	<!------------------------------------------------------>
+  	<!--Fin del formulario-->
+  </div>
 	</div> <!--Fin del contenedor-->
 
-	<div class="modal" id="datosFamiliares">
-	  <h5 class="modal-close right">&#10005;</h5>
-	  <div class="modal-content center">
-	    <h4>Datos familiares</h4><br>
-	      <?php echo form_open(""); ?>
-	      <div class="input-field">
-	        <i class="material-icons prefix">person</i>
-	        <input type="text" id="ape" name="apellidos" class="validate" required>
-	        <label for="ape">Apellidos</label>
-	        <span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
-	      </div><br>
+  <div class="modal" id="datosFamiliares">
+    <h5 class="modal-close right">&#10005;</h5>
+    <div class="modal-content center">
+      <h4>Datos familiares</h4><br>
+        <?php echo form_open(""); ?>
+        <div class="input-field">
+          <i class="material-icons prefix">person</i>
+          <input type="text" id="ape" name="apellidos" class="validate" required>
+          <label for="ape">Apellidos</label>
+          <span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
+        </div><br>
 
-	      <div class="input-field">
-	        <i class="material-icons prefix">perm_identity</i>
-	        <input type="text" id="nom2" name="nombre2" class="validate" required>
-	        <label for="nom2">Nombres</label>
-	        <span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
-	      </div><br>
+        <div class="input-field">
+          <i class="material-icons prefix">perm_identity</i>
+          <input type="text" id="nom2" name="nombre2" class="validate" required>
+          <label for="nom2">Nombres</label>
+          <span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
+        </div><br>
 
-	      <div class="input-field">
-	        <i class="material-icons prefix">timer</i>
-	        <input type="number" id="ed" name="edad1" max="100" min="1" required step="1" class="validate">
-	        <label for="ed">Edad</label>
-	        <span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
-	      </div><br>
+        <div class="input-field">
+          <i class="material-icons prefix">timer</i>
+          <input type="number" id="ed" name="edad1" max="100" min="1" required step="1" class="validate">
+          <label for="ed">Edad</label>
+          <span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
+        </div><br>
 
-	      <div class="input-field">
-	        <i class="material-icons prefix">work</i>
-	        <input type="text" id="ocu2" name="ocupacion2" class="validate" required>
-	        <label for="ocu2">Ocupacion</label>
-	        <span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
-	      </div><br>
+        <div class="input-field">
+          <i class="material-icons prefix">work</i>
+          <input type="text" id="ocu2" name="ocupacion2" class="validate" required>
+          <label for="ocu2">Ocupacion</label>
+          <span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
+        </div><br>
 
-	      <div class="input-field">
-	        <i class="material-icons prefix">group</i>
-	        <input type="text" id="par" name="parentesco1" class="validate" required>
-	        <span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
-	        <label for="par">Parentesco</label>
-	      </div><br>
+        <div class="input-field">
+          <i class="material-icons prefix">group</i>
+          <input type="text" id="par" name="parentesco1" class="validate" required>
+          <span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
+          <label for="par">Parentesco</label>
+        </div><br>
 
-	      <div class="input-field">
-	        <i class="material-icons prefix">school</i>
-	        <input type="text" id="est" name="estudios1" class="validate" required>
-	        <label for="est">Grado máximo de estudios</label>
-	        <span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
-	      </div><br>
+        <div class="input-field">
+          <i class="material-icons prefix">school</i>
+          <input type="text" id="est" name="estudios1" class="validate" required>
+          <label for="est">Grado máximo de estudios</label>
+          <span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
+        </div><br>
 
-	      <div>
-	        <i class="material-icons prefix">wc</i><br />
-	        <label>
-	              <input class="with-gap" name="sexo2" type="radio" value="F"/>
-	              <span>Femenino</span>
-	            </label>
+        <div>
+          <i class="material-icons prefix">wc</i><br />
+          <label>
+                <input class="with-gap" name="sexo2" type="radio" value="F"/>
+                <span>Femenino</span>
+              </label>
 
-	            <label>
-	              <input class="with-gap" name="sexo2" type="radio" value="M"/>
-	              <span>Masculino</span>
-	            </label>
-	      </div><br />
+              <label>
+                <input class="with-gap" name="sexo2" type="radio" value="M"/>
+                <span>Masculino</span>
+              </label>
+        </div><br />
 
-	      <input type="submit" value="Guardar" class="btn btn-large">
-	    <?php echo form_close(); ?>
-	  </div>	  
-	</div>
+        <input type="submit" value="Guardar" class="btn btn-large">
+      <?php echo form_close(); ?>
+    </div>
+  </div>
