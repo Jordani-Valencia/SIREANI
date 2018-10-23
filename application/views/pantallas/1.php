@@ -13,12 +13,12 @@
 	        <li class="collection-header grey lighten-2"><h4 class="center">DATOS GENERALES DEL ESTUDIANTE</h4>
 	        	<p class="center">Los datos que proporcione será utilizados únicamente en el área de Orientación</p></li>
 			<!--Inicio del formulario-->
-			<form action="" class="col s12">
+			<form action="../CInserciones/datosGenerales" method="post" class="col s12" id="form1">
 				<!-- Inicio Fila 1-->
 				<div class="row">
 					<div class="input-field col s4">
 						<input class="validate" id="nombre" type="text" name="nombre1" required>
-						<label for="nombre">Nombre</label>
+						<label for="nombre">Nombre(s)</label>
 						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
 					</div>
 
@@ -66,30 +66,64 @@
 				<!--Inicio Fila 3-->
 				<div class="row">
     				<div class="input-field col s4">
-			          <input type="text" id="ent" class="autocomplete validate" name="entidad1" required>
+							<select class="" name="entidad1" required>
+								<option value="" disabled selected>Elige una opción</option>
+								<option value=1>Aguascalientes</option>
+								<option value=2>Baja California</option>
+								<option value=3>Baja California Sur</option>
+								<option value=4>Campeche</option>
+								<option value=5>Coahuila de Zaragoza</option>
+								<option value=6>Colima</option>
+								<option value=7>Chiapas</option>
+								<option value=8>Chihuahua</option>
+								<option value=9>Ciudad de México</option>
+								<option value=10>Durango</option>
+								<option value=11>Guanajuato</option>
+								<option value=12>Guerrero</option>
+								<option value=13>Hidalgo</option>
+								<option value=14>Jalisco</option>
+								<option value=15>México</option>
+								<option value=16>Michoacán</option>
+								<option value=17>Morelos</option>
+								<option value=18>Nayarit</option>
+								<option value=19>Nuevo León</option>
+								<option value=20>Oaxaca</option>
+								<option value=21>Puebla</option>
+								<option value=22>Querétaro</option>
+								<option value=23>Quintana Roo</option>
+								<option value=24>San Luis Potosí</option>
+								<option value=25>Sinaloa</option>
+								<option value=26>Sonora</option>
+								<option value=27>Tabasco</option>
+								<option value=28>Tamaulipas</option>
+								<option value=29>Tlaxcala</option>
+								<option value=30>Veracruz</option>
+								<option value=31>Yucatán</option>
+								<option value=32>Zacatecas</option>
+							</select>
+
 			          <label for="ent">Entidad Federativa</label>
 			          <span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
     				</div>
-
+<!-------------------------------------->
     				<div class="input-field col s4" id="mun">
-						<select name="municipio1" required>
-							<option value="" disabled selected>Elige una opción</option>
-						</select>
-						<label>Municipio</label>	
+							<input class="validate" id="municipio1" type="text" name="municipio1" required>
+						<label>Municipio</label>
+						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
     				</div>
 
     				<div class="input-field col s4" id="del">
-						<select name="delegacion1" required>
-							<option value="" disabled selected>Elige una opción</option>
-						</select>
-						<label>Delegación</label>	
+						<input class="validate" id="delegacion1" type="text" name="delegacion1" required>
+						<label>Delegación</label>
+						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
     				</div>
+						<!-------------------------------------->
 				</div>
 				<!--Fin Fila 3-->
 				<!--Inicio Fila 4-->
 				<div class="row">
-					<div class="input-field col s4" id="pais1">
-    					<select>
+					<div class="input-field col s4" >
+    					<select name="pais_n">
       						<option value="" disabled selected>Elige una opción</option>
       						<option value="Alemania">Alemania</option>
       						<option value="Francia">Francia</option>
@@ -108,8 +142,8 @@
     					<label>País</label>
     				</div>
 
-					<div class="input-field col s4" id="nacionalidad1">
-    					<select>
+					<div class="input-field col s4" id="nacionalidad1" name="nacionalidad1" required>
+    					<select name="nacion_n" required>
       						<option value="" disabled selected>Elige una opción</option>
       						<option value="Alemán">Alemán</option>
       						<option value="Frances">Francés</option>
@@ -155,23 +189,55 @@
 				<!--Fila nueva-->
 				<div class="row">
 					<div class="input-field col s4">
-						<input class="autocomplete validate" id="ent2" type="text" name="entidad2" required>
+						<select class="" name="entidad2" required>
+							<option value="" disabled selected>Elige una opción</option>
+							<option value=1>Aguascalientes</option>
+							<option value=2>Baja California</option>
+							<option value=3>Baja California Sur</option>
+							<option value=4>Campeche</option>
+							<option value=5>Coahuila de Zaragoza</option>
+							<option value=6>Colima</option>
+							<option value=7>Chiapas</option>
+							<option value=8>Chihuahua</option>
+							<option value=9>Ciudad de México</option>
+							<option value=10>Durango</option>
+							<option value=11>Guanajuato</option>
+							<option value=12>Guerrero</option>
+							<option value=13>Hidalgo</option>
+							<option value=14>Jalisco</option>
+							<option value=15>México</option>
+							<option value=16>Michoacán</option>
+							<option value=17>Morelos</option>
+							<option value=18>Nayarit</option>
+							<option value=19>Nuevo León</option>
+							<option value=20>Oaxaca</option>
+							<option value=21>Puebla</option>
+							<option value=22>Querétaro</option>
+							<option value=23>Quintana Roo</option>
+							<option value=24>San Luis Potosí</option>
+							<option value=25>Sinaloa</option>
+							<option value=26>Sonora</option>
+							<option value=27>Tabasco</option>
+							<option value=28>Tamaulipas</option>
+							<option value=29>Tlaxcala</option>
+							<option value=30>Veracruz</option>
+							<option value=31>Yucatán</option>
+							<option value=32>Zacatecas</option>
+						</select>
 						<label for="ent2">Entidad Federativa</label>
 						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
 					</div>
 
 					<div class="input-field col s4" id="mun2">
-						<select name="municipio2" required>
-							<option value="" disabled selected>Elige una opción</option>
-						</select>
-						<label>Municipio</label>	
+						<input class="validate" id="municipio2" type="text" name="municipio2" required>
+					<label>Municipio</label>
+					<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
 					</div>
 
 					<div class="input-field col s4" id="del2">
-						<select name="delegacion2" required>
-							<option value="" disabled selected>Elige una opción</option>
-						</select>
-						<label>Delegación</label>	
+						<input class="validate" id="delegacion2" type="text" name="delegacion2" required>
+						<label>Delegación</label>
+						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
 					</div>
 				</div>
 				<!--Inicio Fila 6-->
@@ -179,9 +245,9 @@
 					<div class="input-field col s4">
     					<select name="turno1">
       						<option value="" disabled selected>Elige una opción</option>
-      						<option value="Matutino">Matutino</option>
-					      	<option value="Vespertino">Vespertino</option>
-					      	<option value="Mixto">Mixto</option>
+      						<option value="1">Matutino</option>
+					      	<option value="2">Vespertino</option>
+					      	<option value="3">Mixto</option>
 					    </select>
     					<label>Turno</label>
     				</div>
@@ -290,34 +356,67 @@
 						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
 					</div>
 
-					<div class="input-field col s2">
+					<div class="input-field col s4">
 						<input class="validate" id="col" type="text" name="colonia1">
 						<label for="col">Colonia</label>
 						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
 					</div>
+				</div>
 
-					<div class="input-field col s3">
-						<input class="autocomplete validate" id="ent3" type="text" name="entidad3" required>
-						<label for="ent3">Entidad Federativa</label>
+				<!--Fin Fila 10-->
+				<!--Inicio Fila 11-->
+				<div class="input-field col s3">
+					<select class="" name="entidad3" required>
+						<option value="" disabled selected>Elige una opción</option>
+						<option value=1>Aguascalientes</option>
+						<option value=2>Baja California</option>
+						<option value=3>Baja California Sur</option>
+						<option value=4>Campeche</option>
+						<option value=5>Coahuila de Zaragoza</option>
+						<option value=6>Colima</option>
+						<option value=7>Chiapas</option>
+						<option value=8>Chihuahua</option>
+						<option value=9>Ciudad de México</option>
+						<option value=10>Durango</option>
+						<option value=11>Guanajuato</option>
+						<option value=12>Guerrero</option>
+						<option value=13>Hidalgo</option>
+						<option value=14>Jalisco</option>
+						<option value=15>México</option>
+						<option value=16>Michoacán</option>
+						<option value=17>Morelos</option>
+						<option value=18>Nayarit</option>
+						<option value=19>Nuevo León</option>
+						<option value=20>Oaxaca</option>
+						<option value=21>Puebla</option>
+						<option value=22>Querétaro</option>
+						<option value=23>Quintana Roo</option>
+						<option value=24>San Luis Potosí</option>
+						<option value=25>Sinaloa</option>
+						<option value=26>Sonora</option>
+						<option value=27>Tabasco</option>
+						<option value=28>Tamaulipas</option>
+						<option value=29>Tlaxcala</option>
+						<option value=30>Veracruz</option>
+						<option value=31>Yucatán</option>
+						<option value=32>Zacatecas</option>
+					</select>
+					<label for="ent3">Entidad Federativa</label>
+					<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
+				</div>
+				<div class="row">
+					<div class="input-field col s4" id="mun3">
+						<input class="validate" id="municipio3" type="text" name="municipio3" required>
+					<label>Municipio</label>
+					<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
+					</div>
+
+					<div class="input-field col s4" id="del3">
+						<input class="validate" id="delegacion3" type="text" name="delegacion3" required>
+						<label>Delegación</label>
 						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
 					</div>
 				</div>
-				<!--Fin Fila 10-->
-				<!--Inicio Fila 11-->
-				<div class="row">
-					<div class="input-field col s2" id="mun3">
-						<select name="municipio3" required>
-							<option value="" disabled selected>Elige una opción</option>
-						</select>
-						<label>Municipio</label>	
-					</div>
-
-					<div class="input-field col s2" id="del3">
-						<select name="delegacion3" required>
-							<option value="" disabled selected>Elige una opción</option>
-						</select>
-						<label>Delegación</label>	
-					</div>
 
 					<div class="input-field col s2">
 						<input class="validate" id="post" name="postal1" type="number" required>
@@ -372,7 +471,7 @@
 			          </tr>
 			        </tbody>
       			</table>
-      			
+
       			<div class="row center">
 					<input type="submit" value="Guardar/Siguiente" class="btn btn-large center">
 				</div>
@@ -451,5 +550,5 @@
 
 	      <input type="submit" value="Guardar" class="btn btn-large">
 	    <?php echo form_close(); ?>
-	  </div>	  
+	  </div>
 	</div>
