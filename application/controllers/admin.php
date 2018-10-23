@@ -27,34 +27,59 @@ class Admin extends CI_Controller {
 			];
 
 			 $this->session->set_userdata($data);
-			
+
 			echo "no error";
 			}else{
 			echo "error";
 		}
 		}
-	
+
 
 	public function prinAdmin(){
 		$this->load->view('pantallas/encabezado');
 		$this->load->view('pantallas/principalAdmin');
-		$this->load->view('pantallas/navbar');
 		$this->load->view('pantallas/footer');
 	}
 
-	public function generales(){
+	public function adminUno(){
 		$this->load->view('pantallas/encabezado');
-		$this->load->view('pantallas/breadGeneral');
 		$this->load->view('pantallas/navbar');
-		$this->load->view('pantallas/datosGenerales');
+		$this->load->view('pantallas/datosUno');
 		$this->load->view('pantallas/footer');
 	}
 
-	public function domAlumno(){
+	public function adminDos(){
 		$this->load->view('pantallas/encabezado');
-		$this->load->view('pantallas/breadGeneral');
 		$this->load->view('pantallas/navbar');
-		$this->load->view('pantallas/domicilioAlumno');
-		$this->load->view('pantallas/footer');	
+		$this->load->view('pantallas/datosDos');
+		$this->load->view('pantallas/footer');
+	}
+
+	public function adminTres(){
+		$this->load->view('pantallas/encabezado');
+		$this->load->view('pantallas/navbar');
+		$this->load->view('pantallas/datosTres');
+		$this->load->view('pantallas/footer');
+	}
+
+	public function adminCuatro(){
+		$this->load->view('pantallas/encabezado');
+		$this->load->view('pantallas/navbar');
+		$this->load->view('pantallas/datosCuatro');
+		$this->load->view('pantallas/footer');
+	}
+
+	public function adminCinco(){
+		$this->load->view('pantallas/encabezado');
+		$this->load->view('pantallas/navbar');
+		$this->load->view('pantallas/datosCinco');
+		$this->load->view('pantallas/footer');
+	}
+
+	public function adminSeis(){
+		$this->load->view('pantallas/encabezado');
+		$this->load->view('pantallas/navbar');
+		$this->load->view('pantallas/datosSeis');
+		$this->load->view('pantallas/footer');
 	}
 }
