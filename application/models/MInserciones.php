@@ -23,7 +23,7 @@ class MInserciones extends CI_Model
     }else{
       $this->db->insert("secundaria",$data);
       $this->db->where("nombre_sec",$data['nombre_sec']);
-      $last_id=$this->get("secundaria");
+      $last_id=$this->db->get("secundaria");
       return $last_id->row();
     }
 
