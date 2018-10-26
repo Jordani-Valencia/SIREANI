@@ -8,7 +8,7 @@ class Registro extends CI_Controller {
 		$this->load->view('pantallas/encabezado');
 		$this->load->view('pantallas/1');
 		$this->load->view('pantallas/footer');
-	}
+	}	
 
 	public function dos(){
 		$this->load->view('pantallas/encabezado');
