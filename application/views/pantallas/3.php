@@ -14,7 +14,7 @@
 	    <ul class="collection with-header">
 	      <li class="collection-header grey lighten-2"><h5 class="center">AMBIENTE SOCIOECONÓMICO</h5>
 
-			<form action="" class="col s12">
+			<form action="../CInserciones3/ambienteSocioEconomico" method="post" class="col s12">
 				<!--Inicio Fila 1-->
 				<div class="row"><br>
 					<div class="col s3 center">
@@ -64,7 +64,7 @@
 						<h7>Electricidad</h7>
 							<div class="switch">
 					    		<label>No
-					      		<input type="checkbox">
+					      		<input type="checkbox" name="electricidad">
 					      		<span class="lever"></span>
 					      		Sí</label>
 							</div>
@@ -74,7 +74,7 @@
 						<h7>Tableta</h7>
 							<div class="switch">
 					    		<label>No
-					      		<input type="checkbox" name="tableta">
+					      		<input type="checkbox" name="tableta1">
 					      		<span class="lever"></span>
 					      		Sí</label>
 								</div>
@@ -94,7 +94,7 @@
 						<h7>Internet</h7>
 							<div class="switch">
 					    		<label>No
-					      		<input type="checkbox">
+					      		<input type="checkbox" name="internetAS">
 					      		<span class="lever"></span>
 					      		Sí</label>
 							</div>
@@ -204,7 +204,7 @@
 						<h7>Tableta</h7>
 							<div class="switch">
 					    		<label>No
-					      		<input type="checkbox" name="tableta">
+					      		<input type="checkbox" name="tableta2">
 					      		<span class="lever"></span>
 					      		Sí</label>
 							</div>
@@ -270,21 +270,21 @@
 				<div class="row">
 					<div class="input-field col s4">
 						<p><label>
-					        <input class="with-gap" name="grupo3" type="radio"  />
+					        <input class="with-gap" name="grupo3" type="radio" value="1" />
 					        <span>Endomorfo o grueso</span>
 					      </label></p>
 					</div>
 
 					<div class="input-field col s4">
 						<p><label>
-					        <input class="with-gap" name="grupo3" type="radio"  />
+					        <input class="with-gap" name="grupo3" type="radio" value="2" />
 					        <span>Ectomorfo o delgado</span>
 					      </label></p>
 					</div>
 
 					<div class="input-field col s4">
 						<p><label>
-					        <input class="with-gap" name="grupo3" type="radio"  />
+					        <input class="with-gap" name="grupo3" type="radio" value="3" />
 					        <span>Mesoformo o atlético</span>
 					      </label></p>
 					</div>
@@ -334,17 +334,17 @@
 				<!--Inicio Fila12-->
 				<div class="row">
 					<div class="col s4">
-						<label><input type="checkbox" name="imss"/>
+						<label><input type="checkbox" name="imss" value="1"/>
 					    <span>IMSS</span></label>
 					</div>
 
 					<div class="col s4">
-						<label><input type="checkbox" name="ejercito"/>
+						<label><input type="checkbox" name="ejercito" value="4"/>
 					    <span>Ejército o Marina</span></label>
 					</div>
 
 					<div class="col s4">
-						<label><input type="checkbox" name="privado"/>
+						<label><input type="checkbox" name="privado" value="7"/>
 					    <span>Médico privado</span></label>
 					</div>
 				</div>
@@ -352,17 +352,17 @@
 				<!--Inicio Fila13-->
 				<div class="row">
 					<div class="col s4">
-						<label><input type="checkbox" name="isste"/>
+						<label><input type="checkbox" name="isste" value="2"/>
 					    <span>ISSTE</span></label>
 					</div>
 
 					<div class="col s4">
-						<label><input type="checkbox" name="sec_salud"/>
+						<label><input type="checkbox" name="sec_salud" value="5"/>
 					    <span>Secretaría de Salud</span></label>
 					</div>
 
 					<div class="col s4">
-						<label><input type="checkbox" name="otro"/>
+						<label><input type="checkbox" name="otro" value="8"/>
 					    <span>Otro</span></label>
 					</div>
 				</div>
@@ -370,17 +370,18 @@
 				<!--Inicio Fila15-->
 				<div class="row">
 					<div class="col s4">
-						<label><input type="checkbox" name="pemex"/>
+						<label><input type="checkbox" name="pemex" value="3"/>
 					    <span>PEMEX</span></label>
 					</div>
 
 					<div class="col s4">
-						<label><input type="checkbox" name="seg_popular"/>
+						<label><input type="checkbox" name="seg_popular" value="6"/>
 					    <span>Seguro Popular</span></label>
 					</div>
 
 					<div class="input-field col s4">
-						<input class="validate" id="esp5" type="text" name="especificar5">
+            <!-- disabled=TRUE -->
+						<input class="validate" id="esp5" type="text" name="especificar5" >
 						<label for="esp5">Especifique</label>
 						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
 					</div>
@@ -395,11 +396,12 @@
 					<div class="col s8">
 						<select name="medico">
 							<option value="" disabled selected>Elige una opción</option>
-							<option value="">Cada semana</option>
-							<option value="">Cada mes</option>
-							<option value="">Cada seis meses</option>
-							<option value="">Cada año</option>
-							<option value="">Cuando me enfermo</option>
+              <option value=5>Cada semana</option>
+              <option value=6>Cada mes</option>
+              <option value=7>Cada seis meses</option>
+              <option value=8>Cada año</option>
+              <option value=9>Cuando me enfermo</option>
+
 						</select>
 					</div>
 				</div>
@@ -413,11 +415,12 @@
 					<div class="col s8">
 						<select name="dentista">
 							<option value="" disabled selected>Elige una opción</option>
-							<option value="">Cada semana</option>
-							<option value="">Cada mes</option>
-							<option value="">Cada seis meses</option>
-							<option value="">Cada año</option>
-							<option value="">Cuando lo necesito</option>
+              <option value=5>Cada semana</option>
+              <option value=6>Cada mes</option>
+              <option value=7>Cada seis meses</option>
+              <option value=8>Cada año</option>
+              <option value=9>Cuando me enfermo</option>
+
 						</select>
 					</div>
 				</div>
@@ -430,12 +433,11 @@
 
 					<div class="col s8">
 						<select name="anteojos">
-							<option value="" disabled selected>Elige una opción</option>
-							<option value="">No los necesito</option>
-							<option value="">Sólo para leer</option>
-							<option value="">Si los uso</option>
-							<option value="">Si los necesito pero no los uso</option>
-							<option value="">No lo sé</option>
+              <option value=10>No los necesito</option>
+              <option value=11>Solo para leer</option>
+              <option value=12>Si los uso</option>
+              <option value=13>Si los necesito pero no los uso</option>
+              <option value=14>No lo se</option>
 						</select>
 					</div>
 				</div>
