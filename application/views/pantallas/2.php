@@ -52,14 +52,14 @@
 						<select name="municipio4" required>
 							<option value="" disabled selected>Elige una opción</option>
 						</select>
-						<label>Municipio</label>	
+						<label>Municipio</label>
     				</div>
 
     				<div class="input-field col s3" id="del4">
 						<select name="delegacion4" required>
 							<option value="" disabled selected>Elige una opción</option>
 						</select>
-						<label>Delegación</label>	
+						<label>Delegación</label>
     				</div>
 				</div>
 				<!--Fin Fila 2-->
@@ -272,14 +272,14 @@
 						<select name="municipio5" required>
 							<option value="" disabled selected>Elige una opción</option>
 						</select>
-						<label>Municipio</label>	
+						<label>Municipio</label>
     				</div>
 
     				<div class="input-field col s3" id="del5">
 						<select name="delegacion5" required>
 							<option value="" disabled selected>Elige una opción</option>
 						</select>
-						<label>Delegación</label>	
+						<label>Delegación</label>
     				</div>
 				</div>
 				<!--Fin Fila 9-->
@@ -341,7 +341,7 @@
 					        <span>Secundaria incompleta</span>
 					      </label>
     				</div>
-					
+
 					<div class="col s3">
     					<label>
 					        <input class="with-gap" name="grupo2" type="radio"  />
@@ -363,7 +363,7 @@
 					        <span>Bachillerato concluido</span>
 					      </label>
     				</div>
-    				
+
     				<div class="col s3">
     					<label>
 					        <input class="with-gap" name="grupo2" type="radio"  />
@@ -449,6 +449,109 @@
 					</div>
 				</div>
 				<!--Fin Fila 13-->
+        <!--ADICCIÓN TABLA DE DATOS FAMILIARES-->
+        <!--Encabezado-->
+        <ul class="collection with-header"><li class="collection-header grey lighten-2"><h5 class="center">DATOS FAMILIARES   <a href="#datosFamiliares" class="btn-floating btn-large waves-effect waves-light teal accent-3 modal-trigger"><i class="material-icons">add</i></a>       </h5><p class="center">(Únicamente proporcione los datos de las personas que viven en la misma casa)</p></li></ul>
+        <table class="responsive-table" id="tablaFamiliares">
+              <thead class="orange">
+                <tr>
+                    <th>Apellido Paterno</th>
+                    <th>Apellido Materno</th>
+                    <th>Nombre</th>
+                    <th>Sexo</th>
+                    <th>Edad</th>
+                    <th>Ocupación</th>
+                    <th>Parentesco</th>
+                    <th>Grado máx de estudios</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td>Alvin</td>
+                  <td>Eclair</td>
+                  <td>$0.87</td>
+                </tr>
+                <tr>
+                  <td>Alan</td>
+                  <td>Jellybean</td>
+                  <td>$3.76</td>
+                </tr>
+                <tr>
+                  <td>Jonathan</td>
+                  <td>Lollipop</td>
+                  <td>$7.00</td>
+                </tr>
+              </tbody>
+            </table>
+    </ul>
+    </div>
+
+  <div class="modal" id="datosFamiliares">
+    <h5 class="modal-close right">&#10005;</h5>
+    <div class="modal-content center">
+      <h4>Datos familiares</h4><br>
+        <?php echo form_open(""); ?>
+        <div class="input-field">
+          <i class="material-icons prefix">person</i>
+          <input type="text" id="ape" name="apellidos" class="validate" required>
+          <label for="ape">Apellidos</label>
+          <span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
+        </div><br>
+
+        <div class="input-field">
+          <i class="material-icons prefix">perm_identity</i>
+          <input type="text" id="nom2" name="nombre2" class="validate" required>
+          <label for="nom2">Nombres</label>
+          <span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
+        </div><br>
+
+        <div class="input-field">
+          <i class="material-icons prefix">timer</i>
+          <input type="number" id="ed" name="edad1" max="100" min="1" required step="1" class="validate">
+          <label for="ed">Edad</label>
+          <span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
+        </div><br>
+
+        <div class="input-field">
+          <i class="material-icons prefix">work</i>
+          <input type="text" id="ocu2" name="ocupacion2" class="validate" required>
+          <label for="ocu2">Ocupacion</label>
+          <span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
+        </div><br>
+
+        <div class="input-field">
+          <i class="material-icons prefix">group</i>
+          <input type="text" id="par" name="parentesco1" class="validate" required>
+          <span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
+          <label for="par">Parentesco</label>
+        </div><br>
+
+        <div class="input-field">
+          <i class="material-icons prefix">school</i>
+          <input type="text" id="est" name="estudios1" class="validate" required>
+          <label for="est">Grado máximo de estudios</label>
+          <span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
+        </div><br>
+
+        <div>
+          <i class="material-icons prefix">wc</i><br />
+          <label>
+                <input class="with-gap" name="sexo2" type="radio" value="F"/>
+                <span>Femenino</span>
+              </label>
+
+              <label>
+                <input class="with-gap" name="sexo2" type="radio" value="M"/>
+                <span>Masculino</span>
+              </label>
+        </div><br />
+
+        <input type="submit" value="Guardar" class="btn btn-large">
+      <?php echo form_close(); ?>
+    </div>
+  </div>
+        <!--Continua normal-->
 				<!--Encabezado-->
 				<ul class="collection with-header">
 	        	<li class="collection-header grey lighten-2"><h5 class="center">INGRESOS FAMILIARES</h5></li></ul>
