@@ -115,7 +115,7 @@
 <div class="modal" id="login">
     <h5 class="modal-close right">&#10005;</h5>
     <div class="modal-content center">
-      <h4>Login form</h4><br>
+      <h4>Pantalla de Logueo</h4><br>
       <!--<form action="">-->
         <?php echo form_open("admin/index"," id=loginF"); ?>
         <div class="input-field">
