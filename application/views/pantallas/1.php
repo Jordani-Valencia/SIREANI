@@ -7,13 +7,15 @@
     </div>
   </nav>
 
+<script type="text/javascript" src="<?php echo base_url();?>/assets/js/val.js"></script> <!--Validacion de los select--> 
+
 	<div class="container">
 		<div class="row">
 	      <ul class="collection with-header">
 	        <li class="collection-header grey lighten-2"><h4 class="center">DATOS GENERALES DEL ESTUDIANTE</h4>
 	        	<p class="center">Los datos que proporcione será utilizados únicamente en el área de Orientación</p></li>
 			<!--Inicio del formulario-->
-			<form action="../CInserciones/datosGenerales" method="post" class="col s12" id="form1">
+			<form action="../CInserciones/datosGenerales" method="post" class="col s12" id="form1" onsubmit="return validar()">
 				<!-- Inicio Fila 1-->
 				<div class="row">
 					<div class="input-field col s4">
@@ -66,7 +68,7 @@
 				<!--Inicio Fila 3-->
 				<div class="row">
     				<div class="input-field col s4">
-							<select class="" name="entidad1" required>
+							<select class="" name="entidad1" id="uno">
 								<option value="" disabled selected>Elige una opción</option>
 								<option value=1>Aguascalientes</option>
 								<option value=2>Baja California</option>
@@ -108,13 +110,13 @@
 <!-------------------------------------->
     				<div class="input-field col s4" id="mun">
 							<input class="validate" id="municipio1" type="text" name="municipio1" required>
-						<label>Municipio</label>
+						<label for="municipio1">Municipio</label>
 						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
     				</div>
 
     				<div class="input-field col s4" id="del">
 						<input class="validate" id="delegacion1" type="text" name="delegacion1" required>
-						<label>Delegación</label>
+						<label for="delegacion1">Delegación</label>
 						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
     				</div>
 						<!-------------------------------------->
@@ -122,8 +124,8 @@
 				<!--Fin Fila 3-->
 				<!--Inicio Fila 4-->
 				<div class="row">
-					<div class="input-field col s4" >
-    					<select name="pais_n">
+					<div class="input-field col s4">
+    					<select name="pais_n" id="dos">
       						<option value="" disabled selected>Elige una opción</option>
       						<option value="Alemania">Alemania</option>
       						<option value="Francia">Francia</option>
@@ -142,8 +144,8 @@
     					<label>País</label>
     				</div>
 
-					<div class="input-field col s4" id="nacionalidad1" name="nacionalidad1" required>
-    					<select name="nacion_n" required>
+					<div class="input-field col s4" id="nacionalidad1" name="nacionalidad1">
+    					<select name="nacion_n" id="tres">
       						<option value="" disabled selected>Elige una opción</option>
       						<option value="Alemán">Alemán</option>
       						<option value="Frances">Francés</option>
@@ -189,7 +191,7 @@
 				<!--Fila nueva-->
 				<div class="row">
 					<div class="input-field col s4">
-						<select class="" name="entidad2" required>
+						<select class="" name="entidad2" id="cuatro">
 							<option value="" disabled selected>Elige una opción</option>
 							<option value=1>Aguascalientes</option>
 							<option value=2>Baja California</option>
@@ -243,7 +245,7 @@
 				<!--Inicio Fila 6-->
 				<div class="row">
 					<div class="input-field col s4">
-    					<select name="turno1">
+    					<select name="turno1" id="cinco">
       						<option value="" disabled selected>Elige una opción</option>
       						<option value="1">Matutino</option>
 					      	<option value="2">Vespertino</option>
@@ -366,7 +368,7 @@
 				<!--Fin Fila 10-->
 				<!--Inicio Fila 11-->
 				<div class="input-field col s3">
-					<select class="" name="entidad3" required>
+					<select class="" name="entidad3" id="seis">
 						<option value="" disabled selected>Elige una opción</option>
 						<option value=1>Aguascalientes</option>
 						<option value=2>Baja California</option>

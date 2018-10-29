@@ -14,7 +14,6 @@
     $('.tabs').tabs();
     $('.chips').chips();
 
-
     $('input.autocomplete').autocomplete({
       data: {
         "Aguascalientes": '../assets/img/aguascalientes.png',
