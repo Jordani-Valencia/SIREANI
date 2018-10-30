@@ -266,13 +266,13 @@
 						<h7>¿Recibió alguna beca?</h7>
 						 <div class="switch">
 							<label>No
-					      <input type="checkbox" name="beca1">
+					      <input type="checkbox" name="beca1" onchange="checkbeca()">
 					      <span class="lever"></span>Sí</label>
 					  </div>
 	    			</div>
 
 	    			<div class="input-field col s8">
-						<input class="validate" id="esp1" type="text" name="especificar1">
+						<input class="validate" id="esp1" type="text" name="especificar1" >
 						<label for="esp1">Especificar</label>
 						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
 					</div>

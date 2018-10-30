@@ -42,8 +42,11 @@ class CInserciones extends CI_Controller {
     $id_alumno=0;
     $res=$this->MInserciones->insertaDatosGenerales($datos_generales);
     $id_alumno=$res->id_alumno;
-		$this->session->set_userdata($id_alumno);
-
+    //////////////////////////////////////
+    $arrSess=array('id' => $id_alumno,
+                    'curp'=>$res->curp);
+		$this->session->set_userdata($arrSess);
+    //////////////////////////////////////
     if (isset($_POST['beca1'])) {
       if ($_POST['beca1']=="on") {
         $beca=array("id_alumno_ab" => $id_alumno,
@@ -80,6 +83,7 @@ class CInserciones extends CI_Controller {
 
     $this->MInserciones->setDomicilio($domicilio);
 
+    redirect(base_url().'registro/tres');
   }
 
 

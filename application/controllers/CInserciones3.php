@@ -12,27 +12,27 @@ class CInserciones3 extends CI_Controller {
 
 	public function ambienteSocioEconomico(){
 
-    $agua=isset($_POST['agua'])?1:0;
-    $drenaje=isset($_POST['drenaje'])?1:0;
-    $electricidad=isset($_POST['electricidad'])?1:0;
-    $lavadora=isset($_POST['lavadora'])?1:0;
-    $estufa=isset($_POST['estufa'])?1:0;
-    $horno=isset($_POST['horno'])?1:0;
-    $refrigerador=isset($_POST['refrigerador'])?1:0;
-    $telefono=isset($_POST['linea'])?1:0;
-    $computadora=isset($_POST['computadora'])?1:0;
-    $laptop=isset($_POST['laptop'])?1:0;
-    $tableta1=isset($_POST['tableta1'])?1:0;
-    $internet=isset($_POST['internetAS'])?1:0;
     $tv=isset($_POST['television'])?1:0;
+    $tvs=isset($_POST['televisores'])?1:0;
     $vhs=isset($_POST['vhs'])?1:0;
     $dvd=isset($_POST['dvd'])?1:0;
+    $agua=isset($_POST['agua'])?1:0;
     $blue=isset($_POST['blue'])?1:0;
-    $rep_personal=isset($_POST['reproductor'])?1:0;
-    $tableta2=isset($_POST['tableta2'])?1:0;
-    $laptop2=isset($_POST['laptop2'])?1:0;
+    $horno=isset($_POST['horno'])?1:0;
     $focos=isset($_POST['focos'])?1:0;
-    $tvs=isset($_POST['televisores'])?1:0;
+    $laptop=isset($_POST['laptop'])?1:0;
+    $estufa=isset($_POST['estufa'])?1:0;
+    $drenaje=isset($_POST['drenaje'])?1:0;
+    $laptop2=isset($_POST['laptop2'])?1:0;
+    $lavadora=isset($_POST['lavadora'])?1:0;
+    $telefono=isset($_POST['linea'])?1:0;
+    $tableta1=isset($_POST['tableta1'])?1:0;
+    $internet=isset($_POST['internetAS'])?1:0;
+    $tableta2=isset($_POST['tableta2'])?1:0;
+    $computadora=isset($_POST['computadora'])?1:0;
+    $refrigerador=isset($_POST['refrigerador'])?1:0;
+    $electricidad=isset($_POST['electricidad'])?1:0;
+    $rep_personal=isset($_POST['reproductor'])?1:0;
 
     $alumno=$this->session->userdata('id');
 

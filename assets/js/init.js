@@ -6,7 +6,7 @@
     $('.datepicker').datepicker({
     	selectMonths: true,
     	selectYears:30,
-    	format: 'dd-mm-yyyy'});
+    	format: 'yyyy-mm-dd'});
     $('select').formSelect();
     $('.timepicker').timepicker();
     $('.modal').modal();
@@ -56,6 +56,10 @@
 
 function mayus(e){
     e.value=e.value.toUpperCase();
+}
+
+function checkbeca(){
+  document.getElementById('esp1').disabled=TRUE;
 }
 
 //login
