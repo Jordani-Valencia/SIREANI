@@ -7,13 +7,15 @@
     </div>
   </nav>
 
+<script type="text/javascript" src="<?php echo base_url();?>/assets/js/val.js"></script> <!--Validacion de los select--> 
+
 	<div class="container">
 		<div class="row">
 	      <ul class="collection with-header">
 	        <li class="collection-header grey lighten-2"><h4 class="center">DATOS GENERALES DEL ESTUDIANTE</h4>
 	        	<p class="center">Los datos que proporcione será utilizados únicamente en el área de Orientación</p></li>
 			<!--Inicio del formulario-->
-			<form action="../CInserciones/datosGenerales" method="post" class="col s12" id="form1">
+			<form action="../CInserciones/datosGenerales" method="post" class="col s12" id="form1" onsubmit="return validar()">
 				<!-- Inicio Fila 1-->
 				<div class="row">
 					<div class="input-field col s4">
@@ -66,7 +68,7 @@
 				<!--Inicio Fila 3-->
 				<div class="row">
     				<div class="input-field col s4">
-							<select class="" name="entidad1" required>
+							<select class="" name="entidad1" id="uno">
 								<option value="" disabled selected>Elige una opción</option>
 								<option value=1>Aguascalientes</option>
 								<option value=2>Baja California</option>
@@ -108,13 +110,13 @@
 <!-------------------------------------->
     				<div class="input-field col s4" id="mun">
 							<input class="validate" id="municipio1" type="text" name="municipio1" required>
-						<label>Municipio</label>
+						<label for="municipio1">Municipio</label>
 						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
     				</div>
 
     				<div class="input-field col s4" id="del">
 						<input class="validate" id="delegacion1" type="text" name="delegacion1" required>
-						<label>Delegación</label>
+						<label for="delegacion1">Delegación</label>
 						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
     				</div>
 						<!-------------------------------------->
@@ -122,8 +124,8 @@
 				<!--Fin Fila 3-->
 				<!--Inicio Fila 4-->
 				<div class="row">
-					<div class="input-field col s4" >
-    					<select name="pais_n">
+					<div class="input-field col s4">
+    					<select name="pais_n" id="dos">
       						<option value="" disabled selected>Elige una opción</option>
       						<option value="Alemania">Alemania</option>
       						<option value="Francia">Francia</option>
@@ -142,8 +144,8 @@
     					<label>País</label>
     				</div>
 
-					<div class="input-field col s4" id="nacionalidad1" name="nacionalidad1" required>
-    					<select name="nacion_n" required>
+					<div class="input-field col s4" id="nacionalidad1" name="nacionalidad1">
+    					<select name="nacion_n" id="tres">
       						<option value="" disabled selected>Elige una opción</option>
       						<option value="Alemán">Alemán</option>
       						<option value="Frances">Francés</option>
@@ -189,7 +191,7 @@
 				<!--Fila nueva-->
 				<div class="row">
 					<div class="input-field col s4">
-						<select class="" name="entidad2" required>
+						<select class="" name="entidad2" id="cuatro">
 							<option value="" disabled selected>Elige una opción</option>
 							<option value=1>Aguascalientes</option>
 							<option value=2>Baja California</option>
@@ -243,7 +245,7 @@
 				<!--Inicio Fila 6-->
 				<div class="row">
 					<div class="input-field col s4">
-    					<select name="turno1">
+    					<select name="turno1" id="cinco">
       						<option value="" disabled selected>Elige una opción</option>
       						<option value="1">Matutino</option>
 					      	<option value="2">Vespertino</option>
@@ -366,7 +368,7 @@
 				<!--Fin Fila 10-->
 				<!--Inicio Fila 11-->
 				<div class="input-field col s3">
-					<select class="" name="entidad3" required>
+					<select class="" name="entidad3" id="seis">
 						<option value="" disabled selected>Elige una opción</option>
 						<option value=1>Aguascalientes</option>
 						<option value=2>Baja California</option>
@@ -437,118 +439,6 @@
 					</div>
 				</div>
 				<!--Fin Fila 11-->
-				<!--Encabezado-->
-				<ul class="collection with-header"><li class="collection-header grey lighten-2"><h5 class="center">DATOS FAMILIARES   <a href="#datosFamiliares" class="btn-floating btn-large waves-effect waves-light teal accent-3 modal-trigger"><i class="material-icons">add</i></a>       </h5><p class="center">(Únicamente proporcione los datos de las personas que viven en la misma casa)</p></li></ul>
-				<table class="responsive-table" id="tablaFamiliares">
-			        <thead class="orange">
-			          <tr>
-			              <th>Apellido Paterno</th>
-			              <th>Apellido Materno</th>
-			              <th>Nombre</th>
-			              <th>Sexo</th>
-			              <th>Edad</th>
-			              <th>Ocupación</th>
-			              <th>Parentesco</th>
-			              <th>Grado máx de estudios</th>
-			          </tr>
-			        </thead>
-
-			        <tbody>
-			          <tr>
-			            <td>Alvin</td>
-			            <td>Eclair</td>
-			            <td>$0.87</td>
-			          </tr>
-			          <tr>
-			            <td>Alan</td>
-			            <td>Jellybean</td>
-			            <td>$3.76</td>
-			          </tr>
-			          <tr>
-			            <td>Jonathan</td>
-			            <td>Lollipop</td>
-			            <td>$7.00</td>
-			          </tr>
-			        </tbody>
-      			</table>
-
-      			<div class="row center">
-					<input type="submit" value="Guardar/Siguiente" class="btn btn-large center">
-				</div>
-			</form><!------------------------------------------------------>
-			<!------------------------------------------------------>
-			<!------------------------------------------------------>
-			<!------------------------------------------------------>
-			<!------------------------------------------------------>
-			<!------------------------------------------------------>
-			<!------------------------------------------------------>
-			<!------------------------------------------------------>
-			<!--Fin del formulario-->
-		</ul>
+				<div class="row center">
+			<input type="submit" value="Guardar/Siguiente" class="btn btn-large center">
 		</div>
-	</div> <!--Fin del contenedor-->
-
-	<div class="modal" id="datosFamiliares">
-	  <h5 class="modal-close right">&#10005;</h5>
-	  <div class="modal-content center">
-	    <h4>Datos familiares</h4><br>
-	      <?php echo form_open(""); ?>
-	      <div class="input-field">
-	        <i class="material-icons prefix">person</i>
-	        <input type="text" id="ape" name="apellidos" class="validate" required>
-	        <label for="ape">Apellidos</label>
-	        <span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
-	      </div><br>
-
-	      <div class="input-field">
-	        <i class="material-icons prefix">perm_identity</i>
-	        <input type="text" id="nom2" name="nombre2" class="validate" required>
-	        <label for="nom2">Nombres</label>
-	        <span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
-	      </div><br>
-
-	      <div class="input-field">
-	        <i class="material-icons prefix">timer</i>
-	        <input type="number" id="ed" name="edad1" max="100" min="1" required step="1" class="validate">
-	        <label for="ed">Edad</label>
-	        <span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
-	      </div><br>
-
-	      <div class="input-field">
-	        <i class="material-icons prefix">work</i>
-	        <input type="text" id="ocu2" name="ocupacion2" class="validate" required>
-	        <label for="ocu2">Ocupacion</label>
-	        <span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
-	      </div><br>
-
-	      <div class="input-field">
-	        <i class="material-icons prefix">group</i>
-	        <input type="text" id="par" name="parentesco1" class="validate" required>
-	        <span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
-	        <label for="par">Parentesco</label>
-	      </div><br>
-
-	      <div class="input-field">
-	        <i class="material-icons prefix">school</i>
-	        <input type="text" id="est" name="estudios1" class="validate" required>
-	        <label for="est">Grado máximo de estudios</label>
-	        <span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
-	      </div><br>
-
-	      <div>
-	        <i class="material-icons prefix">wc</i><br />
-	        <label>
-	              <input class="with-gap" name="sexo2" type="radio" value="F"/>
-	              <span>Femenino</span>
-	            </label>
-
-	            <label>
-	              <input class="with-gap" name="sexo2" type="radio" value="M"/>
-	              <span>Masculino</span>
-	            </label>
-	      </div><br />
-
-	      <input type="submit" value="Guardar" class="btn btn-large">
-	    <?php echo form_close(); ?>
-	  </div>
-	</div>

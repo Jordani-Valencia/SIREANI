@@ -24,3 +24,22 @@
     <img src="<?php echo base_url(); ?>assets/img/cecyto.png" alt="Contact Person" width="500" height="500">
     Bienvenido Administrador !!!
   </div>
+
+<script type="text/javascript" src="<?php echo base_url();?>/assets/js/jquery-3.3.1.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/datatable/datatables.min.css"/>
+  <script type="text/javascript" src="<?php echo base_url();?>assets/datatable/datatables.min.js"></script>
+
+<div class="container">
+
+</div>
+  <table id="tabla-alumno" class="responsive-table">
+    <thead class="orange">
+      <tr>
+        <td>Id alumno</td>
+        <td>Nombre</td>
+        <td>Apellido paterno</td>
+        <td>Apellido materno</td>
+      </tr>
+    </thead>
+  </table>
+</div>

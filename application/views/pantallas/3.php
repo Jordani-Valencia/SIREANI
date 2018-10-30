@@ -223,7 +223,7 @@
 				<!--Fin Fila5-->
 				<!--Inicio Fila Fila6-->
 				<div class="row">
-					<div class="col s6">
+					<div class="input-field col s6">
     					<select name="focos">
       						<option value="" disabled selected>Elige una opción</option>
       						<option value="1">1</option>
@@ -236,7 +236,7 @@
     					<label>¿Cuántos focos hay dentro de su vivienda?</label>
     				</div>
 
-    				<div class="col s6">
+    				<div class="input-field col s6">
     					<select name="televisores">
       						<option value="" disabled selected>Elige una opción</option>
       						<option value="1">1</option>
