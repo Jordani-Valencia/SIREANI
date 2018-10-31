@@ -38,6 +38,7 @@ class Admin extends CI_Controller {
 	public function prinAdmin(){
 		$this->load->view('pantallas/encabezado');
 		$this->load->view('pantallas/principalAdmin');
+		$this->load->view('pantallas/dataTable',array());
 		$this->load->view('pantallas/footer');
 	}
 

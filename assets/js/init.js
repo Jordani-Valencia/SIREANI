@@ -14,9 +14,6 @@
     $('.tabs').tabs();
     $('.chips').chips();
 
-    $('#tabla-alumno').DataTable();
-
-
     $('input.autocomplete').autocomplete({
       data: {
         "Aguascalientes": '../assets/img/aguascalientes.png',
