@@ -22,10 +22,11 @@ class CPrueba extends CI_Controller {
          foreach($al->result() as $r) {
 
               $data[] = array(
-                   $r->id,
-                   $r->nombre,
-                   $r->paterno,
-                   $r->materno
+                   $r->curp,
+                   $r->nombre_al,
+                   $r->paterno_al,
+                   $r->materno_al,
+                   "<input type='button' value='Editar' href='contrlador/funcion/'>"
               );
          }
 
