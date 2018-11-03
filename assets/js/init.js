@@ -13,6 +13,7 @@
     $('input#curp, input#tel, input#cel, input#cur, input#tel2, input#tel3, input#cel2, input#cu, input#tel4, input#tel5, input#cel3, input#c').characterCounter();
     $('.tabs').tabs();
     $('.chips').chips();
+    $('.slider').slider();
 
     $('input.autocomplete').autocomplete({
       data: {
