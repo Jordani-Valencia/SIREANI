@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-class MPrueba extends CI_Model
+class MadminAlumnos extends CI_Model
 {
   function __construct()
   {
@@ -9,7 +9,7 @@ class MPrueba extends CI_Model
 
   }
 
-  function getalumnos(){
+  public function obtenerAlumnos(){
     return $this->db->get("alumno");
   }
 }
