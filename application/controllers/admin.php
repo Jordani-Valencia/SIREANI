@@ -44,42 +44,7 @@ class Admin extends CI_Controller {
 	public function adminUno(){
 		$this->load->view('pantallas/encabezado');
 		$this->load->view('pantallas/navbar');
-		$this->load->view('pantallas/datosUno');
-		$this->load->view('pantallas/footer');
-	}
-
-	public function adminDos(){
-		$this->load->view('pantallas/encabezado');
-		$this->load->view('pantallas/navbar');
-		$this->load->view('pantallas/datosDos');
-		$this->load->view('pantallas/footer');
-	}
-
-	public function adminTres(){
-		$this->load->view('pantallas/encabezado');
-		$this->load->view('pantallas/navbar');
-		$this->load->view('pantallas/datosTres');
-		$this->load->view('pantallas/footer');
-	}
-
-	public function adminCuatro(){
-		$this->load->view('pantallas/encabezado');
-		$this->load->view('pantallas/navbar');
-		$this->load->view('pantallas/datosCuatro');
-		$this->load->view('pantallas/footer');
-	}
-
-	public function adminCinco(){
-		$this->load->view('pantallas/encabezado');
-		$this->load->view('pantallas/navbar');
-		$this->load->view('pantallas/datosCinco');
-		$this->load->view('pantallas/footer');
-	}
-
-	public function adminSeis(){
-		$this->load->view('pantallas/encabezado');
-		$this->load->view('pantallas/navbar');
-		$this->load->view('pantallas/datosSeis');
+		$this->load->view('pantallas/actualizarAdmin');
 		$this->load->view('pantallas/footer');
 	}
 }
