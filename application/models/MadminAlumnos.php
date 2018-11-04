@@ -12,5 +12,9 @@ class MadminAlumnos extends CI_Model
   public function obtenerAlumnos(){
     return $this->db->get("alumno");
   }
+
+  public function nombre($id){
+    return $this->db->query("SELECT nombre_al FROM alumno WHERE id_alumno=$id");
+  }
 }
 ?>
