@@ -109,9 +109,9 @@
         <div class="col l4 s12">
           <h5 class="white-text">Sitios de interés</h5>
           <ul>
-            <li><a class="grey-text text-darken-3" href="http://edomex.gob.mx/">Portal del gobierno del Estado de México</a></li>
-            <li><a class="grey-text text-darken-3" href="http://cecytem.edomex.gob.mx/">Portal CECYTEM</a></li>
-            <li><a class="grey-text text-darken-3" href="https://consultas.curp.gob.mx/CurpSP/inicio2_2.jsp">Consulta de CURP</a></li>
+            <li><a class="grey-text text-darken-3" href="http://edomex.gob.mx/" target="_blank">Portal del gobierno del Estado de México</a></li>
+            <li><a class="grey-text text-darken-3" href="http://cecytem.edomex.gob.mx/" target="_blank">Portal CECYTEM</a></li>
+            <li><a class="grey-text text-darken-3" href="https://consultas.curp.gob.mx/CurpSP/inicio2_2.jsp" target="_blank">Consulta de CURP</a></li>
           </ul>
 
         </div>

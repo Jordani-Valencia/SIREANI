@@ -27,7 +27,7 @@
         <th>Nombre</th>
         <th>Apellido paterno</th>
         <th>Apellido materno</th>
-        <th>Editar</th>
+        <th class="center">Editar</th>
       </tr>
     </thead>
   </table>

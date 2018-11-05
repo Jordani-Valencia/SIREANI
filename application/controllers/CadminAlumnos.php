@@ -19,7 +19,7 @@ class CadminAlumnos extends CI_Controller {
           $r->nombre_al,
           $r->paterno_al,
           $r->materno_al,
-          "<a href='adminAlumnos/$r->id_alumno' class='btn'>Editar</a>"
+          "<a href='adminAlumnos/$r->id_alumno' class='btn red accent-3 center'>Editar</a>"
           );
          }
 
