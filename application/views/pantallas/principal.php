@@ -35,10 +35,24 @@
       <br><br>
       <h1 class="header center blue-grey-text">Colegio de Estudios Científicos Y Tecnológicos del Estado de México</h1></h1>
       <div class="row center">
-        <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
-      </div>
-      <div class="row center">
-        <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light orange">Get Started</a>
+        <div class="col s12">
+          <div class="slider">
+            <ul class="slides">
+              <li>
+                <img src="<?php echo base_url();?>/assets/img/CECYTEM.jpg">
+              </li>
+              <li>
+                <img src="<?php echo base_url();?>/assets/img/cecyto1.jpeg">    
+              </li>
+              <li>
+                <img src="<?php echo base_url();?>/assets/img/cecyto2.png">    
+              </li>
+              <li>
+                <img src="<?php echo base_url();?>/assets/img/cecyto3.jpeg">
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
       <br><br>
     </div>
@@ -105,7 +119,7 @@
     </div>
     <div class="footer-copyright">
       <div class="container">
-      Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+      Sistema Elaborado por: <a class="orange-text text-lighten-3" href="#">Ing. Ruben Sandoval Valencia e Ing. Jordani Valencia Rosas</a>
       </div>
     </div>
   </footer>
