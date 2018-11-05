@@ -19,7 +19,7 @@
 					<!--Encabezado-->
 	        <li class="collection-header grey lighten-2"><h5 class="center">PROYECTO DE VIDA</h5>
 			<!--Inicio del formulario-->
-			<form action="" class="col s12">
+			<form action="../CInserciones6/proyVida" method="post" class="col s12">
 				<div class="row"><br>
 					<div class="center col s12"><h5 class="collection">¿Por qué decidió estudiar su bachillerato en CECYTEM? (Seleccione al menos tres opciones)</h5></div>
 				</div>
@@ -251,7 +251,7 @@
 	        	<h7>9.- En la secundaria me molestaban con frecuencia otro u otros compañeros (burlas, intimidación, golpes, extorsiones, etc.).</h7>
 							<div class="switch">
 					    		<label>Falso
-					      		<input type="checkbox">
+					      		<input type="checkbox" name="molestaban">
 					      		<span class="lever"></span>
 					      		Verdadero</label>
 						</div>

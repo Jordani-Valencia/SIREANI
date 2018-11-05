@@ -34,7 +34,8 @@ class CInserciones4 extends CI_Controller {
     $ejercicio=array(
       "alumno"=>$alumno,
       "frecuencia"=>$_POST['ejercicio'],
-        "practica_deporte"=>$_POST['deporte']);//verificar
+        "practica_deporte"=>isset($_POST['deporte'])?1:0
+      );//verificar
     $id_deporte=$this->MInserciones4->insetar_deporte($ejercicio);
     $id_dep=$id_deporte->id_ejer_dep;
 
@@ -130,21 +131,21 @@ class CInserciones4 extends CI_Controller {
 
     $habitos_deporte = array('alumno' =>$alumno,
       'fuma'=>isset($_POST['fuma'])?1:0,
-      'cant_cigarros'=>isset($_POST['fuma'])?$_POST['frecfuma']:0,
+      'cant_cigarros'=>isset($_POST['fuma'])?$_POST['frecfuma']:7,
       'amigo_adiccion'=>isset($_POST['adiccion'])?1:0,
-      'adiccion'=>isset($_POST['adiccion'])?$_POST['especificar9']:"-",
+      'adiccion'=>isset($_POST['adiccion'])?$_POST['especificar9']:null,
       'consumen_droga'=>isset($_POST['droga'])?1:0,
-      'droga'=>isset($_POST['droga'])? $_POST['especificar10']:0,
+      'droga'=>isset($_POST['droga'])? $_POST['especificar10']:7,
       'consume_cerveza'=>isset($_POST['cerveza'])?1:0,
-      'cerveza'=>isset($_POST['cerveza'])?$_POST['freccerveza']:0,
+      'cerveza'=>isset($_POST['cerveza'])?$_POST['freccerveza']:7,
       'consume_vino'=>isset($_POST['vino'])?1:0,
-      'vinos'=>isset($_POST['vino'])?$_POST['frecvino']:0,
+      'vinos'=>isset($_POST['vino'])?$_POST['frecvino']:7,
       'consume_coctel'=>isset($_POST['coctel'])?1:0,
-      'cocteles'=>isset($_POST['coctel'])?$_POST['freccoctel']:0,
+      'cocteles'=>isset($_POST['coctel'])?$_POST['freccoctel']:7,
       'consume_licor'=>isset($_POST['licor'])?1:0,
-      'licores'=>isset($_POST['licor'])?$_POST['freclicor']:0,
+      'licores'=>isset($_POST['licor'])?$_POST['freclicor']:7,
       'consume_otro'=>isset($_POST['otro1'])?1:0,
-      'otros'=>isset($_POST['otro1'])?$_POST['frecotro']:0);
+      'otros'=>isset($_POST['otro1'])?$_POST['frecotro']:7);
 
       $this->MInserciones4->insertHabitoConsumo($habitos_deporte);
 
