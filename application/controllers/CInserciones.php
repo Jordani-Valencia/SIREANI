@@ -83,7 +83,7 @@ class CInserciones extends CI_Controller {
 
     $this->MInserciones->setDomicilio($domicilio);
 
-    redirect(base_url().'registro/tres');
+    redirect(base_url().'registro/dos');
   }
 
 

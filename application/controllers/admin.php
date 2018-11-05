@@ -32,7 +32,7 @@ class Admin extends CI_Controller {
 			}else{
 			echo "error";
 		}
-		}
+	}
 
 
 	public function prinAdmin(){

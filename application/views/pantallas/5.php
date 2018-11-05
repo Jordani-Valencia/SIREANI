@@ -15,7 +15,7 @@
 		<div class="row">
 	      <ul class="collection with-header">
 	        <li class="collection-header grey lighten-2"><h5 class="center">TELEFONÍA MÓVIL</h5>
-			<form action="" class="col s12">
+			<form action="../CInserciones5/sociales" method="post" class="col s12">
 				<!--Inicio Fila1-->
 				<div class="row">
 					<br>
@@ -98,31 +98,62 @@
 							<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
     				</div>
 
-    				<div class="input-field col s3" id="mun6">
-						<select name="municipio6" required>
-							<option value="" disabled selected>Elige una opción</option>
-						</select>
-						<label>Municipio</label>
+            <div class="input-field col s3" id="mun6">
+              <input class="validate" id="municipio6" type="text" name="municipio6" required>
+
+						<label for="municipio6">Municipio</label>
     				</div>
 
     				<div class="input-field col s3" id="del6">
-						<select name="delegacion6" required>
-							<option value="" disabled selected>Elige una opción</option>
-						</select>
-						<label>Delegación</label>
+						        <input class="validate" id="delegacion6" type="text" name="delegacion6" required>
+						<label for="delegacion6">Delegación</label>
     				</div>
 				</div>
 				<!--Fin Fila5-->
 				<!--Inicio Fila6-->
 				<div class="row">
-					<div class="input-field col s4">
-						<input type="text" id="ent5" class="autocomplete validate" name="entidad5" required>
-						<label for="ent5">Entidad Federativa</label>
-						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
-    			</div>
+          <div class="input-field col s4">
+              <select name="entidad6" id="ent6">
+                <option value="" disabled selected>Elige una opción</option>
+								<option value=1>Aguascalientes</option>
+								<option value=2>Baja California</option>
+								<option value=3>Baja California Sur</option>
+								<option value=4>Campeche</option>
+								<option value=5>Coahuila de Zaragoza</option>
+								<option value=6>Colima</option>
+								<option value=7>Chiapas</option>
+								<option value=8>Chihuahua</option>
+								<option value=9>Ciudad de México</option>
+								<option value=10>Durango</option>
+								<option value=11>Guanajuato</option>
+								<option value=12>Guerrero</option>
+								<option value=13>Hidalgo</option>
+								<option value=14>Jalisco</option>
+								<option value=15>México</option>
+								<option value=16>Michoacán</option>
+								<option value=17>Morelos</option>
+								<option value=18>Nayarit</option>
+								<option value=19>Nuevo León</option>
+								<option value=20>Oaxaca</option>
+								<option value=21>Puebla</option>
+								<option value=22>Querétaro</option>
+								<option value=23>Quintana Roo</option>
+								<option value=24>San Luis Potosí</option>
+								<option value=25>Sinaloa</option>
+								<option value=26>Sonora</option>
+								<option value=27>Tabasco</option>
+								<option value=28>Tamaulipas</option>
+								<option value=29>Tlaxcala</option>
+								<option value=30>Veracruz</option>
+								<option value=31>Yucatán</option>
+								<option value=32>Zacatecas</option>
+              </select>
+			          <label for="ent6">Entidad Federativa</label>
+			          <span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
+    				</div>
 
 					<div class="input-field col s4" id="pais3">
-    					<select>
+    					<select name="paisTutor">
       						<option value="" disabled selected>Elige una opción</option>
       						<option value="Alemania">Alemania</option>
       						<option value="Francia">Francia</option>
@@ -152,56 +183,86 @@
 				<!--Inicio Fila7-->
 				<div class="row">
 					<div class="col s3">
-    					<label><input class="with-gap" name="grupo4" type="radio"  />
-					     <span>Sin estudios</span></label><br>
+            <label>
+                <input class="with-gap" name="grupo4" type="radio" value="1" />
+                <span>Sin estudios</span>
+              </label>
 
-					    <label><input class="with-gap" name="grupo4" type="radio"  />
-					     <span>Primaria incompleta</span></label>
+            <label>
+                <input class="with-gap" name="grupo4" type="radio" value="2" />
+                <span>Primaria incompleta</span>
+              </label>
 
-					    <label><input class="with-gap" name="grupo4" type="radio"  />
-					     <span>Primaria concluida</span></label>
+            <label>
+                <input class="with-gap" name="grupo4" type="radio" value="3" />
+                <span>Primaria concluida</span>
+              </label>
 
-					    <label><input class="with-gap" name="grupo4" type="radio"  />
-					     <span>Secundaria incompleta</span></label>
+            <label>
+                <input class="with-gap" name="grupo4" type="radio" value="4" />
+                <span>Secundaria incompleta</span>
+              </label>
     				</div>
 
 					<div class="col s3">
-    					<label><input class="with-gap" name="grupo4" type="radio"  />
-					     <span>Secundaria concluida</span></label>
+            <label>
+                <input class="with-gap" name="grupo4" type="radio" value="5" />
+                <span>Secundaria concluida</span>
+              </label>
 
-					    <label><input class="with-gap" name="grupo4" type="radio"  />
-					     <span>Carrera Técnica</span></label>
+            <label>
+                <input class="with-gap" name="grupo4" type="radio" value="6" />
+                <span>Carrera Técnica</span>
+              </label>
 
-					    <label><input class="with-gap" name="grupo4" type="radio"  />
-					     <span>Bachillerato incompleto</span></label>
+            <label>
+                <input class="with-gap" name="grupo4" type="radio" value="7" />
+                <span>Bachillerato incompleto</span>
+              </label>
 
-					    <label><input class="with-gap" name="grupo4" type="radio"  />
-					     <span>Bachillerato concluido</span></label>
+            <label>
+                <input class="with-gap" name="grupo4" type="radio" value="8" />
+                <span>Bachillerato concluido</span>
+              </label>
     				</div>
 
     				<div class="col s3">
-    					<label><input class="with-gap" name="grupo4" type="radio"  />
-					     <span>Tec. Sup. Universitario</span></label>
+              <label>
+					        <input class="with-gap" name="grupo4" type="radio" value="9" />
+					        <span>Tec. Sup. Universitario</span>
+					      </label>
 
-					    <label><input class="with-gap" name="grupo4" type="radio"  />
-					     <span>Licenciatura incompleta</span></label>
+					    <label>
+					        <input class="with-gap" name="grupo4" type="radio" value="10" />
+					        <span>Licenciatura incompleta</span>
+					      </label>
 
-					    <label><input class="with-gap" name="grupo4" type="radio"  />
-					     <span>Licenciatura concluida</span></label>
+					    <label>
+					        <input class="with-gap" name="grupo4" type="radio" value="11" />
+					        <span>Licenciatura concluida</span>
+					      </label>
 
-					    <label><input class="with-gap" name="grupo4" type="radio"  />
-					     <span>Especialidad</span></label>
+					    <label>
+					        <input class="with-gap" name="grupo4" type="radio" value="12" />
+					        <span>Especialidad</span>
+					      </label>
     				</div>
 
     				<div class="col s3">
-    					<label><input class="with-gap" name="group1" type="radio"  />
-					     <span>Maestría</span></label><br>
+              <label>
+					        <input class="with-gap" name="grupo4" type="radio" value="13" />
+					        <span>Maestría</span><br>
+					      </label>
 
-					    <label><input class="with-gap" name="group1" type="radio"  />
-					     <span>Doctorado</span></label><br>
+					    <label>
+					        <input class="with-gap" name="grupo4" type="radio" value="14" />
+					        <span>Doctorado</span><br>
+					      </label>
 
-					    <label><input class="with-gap" name="group1" type="radio"  />
-					     <span>Otro</span></label>
+					    <label>
+					        <input class="with-gap" name="grupo4" type="radio" value="15" />
+					        <span>Otro</span>
+					      </label>
 
 							<div class="input-field cols3">
 								<input class="validate" id="gradoesp" type="text" name="especificar14">
@@ -291,7 +352,7 @@
 				<!--Inicio Fila12-->
 				<div class="row">
 					<div class="input-field col s4">
-						<input class="validate" id="novio" type="number" step="1" max="100" min="1">
+						<input class="validate" id="novio" type="number" step="1" max="100" min="1" name="primernovio">
 						<label for="novio">¿A qué edad tuvo su primer noviazgo?</label>
 						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
 					</div>
@@ -315,13 +376,19 @@
 				<!--Fin Fila12-->
 				<!--Inicio Fila13-->
 				<div class="row">
-					<div class="input-field col s6">
+          <div class="input-field col s4">
+						<input type="text" class="validate" id="parejas" name="parejas">
+						<label for="parejas">¿Cuántas parejas sentimentales has tenido?</label>
+						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
+					</div>
+
+					<div class="input-field col s4">
 						<input type="text" class="validate" id="pro" name="promedio2">
 						<label for="pro">En promedio ¿Cuánto tiempo ha durado con sus parejas?</label>
 						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
 					</div>
 
-					<div class="input-field col s6">
+					<div class="input-field col s4">
 						<input type="text" class="validate" id="rup" name="ruptura">
 						<label for="rup">¿Cuál ha sido el principal motivo de ruptura?</label>
 						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
@@ -561,38 +628,47 @@
 	  <h5 class="modal-close right">&#10005;</h5>
 	  <div class="modal-content center">
 	    <h4>Datos adicciones</h4><br>
-	      <?php echo form_open(""); ?>
+	      <?php echo form_open("#","id=modal33"); ?>
 	      <div class="input-field">
-			<select name="sustancia" required>
-				<option value="" disabled selected>Elige una opción</option>
-				<option value="Alcohol">Alcohol</option>
-				<option value="Cigarros">Cigarros</option>
-				<option value="Alguna droga">Algúna droga</option>
+			<select name="sustanciaModal" id="sustanciaModal" required>
+				<option value="0" disabled selected>Elige una opción</option>
+				<option value="1">Alcohol</option>
+				<option value="2">Cigarros</option>
+				<option value="3">Algúna droga</option>
 			</select>
 			<label>Algún integrante de su familia consume:</label>
 
 	      <div class="input-field">
 
-	        <input type="text" id="nom2" name="nombre2" class="validate" required>
-	        <label for="nom2">Integrante de la familia</label>
-	        <span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
+          <select id="parentescoModal" name="parentescoModal" required>
+            <option value="0" disabled selected>Familiar</option>
+            <option value="1">Padre</option>
+            <option value="2">Madre</option>
+            <option value="3">Hermano(a)</option>
+            <option value="4">Tío(a)</option>
+            <option value="5">Primo(a)</option>
+            <option value="6">Abuelo(a)</option>
+            <option value="7">Sobrino(a)</option>
+            <option value="8">Cuñado(a)</option>
+          </select>
+          <label>Familiar:</label>
 	      </div>
 
 	      <div class="input-field">
-					<select name="sustancia" required>
-						<option value="" disabled selected>Elige una opción</option>
-						<option value="Diario">Diario</option>
-						<option value="1 vez a la semana">1 vez a la semana</option>
-						<option value="3 veces a la semana">3 veces a la semana</option>
-						<option value="1 vez al mes">1 vez al mes</option>
-						<option value="Ocasionalmente">Ocasionalmente</option>
-						<option value="Casi nunca">Casi nunca</option>
-						<option value="Nunca">Nunca</option>
+					<select name="FrecuenciaModal" id="FrecuenciaModal" required>
+						<option value="0" disabled selected>Elige una opción</option>
+						<option value="15">Diario</option>
+						<option value="16">1 vez a la semana</option>
+						<option value="17">3 veces a la semana</option>
+						<option value="18">1 vez al mes</option>
+						<option value="19">Ocasionalmente</option>
+						<option value="20">Casi nunca</option>
+						<option value="21">Nunca</option>
 					</select>
 					<label>Frecuencia:</label>
 	      </div>
 
-	      <input type="submit" value="Guardar" class="btn btn-large">
+	      <input type="submit" value="Guardar" onclick="return modal3()" class="btn btn-large">
 	    <?php echo form_close(); ?>
 	  </div>
 	</div>

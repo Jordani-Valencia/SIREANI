@@ -80,11 +80,12 @@ class CInserciones3 extends CI_Controller {
         }
       }
 
-        if (isset($_POST['imss'])) {
+    if (isset($_POST['imss'])) {
           $arr_salud=array("salud"=>$id,
           "servicio"=>$_POST['imss']);
           $this->MInserciones3->serv_salud($arr_salud);
-          }
+        }
+
           if (isset($_POST['ejercito'])) {
             $arr_salud=array("salud"=>$id,
             "servicio"=>$_POST['ejercito']);
@@ -149,7 +150,7 @@ class CInserciones3 extends CI_Controller {
                       }
                     }
 
-
+            redirect(base_url().'registro/cuatro');
         }
 
 

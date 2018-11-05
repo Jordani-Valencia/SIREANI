@@ -81,3 +81,91 @@ $("#loginF").submit(function(event){
   });
 });
 //
+
+
+
+function modal1(){
+  var nombre=document.getElementById('nom2').value;
+  var paterno=document.getElementById('apeP').value;
+  var materno=document.getElementById('apeM').value;
+  var edad=document.getElementById('ed').value;
+  var ocupacion=document.getElementById('ocu2').value;
+  var parentesco=document.getElementById('parentesco1').value;
+  var grado=document.getElementById('est').value;
+  var sexo=null;
+  if (document.getElementById('sexM').checked==true) {
+    sexo="M";
+  }else if(document.getElementById('sexF').checked==true){
+    sexo="F";
+  }
+  if (nombre=="" || paterno=="" || materno=="" || edad=="" || ocupacion==""|| parentesco=="0" || grado=="0" || sexo==null) {
+    //alert("Datos incompletos, por favor llena todos los campos");
+    return false;
+  }else{
+    var datos="nombre="+nombre+"&paterno="+paterno+"&materno="+materno+"&edad="+edad+
+    "&ocupacion="+ocupacion+"&parentesco="+parentesco+"&grado="+grado+"&sexo="+sexo;
+
+    $.post(base+"CInserciones2/ajaxFamiliar",datos,function(data){
+
+    });
+    document.getElementById('nom2').value=null;
+    document.getElementById('apeP').value=null;
+    document.getElementById('apeM').value=null;
+    document.getElementById('ed').value=null;
+    document.getElementById('ocu2').value=null;
+    document.getElementById('parentesco1').value=0;
+    document.getElementById('est').value=0;
+    document.getElementById('sexM').checked=false;
+    document.getElementById('sexF').checked=false;
+
+    $("#estudios1").val(0);
+    $("#estudios1").material_select;
+    $("#parentesco1").val(0);
+    $("#parentesco1").material_select;
+    alert("hola");
+    //return false;
+  }
+}
+function modal3(){
+  var valores=$("#modal33").serialize();
+
+  $.ajax({
+    url:base+"CInserciones5/ajaxConsumo",
+    type:"POST",
+    data:valores,
+    success:function(resp){
+      alert(resp);
+    }
+  });
+  
+  return false;
+
+}
+
+function modal2(){
+  var persona=document.getElementById('ingresos2').value;
+  var ingreso=document.getElementById('ingresos3').value;
+  var porcentaje=document.getElementById('porcentaje').value;
+
+  if (persona=="" || ingreso=="" || porcentaje=="") {
+    alert("Datos incompletos, por favor llena todos los campos");
+
+  }else{
+    var datos="persona="+persona+"&ingreso="+ingreso+"&porcentaje="+porcentaje;
+
+    $.post(base+"CInserciones2/ajaxIngresos",datos,function(data){
+
+    });
+    document.getElementById('ingresos2').value=null;
+    document.getElementById('ingresos3').value=0;
+    document.getElementById('porcentaje').value=null;
+
+    $("#estudios1").val(0);
+    $("#estudios1").material_select;
+    alert("hola");
+    //return false;
+
+  }
+
+
+}
