@@ -101,7 +101,7 @@ class CInserciones6 extends CI_Controller {
       "p15"=>isset($_POST['trabajar'])?1:0);
 
     $this->MInserciones6->inserPerifl($arr_perfil);
-    redirect(base_url().'registro/generarPDF');
+    redirect(base_url().'generarPDF');
   }
 
 
