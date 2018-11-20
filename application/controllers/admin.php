@@ -47,13 +47,13 @@ class Admin extends CI_Controller {
 		$this->load->view('pantallas/actualizarAdmin');
 		$this->load->view('pantallas/footer');
 
-		$res = $this->MadminAlumnos->nombre($id);
+		/*$res = $this->MadminAlumnos->nombre($id);
 	foreach ($res->result() as $r) {
 	$data[]=array($r->nombre_al);
 	}
 	echo "<pre>";
 	print_r( $data);
-	echo "</pre>";
+	echo "</pre>";*/
 	}
 
 	public function cerrarSesion(){

@@ -100,12 +100,11 @@
 
             <div class="input-field col s3" id="mun6">
               <input class="validate" id="municipio6" type="text" name="municipio6" required>
-
 						<label for="municipio6">Municipio</label>
     				</div>
 
     				<div class="input-field col s3" id="del6">
-						        <input class="validate" id="delegacion6" type="text" name="delegacion6" required>
+						  <input class="validate" id="delegacion6" type="text" name="delegacion6" required>
 						<label for="delegacion6">Delegación</label>
     				</div>
 				</div>
