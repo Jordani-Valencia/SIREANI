@@ -423,6 +423,7 @@
               </div>
             </div>
 
+            <div class="row">
               <div class="input-field col s2">
                 <input class="validate" id="post" name="postal1" type="number" required>
                 <label for="post">Código Postal</label>
@@ -440,6 +441,7 @@
                 <label for="cel">Teléfono de celular</label>
                 <span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
               </div>
+            </div>
             <!--borrado-->
             <!--Fin Fila 11-->
             <!--ADICCIÓN TABLA DE DATOS FAMILIARES-->
@@ -3081,7 +3083,6 @@
           				</div>
           			</div>
 
-
           			<div class="row center">
           				<div class="col s3">
           					<h7>Lavar trastes</h7>
@@ -3112,6 +3113,24 @@
     					      <span></span></label>
           				</div>
           			</div>
+
+                <div class="row"> <!--Negocio familiar-->
+                  <div class="input-field col s6 center">
+        						<h7>¿Sus padres cuentan con algún negocio familiar?</h7>
+        							<div class="switch">
+        					    		<label>No
+        					      		<input type="checkbox" name="negocio" value="1">
+        					      		<span class="lever"></span>
+        					      		Sí</label>
+        							</div>
+        					</div>
+                  <div class="input-field col s6 center">
+        						<input class="validate" id="act" type="text" name="negocio2">
+        						<label for="act">¿En qué actividades del negocio familiar apoya?</label>
+        						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
+        					</div>
+                </div>
+
           			<div class="row center">
     					<input type="submit" value="Guardar/Siguiente" class="btn btn-large center">
     				</div>
