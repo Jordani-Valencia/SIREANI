@@ -73,7 +73,7 @@ $("#loginF").submit(function(event){
       if (resp=="error") {
         M.toast({html: 'Usuario o contraseña incorrectos'});
       }else{
-        window.location.href="http://localhost/SIREANI/admin/prinAdmin";
+        window.location.href="http://localhost:8181/SIREANI/admin/prinAdmin";
       }
     }
   });
@@ -135,7 +135,7 @@ function modal3(){
       alert(resp);
     }
   });
-  
+
   return false;
 
 }

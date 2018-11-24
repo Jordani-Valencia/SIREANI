@@ -18,7 +18,11 @@
 				<div class="row">
 					<div class="input-field col s4">
 						<input class="validate" id="nom3" type="text" name="nombre3" required>
+<<<<<<< HEAD
+						<label for="nom3">Nombre</label>
+=======
 						<label for="nom3">Nombre(s)</label>
+>>>>>>> 6a7f1bc7056cf4dc6ab3d15a3ee4116aea8dbb0a
 						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
 					</div>
 

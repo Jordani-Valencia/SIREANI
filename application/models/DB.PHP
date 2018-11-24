@@ -1,0 +1,135 @@
+CREATE TABLE SUCURSAL(
+	id_sucursal INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre TEXT,
+    estado TEXT,
+    calle TEXT,
+    region TEXT,
+    email TEXT,
+    telefono TEXT
+);
+
+CREATE TABLE ARTISTA(
+	id_artista INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre TEXT,
+    clasificacion TEXT(40),
+    direccion TEXT,
+    email TEXT,
+    telefono TEXT
+);
+
+CREATE TABLE CLIENTE(
+	id_cliente INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre TEXT,
+    direcciom TEXT,
+    email TEXT,
+    telefono TEXT
+);
+
+CREATE TABLE PROMOTOR(
+	id_promotor INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre TEXT,
+    direccion TEXT,
+    email TEXT,
+    telefono TEXT,
+    fecha_ingreso date,
+    sucursal_p INTEGER, CONSTRAINT fk_sucursal FOREIGN KEY (sucursal_p) REFERENCES sucursal(id_sucursal) ON UPDATE CASCADE ON DELETE NO ACTION
+);
+
+CREATE TABLE BONO(
+	id_bono INTEGER PRIMARY KEY AUTOINCREMENT,
+    fecha DATE,
+    eventos INTEGER,
+    monto FLOAT,
+    promotor_b INTEGER, CONSTRAINT fk_promotor FOREIGN KEY (promotor_b) REFERENCES promotor(id_promotor) ON UPDATE CASCADE ON DELETE NO ACTION
+);
+
+CREATE TABLE EVENTO(
+	 id_evento INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre TEXT,
+    fecha_contrato DATE,
+    fecha_inicio_evento DATE,
+    fecha_fin_evento DATE,
+    horas_contratadas FLOAT,
+    horario TEXT,
+    estatus TEXT,
+    lugar TEXT,
+    promotor_evento INTEGER,
+		CONSTRAINT fk_promotor_evento FOREIGN KEY (promotor_evento) REFERENCES PROMOTOR(id_promotor) ON UPDATE CASCADE ON DELETE NO ACTION,
+    cliente_evento INTEGER,
+		CONSTRAINT fk_cliente_evento FOREIGN KEY (cliente_evento) REFERENCES CLIENTE(id_cliente) ON UPDATE CASCADE ON DELETE NO ACTION
+);
+
+CREATE TABLE ARTISTA_EVENTO(
+	id_artista_evento INTEGER,
+    id_evento_evento INTEGER,
+    CONSTRAINT pk_artista_evento FOREIGN KEY (id_artista_evento) REFERENCES artista(id_artista) ON UPDATE CASCADE ON DELETE NO ACTION,
+    CONSTRAINT pk_evento_evento FOREIGN KEY (id_evento_evento) REFERENCES evento(id_evento) ON UPDATE CASCADE ON DELETE NO ACTION,
+		PRIMARY KEY(id_artista_evento,id_evento_evento)
+);
+
+
+insert into ARTISTA VALUES
+(null,"LUIS MIGUEL","MUSICA","IXTAPALUCA, ACOSAC","LUIS_MIGUEL@HOTMAIL.COM","12345678"),
+(null,"MANA","MUSICA","IXTAPALUCA, LOS HEROES","MANA@HOTMAIL.COM","12345670"),
+(null,"CAIFANES","ARTE","IXTAPALUCA, TLAPACOYA","CAIFANES@HOTMAIL.COM","12345670"),
+(null,"ZOE","ESPECTACULOS","TEXCOCO, LIMA","ZOE@HOTMAIL.COM","12345674"),
+(null,"MUSE","MUSICA","TEXCOCO, LINDAVISTA","MUSE@HOTMAIL.COM","12345672");
+
+INSERT INTO SUCURSAL VALUES
+(NULL,"LOMAS DE TAJIN","MONTERREY","LAURELES","NORTE","NORTE@HOTMAIL.COM","12343212"),
+(NULL,"ECATEPEC","EDO MEX","MORAS","CENTRO","CENTRO@HOTMAIL.COM","12343213"),
+(NULL,"PALMAS","QUINTANA ROO","MOLINOS","SUR","SUR@HOTMAIL.COM","12343216"),
+(NULL,"TLAXCALA","TLAXCALA","SAN ISIDRO","CENTRO","CENTRO_TLAX@HOTMAIL.COM","12343214"),
+(NULL,"SALTILLO","COAHUILA","JICAMAS","NORTE","NORTE1@HOTMAIL.COM","12343217");
+
+INSERT INTO PROMOTOR VALUES
+(NULL,"CILVIA SOLIS","TLALPAN SUR, COAPA","SILVIA@HOTMAIL.COM","87652342","01-01-2010",2),
+(NULL,"PEDRO TAPIA","SAN LUIS CUAJIMALPA","PEDRO1@HOTMAIL.COM","87652332","01-02-2010",5),
+(NULL,"FAMIOLA CMAPOS","LINDA VISTA IZTAPALA","FABIOLA@HOTMAIL.COM","87652345","09-09-2010",1),
+(NULL,"BRAULIO ZAVALA","JUNCO, TEXCOCO","BZM@HOTMAIL.COM","87652336","01-03-2010",4),
+(NULL,"GILBERTO PEREZ","SAN JUAN ZUMPANGO","GILBERTO@HOTMAIL.COM","87652312","01-04-2010",3);
+
+
+insert INTO CLIENTE VALUES
+(NULL,"MARHTA MORALES","COATEPEC, IZTAPALUCA","MARHTA@LIVE.COM","87654321"),
+(NULL,"GUSTAVO HERNANDEZ","SANTA BARBARA, IZTAPALUCA","GUSTAVO@LIVE.COM","87654320"),
+(NULL,"ELIAZA CONTRERAS","LOS HORNOS IXTAPALUCA","ELIZA@LIVE.COM","87654322"),
+(NULL,"ALBERTO SALAZAR","ACOSAC, IZTAPALUCA","ALBERTO@LIVE.COM","87654323"),
+(NULL,"LAURA RIOS","LOS REYES LA PAZ","LAURA@LIVE.COM","87654324");
+
+
+INSERT into bono VALUES
+(NULL,"15-10-11",15,110000,3),
+(NULL,"10-10-11",5,100000,1),
+(NULL,"20-10-11",25,80000,5),
+(NULL,"16-10-11",18,160000,3),
+(NULL,"25-10-11",20,990000,3);
+
+insert into evento VALUES
+(NULL,"BAILE1 ","01-02-2011","01-03-2011","01-03-2011",10,"22:00","CUMPLIDO","ESTADIO FUTBOL", 2,1),
+(NULL,"BAILE2 ","01-03-2011","01-04-2011","01-04-2011",15,"20:00","CUMPLIDO","BAR LA ARDILLA", 3,2),
+(NULL,"BAILE3 ","01-04-2011","01-05-2011","01-05-2011",11,"19:00","CUMPLIDO","BAR EL MONKEY", 2,3),
+(NULL,"BAILE4 ","01-05-2011","01-06-2011","01-06-2011",12,"21:00","CUMPLIDO","BAR EL MONKEY", 3,4),
+(NULL,"BAILE5 ","01-06-2011","01-11-2014","12-11-2014",13,"23:00","PENDIENTE","ESTADIO UNIVERSITARIO", 4,5);
+
+insert into ARTISTA_EVENTO VALUES
+(1,2),
+(5,5),
+(2,3),
+(1,4),
+(3,5);
+
+
+
+
+
+create view vista1 as
+(SELECT paterno, materno, alumnos.nombre,
+sexo, alumnos.fecha_nacimiento, alumnos.lugar_nacimiento,
+alumnos.pais,alumnos.nacionalidad,alumnos.curp,
+secundarias.nombre as secundaria,secundarias.domicilio, 
+delegaciones.nombre as delegacion,
+entidades.nombre as entidad,alumnos.turno, alumnos.promedio
+FROM alumnos, secundarias
+INNER JOIN delegaciones on delegaciones.id_delegacion=secundarias.id_mun_deleg
+INNER JOIN municipios on delegaciones.id_municipio= municipios.id_municipio INNER JOIN entidades on municipios.id_entidad=entidades.id_entidad);

@@ -22,19 +22,19 @@
             <!-- Inicio Fila 1-->
             <div class="row">
               <div class="input-field col s4">
-                <input class="validate" id="nombre" type="text" name="nombre1" required>
+                <input class="validate" id="nombre" type="text" name="nombre1" value="<?=$generales->nombre_al ?>" required>
                 <label for="nombre">Nombre(s)</label>
                 <span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
               </div>
 
               <div class="input-field col s4">
-                <input class="validate" id="ap" type="text" name="paterno1" required>
+                <input class="validate" id="ap" type="text" name="paterno1" value="<?=$generales->paterno_al ?>" required>
                 <label for="ap">Apellido Paterno</label>
                 <span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
               </div>
 
               <div class="input-field col s4">
-                <input class="validate" id="am" type="text" name="materno1" required>
+                <input class="validate" id="am" type="text" name="materno1" value="<?=$generales->materno_al ?>" required>
                 <label for="am">Apellido Materno</label>
                 <span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
               </div>
@@ -43,11 +43,11 @@
             <!-- Inicio Fila 2-->
             <div class="row">
               <div class="input-field col s4">
-                  <input type="text" class="datepicker" id="nac" name="nacimiento1" required>
+                  <input type="text" class="datepicker" id="nac" name="nacimiento1" value="<?=$generales->fecha_nacimiento_al?>" required>
                 <label for="nac">Fecha de Nacimiento</label>
                 <span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
               </div>
-
+ <!-- value="<?=$generales->sexo?>" -->
               <div class="center col s4">
                 <h7>Sexo</h7>
                 <p><label>
@@ -62,7 +62,7 @@
                 </div>
 
                 <div class="input-field col s4">
-                  <input class="validate" id="lug" type="text" name="lugar1" required>
+                  <input class="validate" id="lug" type="text" name="lugar1" value="<?=$generales->lugar_nacimiento ?>" required>
                 <label for="lug">Lugar de Nacimiento</label>
                 <span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
                 </div>
@@ -110,17 +110,18 @@
                     <label for="ent">Entidad Federativa</label>
                     <span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
                 </div>
+<!-- value="<?=$generales->entidad ?>" -->
     <!-------------------------------------->
                 <div class="input-field col s4" id="mun">
-                  <input class="validate" id="municipio1" type="text" name="municipio1" required>
-                <label for="municipio1">Municipio</label>
-                <span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
+                  <input class="validate" id="municipio1" type="text" name="municipio1" value="<?=$generales->municipio_nac ?>" required>
+                  <label for="municipio1">Municipio</label>
+                  <span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
                 </div>
 
                 <div class="input-field col s4" id="del">
-                <input class="validate" id="delegacion1" type="text" name="delegacion1" required>
-                <label for="delegacion1">Delegación</label>
-                <span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
+                  <input class="validate" id="delegacion1" type="text" name="delegacion1" value="<?=$generales->delegacion_nac?>" required>
+                  <label for="delegacion1">Delegación</label>
+                  <span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
                 </div>
                 <!-------------------------------------->
             </div>
@@ -146,7 +147,7 @@
                   </select>
                   <label>País</label>
                 </div>
-
+<!-- value="<?=$generales->pais_nac?>" -->
               <div class="input-field col s4" id="nacionalidad1" name="nacionalidad1">
                   <select name="nacion_n" id="tres">
                       <option value="" disabled selected>Elige una opción</option>
@@ -168,7 +169,7 @@
                 </div>
 
               <div class="input-field col s4">
-                <input class="validate" id="curp" name="curp1" type="text" pattern="([A-Z]{4}([0-9]{2})(0[1-9]|1[0-2])(0[1-9]|1[0-9]|2[0-9]|3[0-1])[HM](AS|BC|BS|CC|CL|CM|CS|CH|DF|DG|GT|GR|HG|JC|MC|MN|MS|NT|NL|OC|PL|QT|QR|SP|SL|SR|TC|TS|TL|VZ|YN|ZS|NE)[A-Z]{3}[0-9A-Z]\d)" data-length="18" maxlength="18" required onkeyup="mayus(this);">
+                <input class="validate" value="<?=$generales->curp?>" id="curp" name="curp1" type="text" pattern="([A-Z]{4}([0-9]{2})(0[1-9]|1[0-2])(0[1-9]|1[0-9]|2[0-9]|3[0-1])[HM](AS|BC|BS|CC|CL|CM|CS|CH|DF|DG|GT|GR|HG|JC|MC|MN|MS|NT|NL|OC|PL|QT|QR|SP|SL|SR|TC|TS|TL|VZ|YN|ZS|NE)[A-Z]{3}[0-9A-Z]\d)" data-length="18" maxlength="18" required onkeyup="mayus(this);">
                 <label for="curp">CURP</label>
                 <span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
               </div>
