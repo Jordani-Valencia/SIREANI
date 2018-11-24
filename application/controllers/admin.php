@@ -35,25 +35,28 @@ class Admin extends CI_Controller {
 	}
 
 	public function prinAdmin(){
+		//$alumno=$this->session->userdata('id');
 		$this->load->view('pantallas/encabezado');
 		$this->load->view('pantallas/principalAdmin');
 		$this->load->view('pantallas/dataTable');
+
 	}
 
 	public function adminAlumnos($id){
-		$this->load->model('MadminAlumnos');
+		$this->load->model('MGetInfo');
+		$dGenerales['generales']=$this->MGetInfo->get_gral_sec($id);
 		$this->load->view('pantallas/encabezado');
 		$this->load->view('pantallas/navbar');
-		$this->load->view('pantallas/actualizarAdmin');
+		$this->load->view('pantallas/actualizarAdmin',$dGenerales);
 		$this->load->view('pantallas/footer');
 
-		$res = $this->MadminAlumnos->nombre($id);
-	foreach ($res->result() as $r) {
-	$data[]=array($r->nombre_al);
-	}
-	echo "<pre>";
-	print_r( $data);
-	echo "</pre>";
+
+	// foreach ($res->result() as $r) {
+	// $data[]=array($r->nombre_al);
+	// }
+	// echo "<pre>";
+	// print_r( $data);
+	// echo "</pre>";
 	}
 
 	public function cerrarSesion(){
