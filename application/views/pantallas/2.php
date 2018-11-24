@@ -18,7 +18,11 @@
 				<div class="row">
 					<div class="input-field col s4">
 						<input class="validate" id="nom3" type="text" name="nombre3" required>
+<<<<<<< HEAD
 						<label for="nom3">Nombre</label>
+=======
+						<label for="nom3">Nombre(s)</label>
+>>>>>>> 6a7f1bc7056cf4dc6ab3d15a3ee4116aea8dbb0a
 						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
 					</div>
 
@@ -298,15 +302,16 @@
 							<label for="lug3">Lugar de Nacimiento</label>
 							<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
     				</div>
+
             <div class="input-field col s3" id="mun5">
               <input class="validate" id="municipio5" type="text" name="municipio5" required>
 						<label for="municipio5">Municipio</label>
     				</div>
+
     				<div class="input-field col s3" id="del5">
-						        <input class="validate" id="delegacion5" type="text" name="delegacion5" required>
+						  <input class="validate" id="delegacion5" type="text" name="delegacion5" required>
 						<label for="delegacion5">Delegación</label>
     				</div>
-
 				</div>
 				<!--Fin Fila 9-->
 				<!--Inicio Fila 10-->
@@ -461,10 +466,6 @@
 					        <input class="with-gap" name="grupo2" type="radio" value="15" />
 					        <span>Otro</span>
 					      </label>
-						<!--<div class="input-field cols3">
-							<input class="validate" id="gradoesp" type="text">
-							<label for="gradoesp">Especificar</label>
-						</div>-->
     				</div>
 				</div>
 				<!--Fin Fila 11-->
@@ -498,7 +499,7 @@
 
 					<div class="input-field col s4">
 						<input class="validate" id="tel5" type="tel" name="telefono5" data-length="12" maxlength="12">
-						<label for="tel">Teléfono del trabajo</label>
+						<label for="tel5">Teléfono del trabajo</label>
 						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
 					</div>
 

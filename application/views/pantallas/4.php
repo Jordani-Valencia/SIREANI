@@ -704,7 +704,6 @@
 						<h7>Correo electrónico</h7>
 							<div class="switch">
 					    		<label>No
-
 					      		<input type="checkbox" name="correo">
 					      		<span class="lever"></span>
 					      		Sí</label>
