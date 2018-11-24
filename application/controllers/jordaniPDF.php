@@ -265,6 +265,11 @@ class jordaniPDF extends CI_Controller {
         $pdf->Cell(32.5,4,utf8_decode("No (   )         Si (   )"),'BLRT',0,'L');
         $pdf->Cell(48.75,4,utf8_decode("(   ) Buscar pareja"),'BLRT',0,'L');
         $pdf->Cell(48.75,4,utf8_decode("(   ) Otro"),'BLRT',0,'L');
+
+        $pdf->AddPage();
+        $pdf->SetFont('Arial','B',10);
+        $pdf->SetXY(10,15);
+        $pdf->Cell(195,5,utf8_decode("TELEFONÍA MÓVIL"),1,0,'C');
     $pdf->Output();
 
 
