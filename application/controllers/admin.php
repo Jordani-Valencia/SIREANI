@@ -50,7 +50,6 @@ class Admin extends CI_Controller {
 		$this->load->view('pantallas/actualizarAdmin',$dGenerales);
 		$this->load->view('pantallas/footer');
 
-<<<<<<< HEAD
 
 	// foreach ($res->result() as $r) {
 	// $data[]=array($r->nombre_al);
@@ -58,7 +57,7 @@ class Admin extends CI_Controller {
 	// echo "<pre>";
 	// print_r( $data);
 	// echo "</pre>";
-=======
+
 		/*$res = $this->MadminAlumnos->nombre($id);
 	foreach ($res->result() as $r) {
 	$data[]=array($r->nombre_al);
@@ -66,7 +65,6 @@ class Admin extends CI_Controller {
 	echo "<pre>";
 	print_r( $data);
 	echo "</pre>";*/
->>>>>>> 6a7f1bc7056cf4dc6ab3d15a3ee4116aea8dbb0a
 	}
 
 	public function cerrarSesion(){
