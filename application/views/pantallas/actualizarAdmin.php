@@ -446,7 +446,9 @@
             <!--ADICCIÓN TABLA DE DATOS FAMILIARES-->
             <!--Encabezado-->
             <ul class="collection with-header"><li class="collection-header grey lighten-2"><h5 class="center">DATOS FAMILIARES   <a href="#datosFamiliares" class="btn-floating btn-large waves-effect waves-light teal accent-3 modal-trigger"><i class="material-icons">add</i></a>       </h5><p class="center">(Únicamente proporcione los datos de las personas que viven en la misma casa)</p></li></ul>
-            <table class="responsive-table" id="tablaFamiliares">
+            <div id="tablaFamiliares">
+
+              <table class="responsive-table" >
                   <thead class="orange">
                     <tr>
                         <th>Apellido Paterno</th>
@@ -477,7 +479,8 @@
                       <td>$7.00</td>
                     </tr>
                   </tbody>
-                </table>
+              </table>
+            </div>
         </ul>
 
       <div class="modal" id="datosFamiliares" name='datosFamiliares'>
