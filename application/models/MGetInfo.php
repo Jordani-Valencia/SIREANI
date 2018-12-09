@@ -12,23 +12,23 @@ class MGetInfo extends CI_Model
   function  get_gral_sec($alumno){
       $this->db->where("id_alumno",$alumno);
       return $this->db->get("v_generales_secundaria")->row();
-  }
+  }//////////////////////////////
   function get_beca($alumno){
     $this->db->where("id_alumno_ab",$alumno);
     return $this->db->get("alumno_beca");
-  }
+  }//////////////////////////////
   function get_trabajo($alumno){
     $this->db->where("alumno_at",$alumno);
     return $this->db->get("alumno_trabajo");
-  }
+  }//////////////////////////////
   function get_domicilio($alumno){
     $this->db->where("alumno",$alumno);
-    return $this->db->get("v_domicilio");
-  }
+    return $this->db->get("v_domicilio")->row();
+  }///////////////////////////////
   function get_familiares($alumno){
     $this->db->where("alumno",$alumno);
     return $this->db->get("v_familiares");
-  }
+  }///////////////////////////////
 
 //SELECT'S SEGUNDA HOJA
   function get_padres_tutor($alumno){
