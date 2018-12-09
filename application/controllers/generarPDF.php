@@ -38,6 +38,9 @@ class generarPDF extends CI_Controller {
       $x=20;$y=60;
       $ancho=175;
       //datos generales
+      $datos_generales=$this->MGetInfo->get_gral_sec($alumno);
+
+
       $pdf->SetFont('Arial','B',9);
         $pdf->SetXY($x,$y);
         $pdf->Cell($ancho,6,"DATOS GENERALES DEL ESTUDIANTE",'RLT',1,'C');
@@ -47,6 +50,7 @@ class generarPDF extends CI_Controller {
 
         $pdf->SetFont('Arial','',9);
         $pdf->SetXY($x,$y+=6);
+
         $pdf->Cell(55,6,"Apellido Paterno:",'RLT',0,'L');
         $pdf->Cell(55,6,"Apellido Materno:",'RLT',0,'L');
         $pdf->Cell(65,6,"Nombre:",'RLT',0,'L');
@@ -54,29 +58,36 @@ class generarPDF extends CI_Controller {
       //DATOS_ALUMNO -nmbre,apellidos
       $pdf->SetFont('Arial','',9);
         $pdf->SetXY($x,$y+=6);
-        $pdf->Cell(55,6,"Sandoval",'RLB',0,'L');
-        $pdf->Cell(55,6,"Valencia",'RLB',0,'L');
-        $pdf->Cell(65,6,"Ruben",'RLB',0,'L');
+        $pdf->Cell(55,6,utf8_decode($datos_generales->paterno_al),'RLB',0,'L');
+        $pdf->Cell(55,6,utf8_decode($datos_generales->materno_al),'RLB',0,'L');
+        $pdf->Cell(65,6,utf8_decode($datos_generales->nombre_al),'RLB',0,'L');
 
       //DATOS sexo,fecha_nacimiento, lugar_nacimiento
       $pdf->SetFont('Arial','',9);
         $pdf->SetXY($x,$y+=6);
         $pdf->Cell(16,10,"Sexo:",'RLB',0,'L');
 
-        $pdf->SetXY($x+16,$y);
-        $pdf->Cell(25,5,"Femenino (   )",'RLB',0,'L');
-        $pdf->SetXY($x+16,$y+5);
-        $pdf->Cell(25,5,"Masculino ( X )",'RLB',0,'L');
+        if ($datos_generales->sexo=="M") {
+          $pdf->SetXY($x+16,$y);
+          $pdf->Cell(25,5,"Femenino (   )",'RLB',0,'L');
+          $pdf->SetXY($x+16,$y+5);
+          $pdf->Cell(25,5,"Masculino ( X )",'RLB',0,'L');
+        }else{
+          $pdf->SetXY($x+16,$y);
+          $pdf->Cell(25,5,"Femenino ( X )",'RLB',0,'L');
+          $pdf->SetXY($x+16,$y+5);
+          $pdf->Cell(25,5,"Masculino (   )",'RLB',0,'L');
+        }
 
         $pdf->SetXY($x+41,$y);
         $pdf->Cell(50,5,"Fecha de Nacimiento: ",'RL',0,'L');
         $pdf->SetXY($x+41,$y+5);
-        $pdf->Cell(50,5,"1995-07-01 ",'RLB',0,'L');
+        $pdf->Cell(50,5,$datos_generales->fecha_nacimiento_al,'RLB',0,'L');
 
         $pdf->SetXY($x+91,$y);
         $pdf->Cell(84,5,"Lugar de Nacimiento: ",'RL',0,'L');
         $pdf->SetXY($x+91,$y+5);
-        $pdf->Cell(84,5,"",'RLB',0,'L');
+        $pdf->Cell(84,5,$datos_generales->lugar_nacimiento,'RLB',0,'L');
 
       // delegacion, entidad,pais
       $pdf->SetXY($x,$y+=10);
@@ -84,23 +95,28 @@ class generarPDF extends CI_Controller {
         $pdf->Cell(55,5,"Entidad Federativa:",'RL',0,'L');
         $pdf->Cell(55,5,utf8_decode("País:"),'RL',0,'L');
         $pdf->SetXY($x,$y+=5);
-        $pdf->Cell(65,5,utf8_decode("Amecameca"),'RLB',0,'L');
-        $pdf->Cell(55,5,utf8_decode("Estado de México"),'RLB',0,'L');
-        $pdf->Cell(55,5,utf8_decode("México"),'RLB',0,'L');
+
+        if ($datos_generales->municipio_nac==$datos_generales->delegacion_nac) {
+          $pdf->Cell(65,5,utf8_decode($datos_generales->municipio_nac),'RLB',0,'L');
+        }else{
+          $pdf->Cell(65,5,utf8_decode($datos_generales->municipio_nac.'-'.$datos_generales->delegacion_nac),'RLB',0,'L');
+        }
+
+        $pdf->Cell(55,5,utf8_decode($datos_generales->estado_nacimiento),'RLB',0,'L');
+        $pdf->Cell(55,5,utf8_decode($datos_generales->pais_nac),'RLB',0,'L');
 
       //nacionalidad CURP
       $pdf->SetXY($x,$y+=5);
         $pdf->Cell(47,5,utf8_decode("Nacionalidad:"),'RL',0,'L');
         $pdf->Cell(20,10,utf8_decode("CURP: "),'RLB',0,'L');
 
-        $arrCurp=["S","A","V","R","9","5","0","7","0","1","H","M","C","N","L","B","0","5"];
-
+        $arrCurp=$datos_generales->curp;
         for ($i=0; $i < 18; $i++) {
           $pdf->Cell(6,10,$arrCurp[$i],'RLB',0,'L');
         }
 
         $pdf->SetXY($x,$y+=5);
-        $pdf->Cell(47,5,utf8_decode("Mexicano"),'RLB',0,'L');
+        $pdf->Cell(47,5,utf8_decode($datos_generales->nacionalidad),'RLB',0,'L');
 
       // escuela,domicilio delegacion,entidad (secundaria)
       $pdf->SetXY($x,$y+=5);
@@ -112,6 +128,8 @@ class generarPDF extends CI_Controller {
         $pdf->SetXY($x,$y+12);
         $pdf->Cell(35,4,utf8_decode("ciclo escolar"),'BRL',0,'L');
 
+
+
         $pdf->SetXY($x+35,$y);
         $pdf->Cell(35,8,utf8_decode("Nombre de la escuela"),'RL',0,'L');
         $pdf->Cell(35,8,utf8_decode("Domicilio de la escuela"),'RL',0,'L');
@@ -119,29 +137,62 @@ class generarPDF extends CI_Controller {
         $pdf->Cell(35,8,utf8_decode("Entidad Federativa"),'RL',0,'L');
 
         $pdf->SetXY($x+35,$y+8);
-        $pdf->Cell(35,8,utf8_decode("ESTIC #27"),'RBL',0,'L');
-        $pdf->Cell(35,8,utf8_decode("Allende"),'RLB',0,'L');
-        $pdf->Cell(35,8,utf8_decode("Ozumba"),'RLB',0,'L');
-        $pdf->Cell(35,8,utf8_decode("Estado de México"),'RBL',0,'L');
+        $pdf->Cell(35,8,utf8_decode($datos_generales->nombre_sec),'RBL',0,'L');
+        $pdf->Cell(35,8,utf8_decode($datos_generales->domicilio_sec),'RLB',0,'L');
+        $pdf->Cell(35,8,utf8_decode($datos_generales->mun_del_sec),'RLB',0,'L');
+        $pdf->Cell(35,8,utf8_decode($datos_generales->estado_secundaria),'RBL',0,'L');
 
       //TURNO, promedio
       $pdf->SetXY($x,$y+=16);
         $pdf->Cell(20,6,utf8_decode("Turno: "),'RBL',0,'L');
-        $pdf->Cell(30,6,utf8_decode("Matutino"),'RB',0,'L');
-        $pdf->Cell(105,6,utf8_decode("Promedio de calificaciones en el ciclo anterior:"),'RBL',0,'L');
-        $pdf->Cell(20,6,utf8_decode("9.6"),'RB',0,'L');
+        $pdf->Cell(30,6,utf8_decode($datos_generales->turno ==1?"Matutino":"Vespertino"),'RB',0,'L');
+        $pdf->Cell(105,6,"Promedio de calificaciones en el ciclo anterior: ",'RBL',0,'L');
+        $pdf->Cell(20,6,$datos_generales->promedio,'RB',0,'L');
       //beca  no-si especificar1
-      $pdf->SetXY($x,$y+=6);
+      $datos_beca=$this->MGetInfo->get_beca($alumno);
+      if ($datos_beca->num_rows()>0) {
+        $beca=$datos_beca->row();
+        $pdf->SetXY($x,$y+=6);
         $pdf->Cell(40,6,utf8_decode("¿Recibió alguna beca? "),'RBL',0,'L');
-        $pdf->Cell(40,6,utf8_decode("No (  )    Si (  )"),'RB',0,'L');
+        $pdf->Cell(40,6,utf8_decode("No (   )    Si ( X )"),'RB',0,'L');
+        $pdf->Cell(95,6,utf8_decode("Especificar:".$beca->beca),'RBL',0,'L');
+      }else{
+        $pdf->SetXY($x,$y+=6);
+        $pdf->Cell(40,6,utf8_decode("¿Recibió alguna beca? "),'RBL',0,'L');
+        $pdf->Cell(40,6,utf8_decode("No ( X )    Si (   )"),'RB',0,'L');
         $pdf->Cell(95,6,utf8_decode("Especificar:"),'RBL',0,'L');
+      }
       //trabaja no-si especificar
-      $pdf->SetXY($x,$y+=6);
+      $datos_trabajo=$this->MGetInfo->get_trabajo($alumno);
+      if ($datos_beca->num_rows()>0) {
+        $trabajo=$datos_beca->row();
+        $pdf->SetXY($x,$y+=6);
         $pdf->Cell(20,6,utf8_decode("¿Trabaja? "),'RBL',0,'L');
-        $pdf->Cell(30,6,utf8_decode("No (  )    Si (  )"),'RB',0,'L');
-        $pdf->Cell(125,6,utf8_decode("Especificar:"),'RBL',0,'L');
-      //empresa, puesto, horario,horas semana
-      $pdf->SetXY($x,$y+=6);
+        $pdf->Cell(30,6,utf8_decode("No (   )    Si ( X )"),'RB',0,'L');
+        $pdf->Cell(125,6,utf8_decode("Especificar: ".$trabajo->trabajo),'RBL',0,'L');
+        $pdf->SetXY($x,$y+=6);
+        $pdf->Cell(35,4,utf8_decode("En caso de que su"),'RL',0,'L');
+        $pdf->SetXY($x,$y+4);
+        $pdf->Cell(35,4,utf8_decode("respuesta sea"),'RL',0,'L');
+        $pdf->SetXY($x,$y+8);
+        $pdf->Cell(35,4,utf8_decode("afirmativa conteste"),'RL',0,'L');
+        $pdf->SetXY($x,$y+12);
+        $pdf->Cell(35,4,utf8_decode("lo siguiente:"),'BRL',0,'L');
+
+        $pdf->SetXY($x+35,$y);
+        $pdf->Cell(140,4,utf8_decode("Nombre de la empresa: ".$trabajo->empresa),'BRL',0,'L');
+        $pdf->SetXY($x+35,$y+=4);
+        $pdf->Cell(140,4,utf8_decode("Puesto u ocupación: ".$trabajo->puesto),'RBL',0,'L');
+        $pdf->SetXY($x+35,$y+=4);
+        $pdf->Cell(140,4,utf8_decode("Horario de trabajo: ".$trabajo->horario),'RLB',0,'L');
+        $pdf->SetXY($x+35,$y+=4);
+        $pdf->Cell(140,4,utf8_decode("Número de horas a la semana: ".$trabajo->horas_semana),'BRL',0,'L');
+      }else{
+        $pdf->SetXY($x,$y+=6);
+        $pdf->Cell(20,6,utf8_decode("¿Trabaja? "),'RBL',0,'L');
+        $pdf->Cell(30,6,utf8_decode("No ( X )    Si (  )"),'RB',0,'L');
+        $pdf->Cell(125,6,utf8_decode("Especificar: "),'RBL',0,'L');
+        $pdf->SetXY($x,$y+=6);
         $pdf->Cell(35,4,utf8_decode("En caso de que su"),'RL',0,'L');
         $pdf->SetXY($x,$y+4);
         $pdf->Cell(35,4,utf8_decode("respuesta sea"),'RL',0,'L');
@@ -158,24 +209,38 @@ class generarPDF extends CI_Controller {
         $pdf->Cell(140,4,utf8_decode("Horario de trabajo: "),'RLB',0,'L');
         $pdf->SetXY($x+35,$y+=4);
         $pdf->Cell(140,4,utf8_decode("Número de horas a la semana: "),'BRL',0,'L');
+      }
+      //empresa, puesto, horario,horas semana
 
       // DOMICLIO DEL alumno- calle nums colonia del-municipio
       $pdf->SetFont('Arial','B',9);
         $pdf->SetXY($x,$y+=8);
         $pdf->Cell($ancho,4,"DOMICILIO DEL ALUMNO",'BRLT',1,'C');
 
+        $domicilio=$this->MGetInfo->get_domicilio($alumno);
+
         $pdf->SetXY($x,$y+=4);
         $pdf->SetFont('Arial','',9);
         $pdf->Cell(40,4,utf8_decode("Calle: "),'RL',0,'L');
-        $pdf->Cell(30,4,utf8_decode("No. Exterior: 5"),'BRL',0,'L');
+        if ($domicilio->exterior!=0) {
+          $pdf->Cell(30,4,utf8_decode("No. Exterior: ".$domicilio->exterior),'BRL',0,'L');
+        }else{
+          $pdf->Cell(30,4,utf8_decode("No. Exterior: "),'BRL',0,'L');
+        }
         $pdf->Cell(55,4,utf8_decode("Colonia: "),'RL',0,'L');
         $pdf->Cell(50,4,utf8_decode("Delegacion o Municipio:"),'RL',0,'L');
 
         $pdf->SetXY($x,$y+=4);
-        $pdf->Cell(40,4,utf8_decode("Abasolo"),'RLB',0,'L');
-        $pdf->Cell(30,4,utf8_decode("No. Interior: "),'BRL',0,'L');
-        $pdf->Cell(55,4,utf8_decode("Barrio del agua escondida"),'RBL',0,'L');
-        $pdf->Cell(50,4,utf8_decode("Ozumba"),'BRL',0,'L');
+        $pdf->Cell(40,4,utf8_decode($domicilio->calle),'RLB',0,'L');
+
+        if ($domicilio->interior!=0) {
+          $pdf->Cell(30,4,utf8_decode("No. Interior: ".$domicilio->interior),'BRL',0,'L');
+        }else{
+          $pdf->Cell(30,4,utf8_decode("No. Interior: "),'BRL',0,'L');
+        }
+
+        $pdf->Cell(55,4,utf8_decode($domicilio->colonia),'RBL',0,'L');
+        $pdf->Cell(50,4,utf8_decode($domicilio->dom_delegacion),'BRL',0,'L');
 
       //entidad cp tel casa movil
       $pdf->SetXY($x,$y+=4);
@@ -185,10 +250,10 @@ class generarPDF extends CI_Controller {
         $pdf->Cell(50,4,utf8_decode("Teléfono celular:"),'RL',0,'L');
 
         $pdf->SetXY($x,$y+=4);
-        $pdf->Cell(40,4,utf8_decode("Mexico"),'RLB',0,'L');
-        $pdf->Cell(30,4,utf8_decode("56800"),'BRL',0,'L');
-        $pdf->Cell(55,4,utf8_decode("5979763841"),'RBL',0,'L');
-        $pdf->Cell(50,4,utf8_decode("5541946361"),'BRL',0,'L');
+        $pdf->Cell(40,4,utf8_decode($domicilio->estado),'RLB',0,'L');
+        $pdf->Cell(30,4,utf8_decode($domicilio->codigoPostal),'BRL',0,'L');
+        $pdf->Cell(55,4,utf8_decode($domicilio->tel_casa),'RBL',0,'L');
+        $pdf->Cell(50,4,utf8_decode($domicilio->celular),'BRL',0,'L');
 
       //DATOS FAMILIARES
       $pdf->SetFont('Arial','B',9);
@@ -208,23 +273,42 @@ class generarPDF extends CI_Controller {
         $pdf->Cell(18,7,utf8_decode("Parentesco"),'RLB',0,'L');
         $pdf->Cell(35,7,utf8_decode("Grado máx de estudios"),'RLB',0,'L');
 
+        $familia=$this->MGetInfo->get_familiares($alumno);
         $pdf->SetXY($x,$y+=6);
-        for ($i=0; $i < 8; $i++) {
-
-          $pdf->Cell(33,5,utf8_decode(""),'RLB',0,'L');
-          $pdf->Cell(36,5,utf8_decode(""),'RLB',0,'L');
-          $pdf->Cell(10,5,utf8_decode(""),'RLB',0,'L');
-          $pdf->Cell(10,5,utf8_decode(""),'RLB',0,'L');
-          $pdf->Cell(33,5,utf8_decode(""),'RLB',0,'L');
-          $pdf->Cell(18,5,utf8_decode(""),'RLB',0,'L');
-          $pdf->Cell(35,5,utf8_decode(""),'RLB',0,'L');
+        $contador=0;
+        foreach ($familia->result() as $family) {
+          $pdf->Cell(33,5,utf8_decode($family->apellidos),'RLB',0,'L');
+          $pdf->Cell(36,5,utf8_decode($family->nombre),'RLB',0,'L');
+          $pdf->Cell(10,5,utf8_decode($family->sexo),'RLB',0,'L');
+          $pdf->Cell(10,5,utf8_decode($family->edad),'RLB',0,'L');
+          $pdf->Cell(33,5,utf8_decode($family->ocupacion),'RLB',0,'L');
+          $pdf->Cell(18,5,utf8_decode($family->parentezco),'RLB',0,'L');
+          $pdf->Cell(35,5,utf8_decode($family->grado_estudio),'RLB',0,'L');
           $pdf->SetXY($x,$y+=4);
+          if ($contador++==8) {
+            break;
+          }
+
         }
+        if ($contador<8) {
+          for ($i=$contador; $i<8; $i++) {
+            $pdf->Cell(33,5,utf8_decode(''),'RLB',0,'L');
+            $pdf->Cell(36,5,utf8_decode(''),'RLB',0,'L');
+            $pdf->Cell(10,5,utf8_decode(''),'RLB',0,'L');
+            $pdf->Cell(10,5,utf8_decode(''),'RLB',0,'L');
+            $pdf->Cell(33,5,utf8_decode(''),'RLB',0,'L');
+            $pdf->Cell(18,5,utf8_decode(''),'RLB',0,'L');
+            $pdf->Cell(35,5,utf8_decode(''),'RLB',0,'L');
+            $pdf->SetXY($x,$y+=4);
+          }
+        }
+
 
         $pdf->SetFont('Arial','B',9);
           $pdf->SetXY($x,$y+=15);
           $pdf->Cell($ancho,4,"1/6",'',1,'C');
 
+/////////////////HOJA 2///////////////////////////////////
     $pdf->AddPage();
       $x=20;$y=20;
       $ancho=175;
@@ -445,18 +529,18 @@ class generarPDF extends CI_Controller {
 
       $pdf->SetXY($x,$y);
       $pdf->SetFont('Arial','B',10);
-      $pdf->Cell($ancho,6,utf8_decode('AMBIENTE SOCIOECONOMICO'),1,0,'C');
-      $pdf->SetXY($x,$y+=6);
+      $pdf->Cell($ancho,5,utf8_decode('AMBIENTE SOCIOECONOMICO'),1,0,'C');
+      $pdf->SetXY($x,$y+=5);
       $pdf->SetFont('Arial','I',10);
-      $pdf->Cell($ancho,6,'Marque con una "X" los bienes y servicios que tiene su vivienda',1,0,'C');
-      $pdf->SetXY($x,$y+=6);
+      $pdf->Cell($ancho,4,'Marque con una "X" los bienes y servicios que tiene su vivienda',1,0,'C');
+      $pdf->SetXY($x,$y+=4);
       $pdf->SetFont('Arial','',10);
       for ($i=0; $i <16; $i++) {
-        $pdf->Cell(60,6,utf8_decode($arr_socioeconomico[$i++]),'BRL',0,'L');
-        $pdf->Cell(25,6,'No ( ) Si ( )','RLB',0,'C');
-        $pdf->Cell(65,6,utf8_decode($arr_socioeconomico[$i]),'RLB',0,'L');
-        $pdf->Cell(25,6,'No ( ) Si ( )','RLB',0,'C');
-        $pdf->SetXY($x,$y+=6);
+        $pdf->Cell(60,5,utf8_decode($arr_socioeconomico[$i++]),'BRL',0,'L');
+        $pdf->Cell(25,5,'No ( ) Si ( )','RLB',0,'C');
+        $pdf->Cell(65,5,utf8_decode($arr_socioeconomico[$i]),'RLB',0,'L');
+        $pdf->Cell(25,5,'No ( ) Si ( )','RLB',0,'C');
+        $pdf->SetXY($x,$y+=5);
       }
       $pdf->Cell(90,5,'Para tu uso personal cuentas con:','RLB',0,'L');
       $pdf->Cell(85,5,utf8_decode('¿Cuántos focos hay dentro de su vivienda?'),'RLB',0,'C');
@@ -484,10 +568,10 @@ class generarPDF extends CI_Controller {
       $pdf->Cell(13,5,'5 (  )','RLB',0,'C');
       $pdf->Cell(20,5,utf8_decode('6 o Más( )'),'RLB',0,'C');
 
-      $pdf->SetXY($x,$y+=15);
+      $pdf->SetXY($x,$y+=10);
       $pdf->SetFont('Arial','B',10);
-      $pdf->Cell($ancho,6,'SALUD',1,0,'C');
-      $pdf->SetXY($x,$y+=6);
+      $pdf->Cell($ancho,5,'SALUD',1,0,'C');
+      $pdf->SetXY($x,$y+=5);
       $pdf->SetFont('Arial','I',9);
       $pdf->Cell($ancho,5,utf8_decode('Señala con una "X" cuál de las siguientes figuras corresponde a la percepción que tienes de tu apariencia física'),1,0,'C');
       $pdf->SetXY($x,$y+=5);
@@ -556,8 +640,109 @@ class generarPDF extends CI_Controller {
       $pdf->Cell(90,5,utf8_decode('¿Tiene alguna descapacidad física? No ( ) Si( ) '),'RLB',0,'L');
       $pdf->Cell(85,5,utf8_decode('¿Cuál?'),'RLB',0,'L');
 
+      $pdf->SetXY($x,$y+=5);
+      $pdf->Cell($ancho,5,utf8_decode('¿Ha asistido o asiste a trtamiento psicológico o psiquiatrico? '),'RLB',0,'L');
 
+      $pdf->SetXY($x,$y+=5);
+      $pdf->Cell(15,4,utf8_decode('No ( )'),'RL',0,'L');
+      $pdf->Cell(15,4,utf8_decode('Si ( )'),'RL',0,'L');
+      $pdf->Cell(30,4,utf8_decode('Desde '),'RL',0,'L');
+      $pdf->Cell(30,4,utf8_decode('Hasta '),'RL',0,'L');
+      $pdf->Cell(85,4,utf8_decode('¿Dónde? '),'RL',0,'L');
 
+      $pdf->SetXY($x,$y+=4);
+      $pdf->Cell(15,5,utf8_decode(''),'RLB',0,'L');
+      $pdf->Cell(15,5,utf8_decode(''),'RLB',0,'L');
+      $pdf->Cell(30,5,utf8_decode(''),'RLB',0,'L');
+      $pdf->Cell(30,5,utf8_decode(''),'RLB',0,'L');
+      $pdf->Cell(85,5,utf8_decode(''),'RLB',0,'L');
+
+      $pdf->SetXY($x,$y+=10);
+      $pdf->SetFont('Arial','B',10);
+      $pdf->Cell($ancho,5,utf8_decode('3/6'),0,0,'C');
+
+    $pdf->AddPage();
+      $x=20;$y=20;
+      $ancho=175;
+      $pdf->SetXY($x,$y);
+      $pdf->SetFont('Arial','B',10);
+      $pdf->Cell($ancho,8,'PROYECTO DE VIDA',1,0,'C');
+      $pdf->SetXY($x,$y+=8);
+      $pdf->SetFont('Arial','',10);
+      $pdf->Cell($ancho,5,utf8_decode('¿Por qué decidió estudiar su bachillerato en CECYTEM? (Marque al menos 3 opciones)'),'RLB',0,'L');
+      $pdf->SetXY($x,$y+=5);
+      $pdf->Cell($ancho/2,5,'( ) Porque le gustan las instalaciones','RLB',0,'L');
+      $pdf->Cell($ancho/2,5,utf8_decode('( ) La carrera de técnico en programación'),'RLB',0,'L');
+      $pdf->SetXY($x,$y+=5);
+      $pdf->Cell($ancho/2,5,'( ) Porque le gusta el modelo de enseñanza','RLB',0,'L');
+      $pdf->Cell($ancho/2,5,utf8_decode('( ) Por recomendación de familiares o amigos'),'RLB',0,'L');
+      $pdf->SetXY($x,$y+=5);
+      $pdf->Cell($ancho/2,5,utf8_decode('( ) La documentación que se obiene al egresar'),'RLB',0,'L');
+      $pdf->Cell($ancho/2,5,'( ) Le obligaron sus padres','RLB',0,'L');
+      $pdf->SetXY($x,$y+=5);
+      $pdf->Cell($ancho/2,5,utf8_decode('( ) Por mi situación económica'),'RLB',0,'L');
+      $pdf->Cell($ancho/2,5,utf8_decode('( ) Fué otra de sus opciones'),'RLB',0,'L');
+      $pdf->SetXY($x,$y+=5);
+      $pdf->Cell($ancho,5,utf8_decode('Otra, especifique: '),'RLB',0,'L');
+      $pdf->SetXY($x,$y+=5);
+      $pdf->Cell($ancho,5,utf8_decode('Sus metas en la escuela son: '),'RLB',0,'L');
+      $pdf->SetXY($x,$y+=5);
+      $pdf->Cell($ancho,5,utf8_decode('Su principal meta en la vida es: '),'RLB',0,'L');
+      $pdf->SetXY($x,$y+=5);
+      $pdf->Cell($ancho,5,utf8_decode('¿cómo piensa lograrla? '),'RLB',0,'L');
+      $pdf->SetXY($x,$y+=5);
+      $pdf->Cell($ancho,5,utf8_decode('¿Qué espera durante su estancia en el plantel? '),'RLB',0,'L');
+
+      $pdf->SetXY($x,$y+=5);
+      $pdf->Cell($ancho,5,utf8_decode('Al terminar el bachillerato, piensa continuar estudiando SI( ) NO( ) ¿Qué? '),'RLB',0,'L');
+
+      $pdf->SetXY($x,$y+=13);
+      $pdf->SetFont('Arial','B',10);
+      $pdf->Cell($ancho,8,utf8_decode('PERFIL PERSONAL Y ACADÉMICO DE LOS ESTUDIANTES'),1,0,'C');
+      $pdf->SetXY($x,$y+=8);
+      $pdf->Cell($ancho,6,utf8_decode('INSTRUCCIONES: En la columna de la derecha marca V si es Verdadero y F si es Falso'),1,0,'L');
+      $pdf->SetFont('Arial','',10);
+      $pdf->SetXY($x,$y+=6);
+      $pdf->Cell($ancho-20,6,utf8_decode('1.- Mi promedio en la escuela es igual o mayor a 7.'),1,0,'L');$pdf->Cell(20,6,'',1,0,'L');
+      $pdf->SetXY($x,$y+=6);
+      $pdf->Cell($ancho-20,6,utf8_decode('2.- Reprobé 2 o más materias en la secundaria.'),1,0,'L');$pdf->Cell(20,6,'',1,0,'L');
+      $pdf->SetXY($x,$y+=6);
+      $pdf->Cell($ancho-20,6,utf8_decode('3.- Yo elegí el plantel de bachillerato al que asisto.'),1,0,'L');$pdf->Cell(20,6,'',1,0,'L');
+      $pdf->SetXY($x,$y+=6);
+      $pdf->Cell($ancho-20,6,utf8_decode('4.- Asisto a la educación media superior porque creo que me será muy útil.'),1,0,'L');$pdf->Cell(20,6,'',1,0,'L');
+      $pdf->SetXY($x,$y+=6);
+      $pdf->Cell($ancho-20,6,utf8_decode('5.- Me gusta la escuela.'),1,0,'L');$pdf->Cell(20,6,'',1,0,'L');
+      $pdf->SetXY($x,$y+=6);
+      $pdf->Cell($ancho-20,6,utf8_decode('6.- Soy bueno para estudiar.'),1,0,'L');$pdf->Cell(20,6,'',1,0,'L');
+      $pdf->SetXY($x,$y+=6);
+      $pdf->Cell($ancho-20,6,utf8_decode('7.- En la secundaria sentía confianza con algún maestro(a) como para platicar con él (ella).'),1,0,'L');$pdf->Cell(20,6,'',1,0,'L');
+      $pdf->SetXY($x,$y+=6);
+      $pdf->Cell($ancho-20,6,utf8_decode('8.- En la secundaria preguntaba mis dudas al maestro(a).'),1,0,'L');$pdf->Cell(20,6,'',1,0,'L');
+
+      $pdf->SetXY($x,$y+=6);
+      $pdf->MultiCell($ancho-20,6,utf8_decode('9.- En la secundaria me molestaban con frecuencia otro y otros compañeros (burlas, intimidacion, golpes, extorsiones, etc).'),1,'L',0);
+      $pdf->SetXY($ancho,$y);
+      $pdf->Cell(20,12,'',1,0,'C');
+
+      $pdf->SetXY($x,$y+=12);
+      $pdf->Cell($ancho-20,6,utf8_decode('10.- Si yo reprobara alguna materia, se lo platicaría a mi mamá o mi papá.'),1,0,'L');$pdf->Cell(20,6,'',1,0,'L');
+      $pdf->SetXY($x,$y+=6);
+      $pdf->Cell($ancho-20,6,utf8_decode('11.- Si tuviera un problema alguna personal, lo platicaría con mi mamá o mi papá.'),1,0,'L');$pdf->Cell(20,6,'',1,0,'L');
+      $pdf->SetXY($x,$y+=6);
+      $pdf->Cell($ancho-20,6,utf8_decode('12.- Me gustaría emigrar a Estados Unidos en los próximos 5 años.'),1,0,'L');$pdf->Cell(20,6,'',1,0,'L');
+      $pdf->SetXY($x,$y+=6);
+      $pdf->Cell($ancho-20,6,utf8_decode('13.- Es posible que me case o viva con mi pareja antes de terminar el bachillerato.'),1,0,'L');$pdf->Cell(20,6,'',1,0,'L');
+
+      $pdf->SetXY($x,$y+=6);
+      $pdf->MultiCell($ancho-20,6,utf8_decode('14.- Es mi casa hemos tenido problemas económicos serios (deudas, no alcanza ara los gastos del diario, etc).'),1,'L',0);
+      $pdf->SetXY($ancho,$y);
+      $pdf->Cell(20,12,'',1,0,'C');
+
+      $pdf->SetXY($x,$y+=12);
+      $pdf->Cell($ancho-20,6,utf8_decode('15.- Es más importante trabajar que estudiar'),1,0,'L');$pdf->Cell(20,6,'',1,0,'L');
+
+      $pdf->SetXY($x,$y+=50);
+      $pdf->Cell($ancho,5,'6/6',0,0,'C');
 
     $pdf->Output();
 
