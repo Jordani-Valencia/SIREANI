@@ -92,9 +92,48 @@ class CInserciones2 extends CI_Controller {
         'parentezco'=>$_POST['parentesco'],
         'grado_estudio'=>$_POST['grado'],
         'alumno'=>$alumno);
-        $this->MInserciones2->insertFamiliar($arr_family);
+
+      $familiares = $this->MInserciones2->insertFamiliar($arr_family);
+      $tabla='
+      <table class="responsive-table" >
+        <thead class="orange">
+          <tr>
+            <th>Apellido Paterno</th>
+            <th>Apellido Materno</th>
+            <th>Nombre</th>
+            <th>Sexo</th>
+            <th>Edad</th>
+            <th>Ocupación</th>
+            <th>Parentesco</th>
+            <th>Grado máx de estudios</th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+      ';
+      foreach ($familiares->result() as $row) {
+        $tabla.='
+        <tr>
+          <td>'.$row->paterno.'</td>
+          <td>'.$row->materno.'</td>
+          <td>'.$row->nombre.'</td>
+          <td>'.$row->sexo.'</td>
+          <td>'.$row->edad.'</td>
+          <td>'.$row->ocupacion.'</td>
+          <td>'.$row->parentezco.'</td>
+          <td>'.$row->grado_estudio.'</td>
+        </tr>
+        ';
+      }
+      $tabla.='
+        </tbody>
+      </table>';
+
+      print $tabla;
 
   }
+
   public function ajaxIngresos(){
     $alumno=$this->session->userdata('id');
         $arr_family= array(
@@ -104,6 +143,7 @@ class CInserciones2 extends CI_Controller {
           'alumno'=>$alumno);
           $this->MInserciones2->insertIngreso($arr_family);
   }
+
 
 
 

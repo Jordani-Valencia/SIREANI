@@ -18,11 +18,8 @@
 				<div class="row">
 					<div class="input-field col s4">
 						<input class="validate" id="nom3" type="text" name="nombre3" required>
-<<<<<<< HEAD
 						<label for="nom3">Nombre</label>
-=======
 						<label for="nom3">Nombre(s)</label>
->>>>>>> 6a7f1bc7056cf4dc6ab3d15a3ee4116aea8dbb0a
 						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
 					</div>
 
@@ -549,38 +546,37 @@
         <!--ADICCIÓN TABLA DE DATOS FAMILIARES-->
         <!--Encabezado-->
         <ul class="collection with-header" id="df"><li class="collection-header grey lighten-2"><h5 class="center">DATOS FAMILIARES   <a href="#datosFamiliares" class="btn-floating btn-large waves-effect waves-light teal accent-3 modal-trigger"><i class="material-icons">add</i></a>       </h5><p class="center">(Únicamente proporcione los datos de las personas que viven en la misma casa)</p></li></ul>
-        <table class="responsive-table" id="tablaFamiliares">
-              <thead class="orange">
-                <tr>
-                    <th>Apellido Paterno</th>
-                    <th>Apellido Materno</th>
-                    <th>Nombre</th>
-                    <th>Sexo</th>
-                    <th>Edad</th>
-                    <th>Ocupación</th>
-                    <th>Parentesco</th>
-                    <th>Grado máx de estudios</th>
-                </tr>
-              </thead>
+        <div id="tablaFamiliares">
+          <table class="responsive-table" >
+            <thead class="orange">
+              <tr>
+                <th>Apellido Paterno</th>
+                <th>Apellido Materno</th>
+                <th>Nombre</th>
+                <th>Sexo</th>
+                <th>Edad</th>
+                <th>Ocupación</th>
+                <th>Parentesco</th>
+                <th>Grado máx de estudios</th>
+              </tr>
+            </thead>
 
-              <tbody>
-                <tr>
-                  <td>Alvin</td>
-                  <td>Eclair</td>
-                  <td>$0.87</td>
-                </tr>
-                <tr>
-                  <td>Alan</td>
-                  <td>Jellybean</td>
-                  <td>$3.76</td>
-                </tr>
-                <tr>
-                  <td>Jonathan</td>
-                  <td>Lollipop</td>
-                  <td>$7.00</td>
-                </tr>
-              </tbody>
-            </table>
+            <tbody>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+
+            </tbody>
+          </table>
+
+        </div>
     </ul>
     </div>
 
@@ -591,34 +587,35 @@
 				<!--Encabezado-->
 				<ul class="collection with-header">
 	        	<li class="collection-header grey lighten-2"><h5 class="center">INGRESOS FAMILIARES MENSUALES   <a href="#ingreso" class="btn-floating btn-large waves-effect waves-light teal accent-3 modal-trigger"><i class="material-icons">add</i></a></h5></li></ul>
+        <div class="tablaIngresos">
+          <table class="responsive-table">
+            <thead class="orange">
+              <tr>
+                <th>Persona con ingresos económicos</th>
+                <th>Ingreso mensual en pesos</th>
+                <th>Porcentaje destinado al gasto familiar</th>
+              </tr>
+            </thead>
 
-				<table class="responsive-table" id="tablaIngresos">
-			        <thead class="orange">
-			          <tr>
-			              <th>Persona con ingresos económicos</th>
-			              <th>Ingreso mensual en pesos</th>
-			              <th>Porcentaje destinado al gasto familiar</th>
-			          </tr>
-			        </thead>
-
-			        <tbody>
-			          <tr>
-			            <td>Alvin</td>
-			            <td>Eclair</td>
-			            <td>$0.87</td>
-			          </tr>
-			          <tr>
-			            <td>Alan</td>
-			            <td>Jellybean</td>
-			            <td>$3.76</td>
-			          </tr>
-			          <tr>
-			            <td>Jonathan</td>
-			            <td>Lollipop</td>
-			            <td>$7.00</td>
-			          </tr>
-			        </tbody>
-      			</table>
+            <tbody>
+              <tr>
+                <td>Alvin</td>
+                <td>Eclair</td>
+                <td>$0.87</td>
+              </tr>
+              <tr>
+                <td>Alan</td>
+                <td>Jellybean</td>
+                <td>$3.76</td>
+              </tr>
+              <tr>
+                <td>Jonathan</td>
+                <td>Lollipop</td>
+                <td>$7.00</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 			<div class="row center">
 				<input type="submit" value="Guardar/Siguiente" class="btn btn-large center">
 			</div>

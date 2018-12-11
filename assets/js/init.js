@@ -104,7 +104,7 @@ function modal1(){
     "&ocupacion="+ocupacion+"&parentesco="+parentesco+"&grado="+grado+"&sexo="+sexo;
 
     $.post(base+"CInserciones2/ajaxFamiliar",datos,function(data){
-
+      $("#tablaFamiliares").html(data);
     });
     document.getElementById('nom2').value=null;
     document.getElementById('apeP').value=null;
@@ -121,7 +121,9 @@ function modal1(){
     $("#parentesco1").val(0);
     $("#parentesco1").material_select;
     alert("hola");
-    //return false;
+
+
+
   }
 }
 function modal3(){
