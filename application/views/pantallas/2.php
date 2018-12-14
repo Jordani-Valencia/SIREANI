@@ -587,8 +587,10 @@
 				<!--Encabezado-->
 				<ul class="collection with-header">
 	        	<li class="collection-header grey lighten-2"><h5 class="center">INGRESOS FAMILIARES MENSUALES   <a href="#ingreso" class="btn-floating btn-large waves-effect waves-light teal accent-3 modal-trigger"><i class="material-icons">add</i></a></h5></li></ul>
-        <div class="tablaIngresos">
-          <table class="responsive-table">
+
+
+        <div id="tablaIngresos">
+          <table class="responsive-table" >
             <thead class="orange">
               <tr>
                 <th>Persona con ingresos económicos</th>
@@ -599,22 +601,14 @@
 
             <tbody>
               <tr>
-                <td>Alvin</td>
-                <td>Eclair</td>
-                <td>$0.87</td>
+                <td></td>
+                <td></td>
+                <td></td>
               </tr>
-              <tr>
-                <td>Alan</td>
-                <td>Jellybean</td>
-                <td>$3.76</td>
-              </tr>
-              <tr>
-                <td>Jonathan</td>
-                <td>Lollipop</td>
-                <td>$7.00</td>
-              </tr>
+
             </tbody>
           </table>
+
         </div>
 			<div class="row center">
 				<input type="submit" value="Guardar/Siguiente" class="btn btn-large center">

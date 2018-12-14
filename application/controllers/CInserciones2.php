@@ -98,8 +98,7 @@ class CInserciones2 extends CI_Controller {
       <table class="responsive-table" >
         <thead class="orange">
           <tr>
-            <th>Apellido Paterno</th>
-            <th>Apellido Materno</th>
+            <th>Apellidos</th>
             <th>Nombre</th>
             <th>Sexo</th>
             <th>Edad</th>
@@ -115,8 +114,7 @@ class CInserciones2 extends CI_Controller {
       foreach ($familiares->result() as $row) {
         $tabla.='
         <tr>
-          <td>'.$row->paterno.'</td>
-          <td>'.$row->materno.'</td>
+          <td>'.$row->apellidos.'</td>
           <td>'.$row->nombre.'</td>
           <td>'.$row->sexo.'</td>
           <td>'.$row->edad.'</td>
@@ -141,7 +139,35 @@ class CInserciones2 extends CI_Controller {
           'ingreso'=>$_POST['ingreso'],
           'porcentaje_destinado'=>$_POST['porcentaje'],
           'alumno'=>$alumno);
-          $this->MInserciones2->insertIngreso($arr_family);
+        $ingresos=$this->MInserciones2->insertIngreso($arr_family);
+
+        $tabla='
+        <table class="responsive-table" >
+          <thead class="orange">
+            <tr>
+              <th>Persona con ingresos económicos</th>
+              <th>Ingreso mensual en pesos</th>
+              <th>Porcentaje destinado al gasto familiar</th>
+            </tr>
+          </thead>
+          <tbody>
+
+        ';
+        foreach ($ingresos->result() as $row) {
+          $tabla.='
+          <tr>
+            <td>'.$row->personas_ingreso.'</td>
+            <td>'.$row->opcion.'</td>
+            <td>'.$row->porcentaje_destinado.'</td>
+          </tr>
+          ';
+        }
+        $tabla.='
+          </tbody>
+        </table>';
+
+        print $tabla;
+
   }
 
 
