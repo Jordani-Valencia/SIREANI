@@ -11,7 +11,7 @@ class CInserciones6 extends CI_Controller {
 
 
 	public function proyVida(){
-    $alumno=$this->session->userdata('id');
+    $alumno=9;
 
     $arr_proy=array(
       "alumno"=>$alumno,
