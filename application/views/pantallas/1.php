@@ -7,7 +7,7 @@
     </div>
   </nav>
 
-<script type="text/javascript" src="<?php echo base_url();?>/assets/js/val.js"></script> <!--Validacion de los select--> 
+<script type="text/javascript" src="<?php echo base_url();?>/assets/js/val.js"></script> <!--Validacion de los select-->
 
 	<div class="container">
 		<div class="row">
@@ -175,15 +175,21 @@
 				<ul class="collection center"><li class="collection-item">Datos de la escuela en donde cursó el último ciclo escolar</li></ul>
 				<!--Inicio Fila 5-->
 				<div class="row">
-					<div class="input-field col s6">
+					<div class="input-field col s5">
 						<input class="validate" id="esc" name="escuela1" type="text" required>
 						<label for="esc">Nombre de la escuela</label>
 						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
 					</div>
 
-					<div class="input-field col s6">
+					<div class="input-field col s5">
 						<input class="validate" id="dom" name="domEsc1" type="text" required>
 						<label for="dom">Domicilio de la escuela</label>
+						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
+					</div>
+
+					<div class="input-field col s2">
+						<input class="validate" id="cct1" name="cct" type="text" required>
+						<label for="cct">C.C.T.</label>
 						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
 					</div>
 				</div>
@@ -329,7 +335,7 @@
 
 					<div class="col s2">
 						<p class="range-field">
-      						<input type="range" id="numh" min="0" max="24" name="horas" />
+      						<input type="range" id="numh" min="0" max="48" name="horas" />
       						<label for="numh">Número de horas a la semana</label>
     					</p>
 					</div>
@@ -340,7 +346,7 @@
 				<!--Fin Encabezado-->
 				<!--Inicio Fila 10-->
 	        	<div class="row">
-					<div class="input-field col s3">
+					<div class="input-field col s4">
 						<input class="validate" id="cal" type="text" name="calle1" required>
 						<label for="cal">Calle</label>
 						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
@@ -366,8 +372,31 @@
 				</div>
 
 				<!--Fin Fila 10-->
+
+				<!--Entre calles-->
+				<div class="row">
+					<div class="input-field col s4" id="c1">
+						<input type="text" name="entrec1" id="c1" class="validate" required>
+						<label for="c1">Entre calle</label>
+						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
+					</div>
+
+					<div class="input-field col s4" id="c2">
+						<input type="text" name="entrec2" id="c2" class="validate" required>
+						<label for="c2">Y calle</label>
+						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
+					</div>
+
+					<div class="input-field col s4" id="ref">
+						<input type="text" name="referencia" id="c2" class="validate" required>
+						<label for="ref">Referencia</label>
+						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
+					</div>
+				</div>
+
 				<!--Inicio Fila 11-->
-				<div class="input-field col s3">
+				<div class="row">
+				<div class="input-field col s4">
 					<select class="" name="entidad3" id="seis">
 						<option value="" disabled selected>Elige una opción</option>
 						<option value=1>Aguascalientes</option>
@@ -406,7 +435,7 @@
 					<label for="ent3">Entidad Federativa</label>
 					<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
 				</div>
-				<div class="row">
+
 					<div class="input-field col s4" id="mun3">
 						<input class="validate" id="municipio3" type="text" name="municipio3" required>
 					<label>Municipio</label>
@@ -420,7 +449,8 @@
 					</div>
 				</div>
 
-					<div class="input-field col s2">
+				<div class="row">
+					<div class="input-field col s3">
 						<input class="validate" id="post" name="postal1" type="number" required>
 						<label for="post">Código Postal</label>
 						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
@@ -435,6 +465,12 @@
 					<div class="input-field col s3">
 						<input class="validate" id="cel" type="tel" name="celular1" data-length="10" maxlength="10">
 						<label for="cel">Teléfono de celular</label>
+						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
+					</div>
+
+					<div class="input-field col s3">
+						<input class="validate" id="c" type="tel" name="celular1" data-length="12" maxlength="12">
+						<label for="c">Teléfono de emergencia</label>
 						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
 					</div>
 				</div>
