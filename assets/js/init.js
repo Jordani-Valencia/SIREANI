@@ -120,9 +120,6 @@ function modal1(){
     $("#estudios1").material_select;
     $("#parentesco1").val(0);
     $("#parentesco1").material_select;
-    alert("hola");
-
-
 
   }
 }
@@ -154,7 +151,7 @@ function modal2(){
     var datos="persona="+persona+"&ingreso="+ingreso+"&porcentaje="+porcentaje;
 
     $.post(base+"CInserciones2/ajaxIngresos",datos,function(data){
-
+        $("#tablaIngresos").html(data);
     });
     document.getElementById('ingresos2').value=null;
     document.getElementById('ingresos3').value=0;
@@ -162,7 +159,7 @@ function modal2(){
 
     $("#estudios1").val(0);
     $("#estudios1").material_select;
-    alert("hola");
+
     //return false;
 
   }

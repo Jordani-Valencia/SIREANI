@@ -12,10 +12,14 @@ class MInserciones2 extends CI_Model
   function insertFamiliar($datos){
     $this->db->insert("familiares",$datos);
     $this->db->where("alumno",$datos['alumno']);
-    return $this->db->get("familiares");
+    return $this->db->get("v_familiares");
   }
   function insertIngreso($datos){
     $this->db->insert("ingresos_familiares",$datos);
+
+    $this->db->where("alumno",$datos['alumno']);
+    return $this->db->get("v_ingresos_mensuales");
+
   }
   function padres($datos){
     $this->db->insert("padres",$datos);
