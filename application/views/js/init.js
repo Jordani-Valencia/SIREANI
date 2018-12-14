@@ -10,7 +10,7 @@
     $('select').formSelect();
     $('.timepicker').timepicker();
     $('.modal').modal();
-    $('input#curp, input#tel, input#cel').characterCounter();
+    $('input#curp, input#tel, input#cel, input#c').characterCounter();
 
 
     $('input.autocomplete').autocomplete({
