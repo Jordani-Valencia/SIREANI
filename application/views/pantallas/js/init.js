@@ -5,7 +5,7 @@
     $('.dropdown-trigger').dropdown();
     $('.datepicker').datepicker({
     	selectMonths: true,
-    	selectYears:30,
+    	selectYears:50,
     	format: 'dd-mm-yyyy'});
     $('select').formSelect();
     $('.timepicker').timepicker();
