@@ -7,7 +7,7 @@
     </div>
   </nav>
 
-<script type="text/javascript" src="<?php echo base_url();?>/assets/js/val.js"></script> <!--Validacion de los select-->
+<script type="text/javascript" src="<?php echo base_url();?>assets/js/val.js"></script> <!--Validacion de los select-->
 
 	<div class="container">
 		<div class="row">
@@ -188,8 +188,8 @@
 					</div>
 
 					<div class="input-field col s2">
-						<input class="validate" id="cct1" name="cct" type="text" required>
-						<label for="cct">C.C.T.</label>
+						<input class="validate" id="ct" name="cct" type="text" data-length="12" maxlength="12" required>
+						<label for="ct">C.C.T.</label>
 						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
 					</div>
 				</div>
@@ -469,7 +469,7 @@
 					</div>
 
 					<div class="input-field col s3">
-						<input class="validate" id="c" type="tel" name="celular1" data-length="12" maxlength="12">
+						<input class="validate" id="c" type="tel" name="celular1" data-length="12" maxlength="12" required>
 						<label for="c">Teléfono de emergencia</label>
 						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
 					</div>
