@@ -28,8 +28,14 @@ class MInserciones5 extends CI_Model
   }
   function insConsumoFamiliar($datos){
     $this->db->insert("consumo_familiar",$datos);
+
+    $this->db->where("alumno",$datos['alumno']);
+    return $this->db->get("v_consumo");
   }
 
+  function insertNegocio($datos){
+    $this->db->insert("negocios_familiares",$datos);
+  }
 
 
 }

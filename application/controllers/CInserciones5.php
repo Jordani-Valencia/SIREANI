@@ -19,6 +19,8 @@ class CInserciones5 extends CI_Controller {
       "frecuencia"=>$_POST['FrecuenciaModal']);
 
     $this->MInserciones5->insConsumoFamiliar($arr_consumo);
+
+
   }
 
 	public function sociales(){
@@ -250,6 +252,13 @@ class CInserciones5 extends CI_Controller {
         "actividad"=>17,
         "familiar"=>10);
       $this->MInserciones5->insertActFamilia($ar_actividades);
+    }
+
+    if (isset($_POST['negocio'])) {
+      $ar_actividades=array(
+        "relacion"=>$relacion,
+        "actividades_apoyo"=>$_POST['negocio2']);
+      $this->MInserciones5->insertNegocio($ar_actividades);
     }
 
     redirect(base_url().'registro/seis');
