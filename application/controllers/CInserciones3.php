@@ -19,7 +19,7 @@ class CInserciones3 extends CI_Controller {
     $agua=isset($_POST['agua'])?1:0;
     $blue=isset($_POST['blue'])?1:0;
     $horno=isset($_POST['horno'])?1:0;
-    $focos=isset($_POST['focos'])?1:0;
+    $focos=isset($_POST['focos'])?$_POST['focos']:0;
     $laptop=isset($_POST['laptop'])?1:0;
     $estufa=isset($_POST['estufa'])?1:0;
     $drenaje=isset($_POST['drenaje'])?1:0;
@@ -61,11 +61,14 @@ class CInserciones3 extends CI_Controller {
 
     $this->MInserciones3->ambienteSocioEconomico($arr_amb_soc);
 
-
+    //AGREGAR (tipo_sangre varchar (4), alergias text, num_seguro TEXT)
     $arr_salud=array("alumno"=>$alumno,
     "apariencia"=>$_POST['grupo3'],
     "estatura"=>$_POST['estatura'],
     "peso"=>$_POST['peso'],
+    "tipo_sangre"=>$_POST['sangre'],
+    "alergias"=>$_POST['alergia'],
+    "num_seguro"=>$_POST['numseguro'],
     "frec_medico"=>$_POST['medico'],
     "frec_dentista"=>$_POST['dentista'],
     "anteojos"=>$_POST['anteojos']);
