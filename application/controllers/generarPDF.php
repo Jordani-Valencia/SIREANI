@@ -87,7 +87,7 @@ class generarPDF extends CI_Controller {
         $pdf->SetXY($x+91,$y);
         $pdf->Cell(84,5,"Lugar de Nacimiento: ",'RL',0,'L');
         $pdf->SetXY($x+91,$y+5);
-        $pdf->Cell(84,5,$datos_generales->lugar_nacimiento,'RLB',0,'L');
+        $pdf->Cell(84,5,utf8_decode($datos_generales->lugar_nacimiento),'RLB',0,'L');
 
       // delegacion, entidad,pais
       $pdf->SetXY($x,$y+=10);
@@ -118,18 +118,25 @@ class generarPDF extends CI_Controller {
         $pdf->SetXY($x,$y+=5);
         $pdf->Cell(47,5,utf8_decode($datos_generales->nacionalidad),'RLB',0,'L');
 
+        $pdf->SetXY($x,$y+=5);
+        $pdf->MultiCell(30,4,"Datos de la escuela en donde curso el ultimo cciclo escolar" ,"RLT" ,"J" ,false);
+        $pdf->SetXY($x+30,$y);
+        $pdf->MultiCell(40,4,"Nombre de la escuela \n".utf8_decode($datos_generales->nombre_sec) ,"T" ,"C" ,false);
+        $pdf->SetXY($x+70,$y);
+        $pdf->MultiCell(40,4,"Domicilio de la escuela \n\n".utf8_decode($datos_generales->domicilio_sec)."\n" ,"T" ,"C" ,false);
+        $pdf->SetXY($x+70,$y);
+        $pdf->Cell(40,16,"",'RL',0,'L');
+
+        $pdf->SetXY($x+110,$y);
+        $pdf->MultiCell(35,4,utf8_decode("Delegación o municipio \n".$datos_generales->mun_del_sec)."\n" ,"T" ,"C" ,false);
+        $pdf->SetXY($x+110,$y);
+        $pdf->Cell(35,16,"",'R',0,'L');
+        $pdf->SetXY($x+145,$y);
+        $pdf->MultiCell(30,4,utf8_decode("Entidad Federativa \n\n".$datos_generales->estado_secundaria)."\n" ,"T" ,"C" ,false);
+        $pdf->SetXY($x+145,$y);
+        $pdf->Cell(30,16,"",'RL',0,'L');
       // escuela,domicilio delegacion,entidad (secundaria)
-      $pdf->SetXY($x,$y+=5);
-        $pdf->Cell(35,4,utf8_decode("Datos de la"),'RL',0,'L');
-        $pdf->SetXY($x,$y+4);
-        $pdf->Cell(35,4,utf8_decode("escuela en donde"),'RL',0,'L');
-        $pdf->SetXY($x,$y+8);
-        $pdf->Cell(35,4,utf8_decode("cursó el último"),'RL',0,'L');
-        $pdf->SetXY($x,$y+12);
-        $pdf->Cell(35,4,utf8_decode("ciclo escolar"),'BRL',0,'L');
-
-
-
+      /*$pdf->SetXY($x,$y+=5);
         $pdf->SetXY($x+35,$y);
         $pdf->Cell(35,8,utf8_decode("Nombre de la escuela"),'RL',0,'L');
         $pdf->Cell(35,8,utf8_decode("Domicilio de la escuela"),'RL',0,'L');
@@ -141,13 +148,13 @@ class generarPDF extends CI_Controller {
         $pdf->Cell(35,8,utf8_decode($datos_generales->domicilio_sec),'RLB',0,'L');
         $pdf->Cell(35,8,utf8_decode($datos_generales->mun_del_sec),'RLB',0,'L');
         $pdf->Cell(35,8,utf8_decode($datos_generales->estado_secundaria),'RBL',0,'L');
-
+      */
       //TURNO, promedio
       $pdf->SetXY($x,$y+=16);
-        $pdf->Cell(20,6,utf8_decode("Turno: "),'RBL',0,'L');
-        $pdf->Cell(30,6,utf8_decode($datos_generales->turno ==1?"Matutino":"Vespertino"),'RB',0,'L');
-        $pdf->Cell(105,6,"Promedio de calificaciones en el ciclo anterior: ",'RBL',0,'L');
-        $pdf->Cell(20,6,$datos_generales->promedio,'RB',0,'L');
+        $pdf->Cell(20,6,utf8_decode("Turno: "),'RTBL',0,'L');
+        $pdf->Cell(30,6,utf8_decode($datos_generales->turno ==1?"Matutino":"Vespertino"),'RBT',0,'L');
+        $pdf->Cell(105,6,"Promedio de calificaciones en el ciclo anterior: ",'RBLT',0,'L');
+        $pdf->Cell(20,6,$datos_generales->promedio,'RBT',0,'L');
       //beca  no-si especificar1
       $datos_beca=$this->MGetInfo->get_beca($alumno);
       if ($datos_beca->num_rows()>0) {
@@ -326,6 +333,24 @@ class generarPDF extends CI_Controller {
           $pdf->Cell(65,5,"Nombre(s):",'RL',0,'L');
 
           $pdf->SetXY($x,$y+=5);
+          /*
+          $familia=$this->MGetInfo->get_familiares($alumno);
+          $pdf->SetXY($x,$y+=6);
+          $contador=0;
+          foreach ($familia->result() as $family) {
+            $pdf->Cell(33,5,utf8_decode($family->apellidos),'RLB',0,'L');
+            $pdf->Cell(36,5,utf8_decode($family->nombre),'RLB',0,'L');
+            $pdf->Cell(10,5,utf8_decode($family->sexo),'RLB',0,'L');
+            $pdf->Cell(10,5,utf8_decode($family->edad),'RLB',0,'L');
+            $pdf->Cell(33,5,utf8_decode($family->ocupacion),'RLB',0,'L');
+            $pdf->Cell(18,5,utf8_decode($family->parentezco),'RLB',0,'L');
+            $pdf->Cell(35,5,utf8_decode($family->grado_estudio),'RLB',0,'L');
+            $pdf->SetXY($x,$y+=4);
+            if ($contador++==8) {
+              break;
+            }
+          }
+          */
           $pdf->Cell(55,6,utf8_decode(""),'RLB',0,'L');
           $pdf->Cell(55,6,utf8_decode(""),'RLB',0,'L');
           $pdf->Cell(65,6,utf8_decode(""),'RLB',0,'L');
