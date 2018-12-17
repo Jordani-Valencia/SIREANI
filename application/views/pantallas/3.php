@@ -191,7 +191,7 @@
 				<div class="row">
 					<h5 class="center collection">Para tu uso personal cuentas con</h5>
 					<div class="col s4 center">
-						<h7>Reproductor digital portátil de música</h7>
+						<h7>Smartphone</h7>
 							<div class="switch">
 					    		<label>No
 					      		<input type="checkbox" name="reproductor">
@@ -326,10 +326,39 @@
 					</div>
 				</div>
 				<!--Fin Fila10-->
+        <!--se agrego tipo de sangre y alergias-->
+        <div class="row">
+          <div class="col s6 center input-field">
+            <select class="" name="sangre" id="san">
+              <option value="O-">O-</option>
+              <option value="O+">O+</option>
+              <option value="A-">A-</option>
+              <option value="A+">A+</option>
+              <option value="B-">B-</option>
+              <option value="B+">B+</option>
+              <option value="AB-">AB-</option>
+              <option value="AB+">AB+</option>
+            </select>
+            <label for="san">Tipo de sangre</label>
+          </div>
+
+          <div class="input-field col s6 center">
+            <input type="text" name="alergia" id="ale">
+            <label for="ale">Alergias</label>
+          </div>
+        </div>
 				<!--Inicio Fila11-->
 				<div class="row">
 					<div class="col s12 center"><h5 class="collection">¿Actualmente cuenta con algún tipo de servicio de salud?</h5></div>
 				</div>
+        <!--Se agregó numero de seguro, alergias y tipo de sangre-->
+        <div class="row">
+          <div class="col s12 center input-field">
+            <input class="validate" type="text" name="numseguro" id="seg">
+            <label for="seg">Número de seguro</label>
+            <span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
+          </div>
+        </div>
 				<!--Fin Fila11-->
 				<!--Inicio Fila12-->
 				<div class="row">
