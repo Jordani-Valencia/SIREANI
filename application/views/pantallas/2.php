@@ -235,7 +235,7 @@
 
 	    			<div class="col s6">
 						<p class="range-field">
-      					<input type="range" id="hrsemana" min="0" max="24" name="semana"/>
+      					<input type="range" id="hrsemana" min="0" max="48" name="semana"/>
       					<label for="hrsemana">Número de horas a la semana</label>
     					</p>
 						</div>
