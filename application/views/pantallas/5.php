@@ -67,19 +67,19 @@
 				<!--Inicio Fila4-->
 				<div class="row">
 					<div class="input-field col s4">
-						<input class="validate" id="nom5" type="text" name="nombre5" required>
+						<input class="validate" id="nom5" type="text" name="nombre5">
 						<label for="nom5">Nombre</label>
 						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
 					</div>
 
 					<div class="input-field col s4">
-						<input class="validate" id="ap4" type="text" name="paterno4" required>
+						<input class="validate" id="ap4" type="text" name="paterno4">
 						<label for="ap4">Apellido Paterno</label>
 						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
 					</div>
 
 					<div class="input-field col s4">
-						<input class="validate" id="am4" type="text" name="materno4" required>
+						<input class="validate" id="am4" type="text" name="materno4">
 						<label for="am4">Apellido Materno</label>
 						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
 					</div>
@@ -88,23 +88,23 @@
 				<!--Inicio Fila5-->
 				<div class="row">
 					<div class="input-field col s3">
-  					<input type="text" id="nac4" class="datepicker" name="nacimiento4" required>
+  					<input type="text" id="nac4" class="datepicker" name="nacimiento4">
 						<label for="nac4">Fecha de Nacimiento</label>
 					</div>
 
     				<div class="input-field col s3">
-							<input class="validate" id="lug4" type="text" name="lugar4" required>
+							<input class="validate" id="lug4" type="text" name="lugar4">
 							<label for="lug4">Lugar de Nacimiento</label>
 							<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
     				</div>
 
             <div class="input-field col s3" id="mun6">
-              <input class="validate" id="municipio6" type="text" name="municipio6" required>
+              <input class="validate" id="municipio6" type="text" name="municipio6">
 						<label for="municipio6">Municipio</label>
     				</div>
 
     				<div class="input-field col s3" id="del6">
-						  <input class="validate" id="delegacion6" type="text" name="delegacion6" required>
+						  <input class="validate" id="delegacion6" type="text" name="delegacion6">
 						<label for="delegacion6">Delegación</label>
     				</div>
 				</div>
@@ -173,7 +173,7 @@
     				</div>
 
     				<div class="input-field col s4">
-							<input class="validate" id="c" name="curp4" type="text" pattern="([A-Z]{4}([0-9]{2})(0[1-9]|1[0-2])(0[1-9]|1[0-9]|2[0-9]|3[0-1])[HM](AS|BC|BS|CC|CL|CM|CS|CH|DF|DG|GT|GR|HG|JC|MC|MN|MS|NT|NL|OC|PL|QT|QR|SP|SL|SR|TC|TS|TL|VZ|YN|ZS|NE)[A-Z]{3}[0-9A-Z]\d)" data-length="18" maxlength="18" required onkeyup="mayus(this);">
+							<input class="validate" id="c" name="curp4" type="text" pattern="([A-Z]{4}([0-9]{2})(0[1-9]|1[0-2])(0[1-9]|1[0-9]|2[0-9]|3[0-1])[HM](AS|BC|BS|CC|CL|CM|CS|CH|DF|DG|GT|GR|HG|JC|MC|MN|MS|NT|NL|OC|PL|QT|QR|SP|SL|SR|TC|TS|TL|VZ|YN|ZS|NE)[A-Z]{3}[0-9A-Z]\d)" data-length="18" maxlength="18" onkeyup="mayus(this);">
 							<label for="c">CURP</label>
 							<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
 					</div>
@@ -625,7 +625,7 @@
     					      		Sí</label>
     							</div>
     					</div>
-              
+
               <div class="input-field col s6 center">
     						<input class="validate" id="act" type="text" name="negocio2">
     						<label for="act">¿En qué actividades del negocio familiar apoya?</label>
