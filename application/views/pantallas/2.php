@@ -516,25 +516,25 @@
               <div class="row">
                 <ul class="collection with-header"><li class="collection-header grey lighten-2"><h5 class="center">DOMICILIO DEL TUTOR ESCOLAR</h5></li></ul>
                 <div class="input-field col s4">
-                  <input class="validate" id="cal" type="text" name="calle1">
+                  <input class="validate" id="cal" type="text" name="calle1Tutor">
                   <label for="cal">Calle</label>
                   <span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
                 </div>
 
                 <div class="input-field col s2">
-                  <input class="validate" id="ext" type="number" name="exterior1">
+                  <input class="validate" id="ext" type="number" name="exterior1Tutor">
                   <label for="ext">No. Exterior</label>
                   <span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
                 </div>
 
                 <div class="input-field col s2">
-                  <input class="validate" id="int" type="number" name="interior1">
+                  <input class="validate" id="int" type="number" name="interior1Tutor">
                   <label for="int">No. Interior</label>
                   <span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
                 </div>
 
                 <div class="input-field col s4">
-                  <input class="validate" id="col" type="text" name="colonia1">
+                  <input class="validate" id="col" type="text" name="colonia1Tutor">
                   <label for="col">Colonia</label>
                   <span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
                 </div>
@@ -542,19 +542,19 @@
 
               <div class="row">
                 <div class="input-field col s4" id="c1">
-                  <input type="text" name="entrec1" id="c1" class="validate">
+                  <input type="text" name="entrec1Tutor" id="c1" class="validate">
                   <label for="c1">Entre calle</label>
                   <span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
                 </div>
 
                 <div class="input-field col s4" id="c2">
-                  <input type="text" name="entrec2" id="c2" class="validate">
+                  <input type="text" name="entrec2Tutor" id="c2" class="validate">
                   <label for="c2">Y calle</label>
                   <span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
                 </div>
 
                 <div class="input-field col s4" id="ref">
-                  <input type="text" name="referencia" id="c2" class="validate">
+                  <input type="text" name="referenciaTutor" id="c2" class="validate">
                   <label for="ref">Referencia</label>
                   <span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
                 </div>
