@@ -455,26 +455,26 @@
 				<!--Fin Fila25-->
 				<!--Inicio Fila26-->
 				<div class="row">
-					<div class="collection green lighten-4 col s4 center"><h6>Libros que haz leído</h6></div>
-					<div class="collection red lighten-4 col s4 center"><h6>Mis película preferidas son</h6></div>
-					<div class="collection blue lighten-4 col s4 center"><h6>¿Cuántos amigos tengo?</h6></div>
+					<div class="col s4 center"><h6>Libros que haz leído</h6></div>
+					<div class="col s4 center"><h6>Mis película preferidas son</h6></div>
+					<div class="col s4 center"><h6>¿Cuántos amigos tengo?</h6></div>
 				</div>
 				<!--Fin Fila26-->
 				<!--Inicio Fila27-->
 				<div class="row">
-					<div class="collection green lighten-5 input-field col s4">
+					<div class="input-field col s4">
 						<textarea id="textarea4" class="materialize-textarea validate" name="libro1" required></textarea>
 			      <label for="textarea4">1.- </label>
 						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
 					</div>
 
-					<div class="collection red lighten-5 input-field col s4">
+					<div class="input-field col s4">
 						<textarea id="textarea5" class="materialize-textarea validate" name="pelicula1" required></textarea>
 			      <label for="textarea5">1.- </label>
 						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
 					</div>
 
-					<div class="collection blue lighten-5 input-field col s4">
+					<div class="input-field col s4">
 						<input class="validate" id="ami" type="number" step="1" name="amigos2" required>
 						<label for="ami">Número de amigos</label>
 						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
@@ -483,36 +483,36 @@
 				<!--Fin Fila27-->
 				<!--Inicio Fila28-->
 				<div class="row">
-					<div class="collection green lighten-5 input-field col s4">
+					<div class="input-field col s4">
 						<textarea id="textarea6" class="materialize-textarea validate" name="libro2" required></textarea>
 			      <label for="textarea6">2.- </label>
 						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
 					</div>
 
-					<div class="collection red lighten-5 input-field col s4">
+					<div class="input-field col s4">
 						<textarea id="textarea7" class="materialize-textarea validate" name="pelicula2" required></textarea>
 			      <label for="textarea7">2.- </label>
 						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
 					</div>
 
-					<div class="collection brown lighten-4 col s4 center"><h6>¿Qué lugares frecuento con ellos?</h6></div>
+					<div class="col s4 center"><h6>¿Qué lugares frecuento con ellos?</h6></div>
 				</div>
 				<!--Fin Fila28-->
 				<!--Inicio Fila29-->
 				<div class="row">
-					<div class="collection green lighten-5 input-field col s4">
+					<div class="input-field col s4">
 						<textarea id="textarea8" class="materialize-textarea validate" name="libro3" required></textarea>
 			      <label for="textarea8">3.- </label>
 						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
 					</div>
 
-					<div class="collection red lighten-5 input-field col s4">
+					<div class="input-field col s4">
 						<textarea id="textarea9" class="materialize-textarea validate" name="pelicula3" required></textarea>
 			      <label for="textarea9">3.- </label>
 						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
 					</div>
 
-					<div class="collection brown lighten-5 input-field col s4">
+					<div class="input-field col s4">
 						<textarea id="textarea10" class="materialize-textarea validate" name="lugares" required></textarea>
 			      <label for="textarea10">1.- </label>
 						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
@@ -521,19 +521,19 @@
 				<!--Fin Fila29-->
 				<!--Inicio Fila30-->
 				<div class="row">
-					<div class="collection green lighten-5 input-field col s4">
+					<div class="input-field col s4">
 						<textarea id="textarea11" class="materialize-textarea validate" name="libro4" required></textarea>
 			      <label for="textarea11">4.- </label>
 						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
 					</div>
 
-					<div class="collection red lighten-5 input-field col s4">
+					<div class="input-field col s4">
 						<textarea id="textarea12" class="materialize-textarea validate" name="pelicula4" required></textarea>
 			      <label for="textarea12">4.- </label>
 						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
 					</div>
 
-					<div class="collection brown lighten-5 input-field col s4">
+					<div class="input-field col s4">
 						<textarea id="textarea13" class="materialize-textarea validate" name="lugares2" required></textarea>
 			      <label for="textarea13">2.- </label>
 						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
