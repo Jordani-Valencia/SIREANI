@@ -103,7 +103,6 @@ function modal1(){
     var datos="nombre="+nombre+"&paterno="+paterno+"&materno="+materno+"&edad="+edad+
     "&ocupacion="+ocupacion+"&parentesco="+parentesco+"&grado="+grado+"&sexo="+sexo;
 
-
     $.post(base+"CInserciones2/ajaxFamiliar",datos,function(data){
       $("#tablaFamiliares").html(data);
     });
