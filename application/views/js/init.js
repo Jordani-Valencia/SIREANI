@@ -1,5 +1,6 @@
 (function($){
   $(function(){
+
     $('.sidenav').sidenav();
     $('.dropdown-trigger').dropdown();
     $('.datepicker').datepicker({

@@ -507,63 +507,6 @@
 					</div>
 				</div>
 				<!--Fin Fila 13-->
-
-        <!--En caso de que el padre, madre o tutor no viva con el alumno se llena este apartado-->
-        <ul class="collapsible">
-          <li>
-            <div class="collapsible-header"><h4>En caso de que los padres o tutor no vivan con el alumno llenar lo siguiente dando click aquí</h4></div>
-            <div class="collapsible-body">
-              <div class="row">
-                <ul class="collection with-header"><li class="collection-header grey lighten-2"><h5 class="center">DOMICILIO DEL TUTOR ESCOLAR</h5></li></ul>
-                <div class="input-field col s4">
-                  <input class="validate" id="cal" type="text" name="calle1">
-                  <label for="cal">Calle</label>
-                  <span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
-                </div>
-
-                <div class="input-field col s2">
-                  <input class="validate" id="ext" type="number" name="exterior1">
-                  <label for="ext">No. Exterior</label>
-                  <span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
-                </div>
-
-                <div class="input-field col s2">
-                  <input class="validate" id="int" type="number" name="interior1">
-                  <label for="int">No. Interior</label>
-                  <span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
-                </div>
-
-                <div class="input-field col s4">
-                  <input class="validate" id="col" type="text" name="colonia1">
-                  <label for="col">Colonia</label>
-                  <span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="input-field col s4" id="c1">
-                  <input type="text" name="entrec1" id="c1" class="validate">
-                  <label for="c1">Entre calle</label>
-                  <span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
-                </div>
-
-                <div class="input-field col s4" id="c2">
-                  <input type="text" name="entrec2" id="c2" class="validate">
-                  <label for="c2">Y calle</label>
-                  <span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
-                </div>
-
-                <div class="input-field col s4" id="ref">
-                  <input type="text" name="referencia" id="c2" class="validate">
-                  <label for="ref">Referencia</label>
-                  <span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
-                </div>
-              </div>
-            </div>
-          </li>
-        </ul>
-        <!--Termina domicilio padre, madre, tutor-->
-
         <ul class="collection with-header">
 	        	<li class="collection-header grey lighten-2"><h5 class="center">INGRESOS FAMILIARES</h5></li></ul>
 				<!--Inicio Fila 14-->
