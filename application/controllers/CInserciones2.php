@@ -12,30 +12,57 @@ class CInserciones2 extends CI_Controller {
 
 	public function padre(){
     $alumno=$this->session->userdata('id');
-    $trabaja=isset($_POST['trabaja'])?1:0;
-    $horas=isset($_POST['trabaja'])?$_POST['semana']:0;
 
-    $arr_padre=array(
-      "alumno" =>$alumno,
-      "parentezco"=>2,
-      "paterno_padre"=>$_POST['paterno2'],
-      "materno_padre"=>$_POST['materno2'],
-      "nombre_padre"=>$_POST['nombre3'],
-      "fecha_nacimiento"=>$_POST['nacimiento2'],
-      "lugar_nacimiento"=>$_POST['lugar2'],
-      "municipio"=>$_POST['municipio4'],
-      "delegacion"=>$_POST['delegacion4'],
-      "entidad"=>$_POST['entidad3'],
-      "pais"=>$_POST['pais2'],
-      "curp"=>$_POST['curp2'],
-      "trabaja"=>$trabaja,
-      "tel_casa"=>$_POST['telefono2'],
-      "horas_trabajo"=>$horas,
-      "tel_trabajo"=>$_POST['telefono3'],
-      "cel"=>$_POST['celular2'],
-      "grado_estudio"=>$_POST['grupo1']);
-      $this->MInserciones2->padres($arr_padre);
+    //
+    if ($_POST['nombre5']!=null && $_POST['paterno4']!=null) {
+      $arr_tutor= array(
+        "alumno" =>$alumno,
+        "parentezco"=>9,
+        "paterno_padre"=>$_POST['paterno4'],
+        "materno_padre"=>$_POST['materno4'],
+        "nombre_padre"=>$_POST['nombre5'],
+        "fecha_nacimiento"=>$_POST['nacimiento4'],
+        "lugar_nacimiento"=>$_POST['lugar4'],
+        "municipio"=>$_POST['municipio6'],
+        "delegacion"=>$_POST['delegacion6'],
+        "entidad"=>isset($_POST['entidad6'])?$_POST['entidad6']:15,
+        "pais"=>$_POST['paisTutor'],
+        "curp"=>$_POST['curp4'],
+        "trabaja"=>isset($_POST['trabaja4'])?1:0,
+        "horas_trabajo"=>isset($_POST['trabaja4'])?$_POST['semana3']:0,
+        "grado_estudio"=>isset($_POST['grupo4'])?$_POST['grupo4']:15);
+        //especificar14=otro&
+        $this->MInserciones2->insTutor($arr_tutor);
 
+    }
+    //
+    if ($_POST['nombre3']!=null && $_POST['paterno2']!=null) {
+      $trabaja=isset($_POST['trabaja'])?1:0;
+      $horas=isset($_POST['trabaja'])?$_POST['semana']:0;
+
+      $arr_padre=array(
+        "alumno" =>$alumno,
+        "parentezco"=>2,
+        "paterno_padre"=>$_POST['paterno2'],
+        "materno_padre"=>$_POST['materno2'],
+        "nombre_padre"=>$_POST['nombre3'],
+        "fecha_nacimiento"=>$_POST['nacimiento2'],
+        "lugar_nacimiento"=>$_POST['lugar2'],
+        "municipio"=>$_POST['municipio4'],
+        "delegacion"=>$_POST['delegacion4'],
+        "entidad"=>isset($_POST['entidad3'])?$_POST['entidad3']:15,
+        "pais"=>$_POST['pais2'],
+        "curp"=>$_POST['curp2'],
+        "trabaja"=>$trabaja,
+        "horas_trabajo"=>$horas,
+        "tel_casa"=>$_POST['telefono2'],
+        "tel_trabajo"=>$_POST['telefono3'],
+        "cel"=>$_POST['celular2'],
+        "grado_estudio"=>isset($_POST['grupo1'])?$_POST['grupo1']:15);
+        $this->MInserciones2->padres($arr_padre);
+
+    }
+    if ($_POST['nombre4']!=null && $_POST['paterno3']!=null) {
       $trabaja=isset($_POST['trabaja3'])?1:0;
       $horas=isset($_POST['trabaja3'])?$_POST['semana2']:0;
 
@@ -49,7 +76,7 @@ class CInserciones2 extends CI_Controller {
         "lugar_nacimiento"=>$_POST['lugar3'],
         "municipio"=>$_POST['municipio5'],
         "delegacion"=>$_POST['delegacion5'],
-        "entidad"=>$_POST['entidad4'],
+        "entidad"=>isset($_POST['entidad4'])?$_POST['entidad4']:15,
         "pais"=>$_POST['pais3'],
         "curp"=>$_POST['curp3'],
         "trabaja"=>$trabaja,
@@ -57,8 +84,23 @@ class CInserciones2 extends CI_Controller {
         "horas_trabajo"=>$horas,
         "tel_trabajo"=>$_POST['telefono5'],
         "cel"=>$_POST['celular3'],
-        "grado_estudio"=>$_POST['grupo2']);
+        "grado_estudio"=>isset($_POST['grupo2'])?$_POST['grupo2']:15);
         $this->MInserciones2->padres($arr_padre);
+
+    }
+    if ($_POST['calle1Tutor']!=null) {
+      $arDomTutor=array(
+        "alumno"=>$alumno,
+        "calle"=>$_POST['calle1Tutor'],
+        "externo"=>$_POST['exterior1Tutor'],
+        "interno"=>$_POST['interior1Tutor'],
+        "colonia"=>$_POST['colonia1Tutor'],
+        "entre1"=>$_POST['entrec1Tutor'],
+        "entre2"=>$_POST['entrec2Tutor'],
+        "referencia"=>$_POST['referenciaTutor']
+      );
+      $this->MInserciones2->insertDomTutor($arDomTutor);
+    }
 
         $personas=isset($_POST['ingresos1'])?$_POST['ingresos1']:0;
         $depende=isset($_POST['economico1'])?$_POST['economico1']:0;

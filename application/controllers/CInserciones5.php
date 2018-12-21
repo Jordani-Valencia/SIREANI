@@ -32,25 +32,7 @@ class CInserciones5 extends CI_Controller {
       "correo"=>$_POST['correo2']);
     $this->MInserciones5->insertMovil($arr_int);
 
-    $arr_tutor= array(
-      "alumno" =>$alumno,
-      "parentezco"=>9,
-      "paterno_padre"=>$_POST['paterno4'],
-      "materno_padre"=>$_POST['materno4'],
-      "nombre_padre"=>$_POST['nombre5'],
-      "fecha_nacimiento"=>$_POST['nacimiento4'],
-      "lugar_nacimiento"=>$_POST['lugar4'],
-      "municipio"=>$_POST['municipio6'],
-      "delegacion"=>$_POST['delegacion6'],
-      "entidad"=>$_POST['entidad6'],
-      "pais"=>$_POST['paisTutor'],
-      "curp"=>$_POST['curp4'],
-      "trabaja"=>isset($_POST['trabaja4'])?1:0,
-      "horas_trabajo"=>$_POST['semana3'],
-      "grado_estudio"=>$_POST['grupo4']  );
 
-      //especificar14=otro&
-    $this->MInserciones5->insTutor($arr_tutor);
 
     $arr_relaciones = array(
       "alumno" =>$alumno,

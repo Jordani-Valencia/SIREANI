@@ -11,9 +11,7 @@ class MInserciones5 extends CI_Model
   function insertMovil($datos){
     $this->db->insert("tel_movil",$datos);
   }
-  function insTutor($datos){
-    $this->db->insert("padres",$datos);
-  }
+
   function insRelaciones($datos){
     $this->db->insert("relaciones_sociales",$datos);
     $this->db->where("alumno",$datos['alumno']);
