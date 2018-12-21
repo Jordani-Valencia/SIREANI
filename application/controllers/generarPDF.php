@@ -13,8 +13,8 @@ class generarPDF extends CI_Controller {
 	}
 
 
-	public function index(){
-    $alumno=$this->session->userdata('id');
+	public function index($alumno){
+    
     $pdf=new fpdf('P','mm','letter');
     //P-L,pt puntos mm milimetros, cm centimetnros, tamaño
     $pdf->AddPage();
