@@ -31,10 +31,23 @@ class MGetInfo extends CI_Model
   }///////////////////////////////
 
 //SELECT'S SEGUNDA HOJA
-  function get_padres_tutor($alumno){
+  function get_padres($alumno){
     $this->db->where("alumno",$alumno);
+    $this->db->where("parentezco",1);
     return $this->db->get("v_padres");
   }
+  function get_madre($alumno){
+    $this->db->where("alumno",$alumno);
+    $this->db->where("parentezco",2);
+    return $this->db->get("v_padres");
+  }
+  // //////////////
+  function get_tutor($alumno){
+    $this->db->where("alumno",$alumno);
+    $this->db->where("parentezco",9);
+    return $this->db->get("v_padres");
+  }
+
   function get_ingr_familiares($alumno){
     $this->db->where("alumno",$alumno);
     return $this->db->get("v_ingresos_familiares");
@@ -47,7 +60,7 @@ class MGetInfo extends CI_Model
 //SELECT'S TERCER HOJA
   function get_socioeconomico($alumno){
     $this->db->where("alumno",$alumno);
-    return $this->db->get("abmiente_socioeconomico");
+    return $this->db->get("ambiente_socioeconomico");
   }
   function get_salud1($alumno){
     $this->db->where("alumno",$alumno);
@@ -59,7 +72,7 @@ class MGetInfo extends CI_Model
   }
   function get_s_salud($salud){
     $this->db->where("salud",$salud);
-    return $this->db->get("servicio_salud");
+    return $this->db->get("v_servicio_salud");
   }
   function get_tratamiento($salud){
     $this->db->where("salud",$salud);
