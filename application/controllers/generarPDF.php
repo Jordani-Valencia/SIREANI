@@ -1068,59 +1068,230 @@ class generarPDF extends CI_Controller {
           $pdf->SetXY($x,$y+=5);
           $pdf->SetFont('Arial','',8);
           $pdf->Cell($ancho,4,utf8_decode("¿Cuántas veces a la semana haces ejercicio físico?"),'BRLT',1,'C');
-
+          $ejercicio=$this->MGetInfo->get_ejercicio($alumno);
+          $ejercicio=$ejercicio->row();
           $pdf->SetFont('Arial','',9);
           $pdf->SetXY($x,$y+=4);
-          $pdf->Cell($ancho/4,4,"(    ) De 1 a 2 veces ",'RLB',0,'C');
+          $p=$ejercicio->frecuencia==1?"X":" ";
+          $pdf->Cell($ancho/4,4,"(  $p  ) De 1 a 2 veces ",'RLB',0,'C');
           $pdf->SetXY(63.75,$y);
-          $pdf->Cell($ancho/4,4,"(    ) De 3 a 4 veces ",'RLB',0,'C');
+          $p=$ejercicio->frecuencia==2?"X":" ";
+          $pdf->Cell($ancho/4,4,"(  $p  ) De 3 a 4 veces ",'RLB',0,'C');
           $pdf->SetXY(107.5,$y);
-          $pdf->Cell($ancho/4,4,"(    ) De 5 a 7 veces ",'RLB',0,'C');
+          $p=$ejercicio->frecuencia==3?"X":" ";
+          $pdf->Cell($ancho/4,4,"(  $p  ) De 5 a 7 veces ",'RLB',0,'C');
           $pdf->SetXY(151.25,$y);
-          $pdf->Cell($ancho/4,4,"(    ) Nunca ",'RLB',0,'C');
+          $p=$ejercicio->frecuencia==4?"X":" ";
+          $pdf->Cell($ancho/4,4,"(  $p  ) Nunca ",'RLB',0,'C');
+
 
           $pdf->SetFont('Arial','',9);
           $pdf->SetXY($x,$y+=4);
-          $pdf->Cell($ancho/2,4,utf8_decode("¿Practicas algún deporte?   No (   )   Si (   )"),'RLB',0,'C');
+          $p=$ejercicio->practica_deporte==1?"¿Practicas algún deporte?   No (   )   Si (  X  )":"¿Practicas algún deporte?   No (  X  )   Si (   )";
+          $pdf->Cell($ancho/2,4,utf8_decode($p),'RLB',0,'C');
           $pdf->SetXY(107.5,$y);
           $pdf->Cell($ancho/2,4,utf8_decode("Marca con una 'X' cuál de los siguientes:"),'RLB',0,'C');
+          $deporte=$this->MGetInfo->get_practica_deporte($ejercicio->id_ejer_dep);
+          if ($deporte->num_rows()>0) {
+            $pdf->SetFont('Arial','',9);
+            $pdf->SetXY($x,$y+=4);
+            foreach ($deporte->result() as $deportes) {
+              if ($deportes->id_deporte==1) {
+                $p="X";
+                break;
+              }else{
+                $p=" ";
+              }
+            }
+            $pdf->Cell(29.16,4,utf8_decode("(  $p  ) Futbol"),'RLB',0,'L');
+            foreach ($deporte->result() as $deportes) {
+              if ($deportes->id_deporte==4) {
+                $p="X";
+                break;
+              }else{
+                $p=" ";
+              }
+            }
+            $pdf->Cell(29.16,4,utf8_decode("(  $p  ) Béisbol"),'RLB',0,'L');
+            foreach ($deporte->result() as $deportes) {
+              if ($deportes->id_deporte==7) {
+                $p="X";
+                break;
+              }else{
+                $p=" ";
+              }
+            }
+            $pdf->Cell(29.16,4,utf8_decode("(  $p  ) Basquetbol"),'RLB',0,'L');
+            foreach ($deporte->result() as $deportes) {
+              if ($deportes->id_deporte==10) {
+                $p="X";
+                break;
+              }else{
+                $p=" ";
+              }
+            }
+            $pdf->Cell(43.75,4,utf8_decode("(  $p  ) Natación"),'RLB',0,'L');
+            foreach ($deporte->result() as $deportes) {
+              if ($deportes->id_deporte==13) {
+                $p="X";
+                break;
+              }else{
+                $p=" ";
+              }
+            }
+            $pdf->Cell(43.75,4,utf8_decode("(  $p  ) Atletismo"),'RLB',0,'L');
+            $pdf->SetXY($x,$y+=4);
+            foreach ($deporte->result() as $deportes) {
+              if ($deportes->id_deporte==2) {
+                $p="X";
+                break;
+              }else{
+                $p=" ";
+              }
+            }
+            $pdf->Cell(29.16,4,utf8_decode("(  $p  ) Tenis"),'RLB',0,'L');
+            foreach ($deporte->result() as $deportes) {
+              if ($deportes->id_deporte==5) {
+                $p="X";
+                break;
+              }else{
+                $p=" ";
+              }
+            }
+            $pdf->Cell(29.16,4,utf8_decode("(  $p  ) Gimnasia"),'RLB',0,'L');
+            foreach ($deporte->result() as $deportes) {
+              if ($deportes->id_deporte==8) {
+                $p="X";
+                break;
+              }else{
+                $p=" ";
+              }
+            }
+            $pdf->Cell(29.16,4,utf8_decode("(  $p  ) Judo"),'RLB',0,'L');
+            foreach ($deporte->result() as $deportes) {
+              if ($deportes->id_deporte==11) {
+                $p="X";
+                break;
+              }else{
+                $p=" ";
+              }
+            }
+            $pdf->Cell(43.75,4,utf8_decode("(  $p  ) Karate"),'RLB',0,'L');
+            foreach ($deporte->result() as $deportes) {
+              if ($deportes->id_deporte==14) {
+                $p="X";
+                break;
+              }else{
+                $p=" ";
+              }
+            }
+            $pdf->Cell(43.75,4,utf8_decode("(  $p  ) Halterofilia"),'RLB',0,'L');
+            $pdf->SetXY($x,$y+=4);
+            foreach ($deporte->result() as $deportes) {
+              if ($deportes->id_deporte==3) {
+                $p="X";
+                break;
+              }else{
+                $p=" ";
+              }
+            }
+            $pdf->Cell(29.16,4,utf8_decode("(  $p  ) Boxeo"),'RLB',0,'L');
+            foreach ($deporte->result() as $deportes) {
+              if ($deportes->id_deporte==6) {
+                $p="X";
+                break;
+              }else{
+                $p=" ";
+              }
+            }
+            $pdf->Cell(29.16,4,utf8_decode("(  $p  ) Lucha"),'RLB',0,'L');
+            foreach ($deporte->result() as $deportes) {
+              if ($deportes->id_deporte==9) {
+                $p="X";
+                break;
+              }else{
+                $p=" ";
+              }
+            }
+            $pdf->Cell(29.16,4,utf8_decode("(  $p  ) Ciclismo"),'RLB',0,'L');
+            foreach ($deporte->result() as $deportes) {
+              if ($deportes->id_deporte==12) {
+                $p="X";
+                break;
+              }else{
+                $p=" ";
+              }
+            }
+            $pdf->Cell(43.75,4,utf8_decode("(  $p  ) Charrería"),'RLB',0,'L');
+            foreach ($deporte->result() as $deportes) {
+              if ($deportes->id_deporte>14) {
 
-          $pdf->SetFont('Arial','',9);
-          $pdf->SetXY($x,$y+=4);
-          $pdf->Cell(29.16,4,utf8_decode("(   ) Futbol"),'RLB',0,'L');
-          $pdf->Cell(29.16,4,utf8_decode("(   ) Béisbol"),'RLB',0,'L');
-          $pdf->Cell(29.16,4,utf8_decode("(   ) Basquetbol"),'RLB',0,'L');
-          $pdf->Cell(43.75,4,utf8_decode("(   ) Natación"),'RLB',0,'L');
-          $pdf->Cell(43.75,4,utf8_decode("(   ) Atletismo"),'RLB',0,'L');
-          $pdf->SetXY($x,$y+=4);
-          $pdf->Cell(29.16,4,utf8_decode("(   ) Tenis"),'RLB',0,'L');
-          $pdf->Cell(29.16,4,utf8_decode("(   ) Gimnasia"),'RLB',0,'L');
-          $pdf->Cell(29.16,4,utf8_decode("(   ) Judo"),'RLB',0,'L');
-          $pdf->Cell(43.75,4,utf8_decode("(   ) Karate"),'RLB',0,'L');
-          $pdf->Cell(43.75,4,utf8_decode("(   ) Halterofilia"),'RLB',0,'L');
-          $pdf->SetXY($x,$y+=4);
-          $pdf->Cell(29.16,4,utf8_decode("(   ) Boxeo"),'RLB',0,'L');
-          $pdf->Cell(29.16,4,utf8_decode("(   ) Lucha"),'RLB',0,'L');
-          $pdf->Cell(29.16,4,utf8_decode("(   ) Ciclismo"),'RLB',0,'L');
-          $pdf->Cell(43.75,4,utf8_decode("(   ) Charrería"),'RLB',0,'L');
-          $pdf->Cell(43.75,4,utf8_decode("(   ) Otro, especificar"),'RLB',0,'L');
-          $pdf->SetXY($x,$y+=4);
-          $pdf->Cell($ancho,4," ",'RLB',0,'C');
+                $pdf->Cell(43.75,4,utf8_decode("(  X  ) Otro"),'RLB',0,'L');
+
+                break;
+              }else{
+                $p=" ";
+                $pdf->Cell(43.75,4,utf8_decode("(  $p  ) Otro, especificar"),'RLB',0,'L');
+
+              }
+            }
+            $pdf->SetXY($x,$y+=4);
+            $pdf->Cell($ancho,4," ",'RLB',0,'C');
+          }else{
+            $pdf->SetFont('Arial','',9);
+            $pdf->SetXY($x,$y+=4);
+            $pdf->Cell(29.16,4,utf8_decode("(     ) Futbol"),'RLB',0,'L');
+            $pdf->Cell(29.16,4,utf8_decode("(     ) Béisbol"),'RLB',0,'L');
+            $pdf->Cell(29.16,4,utf8_decode("(     ) Basquetbol"),'RLB',0,'L');
+            $pdf->Cell(43.75,4,utf8_decode("(     ) Natación"),'RLB',0,'L');
+            $pdf->Cell(43.75,4,utf8_decode("(     ) Atletismo"),'RLB',0,'L');
+            $pdf->SetXY($x,$y+=4);
+            $pdf->Cell(29.16,4,utf8_decode("(     ) Tenis"),'RLB',0,'L');
+            $pdf->Cell(29.16,4,utf8_decode("(     ) Gimnasia"),'RLB',0,'L');
+            $pdf->Cell(29.16,4,utf8_decode("(     ) Judo"),'RLB',0,'L');
+            $pdf->Cell(43.75,4,utf8_decode("(     ) Karate"),'RLB',0,'L');
+            $pdf->Cell(43.75,4,utf8_decode("(     ) Halterofilia"),'RLB',0,'L');
+            $pdf->SetXY($x,$y+=4);
+            $pdf->Cell(29.16,4,utf8_decode("(     ) Boxeo"),'RLB',0,'L');
+            $pdf->Cell(29.16,4,utf8_decode("(     ) Lucha"),'RLB',0,'L');
+            $pdf->Cell(29.16,4,utf8_decode("(     ) Ciclismo"),'RLB',0,'L');
+            $pdf->Cell(43.75,4,utf8_decode("(     ) Charrería"),'RLB',0,'L');
+            $pdf->Cell(43.75,4,utf8_decode("(     ) Otro"),'RLB',0,'L');
+            $pdf->SetXY($x,$y+=4);
+            $pdf->Cell($ancho,4," ",'RLB',0,'C');
+          }
+
 
           //Hábitos de consumo
           $pdf->SetFont('Arial','B',9);
           $pdf->SetXY($x,$y+=9);
           $pdf->Cell($ancho,5,utf8_decode("HÁBITOS DE CONSUMO"),'BRLT',1,'C');
-
+          $habitos=$this->MGetInfo->get_habito($alumno);
+          $habitos=$habitos->row();
           $pdf->SetFont('Arial','',9);
           $pdf->SetXY($x,$y+=5);
           $pdf->Cell(20,4,utf8_decode("¿Fuma?"),'RLB',0,'C');
-          $pdf->Cell(20,4,utf8_decode("No (   )"),'RLB',0,'C');
-          $pdf->Cell(20,4,utf8_decode("Si (   )"),'RLB',0,'C');
-          $pdf->Cell(55,4,utf8_decode("¿Cuántos cigarros por día?"),'RLB',0,'C');
-          $pdf->Cell(20,4,utf8_decode("1 a 5 (   )"),'RLB',0,'C');
-          $pdf->Cell(20,4,utf8_decode("6 a 10 (  )"),'RLB',0,'C');
-          $pdf->Cell(20,4,utf8_decode("10 o más (   )"),'RLB',0,'C');
+          if ($habitos->fuma==1) {
+            $pdf->Cell(20,4,utf8_decode("No (    )"),'RLB',0,'C');
+            $pdf->Cell(20,4,utf8_decode("Si (  X  )"),'RLB',0,'C');
+            $pdf->Cell(55,4,utf8_decode("¿Cuántos cigarros por día?"),'RLB',0,'C');
+
+            $p=$habitos->cant_cigarros==4?"X":" ";
+            $pdf->Cell(20,4,utf8_decode("1 a 5 (  $p  )"),'RLB',0,'C');
+            $p=$habitos->cant_cigarros==5?"X":" ";
+            $pdf->Cell(20,4,utf8_decode("6 a 10 (  $p )"),'RLB',0,'C');
+            $p=$habitos->cant_cigarros==6?"X":" ";
+            $pdf->Cell(20,4,utf8_decode("10 o más (  $p  )"),'RLB',0,'C');
+          }else{
+            $pdf->Cell(20,4,utf8_decode("No (  X  )"),'RLB',0,'C');
+            $pdf->Cell(20,4,utf8_decode("Si (    )"),'RLB',0,'C');
+            $pdf->Cell(55,4,utf8_decode("¿Cuántos cigarros por día?"),'RLB',0,'C');
+            $pdf->Cell(20,4,utf8_decode("1 a 5 (   )"),'RLB',0,'C');
+            $pdf->Cell(20,4,utf8_decode("6 a 10 (  )"),'RLB',0,'C');
+            $pdf->Cell(20,4,utf8_decode("10 o más (   )"),'RLB',0,'C');
+          }
+
+
 
           $pdf->SetXY($x,$y+=4);
           $pdf->Cell($ancho,4,utf8_decode("En el siguiente cuadro marque con una 'X' las opciones que considere necesarias:"),'BRLT',1,'C');
@@ -1135,57 +1306,136 @@ class generarPDF extends CI_Controller {
 
           $pdf->SetXY($x,$y+=4);
           $pdf->Cell(20,4,utf8_decode("Cerveza"),'RLB',0,'C');
-          $pdf->Cell(20,4,utf8_decode(" "),'RLB',0,'C');
-          $pdf->Cell(20,4,utf8_decode(" "),'RLB',0,'C');
-          $pdf->SetXY(135,$y);
-          $pdf->Cell(20,4,utf8_decode(" "),'RLB',0,'C');
-          $pdf->Cell(20,4,utf8_decode(" "),'RLB',0,'C');
-          $pdf->Cell(20,4,utf8_decode(" "),'RLB',0,'C');
+          if ($habitos->consume_cerveza==1) {
+            $pdf->Cell(20,4,utf8_decode(" "),'RLB',0,'C');
+            $pdf->Cell(20,4,utf8_decode("X"),'RLB',0,'C');
+            $pdf->SetXY(135,$y);
+            $p=$habitos->cerveza==1?"X":" ";
+            $pdf->Cell(20,4,utf8_decode("$p"),'RLB',0,'C');
+            $p=$habitos->cerveza==2?"X":" ";
+            $pdf->Cell(20,4,utf8_decode("$p"),'RLB',0,'C');
+            $p=$habitos->cerveza==3?"X":" ";
+            $pdf->Cell(20,4,utf8_decode("$p"),'RLB',0,'C');
+
+          }else{
+            $pdf->Cell(20,4,utf8_decode("X"),'RLB',0,'C');
+            $pdf->Cell(20,4,utf8_decode(" "),'RLB',0,'C');
+            $pdf->SetXY(135,$y);
+            $pdf->Cell(20,4,utf8_decode(" "),'RLB',0,'C');
+            $pdf->Cell(20,4,utf8_decode(" "),'RLB',0,'C');
+            $pdf->Cell(20,4,utf8_decode(" "),'RLB',0,'C');
+          }
 
           $pdf->SetXY($x,$y+=4);
           $pdf->Cell(20,4,utf8_decode("Vinos de mesa"),'RLB',0,'C');
-          $pdf->Cell(20,4,utf8_decode(" "),'RLB',0,'C');
-          $pdf->Cell(20,4,utf8_decode(" "),'RLB',0,'C');
-          $pdf->SetXY(135,$y);
-          $pdf->Cell(20,4,utf8_decode(" "),'RLB',0,'C');
-          $pdf->Cell(20,4,utf8_decode(" "),'RLB',0,'C');
-          $pdf->Cell(20,4,utf8_decode(" "),'RLB',0,'C');
+          if ($habitos->consume_vino==1) {
+            $pdf->Cell(20,4,utf8_decode(" "),'RLB',0,'C');
+            $pdf->Cell(20,4,utf8_decode("X"),'RLB',0,'C');
+            $pdf->SetXY(135,$y);
+            $p=$habitos->vinos==1?"X":" ";
+            $pdf->Cell(20,4,utf8_decode("$p"),'RLB',0,'C');
+            $p=$habitos->vinos==2?"X":" ";
+            $pdf->Cell(20,4,utf8_decode("$p"),'RLB',0,'C');
+            $p=$habitos->vinos==3?"X":" ";
+            $pdf->Cell(20,4,utf8_decode("$p"),'RLB',0,'C');
+
+          }else{
+            $pdf->Cell(20,4,utf8_decode("X"),'RLB',0,'C');
+            $pdf->Cell(20,4,utf8_decode(" "),'RLB',0,'C');
+            $pdf->SetXY(135,$y);
+            $pdf->Cell(20,4,utf8_decode(" "),'RLB',0,'C');
+            $pdf->Cell(20,4,utf8_decode(" "),'RLB',0,'C');
+            $pdf->Cell(20,4,utf8_decode(" "),'RLB',0,'C');
+          }
 
           $pdf->SetXY($x,$y+=4);
           $pdf->Cell(20,4,utf8_decode("Cocteles"),'RLB',0,'C');
-          $pdf->Cell(20,4,utf8_decode(" "),'RLB',0,'C');
-          $pdf->Cell(20,4,utf8_decode(" "),'RLB',0,'C');
-          $pdf->SetXY(135,$y);
-          $pdf->Cell(20,4,utf8_decode(" "),'RLB',0,'C');
-          $pdf->Cell(20,4,utf8_decode(" "),'RLB',0,'C');
-          $pdf->Cell(20,4,utf8_decode(" "),'RLB',0,'C');
+          if ($habitos->consume_coctel==1) {
+            $pdf->Cell(20,4,utf8_decode(" "),'RLB',0,'C');
+            $pdf->Cell(20,4,utf8_decode("X"),'RLB',0,'C');
+            $pdf->SetXY(135,$y);
+            $p=$habitos->cocteles==1?"X":" ";
+            $pdf->Cell(20,4,utf8_decode("$p"),'RLB',0,'C');
+            $p=$habitos->cocteles==2?"X":" ";
+            $pdf->Cell(20,4,utf8_decode("$p"),'RLB',0,'C');
+            $p=$habitos->cocteles==3?"X":" ";
+            $pdf->Cell(20,4,utf8_decode("$p"),'RLB',0,'C');
+
+          }else{
+            $pdf->Cell(20,4,utf8_decode("X"),'RLB',0,'C');
+            $pdf->Cell(20,4,utf8_decode(" "),'RLB',0,'C');
+            $pdf->SetXY(135,$y);
+            $pdf->Cell(20,4,utf8_decode(" "),'RLB',0,'C');
+            $pdf->Cell(20,4,utf8_decode(" "),'RLB',0,'C');
+            $pdf->Cell(20,4,utf8_decode(" "),'RLB',0,'C');
+          }
 
           $pdf->SetXY($x,$y+=4);
           $pdf->Cell(20,4,utf8_decode("Licores"),'RLB',0,'C');
-          $pdf->Cell(20,4,utf8_decode(" "),'RLB',0,'C');
-          $pdf->Cell(20,4,utf8_decode(" "),'RLB',0,'C');
-          $pdf->SetXY(135,$y);
-          $pdf->Cell(20,4,utf8_decode(" "),'RLB',0,'C');
-          $pdf->Cell(20,4,utf8_decode(" "),'RLB',0,'C');
-          $pdf->Cell(20,4,utf8_decode(" "),'RLB',0,'C');
+          if ($habitos->consume_licor==1) {
+            $pdf->Cell(20,4,utf8_decode(" "),'RLB',0,'C');
+            $pdf->Cell(20,4,utf8_decode("X"),'RLB',0,'C');
+            $pdf->SetXY(135,$y);
+            $p=$habitos->licores==1?"X":" ";
+            $pdf->Cell(20,4,utf8_decode("$p"),'RLB',0,'C');
+            $p=$habitos->licores==2?"X":" ";
+            $pdf->Cell(20,4,utf8_decode("$p"),'RLB',0,'C');
+            $p=$habitos->licores==3?"X":" ";
+            $pdf->Cell(20,4,utf8_decode("$p"),'RLB',0,'C');
+
+          }else{
+            $pdf->Cell(20,4,utf8_decode("X"),'RLB',0,'C');
+            $pdf->Cell(20,4,utf8_decode(" "),'RLB',0,'C');
+            $pdf->SetXY(135,$y);
+            $pdf->Cell(20,4,utf8_decode(" "),'RLB',0,'C');
+            $pdf->Cell(20,4,utf8_decode(" "),'RLB',0,'C');
+            $pdf->Cell(20,4,utf8_decode(" "),'RLB',0,'C');
+          }
 
           $pdf->SetXY($x,$y+=4);
           $pdf->Cell(20,4,utf8_decode("Otros"),'RLB',0,'C');
-          $pdf->Cell(20,4,utf8_decode(" "),'RLB',0,'C');
-          $pdf->Cell(20,4,utf8_decode(" "),'RLB',0,'C');
-          $pdf->SetXY(135,$y);
-          $pdf->Cell(20,4,utf8_decode(" "),'RLB',0,'C');
-          $pdf->Cell(20,4,utf8_decode(" "),'RLB',0,'C');
-          $pdf->Cell(20,4,utf8_decode(" "),'RLB',0,'C');
+          if ($habitos->consume_otro==1) {
+            $pdf->Cell(20,4,utf8_decode(" "),'RLB',0,'C');
+            $pdf->Cell(20,4,utf8_decode("X"),'RLB',0,'C');
+            $pdf->SetXY(135,$y);
+            $p=$habitos->otros==1?"X":" ";
+            $pdf->Cell(20,4,utf8_decode("$p"),'RLB',0,'C');
+            $p=$habitos->otros==2?"X":" ";
+            $pdf->Cell(20,4,utf8_decode("$p"),'RLB',0,'C');
+            $p=$habitos->otros==3?"X":" ";
+            $pdf->Cell(20,4,utf8_decode("$p"),'RLB',0,'C');
+
+          }else{
+            $pdf->Cell(20,4,utf8_decode("X"),'RLB',0,'C');
+            $pdf->Cell(20,4,utf8_decode(" "),'RLB',0,'C');
+            $pdf->SetXY(135,$y);
+            $pdf->Cell(20,4,utf8_decode(" "),'RLB',0,'C');
+            $pdf->Cell(20,4,utf8_decode(" "),'RLB',0,'C');
+            $pdf->Cell(20,4,utf8_decode(" "),'RLB',0,'C');
+          }
 
           $pdf->SetXY($x,$y+=4);
           $pdf->Cell($ancho,4,"Considera que sus amigos",'RLB',0,'C');
           $pdf->SetXY($x,$y+=4);
-          $pdf->Cell($ancho/2,4,utf8_decode("¿Tienen alguna adicción?    No (   )   Si (   )"),'RLB',0,'L');
-          $pdf->Cell($ancho/2,4,"Especifique: ",'RLB',0,'L');
-          $pdf->SetXY($x,$y+=4);
-          $pdf->Cell($ancho/2,4,utf8_decode("¿Consumen alguna droga?    No (   )   Si (   )"),'RLB',0,'L');
-          $pdf->Cell($ancho/2,4,"Especifique: ",'RLB',0,'L');
+          if ($habitos->amigo_adiccion==1) {
+            $pdf->Cell($ancho/2,4,utf8_decode("¿Tienen alguna adicción?    No (   )   Si ( X )"),'RLB',0,'L');
+            $pdf->Cell($ancho/2,4,"Especifique: $habitos->adiccion",'RLB',0,'L');
+            $pdf->SetXY($x,$y+=4);
+
+          }else{
+            $pdf->Cell($ancho/2,4,utf8_decode("¿Tienen alguna adicción?    No ( X )   Si (   )"),'RLB',0,'L');
+            $pdf->Cell($ancho/2,4,"Especifique: ",'RLB',0,'L');
+            $pdf->SetXY($x,$y+=4);
+
+          }
+          if ($habitos->consumen_droga==1) {
+            $pdf->Cell($ancho/2,4,utf8_decode("¿Consumen alguna droga?    No (   )   Si ( X )"),'RLB',0,'L');
+            $pdf->Cell($ancho/2,4,"Especifique: $habitos->droga",'RLB',0,'L');
+
+          }else{
+            $pdf->Cell($ancho/2,4,utf8_decode("¿Consumen alguna droga?    No ( X )   Si (   )"),'RLB',0,'L');
+            $pdf->Cell($ancho/2,4,"Especifique: ",'RLB',0,'L');
+          }
 
           //Recreación y tiempo libre
           $pdf->SetFont('Arial','B',9);
@@ -1197,56 +1447,195 @@ class generarPDF extends CI_Controller {
           $pdf->Cell($ancho,4,utf8_decode("(Marque con una 'X' las actividades que frecuentemente realiza)"),'BRLT',1,'C');
 
           $pdf->SetXY($x,$y+=4);
-          $pdf->Cell($ancho/3,4,utf8_decode("(   )   Ir al parque"),'RLB',0,'L');
-          $pdf->Cell($ancho/3,4,utf8_decode("(   )   Hacer deporte"),'RLB',0,'L');
-          $pdf->Cell($ancho/3,4,utf8_decode("(   )   Ver televisión"),'RLB',0,'L');
-          $pdf->SetXY($x,$y+=4);
-          $pdf->Cell($ancho/3,4,utf8_decode("(   )   Ir al cine"),'RLB',0,'L');
-          $pdf->Cell($ancho/3,4,utf8_decode("(   )   Reunirse con amigos"),'RLB',0,'L');
-          $pdf->Cell($ancho/3,4,utf8_decode("(   )   Ver películas en casa"),'RLB',0,'L');
-          $pdf->SetXY($x,$y+=4);
-          $pdf->Cell($ancho/3,4,utf8_decode("(   )   Ir a bailar"),'RLB',0,'L');
-          $pdf->Cell($ancho/3,4,utf8_decode("(   )   Salir con mi pareja"),'RLB',0,'L');
-          $pdf->Cell($ancho/3,4,utf8_decode("(   )   Leer"),'RLB',0,'L');
-          $pdf->SetXY($x,$y+=4);
-          $pdf->Cell($ancho/3,4,utf8_decode("(   )   Jugar videojuegos"),'RLB',0,'L');
-          $pdf->Cell($ancho/3,4,utf8_decode("(   )   Escuchar música"),'RLB',0,'L');
-          $pdf->Cell($ancho/3,8,utf8_decode("(   )   Otro, especificar:"),'RLB',0,'L');
-          $pdf->SetXY($x,$y+=4);
-          $pdf->Cell($ancho/3,4,utf8_decode("(   )   Ir de compras"),'RLB',0,'L');
-          $pdf->Cell($ancho/3,4,utf8_decode("(   )   Usar la computadora"),'RLB',0,'L');
+          $recreacion=$this->MGetInfo->get_recreacion($alumno);
+          if ($recreacion->num_rows()>0) {
+            foreach ($recreacion->result() as $recreacionA) {
+              if ($recreacionA->actividad==1) {
+                $p="X";
+                break;
+              }else{
+                $p=" ";
+              }
+            }
+            $pdf->Cell($ancho/3,4,utf8_decode("( $p )   Ir al parque"),'RLB',0,'L');
+            foreach ($recreacion->result() as $recreacionA) {
+              if ($recreacionA->actividad==6) {
+                $p="X";
+                break;
+              }else{
+                $p=" ";
+              }
+            }
+            $pdf->Cell($ancho/3,4,utf8_decode("( $p )   Hacer deporte"),'RLB',0,'L');
+            foreach ($recreacion->result() as $recreacionA) {
+              if ($recreacionA->actividad==11) {
+                $p="X";
+                break;
+              }else{
+                $p=" ";
+              }
+            }
+            $pdf->Cell($ancho/3,4,utf8_decode("( $p )   Ver televisión"),'RLB',0,'L');
+            $pdf->SetXY($x,$y+=4);
+            foreach ($recreacion->result() as $recreacionA) {
+              if ($recreacionA->actividad==2) {
+                $p="X";
+                break;
+              }else{
+                $p=" ";
+              }
+            }
+            $pdf->Cell($ancho/3,4,utf8_decode("( $p )   Ir al cine"),'RLB',0,'L');
+            foreach ($recreacion->result() as $recreacionA) {
+              if ($recreacionA->actividad==7) {
+                $p="X";
+                break;
+              }else{
+                $p=" ";
+              }
+            }
+            $pdf->Cell($ancho/3,4,utf8_decode("( $p )   Reunirse con amigos"),'RLB',0,'L');
+            foreach ($recreacion->result() as $recreacionA) {
+              if ($recreacionA->actividad==12) {
+                $p="X";
+                break;
+              }else{
+                $p=" ";
+              }
+            }
+            $pdf->Cell($ancho/3,4,utf8_decode("( $p )   Ver películas en casa"),'RLB',0,'L');
+            $pdf->SetXY($x,$y+=4);
+            foreach ($recreacion->result() as $recreacionA) {
+              if ($recreacionA->actividad==3) {
+                $p="X";
+                break;
+              }else{
+                $p=" ";
+              }
+            }
+            $pdf->Cell($ancho/3,4,utf8_decode("( $p )   Ir a bailar"),'RLB',0,'L');
+            foreach ($recreacion->result() as $recreacionA) {
+              if ($recreacionA->actividad==8) {
+                $p="X";
+                break;
+              }else{
+                $p=" ";
+              }
+            }
+            $pdf->Cell($ancho/3,4,utf8_decode("( $p )   Salir con mi pareja"),'RLB',0,'L');
+            foreach ($recreacion->result() as $recreacionA) {
+              if ($recreacionA->actividad==18) {
+                $p="X";
+                break;
+              }else{
+                $p=" ";
+              }
+            }
+            $pdf->Cell($ancho/3,4,utf8_decode("( $p )   Leer"),'RLB',0,'L');
+            $pdf->SetXY($x,$y+=4);
+            foreach ($recreacion->result() as $recreacionA) {
+              if ($recreacionA->actividad==4) {
+                $p="X";
+                break;
+              }else{
+                $p=" ";
+              }
+            }
+            $pdf->Cell($ancho/3,4,utf8_decode("( $p )   Jugar videojuegos"),'RLB',0,'L');
+            foreach ($recreacion->result() as $recreacionA) {
+              if ($recreacionA->actividad==9) {
+                $p="X";
+                break;
+              }else{
+                $p=" ";
+              }
+            }
+            $pdf->Cell($ancho/3,4,utf8_decode("( $p )   Escuchar música"),'RLB',0,'L');
+            //
+            foreach ($recreacion->result() as $recreacionA) {
+              if ($recreacionA->actividad>12) {
+                $p="X";
+                $accion=$recreacionA->accion;
+                break;
+              }else{
+                $p=" ";
+                $accion="";
+              }
+            }
+            $pdf->Cell($ancho/3,8,utf8_decode("( $p )   Otro, especificar: $accion"),'RLB',0,'L');
+            $pdf->SetXY($x,$y+=4);
+            foreach ($recreacion->result() as $recreacionA) {
+              if ($recreacionA->actividad==5) {
+                $p="X";
+                break;
+              }else{
+                $p=" ";
+              }
+            }
+            $pdf->Cell($ancho/3,4,utf8_decode("( $p )   Ir de compras"),'RLB',0,'L');
+            foreach ($recreacion->result() as $recreacionA) {
+              if ($recreacionA->actividad==10) {
+                $p="X";
+                break;
+              }else{
+                $p=" ";
+              }
+            }
+            $pdf->Cell($ancho/3,4,utf8_decode("( $p )   Usar la computadora"),'RLB',0,'L');
+          }else{
+            $pdf->Cell($ancho/3,4,utf8_decode("(   )   Ir al parque"),'RLB',0,'L');
+            $pdf->Cell($ancho/3,4,utf8_decode("(   )   Hacer deporte"),'RLB',0,'L');
+            $pdf->Cell($ancho/3,4,utf8_decode("(   )   Ver televisión"),'RLB',0,'L');
+            $pdf->SetXY($x,$y+=4);
+            $pdf->Cell($ancho/3,4,utf8_decode("(   )   Ir al cine"),'RLB',0,'L');
+            $pdf->Cell($ancho/3,4,utf8_decode("(   )   Reunirse con amigos"),'RLB',0,'L');
+            $pdf->Cell($ancho/3,4,utf8_decode("(   )   Ver películas en casa"),'RLB',0,'L');
+            $pdf->SetXY($x,$y+=4);
+            $pdf->Cell($ancho/3,4,utf8_decode("(   )   Ir a bailar"),'RLB',0,'L');
+            $pdf->Cell($ancho/3,4,utf8_decode("(   )   Salir con mi pareja"),'RLB',0,'L');
+            $pdf->Cell($ancho/3,4,utf8_decode("(   )   Leer"),'RLB',0,'L');
+            $pdf->SetXY($x,$y+=4);
+            $pdf->Cell($ancho/3,4,utf8_decode("(   )   Jugar videojuegos"),'RLB',0,'L');
+            $pdf->Cell($ancho/3,4,utf8_decode("(   )   Escuchar música"),'RLB',0,'L');
+            $pdf->Cell($ancho/3,8,utf8_decode("(   )   Otro, especificar:"),'RLB',0,'L');
+            $pdf->SetXY($x,$y+=4);
+            $pdf->Cell($ancho/3,4,utf8_decode("(   )   Ir de compras"),'RLB',0,'L');
+            $pdf->Cell($ancho/3,4,utf8_decode("(   )   Usar la computadora"),'RLB',0,'L');
+          }
+
 
           //Gustos e intereses
           $pdf->SetFont('Arial','B',9);
           $pdf->SetXY($x,$y+=4);
           $pdf->Cell($ancho,5,utf8_decode("GUSTOS E INTERESES"),'BRLT',1,'C');
-
+          $gustos=$this->MGetInfo->get_gustos($alumno);
+          $gustos=$gustos->row();
           $pdf->SetFont('Arial','',9);
           $pdf->SetXY($x,$y+=5);
-          $pdf->Cell($ancho,4,utf8_decode("¿Qué hago en mi tiempo libre?"),'BRLT',1,'L');
+          $pdf->Cell($ancho,4,utf8_decode("¿Qué hago en mi tiempo libre? $gustos->tiempo_libre"),'BRLT',1,'L');
           $pdf->SetXY($x,$y+=4);
-          $pdf->Cell(55,4,utf8_decode("Última vez que leí un libro:"),'BRLT',0,'L');
-          $pdf->Cell(120,4,utf8_decode("¿Qué es lo que me gusta hacer?"),'BRLT',0,'L');
+          $pdf->Cell(65,4,utf8_decode("Última vez que leí un libro: $gustos->ultima_vez_libro"),'BRLT',0,'L');
+          $pdf->Cell(110,4,utf8_decode("¿Qué es lo que me gusta hacer? $gustos->gusta_hacer"),'BRLT',0,'L');
           $pdf->SetXY($x,$y+=4);
-          $pdf->Cell(55,4,utf8_decode("Libros que haz leído"),'BRLT',0,'L');
-          $pdf->Cell(120,4,utf8_decode("¿Qué me disgusta hacer?"),'BRLT',0,'L');
+          $pdf->Cell(55,4,utf8_decode("Libros que has leído"),'BRLT',0,'L');
+          $pdf->Cell(120,4,utf8_decode("¿Qué me disgusta hacer? $gustos->disgusta_hacer"),'BRLT',0,'L');
           $pdf->SetXY($x,$y+=4);
-          $pdf->Cell(55,4,utf8_decode("1.- "),'BRLT',0,'L');
+          $pdf->Cell(55,4,utf8_decode("1.-$gustos->libro1"),'BRLT',0,'L');
           $pdf->Cell(55,4,utf8_decode("Mis películas preferidas son:"),'BRLT',0,'L');
           $pdf->Cell(55,4,utf8_decode("¿Cuántos amigos tengo?"),'BRLT',0,'L');
-          $pdf->Cell(10,4,utf8_decode(" "),'BRLT',0,'L');
+          $pdf->Cell(10,4,utf8_decode("$gustos->num_amigos"),'BRLT',0,'L');
           $pdf->SetXY($x,$y+=4);
-          $pdf->Cell(55,4,utf8_decode("2.- "),'BRLT',0,'L');
-          $pdf->Cell(55,4,utf8_decode("1.- "),'BRLT',0,'L');
+          $pdf->Cell(55,4,utf8_decode("2.-$gustos->libro2"),'BRLT',0,'L');
+          $pdf->Cell(55,4,utf8_decode("1.-$gustos->pelicula1"),'BRLT',0,'L');
           $pdf->Cell(65,4,utf8_decode("¿Qué lugares frecuento con ellos?"),'BRLT',0,'L');
           $pdf->SetXY($x,$y+=4);
-          $pdf->Cell(55,4,utf8_decode("3.- "),'BRLT',0,'L');
-          $pdf->Cell(55,4,utf8_decode("2.- "),'BRLT',0,'L');
-          $pdf->Cell(65,4,utf8_decode("1.- "),'BRLT',0,'L');
+          $pdf->Cell(55,4,utf8_decode("3.-$gustos->libro3"),'BRLT',0,'L');
+          $pdf->Cell(55,4,utf8_decode("2.-$gustos->pelicula2"),'BRLT',0,'L');
+          $pdf->Cell(65,4,utf8_decode("1.-$gustos->lugar1"),'BRLT',0,'L');
           $pdf->SetXY($x,$y+=4);
-          $pdf->Cell(55,4,utf8_decode("4.- "),'BRLT',0,'L');
-          $pdf->Cell(55,4,utf8_decode("3.- "),'BRLT',0,'L');
-          $pdf->Cell(65,4,utf8_decode("2.- "),'BRLT',0,'L');
+          $pdf->Cell(55,4,utf8_decode("4.-$gustos->libro4"),'BRLT',0,'L');
+          $pdf->Cell(55,4,utf8_decode("3.-$gustos->pelicula3"),'BRLT',0,'L');
+          $pdf->Cell(65,4,utf8_decode("2.-$gustos->lugar2"),'BRLT',0,'L');
 
 
           //Participacion social
@@ -1255,35 +1644,151 @@ class generarPDF extends CI_Controller {
           $pdf->Cell($ancho,4,utf8_decode("PARTICIPACIÓN SOCIAL"),'BRLT',1,'C');
           $pdf->SetFont('Arial','',9);
           $pdf->SetXY($x,$y+=4);
-          $pdf->Cell($ancho,4,utf8_decode("¿Actualmente participa en alguna organización, asociación, equipo o grupo?   No (   )   Si (   )"),'BRLT',1,'L');
-          $pdf->SetXY($x,$y+=4);
-          $pdf->Cell($ancho/4,4,utf8_decode("(   ) Estudiantil"),'BRLT',0,'L');
-          $pdf->Cell($ancho/4,4,utf8_decode("(   ) Beneficiencia"),'BRLT',0,'L');
-          $pdf->Cell($ancho/4,4,utf8_decode("(   ) Político"),'BRLT',0,'L');
-          $pdf->Cell($ancho/4,8,utf8_decode("(   ) Otro, especificar"),'BRLT',0,'L');
-          $pdf->SetXY($x,$y+=4);
-          $pdf->Cell($ancho/4,4,utf8_decode("(   ) Deportivo"),'BRLT',0,'L');
-          $pdf->Cell($ancho/4,4,utf8_decode("(   ) Religioso"),'BRLT',0,'L');
-          $pdf->Cell($ancho/4,4,utf8_decode("(   ) Académico"),'BRLT',0,'L');
+          $participacion=$this->MGetInfo->get_participacion($alumno);
+          if ($participacion->num_rows()>0) {
+            $participacion=$participacion->row();
+            $pdf->Cell($ancho,4,utf8_decode("¿Actualmente participa en alguna organización, asociación, equipo o grupo?   No (    )   Si (  X  )"),'BRLT',1,'L');
+            $pdf->SetXY($x,$y+=4);
+            $organizacion=$this->MGetInfo->get_organizaciones($participacion->id_participacion);
+            if ($organizacion->num_rows()>0) {
+              foreach ($organizacion->result() as $key) {
+                if ($key->organizacion==1) {
+                  $p="X";
+                  break;
+                }
+                else{
+                  $p=" ";
+                }
+              }
+              $pdf->Cell($ancho/4,4,utf8_decode("(  $p  ) Estudiantil"),'BRLT',0,'L');
+              foreach ($organizacion->result() as $key) {
+                if ($key->organizacion==3) {
+                  $p="X";
+                  break;
+                }
+                else{
+                  $p=" ";
+                }
+              }
+              $pdf->Cell($ancho/4,4,utf8_decode("(  $p  ) Beneficiencia"),'BRLT',0,'L');
+              foreach ($organizacion->result() as $key) {
+                if ($key->organizacion==5) {
+                  $p="X";
+                  break;
+                }
+                else{
+                  $p=" ";
+                }
+              }
+              $pdf->Cell($ancho/4,4,utf8_decode("(  $p  ) Político"),'BRLT',0,'L');
+              foreach ($organizacion->result() as $key) {
+                if ($key->organizacion>=7) {
+                  $p="X";
+                  $opcion=$key->org;
+                  break;
+                }
+                else{
+                  $p=" ";
+                  $opcion=" ";
+                }
+              }
+              $pdf->Cell($ancho/4,8,utf8_decode("(  $p  ) Otro, $opcion"),'BRLT',0,'L');
+              //
+              $pdf->SetXY($x,$y+=4);
+              foreach ($organizacion->result() as $key) {
+                if ($key->organizacion==2) {
+                  $p="X";
+                  break;
+                }
+                else{
+                  $p=" ";
+                }
+              }
+              $pdf->Cell($ancho/4,4,utf8_decode("(  $p  ) Deportivo"),'BRLT',0,'L');
+              foreach ($organizacion->result() as $key) {
+                if ($key->organizacion==4) {
+                  $p="X";
+                  break;
+                }
+                else{
+                  $p=" ";
+                }
+              }
+              $pdf->Cell($ancho/4,4,utf8_decode("(  $p  ) Religioso"),'BRLT',0,'L');
+              foreach ($organizacion->result() as $key) {
+                if ($key->organizacion==6) {
+                  $p="X";
+                  break;
+                }
+                else{
+                  $p=" ";
+                }
+              }
+              $pdf->Cell($ancho/4,4,utf8_decode("(  $p  ) Académico"),'BRLT',0,'L');
+            }else{
+              $pdf->Cell($ancho/4,4,utf8_decode("(   ) Estudiantil"),'BRLT',0,'L');
+              $pdf->Cell($ancho/4,4,utf8_decode("(   ) Beneficiencia"),'BRLT',0,'L');
+              $pdf->Cell($ancho/4,4,utf8_decode("(   ) Político"),'BRLT',0,'L');
+              $pdf->Cell($ancho/4,8,utf8_decode("(   ) Otro, especificar"),'BRLT',0,'L');
+              $pdf->SetXY($x,$y+=4);
+              $pdf->Cell($ancho/4,4,utf8_decode("(   ) Deportivo"),'BRLT',0,'L');
+              $pdf->Cell($ancho/4,4,utf8_decode("(   ) Religioso"),'BRLT',0,'L');
+              $pdf->Cell($ancho/4,4,utf8_decode("(   ) Académico"),'BRLT',0,'L');
+            }
+
+
+          }else{
+            $pdf->Cell($ancho,4,utf8_decode("¿Actualmente participa en alguna organización, asociación, equipo o grupo?   No (  X  )   Si (    )"),'BRLT',1,'L');
+            $pdf->SetXY($x,$y+=4);
+            $pdf->Cell($ancho/4,4,utf8_decode("(   ) Estudiantil"),'BRLT',0,'L');
+            $pdf->Cell($ancho/4,4,utf8_decode("(   ) Beneficiencia"),'BRLT',0,'L');
+            $pdf->Cell($ancho/4,4,utf8_decode("(   ) Político"),'BRLT',0,'L');
+            $pdf->Cell($ancho/4,8,utf8_decode("(   ) Otro, especificar"),'BRLT',0,'L');
+            $pdf->SetXY($x,$y+=4);
+            $pdf->Cell($ancho/4,4,utf8_decode("(   ) Deportivo"),'BRLT',0,'L');
+            $pdf->Cell($ancho/4,4,utf8_decode("(   ) Religioso"),'BRLT',0,'L');
+            $pdf->Cell($ancho/4,4,utf8_decode("(   ) Académico"),'BRLT',0,'L');
+          }
 
           //Internet
           $pdf->SetFont('Arial','B',9);
+          $internet=$this->MGetInfo->get_internet($alumno);
+          $internet=$internet->row();
           $pdf->SetXY($x,$y+=9);
           $pdf->Cell($ancho,5,utf8_decode("INTERNET"),'BRLT',1,'C');
           $pdf->SetFont('Arial','',9);
           $pdf->SetXY($x,$y+=5);
-          $pdf->Cell($ancho/2,4,utf8_decode("¿Sabes usar internet?   No (   )   Si (   )"),'BRLT',0,'L');
-          $pdf->Cell($ancho/2,4,utf8_decode("¿Tienes acceso a internet?   No (   )   Si (   )"),'BRLT',0,'L');
+          if ($internet->sabe_usar==1) {
+            $pdf->Cell($ancho/2,4,utf8_decode("¿Sabes usar internet?   No (   )   Si (  X  )"),'BRLT',0,'L');
+
+          }else{
+            $pdf->Cell($ancho/2,4,utf8_decode("¿Sabes usar internet?   No (  X  )   Si (   )"),'BRLT',0,'L');
+          }
+          if ($internet->tiene_acceso==1) {
+            $pdf->Cell($ancho/2,4,utf8_decode("¿Tienes acceso a internet?   No (   )   Si (  X  )"),'BRLT',0,'L');
+
+          }else{
+            $pdf->Cell($ancho/2,4,utf8_decode("¿Tienes acceso a internet?   No (  X  )   Si (   )"),'BRLT',0,'L');
+
+          }
           $pdf->SetXY($x,$y+=4);
           $pdf->Cell($ancho,4,utf8_decode("En caso afirmativo, marque con una 'X' el lugar principal en el que tiene acceso"),'BRLT',1,'C');
           $pdf->SetXY($x,$y+=4);
-          $pdf->Cell($ancho/3,4,utf8_decode("(   ) Casa"),'BRLT',0,'L');
-          $pdf->Cell($ancho/3,4,utf8_decode("(   ) Escuela"),'BRLT',0,'L');
-          $pdf->Cell($ancho/3,4,utf8_decode("(   ) Trabajo"),'BRLT',0,'L');
+
+          $p=$internet->acceso==1?"X":" ";
+          $pdf->Cell($ancho/3,4,utf8_decode("(  $p  ) Casa"),'BRLT',0,'L');
+          $p=$internet->acceso==2?"X":" ";
+          $pdf->Cell($ancho/3,4,utf8_decode("(  $p  ) Escuela"),'BRLT',0,'L');
+          $p=$internet->acceso==3?"X":" ";
+          $pdf->Cell($ancho/3,4,utf8_decode("(  $p  ) Trabajo"),'BRLT',0,'L');
           $pdf->SetXY($x,$y+=4);
-          $pdf->Cell($ancho/3,4,utf8_decode("(   ) Café Internet"),'BRLT',0,'L');
-          $pdf->Cell($ancho/3,4,utf8_decode("(   ) Casa de algún amigo o familiar"),'BRLT',0,'L');
-          $pdf->Cell($ancho/3,4,utf8_decode("(   ) Otro, especificar"),'BRLT',0,'L');
+          $p=$internet->acceso==4?"X":" ";
+          $pdf->Cell($ancho/3,4,utf8_decode("(  $p  ) Café Internet"),'BRLT',0,'L');
+          $p=$internet->acceso==5?"X":" ";
+          $pdf->Cell($ancho/3,4,utf8_decode("(  $p  ) Casa de algún amigo o familiar"),'BRLT',0,'L');
+          $p=$internet->acceso==6?"X":" ";
+          $pdf->Cell($ancho/3,4,utf8_decode("(  $p  ) Otro, especificar"),'BRLT',0,'L');
+
           $pdf->SetXY($x,$y+=4);
           $pdf->Cell($ancho,4,utf8_decode("¿Para qué utiliza internet? (Marque con una 'X' las opciones que consideres necesarias)"),'BRLT',1,'C');
           $pdf->SetXY($x,$y+=4);
@@ -1291,41 +1796,76 @@ class generarPDF extends CI_Controller {
           $pdf->Cell($ancho/2,4,utf8_decode("¿Para qué lo utiliza?"),'BLRT',0,'C');
           $pdf->SetXY($x,$y+=4);
           $pdf->Cell(57.5,4,utf8_decode("Correo electrónico"),'BLRT',0,'L');
-          $pdf->Cell(30,4,utf8_decode("No (   )         Si (   )"),'BLRT',0,'L');
-          $pdf->Cell(43.75,4,utf8_decode("(   ) Intercambiar información"),'BLRT',0,'L');
-          $pdf->Cell(43.75,4,utf8_decode("(   ) Entretenimiento"),'BLRT',0,'L');
+          if ($internet->correo_electronico==1) {
+            $pdf->Cell(30,4,utf8_decode("No (   )         Si ( X )"),'BLRT',0,'L');
+          }else{
+            $pdf->Cell(30,4,utf8_decode("No ( X )        Si (   )"),'BLRT',0,'L');
+          }
+          $p=$internet->intercambiar==1?"X":" ";
+          $pdf->Cell(43.75,4,utf8_decode("( $p ) Intercambiar información"),'BLRT',0,'L');
+          $p=$internet->entrenimiento==1?"X":" ";
+          $pdf->Cell(43.75,4,utf8_decode("( $p ) Entretenimiento"),'BLRT',0,'L');
           $pdf->SetXY($x,$y+=4);
           $pdf->Cell(57.5,4,utf8_decode("Página web personal"),'BLRT',0,'L');
-          $pdf->Cell(30,4,utf8_decode("No (   )         Si (   )"),'BLRT',0,'L');
-          $pdf->Cell(43.75,4,utf8_decode("(   ) Relaciones de amistad"),'BLRT',0,'L');
-          $pdf->Cell(43.75,4,utf8_decode("(   ) Buscar amigos"),'BLRT',0,'L');
+          if ($internet->pag_web_personal==1) {
+            $pdf->Cell(30,4,utf8_decode("No (   )         Si ( X )"),'BLRT',0,'L');
+          }else{
+            $pdf->Cell(30,4,utf8_decode("No ( X )        Si (   )"),'BLRT',0,'L');
+          }
+          $p=$internet->amistad==1?"X":" ";
+          $pdf->Cell(43.75,4,utf8_decode("( $p ) Relaciones de amistad"),'BLRT',0,'L');
+          $p=$internet->amigos==1?"X":" ";
+          $pdf->Cell(43.75,4,utf8_decode("( $p ) Buscar amigos"),'BLRT',0,'L');
           $pdf->SetXY($x,$y+=4);
           $pdf->Cell(57.5,4,utf8_decode("Red Social (Facebook, Twitter, etc.)"),'BLRT',0,'L');
-          $pdf->Cell(30,4,utf8_decode("No (   )         Si (   )"),'BLRT',0,'L');
-          $pdf->Cell(43.75,4,utf8_decode("(   ) Relaciones profesionales"),'BLRT',0,'L');
-          $pdf->Cell(43.75,4,utf8_decode("(   ) Comunicarte"),'BLRT',0,'L');
+          if ($internet->red_social==1) {
+            $pdf->Cell(30,4,utf8_decode("No (   )         Si ( X )"),'BLRT',0,'L');
+          }else{
+            $pdf->Cell(30,4,utf8_decode("No ( X )        Si (   )"),'BLRT',0,'L');
+          }
+          $p=$internet->profesionales==1?"X":" ";
+          $pdf->Cell(43.75,4,utf8_decode("( $p ) Relaciones profesionales"),'BLRT',0,'L');
+          $p=$internet->comuinicarse==1?"X":" ";
+          $pdf->Cell(43.75,4,utf8_decode("( $p ) Comunicarte"),'BLRT',0,'L');
           $pdf->SetXY($x,$y+=4);
           $pdf->Cell(57.5,4,utf8_decode("Blog/Weblog"),'BLRT',0,'L');
-          $pdf->Cell(30,4,utf8_decode("No (   )         Si (   )"),'BLRT',0,'L');
-          $pdf->Cell(43.75,4,utf8_decode("(   ) Buscar pareja"),'BLRT',0,'L');
-          $pdf->Cell(43.75,4,utf8_decode("(   ) Otro"),'BLRT',0,'L');
+          if ($internet->webblog==1) {
+            $pdf->Cell(30,4,utf8_decode("No (   )         Si ( X )"),'BLRT',0,'L');
+          }else{
+            $pdf->Cell(30,4,utf8_decode("No ( X )        Si (   )"),'BLRT',0,'L');
+          }
+          $p=$internet->pareja==1?"X":" ";
+          $pdf->Cell(43.75,4,utf8_decode("( $p ) Buscar pareja"),'BLRT',0,'L');
+          $p=$internet->otro==1?"X":" ";
+          $pdf->Cell(43.75,4,utf8_decode("( $p ) Otro"),'BLRT',0,'L');
 
+          ////////////////////////HOJA 5
           $pdf->AddPage();
-          //HOJA5
           $x=20;$y=15;
           $ancho=175;
-
+          $movil=$this->MGetInfo->get_movil($alumno);
+          $movil=$movil->row();
           $pdf->SetFont('Arial','B',10);
           $pdf->SetXY($x,$y);
           $pdf->Cell($ancho,5,utf8_decode("TELEFONÍA MÓVIL"),1,0,'C');
           $pdf->SetFont('Arial','',9);
           $pdf->SetXY($x,$y+=5);
-          $pdf->Cell(87.5,5,utf8_decode("¿Tiene teléfono celular?   No (   )   Si (   )"),'BLRT',0,'L');
-          $pdf->Cell(87.5,5,utf8_decode("Si es afirmativo, ¿tiene acceso a internet?   No (   )   Si (   )"),'BLRT',0,'L');
+          if ($movil->tiene_cel==1) {
+            $pdf->Cell(87.5,5,utf8_decode("¿Tiene teléfono celular?   No (   )   Si ( X )"),'BLRT',0,'L');
+          }else{
+            $pdf->Cell(87.5,5,utf8_decode("¿Tiene teléfono celular?   No ( X )  Si (   )"),'BLRT',0,'L');
+          }
+          if ($movil->acceso_int==1) {
+            $pdf->Cell(87.5,5,utf8_decode("Si es afirmativo, ¿tiene acceso a internet?   No (   )   Si ( X )"),'BLRT',0,'L');
+          }else{
+            $pdf->Cell(87.5,5,utf8_decode("Si es afirmativo, ¿tiene acceso a internet?   No ( X )  Si (   )"),'BLRT',0,'L');
+
+          }
           $pdf->SetXY($x,$y+=5);
-          $pdf->Cell(175,5,utf8_decode("Correo electrónico: "),'BLRT',0,'L');
+          $pdf->Cell(175,5,utf8_decode("Correo electrónico: $movil->correo"),'BLRT',0,'L');
           $pdf->Rect($x,$y+=5,175,20,'D');
           $pdf->SetFont('Arial','B',9);
+
           $pdf->Text(22,40,utf8_decode("Si no vives con algunos de tus padres; completa el siguiente apartado (Pueden ser Abuelos, tíos, hermanos, etc.)."));
           $pdf->SetXY($x,55);
           $pdf->Cell($ancho,5,utf8_decode("DATOS DEL TUTOR"),1,0,'C');
@@ -1333,99 +1873,270 @@ class generarPDF extends CI_Controller {
           $pdf->SetXY($x,$y+=30);
 
           //Datos del tutor
-          $pdf->Cell(55,5,"Apellido Paterno:",'RL',0,'L');
-          $pdf->Cell(55,5,"Apellido Materno:",'RL',0,'L');
-          $pdf->Cell(65,5,"Nombre(s):",'RL',0,'L');
-
-          $pdf->SetXY($x,$y+=5);
-          $pdf->Cell(55,5,utf8_decode(""),'RLB',0,'L');
-          $pdf->Cell(55,5,utf8_decode(""),'RLB',0,'L');
-          $pdf->Cell(65,5,utf8_decode(""),'RLB',0,'L');
-
-          //fecha lugar dlegacion ,nacimietno
-          $pdf->SetXY($x,$y+=5);
-          $pdf->Cell(55,5,"Fecha de Nacimiento:",'RL',0,'L');
-          $pdf->Cell(55,5,"Lugar de Nacimiento:",'RL',0,'L');
-          $pdf->Cell(65,5,utf8_decode("Delegación o municipio:"),'RL',0,'L');
-
-          $pdf->SetXY($x,$y+=5);
-          $pdf->Cell(55,5,utf8_decode(""),'RLB',0,'L');
-          $pdf->Cell(55,5,utf8_decode(""),'RLB',0,'L');
-          $pdf->Cell(65,5,utf8_decode(""),'RLB',0,'L');
-
-          //endidad pais curp
-          $pdf->SetXY($x,$y+=5);
-          $pdf->Cell(35,4,"Entidad Federativa:",'RL',0,'L');
-          $pdf->Cell(35,4,utf8_decode("País:"),'RL',0,'L');
-
-          $pdf->Cell(15,8,utf8_decode("CURP:"),'BRL',0,'L');
-            for ($i=0; $i <18 ; $i++) {
-              $pdf->Cell(5,8,utf8_decode($i),'RBL',0,'L');
-            }
-
-          $pdf->SetXY($x,$y+=4);
-          $pdf->Cell(35,4,utf8_decode(""),'RLB',0,'L');
-          $pdf->Cell(35,4,utf8_decode(""),'RLB',0,'L');
-          //grado de estudios
-          $pdf->SetFont('Arial','B',10);
-          $pdf->SetXY($x,$y+=4);
-          $pdf->Cell($ancho,5,utf8_decode("Grado máximo de estudios"),1,0,'C');
-
-          $pdf->SetFont('Arial','',10);
+          $tutor=$this->MGetInfo->get_tutor($alumno);
+          if ($tutor->num_rows()>0) {
+            $tutor=$tutor->row();
+            $pdf->Cell(55,5,"Apellido Paterno:",'RL',0,'L');
+            $pdf->Cell(55,5,"Apellido Materno:",'RL',0,'L');
+            $pdf->Cell(65,5,"Nombre(s):",'RL',0,'L');
 
             $pdf->SetXY($x,$y+=5);
-            $arr_estudios=["Sin estudios", "Secundaria concluída","Tec. Sup. Universitario",
-                          "Maestría","Primaria incompleta","Carrera técnica","Licenciatura incompleta",
-                          "Doctorado","Primaria concluída","Bachillerato incompleto","Licenciatura concluía",
-                          "Otro","Secundaria incompleta","Bachillerato concluído","Especialidad","Especificar"];
+            $pdf->Cell(55,5,utf8_decode($tutor->paterno_padre),'RLB',0,'L');
+            $pdf->Cell(55,5,utf8_decode($tutor->materno_padre),'RLB',0,'L');
+            $pdf->Cell(65,5,utf8_decode($tutor->nombre_padre),'RLB',0,'L');
 
-            for ($i=0; $i<16 ; $i++) {
-              $pdf->Cell($ancho/4,5,utf8_decode("( )".$arr_estudios[$i++]),'RBL',0,'L');
-              $pdf->Cell($ancho/4,5,utf8_decode("( )".$arr_estudios[$i++]),'RBL',0,'L');
-              $pdf->Cell($ancho/4,5,utf8_decode("( )".$arr_estudios[$i++]),'RBL',0,'L');
-              $pdf->Cell($ancho/4,5,utf8_decode("( )".$arr_estudios[$i]),'RBL',0,'L');
-              $pdf->SetXY(20,$y+=5);
-            }
-            $pdf->Cell(87.5,5,"Trabaja: No ( ) Si ( )",'RLB',0,'L');
-            $pdf->Cell(87.5,5,utf8_decode("Número de horas a la semana: "),'RLB',0,'L');
+            //fecha lugar dlegacion ,nacimietno
+            $pdf->SetXY($x,$y+=5);
+            $pdf->Cell(55,5,"Fecha de Nacimiento:",'RL',0,'L');
+            $pdf->Cell(55,5,"Lugar de Nacimiento:",'RL',0,'L');
+            $pdf->Cell(65,5,utf8_decode("Delegación o municipio:"),'RL',0,'L');
+
+            $pdf->SetXY($x,$y+=5);
+            $pdf->Cell(55,5,utf8_decode($tutor->fecha_nacimiento),'RLB',0,'L');
+            $pdf->Cell(55,5,utf8_decode($tutor->lugar_nacimiento),'RLB',0,'L');
+            $pdf->Cell(65,5,utf8_decode($tutor->mun_delegacion),'RLB',0,'L');
+
+            //endidad pais curp
+            $pdf->SetXY($x,$y+=5);
+            $pdf->Cell(35,4,"Entidad Federativa:",'RL',0,'L');
+            $pdf->Cell(35,4,utf8_decode("País:"),'RL',0,'L');
+
+            $pdf->Cell(15,8,utf8_decode("CURP:"),'BRL',0,'L');
+              for ($i=0; $i <18 ; $i++) {
+                $pdf->Cell(5,8,$tutor->curp[$i],'RBL',0,'L');
+              }
+
+            $pdf->SetXY($x,$y+=4);
+            $pdf->Cell(35,4,utf8_decode($tutor->estado),'RLB',0,'L');
+            $pdf->Cell(35,4,utf8_decode($tutor->pais),'RLB',0,'L');
+            //grado de estudios
+            $pdf->SetFont('Arial','B',10);
+            $pdf->SetXY($x,$y+=4);
+            $pdf->Cell($ancho,5,utf8_decode("Grado máximo de estudios"),1,0,'C');
+
+            $pdf->SetFont('Arial','',10);
+
+              $pdf->SetXY($x,$y+=5);
+              $arr_estudios=["Sin estudios", "Secundaria concluída","Tec. Sup. Universitario",
+                            "Maestría","Primaria incompleta","Carrera técnica","Licenciatura incompleta",
+                            "Doctorado","Primaria concluída","Bachillerato incompleto","Licenciatura concluía",
+                            "Otro","Secundaria incompleta","Bachillerato concluído","Especialidad","Especificar"];
+
+              $grado=$tutor->grado_estudio;
+              $p="";
+              for ($i=0; $i<16 ; $i++) {
+                $p=$grado==$arr_estudios[$i]?"X":" ";
+                $pdf->Cell($ancho/4,5,utf8_decode("($p)".$arr_estudios[$i++]),'RBL',0,'L');
+                $p=$grado==$arr_estudios[$i]?"X":" ";
+                $pdf->Cell($ancho/4,5,utf8_decode("($p)".$arr_estudios[$i++]),'RBL',0,'L');
+                $p=$grado==$arr_estudios[$i]?"X":" ";
+                $pdf->Cell($ancho/4,5,utf8_decode("($p)".$arr_estudios[$i++]),'RBL',0,'L');
+                $p=$grado==$arr_estudios[$i]?"X":" ";
+                $pdf->Cell($ancho/4,5,utf8_decode("($p)".$arr_estudios[$i]),'RBL',0,'L');
+                $pdf->SetXY($x,$y+=5);
+              }
+              if ($tutor->trabaja==1) {
+                $pdf->Cell(87.5,5,"Trabaja: No ( ) Si (X)",'RLB',0,'L');
+                $pdf->Cell(87.5,5,utf8_decode("Número de horas a la semana: $tutor->horas_trabajo"),'RLB',0,'L');
+              }else{
+                $pdf->Cell(87.5,5,"Trabaja: No (X) Si ( )",'RLB',0,'L');
+                $pdf->Cell(87.5,5,utf8_decode("Número de horas a la semana: "),'RLB',0,'L');
+              }
+
+
+          }else{
+            $pdf->Cell(55,5,"Apellido Paterno:",'RL',0,'L');
+            $pdf->Cell(55,5,"Apellido Materno:",'RL',0,'L');
+            $pdf->Cell(65,5,"Nombre(s):",'RL',0,'L');
+
+            $pdf->SetXY($x,$y+=5);
+            $pdf->Cell(55,5,utf8_decode(""),'RLB',0,'L');
+            $pdf->Cell(55,5,utf8_decode(""),'RLB',0,'L');
+            $pdf->Cell(65,5,utf8_decode(""),'RLB',0,'L');
+
+            //fecha lugar dlegacion ,nacimietno
+            $pdf->SetXY($x,$y+=5);
+            $pdf->Cell(55,5,"Fecha de Nacimiento:",'RL',0,'L');
+            $pdf->Cell(55,5,"Lugar de Nacimiento:",'RL',0,'L');
+            $pdf->Cell(65,5,utf8_decode("Delegación o municipio:"),'RL',0,'L');
+
+            $pdf->SetXY($x,$y+=5);
+            $pdf->Cell(55,5,utf8_decode(""),'RLB',0,'L');
+            $pdf->Cell(55,5,utf8_decode(""),'RLB',0,'L');
+            $pdf->Cell(65,5,utf8_decode(""),'RLB',0,'L');
+
+            //endidad pais curp
+            $pdf->SetXY($x,$y+=5);
+            $pdf->Cell(35,4,"Entidad Federativa:",'RL',0,'L');
+            $pdf->Cell(35,4,utf8_decode("País:"),'RL',0,'L');
+
+            $pdf->Cell(15,8,utf8_decode("CURP:"),'BRL',0,'L');
+              for ($i=0; $i <18 ; $i++) {
+                $pdf->Cell(5,8," ",'RBL',0,'L');
+              }
+
+            $pdf->SetXY($x,$y+=4);
+            $pdf->Cell(35,4,utf8_decode(""),'RLB',0,'L');
+            $pdf->Cell(35,4,utf8_decode(""),'RLB',0,'L');
+            //grado de estudios
+            $pdf->SetFont('Arial','B',10);
+            $pdf->SetXY($x,$y+=4);
+            $pdf->Cell($ancho,5,utf8_decode("Grado máximo de estudios"),1,0,'C');
+
+            $pdf->SetFont('Arial','',10);
+
+              $pdf->SetXY($x,$y+=5);
+              $arr_estudios=["Sin estudios", "Secundaria concluída","Tec. Sup. Universitario",
+                            "Maestría","Primaria incompleta","Carrera técnica","Licenciatura incompleta",
+                            "Doctorado","Primaria concluída","Bachillerato incompleto","Licenciatura concluía",
+                            "Otro","Secundaria incompleta","Bachillerato concluído","Especialidad","Especificar"];
+
+              for ($i=0; $i<16 ; $i++) {
+                $pdf->Cell($ancho/4,5,utf8_decode("( )".$arr_estudios[$i++]),'RBL',0,'L');
+                $pdf->Cell($ancho/4,5,utf8_decode("( )".$arr_estudios[$i++]),'RBL',0,'L');
+                $pdf->Cell($ancho/4,5,utf8_decode("( )".$arr_estudios[$i++]),'RBL',0,'L');
+                $pdf->Cell($ancho/4,5,utf8_decode("( )".$arr_estudios[$i]),'RBL',0,'L');
+                $pdf->SetXY(20,$y+=5);
+              }
+              $pdf->Cell(87.5,5,"Trabaja: No ( ) Si ( )",'RLB',0,'L');
+              $pdf->Cell(87.5,5,utf8_decode("Número de horas a la semana: "),'RLB',0,'L');
+
+
+          }
 
             $pdf->SetFont('Arial','B',10);
             $pdf->SetXY($x,$y+=10);
             $pdf->Cell($ancho,5,utf8_decode("RELACIONES SOCIALES / ASPECTOS INTERPERSONALES"),1,0,'C');
-
+            $relaciones=$this->MGetInfo->get_rel_sociales($alumno);
+            $relaciones=$relaciones->row();
             $pdf->SetFont('Arial','',9);
             $pdf->SetXY($x,$y+=5);
-            $pdf->Cell($ancho,5,"Lugar que ocupo entre mis hermanos: ",'RLB',0,'I');
+            $lugar_hermanos=[" ","El más pequeño","El más grande","El de en medio","Soy hijo único"];
+            $pdf->Cell($ancho,5,utf8_decode("Lugar que ocupo entre mis hermanos: ".$lugar_hermanos[$relaciones->lugar_hermano]),'RLB',0,'I');
             $pdf->SetXY($x,$y+=5);
             $pdf->Cell($ancho,5,utf8_decode("¿Cómo es la relación con sus hermanos? (Marque al menos 2 opciones)"),'RLB',0,'I');
+            $relac_hermanos=$this->MGetInfo->get_rel_hermanos($relaciones->id_relacion);
             $pdf->SetXY($x,$y+=5);
-            $pdf->Cell($ancho/3,5,utf8_decode("(   ) Platicamos"),'RLB',0,'I');
-            $pdf->Cell($ancho/3,5,utf8_decode("(   ) Hay respeto"),'RLB',0,'I');
-            $pdf->Cell($ancho/3,5,utf8_decode("(   ) Nos apoyamos"),'RLB',0,'I');
+            if ($relac_hermanos->num_rows()>0) {
+              foreach ($relac_hermanos->result() as $key) {
+                if ($key->descripcion==1) {
+                  $p="X";
+                  break;
+                }else{
+                  $p=" ";
+                }
+              }
+              $pdf->Cell($ancho/3,5,utf8_decode("( $p ) Platicamos"),'RLB',0,'I');
+              foreach ($relac_hermanos->result() as $key) {
+                if ($key->descripcion==3) {
+                  $p="X";
+                  break;
+                }else{
+                  $p=" ";
+                }
+              }
+              $pdf->Cell($ancho/3,5,utf8_decode("( $p ) Hay respeto"),'RLB',0,'I');
+              foreach ($relac_hermanos->result() as $key) {
+                if ($key->descripcion==5) {
+                  $p="X";
+                  break;
+                }else{
+                  $p=" ";
+                }
+              }
+              $pdf->Cell($ancho/3,5,utf8_decode("( $p ) Nos apoyamos"),'RLB',0,'I');
+              $pdf->SetXY($x,$y+=5);
+              foreach ($relac_hermanos->result() as $key) {
+                if ($key->descripcion==2) {
+                  $p="X";
+                  break;
+                }else{
+                  $p=" ";
+                }
+              }
+              $pdf->Cell($ancho/3,5,utf8_decode("( $p ) Jugamos"),'RLB',0,'I');
+              foreach ($relac_hermanos->result() as $key) {
+                if ($key->descripcion==4) {
+                  $p="X";
+                  break;
+                }else{
+                  $p=" ";
+                }
+              }
+              $pdf->Cell($ancho/3,5,utf8_decode("( $p ) No nos llevamos"),'RLB',0,'I');
+              foreach ($relac_hermanos->result() as $key) {
+                if ($key->descripcion==6) {
+                  $p="X";
+                  break;
+                }else{
+                  $p=" ";
+                }
+              }
+              $pdf->Cell($ancho/3,5,utf8_decode("( $p ) Siempre estamos peleando"),'RLB',0,'I');
+            }else{
+              $pdf->Cell($ancho/3,5,utf8_decode("(   ) Platicamos"),'RLB',0,'I');
+              $pdf->Cell($ancho/3,5,utf8_decode("(   ) Hay respeto"),'RLB',0,'I');
+              $pdf->Cell($ancho/3,5,utf8_decode("(   ) Nos apoyamos"),'RLB',0,'I');
+              $pdf->SetXY($x,$y+=5);
+              $pdf->Cell($ancho/3,5,utf8_decode("(   ) Jugamos"),'RLB',0,'I');
+              $pdf->Cell($ancho/3,5,utf8_decode("(   ) No nos llevamos"),'RLB',0,'I');
+              $pdf->Cell($ancho/3,5,utf8_decode("(   ) Siempre estamos peleando"),'RLB',0,'I');
+            }
+
+
             $pdf->SetXY($x,$y+=5);
-            $pdf->Cell($ancho/3,5,utf8_decode("(   ) Jugamos"),'RLB',0,'I');
-            $pdf->Cell($ancho/3,5,utf8_decode("(   ) No nos llevamos"),'RLB',0,'I');
-            $pdf->Cell($ancho/3,5,utf8_decode("(   ) Siempre estamos peleando"),'RLB',0,'I');
+            $pdf->Cell($ancho,5,utf8_decode("¿A qué edad tuvo su primer noviazgo? $relaciones->edad_noviazgo años"),'RLB',0,'I');
             $pdf->SetXY($x,$y+=5);
-            $pdf->Cell($ancho,5,utf8_decode("¿A qué edad tuvo su primer noviazgo?"),'RLB',0,'I');
+            if ($relaciones->tiene_novio==1) {
+                $pdf->Cell($ancho,5,utf8_decode("Actualmente tiene novio(a): (  X  ) Si   (    ) No   ¿Cuánto tiempo llevas saliendo con él (ella)? $relaciones->tiempo_novio"),'RLB',0,'I');
+            }else{
+              $pdf->Cell($ancho,5,utf8_decode("Actualmente tiene novio(a): (    ) Si   (  X  ) No   ¿Cuánto tiempo llevas saliendo con él (ella)? "),'RLB',0,'I');
+            }
+
             $pdf->SetXY($x,$y+=5);
-            $pdf->Cell($ancho,5,utf8_decode("Actualmente tiene novio(a): (   ) Si   (   ) No   ¿Cuánto tiempo llevas saliendo con él (ella)? "),'RLB',0,'I');
+
+            $pdf->Cell($ancho,5,utf8_decode("¿Cuantás parejas sentimentales has tenido? $relaciones->numero_parejas"),'RLB',0,'I');
             $pdf->SetXY($x,$y+=5);
-            $pdf->Cell($ancho,5,utf8_decode("¿Cuantás parejas sentimentales has tenido?"),'RLB',0,'I');
+            $pdf->Cell($ancho,5,utf8_decode("En promedio ¿Cuánto tiempo ha durado con sus parejas? $relaciones->tiempo_ruptura"),'RLB',0,'I');
             $pdf->SetXY($x,$y+=5);
-            $pdf->Cell($ancho,5,utf8_decode("En promedio ¿Cuánto tiempo ha durado con sus parejas?"),'RLB',0,'I');
+            $pdf->Cell($ancho,5,utf8_decode("¿Cuál ha sido el principal motivo de ruptura? $relaciones->motivo_ruptura"),'RLB',0,'I');
             $pdf->SetXY($x,$y+=5);
-            $pdf->Cell($ancho,5,utf8_decode("¿Cuál ha sido el principal motivo de ruptura?"),'RLB',0,'I');
+            $pdf->Cell($ancho,5,utf8_decode("La persona a la que mas confianza le tiene es: $relaciones->persona_confianza"),'RLB',0,'I');
             $pdf->SetXY($x,$y+=5);
-            $pdf->Cell($ancho,5,utf8_decode("La persona a la que mas confianza le tiene es: "),'RLB',0,'I');
+            $pdf->Cell($ancho,5,utf8_decode("¿Por qué le tiene confianza? $relaciones->razon"),'RLB',0,'I');
             $pdf->SetXY($x,$y+=5);
-            $pdf->Cell($ancho,5,utf8_decode("¿Por qué le tiene confianza?"),'RLB',0,'I');
+            if ($relaciones->toma_decisiones==1) {
+              $pdf->Cell($ancho,5,utf8_decode("¿Quién toma las decisiones definitivas en casa?   Papá (  X  )    Mamá (   )    Ambos (   )    Hermanos (   )"),'RLB',0,'I');
+            }else if ($relaciones->toma_decisiones==2) {
+              $pdf->Cell($ancho,5,utf8_decode("¿Quién toma las decisiones definitivas en casa?   Papá (   )    Mamá (  X  )    Ambos (   )    Hermanos (   )"),'RLB',0,'I');
+            }else if ($relaciones->toma_decisiones==3) {
+              $pdf->Cell($ancho,5,utf8_decode("¿Quién toma las decisiones definitivas en casa?   Papá (   )    Mamá (   )    Ambos (  X  )    Hermanos (   )"),'RLB',0,'I');
+            }else if ($relaciones->toma_decisiones==4) {
+              $pdf->Cell($ancho,5,utf8_decode("¿Quién toma las decisiones definitivas en casa?   Papá (   )    Mamá (   )    Ambos (   )    Hermanos (  X  )"),'RLB',0,'I');
+            }else{
+                $pdf->Cell($ancho,5,utf8_decode("¿Quién toma las decisiones definitivas en casa?   Papá (   )    Mamá (   )    Ambos (   )    Hermanos (   )"),'RLB',0,'I');
+            }
+
             $pdf->SetXY($x,$y+=5);
-            $pdf->Cell($ancho,5,utf8_decode("¿Quién tomas las decisiones definitivas en casa?   Papá (   )    Mamá (   )    Ambos (   )    Hermanos (   )"),'RLB',0,'I');
+            if ($relaciones->flexible_problemas==1) {
+              $pdf->Cell($ancho,5,utf8_decode("¿Quién es más flexible en los problemas?   Papá (  X  )    Mamá (   )    Ambos (   )"),'RLB',0,'I');
+            }else if ($relaciones->flexible_problemas==2) {
+              $pdf->Cell($ancho,5,utf8_decode("¿Quién es más flexible en los problemas?   Papá (   )    Mamá (  X  )    Ambos (   )"),'RLB',0,'I');
+            }else if ($relaciones->flexible_problemas==3) {
+              $pdf->Cell($ancho,5,utf8_decode("¿Quién es más flexible en los problemas?   Papá (   )    Mamá (   )    Ambos (  X  )"),'RLB',0,'I');
+            }else{
+              $pdf->Cell($ancho,5,utf8_decode("¿Quién es más flexible en los problemas?   Papá (   )    Mamá (   )    Ambos (    )"),'RLB',0,'I');
+            }
             $pdf->SetXY($x,$y+=5);
-            $pdf->Cell($ancho,5,utf8_decode("¿Quién es más flexible en los problemas?   Papá (   )    Mamá (   )    Ambos (   )"),'RLB',0,'I');
-            $pdf->SetXY($x,$y+=5);
-            $pdf->Cell($ancho,5,utf8_decode("¿Con quién hay más problemas de comunicación?   Papá (   )    Mamá (   )    Ambos (   )"),'RLB',0,'I');
+            if ($relaciones->problemas_comunicacion==1) {
+              $pdf->Cell($ancho,5,utf8_decode("¿Con quién hay más problemas de comunicación?   Papá (  X  )    Mamá (   )    Ambos (   )"),'RLB',0,'I');
+            }else if ($relaciones->problemas_comunicacion==2) {
+              $pdf->Cell($ancho,5,utf8_decode("¿Con quién hay más problemas de comunicación?   Papá (   )    Mamá (  X  )    Ambos (   )"),'RLB',0,'I');
+            }else if ($relaciones->problemas_comunicacion==3) {
+              $pdf->Cell($ancho,5,utf8_decode("¿Con quién hay más problemas de comunicación?   Papá (   )    Mamá (   )    Ambos (  X  )"),'RLB',0,'I');
+            }else{
+              $pdf->Cell($ancho,5,utf8_decode("¿Con quién hay más problemas de comunicación?   Papá (   )    Mamá (   )    Ambos (   )"),'RLB',0,'I');
+            }
 
 
             $pdf->SetFont('Arial','',8);
@@ -1447,37 +2158,182 @@ class generarPDF extends CI_Controller {
 
             $pdf->SetFont('Arial','',9);
             $pdf->SetXY($x,$y+=12);
-            $pdf->Cell(30,5,utf8_decode("Alcohol"),'RLB',0,'I');
-            $pdf->Cell(20,5,utf8_decode(" "),'RLB',0,'I');
-            $pdf->Cell(8,5,utf8_decode(" "),'RLB',0,'I');
-            $pdf->Cell(24,5,utf8_decode(" "),'RLB',0,'I');
-            $pdf->Cell(28,5,utf8_decode(" "),'RLB',0,'I');
-            $pdf->Cell(18,5,utf8_decode(" "),'RLB',0,'I');
-            $pdf->Cell(22,5,utf8_decode(" "),'RLB',0,'I');
-            $pdf->Cell(17,5,utf8_decode(" "),'RLB',0,'I');
-            $pdf->Cell(8,5,utf8_decode(" "),'RLB',0,'I');
+            $consumo=$this->MGetInfo->get_consumo($alumno);
+            if ($consumo->num_rows()>0) {
+              foreach ($consumo->result() as $key) {
+                if ($key->sustancia==1) {
+                  $p=true;
+                  break;
+                }else{
+                  $p=false;
+                }
+              }
 
-            $pdf->SetXY($x,$y+=5);
-            $pdf->Cell(30,5,utf8_decode("Cigarros"),'RLB',0,'I');
-            $pdf->Cell(20,5,utf8_decode(" "),'RLB',0,'I');
-            $pdf->Cell(8,5,utf8_decode(" "),'RLB',0,'I');
-            $pdf->Cell(24,5,utf8_decode(" "),'RLB',0,'I');
-            $pdf->Cell(28,5,utf8_decode(" "),'RLB',0,'I');
-            $pdf->Cell(18,5,utf8_decode(" "),'RLB',0,'I');
-            $pdf->Cell(22,5,utf8_decode(" "),'RLB',0,'I');
-            $pdf->Cell(17,5,utf8_decode(" "),'RLB',0,'I');
-            $pdf->Cell(8,5,utf8_decode(" "),'RLB',0,'I');
+              if ($p==true) {
+                foreach ($consumo->result() as $key) {
+                  if ($key->sustancia==1) {
+                    $pdf->Cell(30,5,utf8_decode("Alcohol"),'RLB',0,'I');
+                    $pdf->Cell(20,5,utf8_decode($key->parentezco),'RLB',0,'I');//integrante
+                    $p=$key->frecuencia==15?"X":" ";
+                    $pdf->Cell(8,5,utf8_decode("$p"),'RLB',0,'I');//diario 15
+                    $p=$key->frecuencia==16?"X":" ";
+                    $pdf->Cell(24,5,utf8_decode("$p"),'RLB',0,'I');//1 vez semana
+                    $p=$key->frecuencia==17?"X":" ";
+                    $pdf->Cell(28,5,utf8_decode("$p"),'RLB',0,'I');//3 veces semana
+                    $p=$key->frecuencia==18?"X":" ";
+                    $pdf->Cell(18,5,utf8_decode("$p"),'RLB',0,'I');//1 mes
+                    $p=$key->frecuencia==19?"X":" ";
+                    $pdf->Cell(22,5,utf8_decode("$p"),'RLB',0,'I');//Ocasionalmente
+                    $p=$key->frecuencia==20?"X":" ";
+                    $pdf->Cell(17,5,utf8_decode("$p"),'RLB',0,'I');//casi Nunca
+                    $p=$key->frecuencia==21?"X":" ";
+                    $pdf->Cell(8,5,utf8_decode("$p"),'RLB',0,'I');//nunca 21
+                    break;
+                  }else{
+                    $p=false;
+                  }
+                }
+              }else{
+                $pdf->Cell(30,5,utf8_decode("Alcohol"),'RLB',0,'I');
+                $pdf->Cell(20,5,utf8_decode(" "),'RLB',0,'I');//integrante
+                $pdf->Cell(8,5,utf8_decode(" "),'RLB',0,'I');//diario
+                $pdf->Cell(24,5,utf8_decode(" "),'RLB',0,'I');//1 vez semana
+                $pdf->Cell(28,5,utf8_decode(" "),'RLB',0,'I');//3 veces semana
+                $pdf->Cell(18,5,utf8_decode(" "),'RLB',0,'I');//1 mes
+                $pdf->Cell(22,5,utf8_decode(" "),'RLB',0,'I');//Ocasionalmente
+                $pdf->Cell(17,5,utf8_decode(" "),'RLB',0,'I');//casi Nunca
+                $pdf->Cell(8,5,utf8_decode(" "),'RLB',0,'I');//nunca
+              }
+              $pdf->SetXY($x,$y+=5);
+              //
+              foreach ($consumo->result() as $key) {
+                if ($key->sustancia==2) {
+                  $p=true;
+                  break;
+                }else{
+                  $p=false;
+                }
+              }
 
-            $pdf->SetXY($x,$y+=5);
-            $pdf->Cell(30,5,utf8_decode("Alguna droga"),'RLB',0,'I');
-            $pdf->Cell(20,5,utf8_decode(" "),'RLB',0,'I');
-            $pdf->Cell(8,5,utf8_decode(" "),'RLB',0,'I');
-            $pdf->Cell(24,5,utf8_decode(" "),'RLB',0,'I');
-            $pdf->Cell(28,5,utf8_decode(" "),'RLB',0,'I');
-            $pdf->Cell(18,5,utf8_decode(" "),'RLB',0,'I');
-            $pdf->Cell(22,5,utf8_decode(" "),'RLB',0,'I');
-            $pdf->Cell(17,5,utf8_decode(" "),'RLB',0,'I');
-            $pdf->Cell(8,5,utf8_decode(" "),'RLB',0,'I');
+              if ($p==true) {
+                foreach ($consumo->result() as $key) {
+                  if ($key->sustancia==2) {
+                    $pdf->Cell(30,5,utf8_decode("Cigarros"),'RLB',0,'I');
+                    $pdf->Cell(20,5,utf8_decode($key->parentezco),'RLB',0,'I');//integrante
+                    $p=$key->frecuencia==15?"X":" ";
+                    $pdf->Cell(8,5,utf8_decode("$p"),'RLB',0,'I');//diario 15
+                    $p=$key->frecuencia==16?"X":" ";
+                    $pdf->Cell(24,5,utf8_decode("$p"),'RLB',0,'I');//1 vez semana
+                    $p=$key->frecuencia==17?"X":" ";
+                    $pdf->Cell(28,5,utf8_decode("$p"),'RLB',0,'I');//3 veces semana
+                    $p=$key->frecuencia==18?"X":" ";
+                    $pdf->Cell(18,5,utf8_decode("$p"),'RLB',0,'I');//1 mes
+                    $p=$key->frecuencia==19?"X":" ";
+                    $pdf->Cell(22,5,utf8_decode("$p"),'RLB',0,'I');//Ocasionalmente
+                    $p=$key->frecuencia==20?"X":" ";
+                    $pdf->Cell(17,5,utf8_decode("$p"),'RLB',0,'I');//casi Nunca
+                    $p=$key->frecuencia==21?"X":" ";
+                    $pdf->Cell(8,5,utf8_decode("$p"),'RLB',0,'I');//nunca 21
+                    break;
+                  }else{
+                    $p=false;
+                  }
+                }
+              }else{
+                $pdf->Cell(30,5,utf8_decode("Cigarros"),'RLB',0,'I');
+                $pdf->Cell(20,5,utf8_decode(" "),'RLB',0,'I');//integrante
+                $pdf->Cell(8,5,utf8_decode(" "),'RLB',0,'I');//diario
+                $pdf->Cell(24,5,utf8_decode(" "),'RLB',0,'I');//1 vez semana
+                $pdf->Cell(28,5,utf8_decode(" "),'RLB',0,'I');//3 veces semana
+                $pdf->Cell(18,5,utf8_decode(" "),'RLB',0,'I');//1 mes
+                $pdf->Cell(22,5,utf8_decode(" "),'RLB',0,'I');//Ocasionalmente
+                $pdf->Cell(17,5,utf8_decode(" "),'RLB',0,'I');//casi Nunca
+                $pdf->Cell(8,5,utf8_decode(" "),'RLB',0,'I');//nunca
+              }
+              //
+
+              $pdf->SetXY($x,$y+=5);
+              //
+              foreach ($consumo->result() as $key) {
+                if ($key->sustancia==3) {
+                  $p=true;
+                  break;
+                }else{
+                  $p=false;
+                }
+              }
+
+              if ($p==true) {
+                foreach ($consumo->result() as $key) {
+                  if ($key->sustancia==3) {
+                    $pdf->Cell(30,5,utf8_decode("Alguna droga"),'RLB',0,'I');
+                    $pdf->Cell(20,5,utf8_decode($key->parentezco),'RLB',0,'I');//integrante
+                    $p=$key->frecuencia==15?"X":" ";
+                    $pdf->Cell(8,5,utf8_decode("$p"),'RLB',0,'I');//diario 15
+                    $p=$key->frecuencia==16?"X":" ";
+                    $pdf->Cell(24,5,utf8_decode("$p"),'RLB',0,'I');//1 vez semana
+                    $p=$key->frecuencia==17?"X":" ";
+                    $pdf->Cell(28,5,utf8_decode("$p"),'RLB',0,'I');//3 veces semana
+                    $p=$key->frecuencia==18?"X":" ";
+                    $pdf->Cell(18,5,utf8_decode("$p"),'RLB',0,'I');//1 mes
+                    $p=$key->frecuencia==19?"X":" ";
+                    $pdf->Cell(22,5,utf8_decode("$p"),'RLB',0,'I');//Ocasionalmente
+                    $p=$key->frecuencia==20?"X":" ";
+                    $pdf->Cell(17,5,utf8_decode("$p"),'RLB',0,'I');//casi Nunca
+                    $p=$key->frecuencia==21?"X":" ";
+                    $pdf->Cell(8,5,utf8_decode("$p"),'RLB',0,'I');//nunca 21
+                    break;
+                  }else{
+                    $p=false;
+                  }
+                }
+              }else{
+                $pdf->Cell(30,5,utf8_decode("Alguna droga"),'RLB',0,'I');
+                $pdf->Cell(20,5,utf8_decode(" "),'RLB',0,'I');//integrante
+                $pdf->Cell(8,5,utf8_decode(" "),'RLB',0,'I');//diario
+                $pdf->Cell(24,5,utf8_decode(" "),'RLB',0,'I');//1 vez semana
+                $pdf->Cell(28,5,utf8_decode(" "),'RLB',0,'I');//3 veces semana
+                $pdf->Cell(18,5,utf8_decode(" "),'RLB',0,'I');//1 mes
+                $pdf->Cell(22,5,utf8_decode(" "),'RLB',0,'I');//Ocasionalmente
+                $pdf->Cell(17,5,utf8_decode(" "),'RLB',0,'I');//casi Nunca
+                $pdf->Cell(8,5,utf8_decode(" "),'RLB',0,'I');//nunca
+              }
+              //
+              //
+            }else{
+
+              $pdf->Cell(30,5,utf8_decode("Alcohol"),'RLB',0,'I');
+              $pdf->Cell(20,5,utf8_decode(" "),'RLB',0,'I');//integrante
+              $pdf->Cell(8,5,utf8_decode(" "),'RLB',0,'I');//diario
+              $pdf->Cell(24,5,utf8_decode(" "),'RLB',0,'I');//1 vez semana
+              $pdf->Cell(28,5,utf8_decode(" "),'RLB',0,'I');//3 veces semana
+              $pdf->Cell(18,5,utf8_decode(" "),'RLB',0,'I');//1 mes
+              $pdf->Cell(22,5,utf8_decode(" "),'RLB',0,'I');//Ocasionalmente
+              $pdf->Cell(17,5,utf8_decode(" "),'RLB',0,'I');//casi Nunca
+              $pdf->Cell(8,5,utf8_decode(" "),'RLB',0,'I');//nunca
+
+              $pdf->SetXY($x,$y+=5);
+              $pdf->Cell(30,5,utf8_decode("Cigarros"),'RLB',0,'I');
+              $pdf->Cell(20,5,utf8_decode(" "),'RLB',0,'I');
+              $pdf->Cell(8,5,utf8_decode(" "),'RLB',0,'I');
+              $pdf->Cell(24,5,utf8_decode(" "),'RLB',0,'I');
+              $pdf->Cell(28,5,utf8_decode(" "),'RLB',0,'I');
+              $pdf->Cell(18,5,utf8_decode(" "),'RLB',0,'I');
+              $pdf->Cell(22,5,utf8_decode(" "),'RLB',0,'I');
+              $pdf->Cell(17,5,utf8_decode(" "),'RLB',0,'I');
+              $pdf->Cell(8,5,utf8_decode(" "),'RLB',0,'I');
+
+              $pdf->SetXY($x,$y+=5);
+              $pdf->Cell(30,5,utf8_decode("Alguna droga"),'RLB',0,'I');
+              $pdf->Cell(20,5,utf8_decode(" "),'RLB',0,'I');
+              $pdf->Cell(8,5,utf8_decode(" "),'RLB',0,'I');
+              $pdf->Cell(24,5,utf8_decode(" "),'RLB',0,'I');
+              $pdf->Cell(28,5,utf8_decode(" "),'RLB',0,'I');
+              $pdf->Cell(18,5,utf8_decode(" "),'RLB',0,'I');
+              $pdf->Cell(22,5,utf8_decode(" "),'RLB',0,'I');
+              $pdf->Cell(17,5,utf8_decode(" "),'RLB',0,'I');
+              $pdf->Cell(8,5,utf8_decode(" "),'RLB',0,'I');
+            }
 
             $pdf->SetFont('Arial','',7);
             $pdf->SetXY($x,$y+=5);
@@ -1490,75 +2346,301 @@ class generarPDF extends CI_Controller {
             $pdf->Cell(25,8,utf8_decode("Persona de servicio"),'BRL',0,'C');
             $pdf->SetXY($x,$y+4);
             $pdf->Cell(16,4,utf8_decode("realiza las"),'RL',0,'L');
-
             $pdf->SetXY($x,$y+8);
-            $pdf->Cell(16,4,utf8_decode("siguientes"),'RL',0,'L');
-            $pdf->Cell(34,4,utf8_decode("Lavar, planchar su ropa"),'TRB',0,'L');
-            $pdf->Cell(25,8,utf8_decode(" "),'BRL',0,'C');
-            $pdf->Cell(25,8,utf8_decode(" "),'BRL',0,'C');
-            $pdf->Cell(25,8,utf8_decode(" "),'BRL',0,'C');
-            $pdf->Cell(25,8,utf8_decode(" "),'BRL',0,'C');
-            $pdf->Cell(25,8,utf8_decode(" "),'BRL',0,'C');
-            $pdf->SetXY($x,$y+12);
-            $pdf->Cell(16,4,utf8_decode("actividades"),'RL',0,'L');
-            $pdf->Cell(34,4,utf8_decode("Barrer, trapear (aseo general)"),'TRB',0,'L');
-            $pdf->Cell(25,8,utf8_decode(" "),'BRL',0,'C');
-            $pdf->Cell(25,8,utf8_decode(" "),'BRL',0,'C');
-            $pdf->Cell(25,8,utf8_decode(" "),'BRL',0,'C');
-            $pdf->Cell(25,8,utf8_decode(" "),'BRL',0,'C');
-            $pdf->Cell(25,8,utf8_decode(" "),'BRL',0,'C');
-            $pdf->SetXY($x,$y+16);
-            $pdf->Cell(16,4,utf8_decode("en el"),'RL',0,'L');
-            $pdf->Cell(34,4,utf8_decode("Cocinar"),'TRB',0,'L');
-            $pdf->Cell(25,8,utf8_decode(" "),'BRL',0,'C');
-            $pdf->Cell(25,8,utf8_decode(" "),'BRL',0,'C');
-            $pdf->Cell(25,8,utf8_decode(" "),'BRL',0,'C');
-            $pdf->Cell(25,8,utf8_decode(" "),'BRL',0,'C');
-            $pdf->Cell(25,8,utf8_decode(" "),'BRL',0,'C');
-            $pdf->SetXY($x,$y+20);
-            $pdf->Cell(16,4,utf8_decode("hogar?"),'BRL',0,'L');
-            $pdf->Cell(34,4,utf8_decode("Lavar trastes"),'TRB',0,'L');
 
-            $pdf->SetFont('Arial','',9);
-            $pdf->SetXY($x,$y+=24);
-            $pdf->Cell($ancho,5,utf8_decode("¿Sus padres cuentan con algún negocio familiar?   Si (   )   No (   )"),'BRL',0,'I');
-            $pdf->SetXY($x,$y+5);
-            $pdf->Cell($ancho,5,utf8_decode("¿En qué actividades apoya?"),'BRL',0,'I');
+            $actividades=$this->MGetInfo->get_actividades($relaciones->id_relacion);
+            if ($actividades->num_rows()>0) {
+              foreach ($actividades->result() as $key) {
+                if ($key->actividad==14) {
+                  $p=true;
+                  break;
+                }else{
+                  $p=false;
+                }
+              }
+              if ($p==true) {
+                foreach ($actividades->result() as $key) {
+                  if ($key->actividad==14) {
+                    $pdf->Cell(16,4,utf8_decode("siguientes"),'RL',0,'L');
+                    $pdf->Cell(34,4,utf8_decode("Lavar, planchar su ropa"),'TRB',0,'L');
+                    $p=$key->familiar==1?"X":" ";
+                    $pdf->Cell(25,8,utf8_decode("$p"),'BRL',0,'C');
+                    $p=$key->familiar==2?"X":" ";
+                    $pdf->Cell(25,8,utf8_decode("$p"),'BRL',0,'C');
+                    $p=$key->familiar==3?"X":" ";
+                    $pdf->Cell(25,8,utf8_decode("$p"),'BRL',0,'C');
+                    $p=$key->familiar==4?"X":" ";
+                    $pdf->Cell(25,8,utf8_decode("$p"),'BRL',0,'C');
+                    $p=$key->familiar==5?"X":" ";
+                    $pdf->Cell(25,8,utf8_decode("$p"),'BRL',0,'C');
+                  }
+                }
+
+              }else{
+                $pdf->Cell(16,4,utf8_decode("siguientes"),'RL',0,'L');
+                $pdf->Cell(34,4,utf8_decode("Lavar, planchar su ropa"),'TRB',0,'L');
+                $pdf->Cell(25,8,utf8_decode(" "),'BRL',0,'C');
+                $pdf->Cell(25,8,utf8_decode(" "),'BRL',0,'C');
+                $pdf->Cell(25,8,utf8_decode(" "),'BRL',0,'C');
+                $pdf->Cell(25,8,utf8_decode(" "),'BRL',0,'C');
+                $pdf->Cell(25,8,utf8_decode(" "),'BRL',0,'C');
+              }
+
+              $pdf->SetXY($x,$y+12);
+//
+foreach ($actividades->result() as $key) {
+  if ($key->actividad==15) {
+    $p=true;
+    break;
+  }else{
+    $p=false;
+  }
+}
+if ($p==true) {
+  foreach ($actividades->result() as $key) {
+    if ($key->actividad==15) {
+      $pdf->Cell(16,4,utf8_decode("actividades"),'RL',0,'L');
+      $pdf->Cell(34,4,utf8_decode("Barrer, trapear (aseo general)"),'TRB',0,'L');
+
+      $p=$key->familiar==1?"X":" ";
+      $pdf->Cell(25,8,utf8_decode("$p"),'BRL',0,'C');
+      $p=$key->familiar==2?"X":" ";
+      $pdf->Cell(25,8,utf8_decode("$p"),'BRL',0,'C');
+      $p=$key->familiar==3?"X":" ";
+      $pdf->Cell(25,8,utf8_decode("$p"),'BRL',0,'C');
+      $p=$key->familiar==4?"X":" ";
+      $pdf->Cell(25,8,utf8_decode("$p"),'BRL',0,'C');
+      $p=$key->familiar==5?"X":" ";
+      $pdf->Cell(25,8,utf8_decode("$p"),'BRL',0,'C');
+    }
+  }
+
+}else{
+  $pdf->Cell(16,4,utf8_decode("actividades"),'RL',0,'L');
+  $pdf->Cell(34,4,utf8_decode("Barrer, trapear (aseo general)"),'TRB',0,'L');
+
+  $pdf->Cell(25,8,utf8_decode(" "),'BRL',0,'C');
+  $pdf->Cell(25,8,utf8_decode(" "),'BRL',0,'C');
+  $pdf->Cell(25,8,utf8_decode(" "),'BRL',0,'C');
+  $pdf->Cell(25,8,utf8_decode(" "),'BRL',0,'C');
+  $pdf->Cell(25,8,utf8_decode(" "),'BRL',0,'C');
+}
+//
+
+
+              $pdf->SetXY($x,$y+16);
+              //
+              foreach ($actividades->result() as $key) {
+                if ($key->actividad==16) {
+                  $p=true;
+                  break;
+                }else{
+                  $p=false;
+                }
+              }
+              if ($p==true) {
+                foreach ($actividades->result() as $key) {
+                  if ($key->actividad==16) {
+                    $pdf->Cell(16,4,utf8_decode("en el"),'RL',0,'L');
+                    $pdf->Cell(34,4,utf8_decode("Cocinar"),'TRB',0,'L');
+
+                    $p=$key->familiar==1?"X":" ";
+                    $pdf->Cell(25,8,utf8_decode("$p"),'BRL',0,'C');
+                    $p=$key->familiar==2?"X":" ";
+                    $pdf->Cell(25,8,utf8_decode("$p"),'BRL',0,'C');
+                    $p=$key->familiar==3?"X":" ";
+                    $pdf->Cell(25,8,utf8_decode("$p"),'BRL',0,'C');
+                    $p=$key->familiar==4?"X":" ";
+                    $pdf->Cell(25,8,utf8_decode("$p"),'BRL',0,'C');
+                    $p=$key->familiar==5?"X":" ";
+                    $pdf->Cell(25,8,utf8_decode("$p"),'BRL',0,'C');
+                  }
+                }
+
+              }else{
+                $pdf->Cell(16,4,utf8_decode("en el"),'RL',0,'L');
+                $pdf->Cell(34,4,utf8_decode("Cocinar"),'TRB',0,'L');
+
+                $pdf->Cell(25,8,utf8_decode(" "),'BRL',0,'C');
+                $pdf->Cell(25,8,utf8_decode(" "),'BRL',0,'C');
+                $pdf->Cell(25,8,utf8_decode(" "),'BRL',0,'C');
+                $pdf->Cell(25,8,utf8_decode(" "),'BRL',0,'C');
+                $pdf->Cell(25,8,utf8_decode(" "),'BRL',0,'C');
+              }
+
+              //
+
+
+              $pdf->SetXY($x,$y+20);
+              $pdf->Cell(16,4,utf8_decode("hogar?"),'BRL',0,'L');
+              $pdf->Cell(34,4,utf8_decode("Lavar trastes"),'TRB',0,'L');
+
+            }else{
+              $pdf->Cell(16,4,utf8_decode("siguientes"),'RL',0,'L');
+              $pdf->Cell(34,4,utf8_decode("Lavar, planchar su ropa"),'TRB',0,'L');
+              $pdf->Cell(25,8,utf8_decode(" "),'BRL',0,'C');
+              $pdf->Cell(25,8,utf8_decode(" "),'BRL',0,'C');
+              $pdf->Cell(25,8,utf8_decode(" "),'BRL',0,'C');
+              $pdf->Cell(25,8,utf8_decode(" "),'BRL',0,'C');
+              $pdf->Cell(25,8,utf8_decode(" "),'BRL',0,'C');
+              $pdf->SetXY($x,$y+12);
+              $pdf->Cell(16,4,utf8_decode("actividades"),'RL',0,'L');
+              $pdf->Cell(34,4,utf8_decode("Barrer, trapear (aseo general)"),'TRB',0,'L');
+              $pdf->Cell(25,8,utf8_decode(" "),'BRL',0,'C');
+              $pdf->Cell(25,8,utf8_decode(" "),'BRL',0,'C');
+              $pdf->Cell(25,8,utf8_decode(" "),'BRL',0,'C');
+              $pdf->Cell(25,8,utf8_decode(" "),'BRL',0,'C');
+              $pdf->Cell(25,8,utf8_decode(" "),'BRL',0,'C');
+              $pdf->SetXY($x,$y+16);
+              $pdf->Cell(16,4,utf8_decode("en el"),'RL',0,'L');
+              $pdf->Cell(34,4,utf8_decode("Cocinar"),'TRB',0,'L');
+              $pdf->Cell(25,8,utf8_decode(" "),'BRL',0,'C');
+              $pdf->Cell(25,8,utf8_decode(" "),'BRL',0,'C');
+              $pdf->Cell(25,8,utf8_decode(" "),'BRL',0,'C');
+              $pdf->Cell(25,8,utf8_decode(" "),'BRL',0,'C');
+              $pdf->Cell(25,8,utf8_decode(" "),'BRL',0,'C');
+              $pdf->SetXY($x,$y+20);
+              $pdf->Cell(16,4,utf8_decode("hogar?"),'BRL',0,'L');
+              $pdf->Cell(34,4,utf8_decode("Lavar trastes"),'TRB',0,'L');
+
+            }
+            $negocio=$this->MGetInfo->get_negocio_familiar($relaciones->id_relacion);
+            if ($negocio->num_rows()>0) {
+              $negocio=$negocio->row();
+              $pdf->SetFont('Arial','',9);
+              $pdf->SetXY($x,$y+=24);
+              $pdf->Cell($ancho,5,utf8_decode("¿Sus padres cuentan con algún negocio familiar?   Si (  X  )   No (   )"),'BRL',0,'I');
+              $pdf->SetXY($x,$y+5);
+              $pdf->Cell($ancho,5,utf8_decode("¿En qué actividades apoya? $negocio->actividades_apoyo"),'BRL',0,'I');
+            }else{
+              $pdf->SetFont('Arial','',9);
+              $pdf->SetXY($x,$y+=24);
+              $pdf->Cell($ancho,5,utf8_decode("¿Sus padres cuentan con algún negocio familiar?   Si (   )   No (   )"),'BRL',0,'I');
+              $pdf->SetXY($x,$y+5);
+              $pdf->Cell($ancho,5,utf8_decode("¿En qué actividades apoya?"),'BRL',0,'I');
+          }
 
     $pdf->AddPage();
+    /////////////hoja 6
       $x=20;$y=20;
       $ancho=175;
       $pdf->SetXY($x,$y);
       $pdf->SetFont('Arial','B',10);
       $pdf->Cell($ancho,8,'PROYECTO DE VIDA',1,0,'C');
+      $proyecto=$this->MGetInfo->get_proy_vida($alumno);
+      $proyecto=$proyecto->row();
+
       $pdf->SetXY($x,$y+=8);
       $pdf->SetFont('Arial','',10);
       $pdf->Cell($ancho,5,utf8_decode('¿Por qué decidió estudiar su bachillerato en CECYTEM? (Marque al menos 3 opciones)'),'RLB',0,'L');
       $pdf->SetXY($x,$y+=5);
-      $pdf->Cell($ancho/2,5,'( ) Porque le gustan las instalaciones','RLB',0,'L');
-      $pdf->Cell($ancho/2,5,utf8_decode('( ) La carrera de técnico en programación'),'RLB',0,'L');
+      $opciones=$this->MGetInfo->get_opciones_proyecto($proyecto->id_proy_vida);
+      foreach ($opciones->result() as $key) {
+        if ($key->id_opcion_pv==1) {
+          $p=true;
+          break;
+        }else{
+            $p=false;
+          }
+
+      }
+      $op=$p==true?"X":" ";
+      $pdf->Cell($ancho/2,5,'('.$op.') Porque le gustan las instalaciones','RLB',0,'L');
+      foreach ($opciones->result() as $key) {
+        if ($key->id_opcion_pv==5) {
+          $p=true;
+          break;
+        }else{
+          $p=false;
+        }
+      }
+      $op=$p==true?"X":" ";
+      $pdf->Cell($ancho/2,5,utf8_decode('('.$op.') La carrera de técnico en programación'),'RLB',0,'L');
       $pdf->SetXY($x,$y+=5);
-      $pdf->Cell($ancho/2,5,'( ) Porque le gusta el modelo de enseñanza','RLB',0,'L');
-      $pdf->Cell($ancho/2,5,utf8_decode('( ) Por recomendación de familiares o amigos'),'RLB',0,'L');
+      foreach ($opciones->result() as $key) {
+        if ($key->id_opcion_pv==2) {
+          $p=true;
+          break;
+        }else{
+          $p=false;
+        }
+      }
+      $op=$p==true?"X":" ";
+      $pdf->Cell($ancho/2,5,utf8_decode('('.$op.') Porque le gusta el modelo de enseñanza'),'RLB',0,'L');
+      foreach ($opciones->result() as $key) {
+        if ($key->id_opcion_pv==6) {
+          $p=true;
+          break;
+        }else{
+          $p=false;
+        }
+      }
+      $op=$p==true?"X":" ";
+      $pdf->Cell($ancho/2,5,utf8_decode('('.$op.') Por recomendación de familiares o amigos'),'RLB',0,'L');
       $pdf->SetXY($x,$y+=5);
-      $pdf->Cell($ancho/2,5,utf8_decode('( ) La documentación que se obiene al egresar'),'RLB',0,'L');
-      $pdf->Cell($ancho/2,5,'( ) Le obligaron sus padres','RLB',0,'L');
+      foreach ($opciones->result() as $key) {
+        if ($key->id_opcion_pv==3) {
+          $p=true;
+          break;
+        }else{
+          $p=false;
+        }
+      }
+      $op=$p==true?"X":" ";
+      $pdf->Cell($ancho/2,5,utf8_decode('('.$op.') La documentación que se obiene al egresar'),'RLB',0,'L');
+      foreach ($opciones->result() as $key) {
+        if ($key->id_opcion_pv==7) {
+          $p=true;
+          break;
+        }else{
+          $p=false;
+        }
+      }
+      $op=$p==true?"X":" ";
+      $pdf->Cell($ancho/2,5,'('.$op.') Le obligaron sus padres','RLB',0,'L');
       $pdf->SetXY($x,$y+=5);
-      $pdf->Cell($ancho/2,5,utf8_decode('( ) Por mi situación económica'),'RLB',0,'L');
-      $pdf->Cell($ancho/2,5,utf8_decode('( ) Fué otra de sus opciones'),'RLB',0,'L');
+      foreach ($opciones->result() as $key) {
+        if ($key->id_opcion_pv==4) {
+          $p=true;
+          break;
+        }else{
+          $p=false;
+        }
+      }
+      $op=$p==true?"X":" ";
+      $pdf->Cell($ancho/2,5,utf8_decode('('.$op.') Por mi situación económica'),'RLB',0,'L');
+      foreach ($opciones->result() as $key) {
+        if ($key->id_opcion_pv>=8) {
+          $p=true;
+
+          break;
+        }else{
+          $p=false;
+        }
+      }
+      $op=$p==true?"X":" ";
+      //
+      $pdf->Cell($ancho/2,5,utf8_decode('('.$op.') Fué otra de sus opciones'),'RLB',0,'L');
       $pdf->SetXY($x,$y+=5);
+
       $pdf->Cell($ancho,5,utf8_decode('Otra, especifique: '),'RLB',0,'L');
-      $pdf->SetXY($x,$y+=5);
-      $pdf->Cell($ancho,5,utf8_decode('Sus metas en la escuela son: '),'RLB',0,'L');
-      $pdf->SetXY($x,$y+=5);
-      $pdf->Cell($ancho,5,utf8_decode('Su principal meta en la vida es: '),'RLB',0,'L');
-      $pdf->SetXY($x,$y+=5);
-      $pdf->Cell($ancho,5,utf8_decode('¿cómo piensa lograrla? '),'RLB',0,'L');
-      $pdf->SetXY($x,$y+=5);
-      $pdf->Cell($ancho,5,utf8_decode('¿Qué espera durante su estancia en el plantel? '),'RLB',0,'L');
 
       $pdf->SetXY($x,$y+=5);
-      $pdf->Cell($ancho,5,utf8_decode('Al terminar el bachillerato, piensa continuar estudiando SI( ) NO( ) ¿Qué? '),'RLB',0,'L');
+      $pdf->Cell($ancho,5,utf8_decode("Sus metas en la escuela son: ".$proyecto->meta_escuela),'RLB',0,'L');
+      $pdf->SetXY($x,$y+=5);
+      $pdf->Cell($ancho,5,utf8_decode("Su principal meta en la vida es: $proyecto->meta_vida"),'RLB',0,'L');
+      $pdf->SetXY($x,$y+=5);
+      $pdf->Cell($ancho,5,utf8_decode('¿cómo piensa lograrla? '.$proyecto->piensa_lograrla),'RLB',0,'L');
+      $pdf->SetXY($x,$y+=5);
+      $pdf->Cell($ancho,5,utf8_decode('¿Qué espera durante su estancia en el plantel? '.$proyecto->estancia),'RLB',0,'L');
+
+      $pdf->SetXY($x,$y+=5);
+      if ($proyecto->termino==1) {
+        $pdf->Cell($ancho,5,utf8_decode('Al terminar el bachillerato, piensa continuar estudiando SI( x ) NO( ) ¿Qué? '.$proyecto->carrera),'RLB',0,'L');
+
+      }else{
+        $pdf->Cell($ancho,5,utf8_decode('Al terminar el bachillerato, piensa continuar estudiando SI( ) NO( x ) ¿Qué? '),'RLB',0,'L');
+      }
 
       $pdf->SetXY($x,$y+=13);
       $pdf->SetFont('Arial','B',10);
@@ -1567,43 +2649,60 @@ class generarPDF extends CI_Controller {
       $pdf->Cell($ancho,6,utf8_decode('INSTRUCCIONES: En la columna de la derecha marca V si es Verdadero y F si es Falso'),1,0,'L');
       $pdf->SetFont('Arial','',10);
       $pdf->SetXY($x,$y+=6);
-      $pdf->Cell($ancho-20,6,utf8_decode('1.- Mi promedio en la escuela es igual o mayor a 7.'),1,0,'L');$pdf->Cell(20,6,'',1,0,'L');
+      $perfil=$this->MGetInfo->get_perfil($alumno);
+      $perfil=$perfil->row();
+      $op=$perfil->p1==1?"V":"F";
+      $pdf->Cell($ancho-20,6,utf8_decode('1.- Mi promedio en la escuela es igual o mayor a 7.'),1,0,'L');$pdf->Cell(20,6,$op,1,0,'L');
       $pdf->SetXY($x,$y+=6);
-      $pdf->Cell($ancho-20,6,utf8_decode('2.- Reprobé 2 o más materias en la secundaria.'),1,0,'L');$pdf->Cell(20,6,'',1,0,'L');
+      $op=$perfil->p2==1?"V":"F";
+      $pdf->Cell($ancho-20,6,utf8_decode('2.- Reprobé 2 o más materias en la secundaria.'),1,0,'L');$pdf->Cell(20,6,$op,1,0,'L');
       $pdf->SetXY($x,$y+=6);
-      $pdf->Cell($ancho-20,6,utf8_decode('3.- Yo elegí el plantel de bachillerato al que asisto.'),1,0,'L');$pdf->Cell(20,6,'',1,0,'L');
+      $op=$perfil->p3==1?"V":"F";
+      $pdf->Cell($ancho-20,6,utf8_decode('3.- Yo elegí el plantel de bachillerato al que asisto.'),1,0,'L');$pdf->Cell(20,6,$op,1,0,'L');
       $pdf->SetXY($x,$y+=6);
-      $pdf->Cell($ancho-20,6,utf8_decode('4.- Asisto a la educación media superior porque creo que me será muy útil.'),1,0,'L');$pdf->Cell(20,6,'',1,0,'L');
+      $op=$perfil->p4==1?"V":"F";
+      $pdf->Cell($ancho-20,6,utf8_decode('4.- Asisto a la educación media superior porque creo que me será muy útil.'),1,0,'L');$pdf->Cell(20,6,$op,1,0,'L');
       $pdf->SetXY($x,$y+=6);
-      $pdf->Cell($ancho-20,6,utf8_decode('5.- Me gusta la escuela.'),1,0,'L');$pdf->Cell(20,6,'',1,0,'L');
+      $op=$perfil->p5==1?"V":"F";
+      $pdf->Cell($ancho-20,6,utf8_decode('5.- Me gusta la escuela.'),1,0,'L');$pdf->Cell(20,6,$op,1,0,'L');
       $pdf->SetXY($x,$y+=6);
-      $pdf->Cell($ancho-20,6,utf8_decode('6.- Soy bueno para estudiar.'),1,0,'L');$pdf->Cell(20,6,'',1,0,'L');
+      $op=$perfil->p6==1?"V":"F";
+      $pdf->Cell($ancho-20,6,utf8_decode('6.- Soy bueno para estudiar.'),1,0,'L');$pdf->Cell(20,6,$op,1,0,'L');
       $pdf->SetXY($x,$y+=6);
-      $pdf->Cell($ancho-20,6,utf8_decode('7.- En la secundaria sentía confianza con algún maestro(a) como para platicar con él (ella).'),1,0,'L');$pdf->Cell(20,6,'',1,0,'L');
+      $op=$perfil->p7==1?"V":"F";
+      $pdf->Cell($ancho-20,6,utf8_decode('7.- En la secundaria sentía confianza con algún maestro(a) como para platicar con él (ella).'),1,0,'L');$pdf->Cell(20,6,$op,1,0,'L');
       $pdf->SetXY($x,$y+=6);
-      $pdf->Cell($ancho-20,6,utf8_decode('8.- En la secundaria preguntaba mis dudas al maestro(a).'),1,0,'L');$pdf->Cell(20,6,'',1,0,'L');
+      $op=$perfil->p8==1?"V":"F";
+      $pdf->Cell($ancho-20,6,utf8_decode('8.- En la secundaria preguntaba mis dudas al maestro(a).'),1,0,'L');$pdf->Cell(20,6,$op,1,0,'L');
 
       $pdf->SetXY($x,$y+=6);
+      $op=$perfil->p9==1?"V":"F";
       $pdf->MultiCell($ancho-20,6,utf8_decode('9.- En la secundaria me molestaban con frecuencia otro y otros compañeros (burlas, intimidacion, golpes, extorsiones, etc).'),1,'L',0);
       $pdf->SetXY($ancho,$y);
-      $pdf->Cell(20,12,'',1,0,'C');
+      $pdf->Cell(20,12,$op,1,0,'L');
 
       $pdf->SetXY($x,$y+=12);
-      $pdf->Cell($ancho-20,6,utf8_decode('10.- Si yo reprobara alguna materia, se lo platicaría a mi mamá o mi papá.'),1,0,'L');$pdf->Cell(20,6,'',1,0,'L');
+      $op=$perfil->p10==1?"V":"F";
+      $pdf->Cell($ancho-20,6,utf8_decode('10.- Si yo reprobara alguna materia, se lo platicaría a mi mamá o mi papá.'),1,0,'L');$pdf->Cell(20,6,$op,1,0,'L');
       $pdf->SetXY($x,$y+=6);
-      $pdf->Cell($ancho-20,6,utf8_decode('11.- Si tuviera un problema alguna personal, lo platicaría con mi mamá o mi papá.'),1,0,'L');$pdf->Cell(20,6,'',1,0,'L');
+      $op=$perfil->p11==1?"V":"F";
+      $pdf->Cell($ancho-20,6,utf8_decode('11.- Si tuviera un problema alguna personal, lo platicaría con mi mamá o mi papá.'),1,0,'L');$pdf->Cell(20,6,$op,1,0,'L');
       $pdf->SetXY($x,$y+=6);
-      $pdf->Cell($ancho-20,6,utf8_decode('12.- Me gustaría emigrar a Estados Unidos en los próximos 5 años.'),1,0,'L');$pdf->Cell(20,6,'',1,0,'L');
+      $op=$perfil->p12==1?"V":"F";
+      $pdf->Cell($ancho-20,6,utf8_decode('12.- Me gustaría emigrar a Estados Unidos en los próximos 5 años.'),1,0,'L');$pdf->Cell(20,6,$op,1,0,'L');
       $pdf->SetXY($x,$y+=6);
-      $pdf->Cell($ancho-20,6,utf8_decode('13.- Es posible que me case o viva con mi pareja antes de terminar el bachillerato.'),1,0,'L');$pdf->Cell(20,6,'',1,0,'L');
+      $op=$perfil->p13==1?"V":"F";
+      $pdf->Cell($ancho-20,6,utf8_decode('13.- Es posible que me case o viva con mi pareja antes de terminar el bachillerato.'),1,0,'L');$pdf->Cell(20,6,$op,1,0,'L');
 
       $pdf->SetXY($x,$y+=6);
+      $op=$perfil->p14==1?"V":"F";
       $pdf->MultiCell($ancho-20,6,utf8_decode('14.- Es mi casa hemos tenido problemas económicos serios (deudas, no alcanza ara los gastos del diario, etc).'),1,'L',0);
       $pdf->SetXY($ancho,$y);
-      $pdf->Cell(20,12,'',1,0,'C');
+      $pdf->Cell(20,12,$op,1,0,'L');
 
       $pdf->SetXY($x,$y+=12);
-      $pdf->Cell($ancho-20,6,utf8_decode('15.- Es más importante trabajar que estudiar'),1,0,'L');$pdf->Cell(20,6,'',1,0,'L');
+      $op=$perfil->p15==1?"V":"F";
+      $pdf->Cell($ancho-20,6,utf8_decode('15.- Es más importante trabajar que estudiar'),1,0,'L');$pdf->Cell(20,6,$op,1,0,'L');
 
       $pdf->SetXY($x,$y+=50);
       $pdf->Cell($ancho,5,'6/6',0,0,'C');

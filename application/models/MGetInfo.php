@@ -102,11 +102,11 @@ class MGetInfo extends CI_Model
   }
   function get_recreacion($alumno){
     $this->db->where("alumno",$alumno);
-    return $this->db->get("recreacion");
+    return $this->db->get("v_recreacion");
   }
   function get_gustos($alumno){
     $this->db->where("alumno",$alumno);
-    return $this->db->get("gusto_intereses");
+    return $this->db->get("gustos_intereses");
   }
   function get_participacion($alumno){
     $this->db->where("alumno",$alumno);
@@ -114,7 +114,7 @@ class MGetInfo extends CI_Model
   }
   function get_organizaciones($participacion){
     $this->db->where("id_participacion",$participacion);
-    return $this->db->get("org_participacion");
+    return $this->db->get("v_organizaciones");
   }
   function get_internet($alumno){
     $this->db->where("alumno",$alumno);
@@ -136,15 +136,16 @@ class MGetInfo extends CI_Model
   }
   function get_consumo($alumno){
     $this->db->where("alumno",$alumno);
-    return $this->db->get("consumo_familiar");
+    return $this->db->get("v_consumo_familiar");
   }
   function get_actividades($relacion){
     $this->db->where("relacion",$relacion);
     return $this->db->get("actividades_hogar");
   }
-  // function get_negocio_familiar($relacion){
-  //
-  // }
+  function get_negocio_familiar($relacion){
+    $this->db->where("relacion",$relacion);
+    return $this->db->get("negocios_familiares");
+  }
 
 //SELECT'S SEXTA HOJA
   function get_proy_vida($alumno){

@@ -33,7 +33,7 @@ class CInserciones4 extends CI_Controller {
     //////////////////////////////////
     $ejercicio=array(
       "alumno"=>$alumno,
-      "frecuencia"=>$_POST['ejercicio'],
+      "frecuencia"=>isset($_POST['ejercicio'])?$_POST['ejercicio']:4,
         "practica_deporte"=>isset($_POST['deporte'])?1:0
       );//verificar
     $id_deporte=$this->MInserciones4->insetar_deporte($ejercicio);
