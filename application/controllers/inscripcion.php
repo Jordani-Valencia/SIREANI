@@ -96,7 +96,7 @@ class inscripcion extends CI_Controller {
         $pdf->Cell(138,5,utf8_decode(""),'B',0,'L');
 
         $pdf->SetFont('Arial','B',10);
-        $pdf->SetXY($x,$y+=5);
+        $pdf->SetXY($x,$y+=6);
         $pdf->Cell(40,5,utf8_decode("Dirección del aspirante:"),'',0,'L');
         $pdf->Rect(20,100,175,15);
 
@@ -137,7 +137,7 @@ class inscripcion extends CI_Controller {
         $pdf->Rect(20,120,175,15);
 
         $pdf->SetFont('Arial','',9);
-        $pdf->SetXY($x+5,$y+=6);
+        $pdf->SetXY($x+5,$y+=5);
         $pdf->Cell(50,5,"",'BLRT',0,'L');
         $pdf->SetXY($x+65,$y);
         $pdf->Cell(50,5,"",'BLRT',0,'L');
@@ -159,9 +159,9 @@ class inscripcion extends CI_Controller {
         $pdf->Cell(36,5,"",'B',0,'L');
 
         $pdf->SetFont('Arial','B',10);
-        $pdf->SetXY($x,$y+=5);
+        $pdf->SetXY($x,$y+=6);
         $pdf->Cell(42,5,utf8_decode("Datos del padre o tutor:"),'',0,'L');
-        $pdf->Rect(20,140,175,20);
+        $pdf->Rect(20,140,175,21);
 
         $pdf->SetFont('Arial','',9);
         $pdf->SetXY($x,$y+=5);
@@ -205,9 +205,89 @@ class inscripcion extends CI_Controller {
         $pdf->Cell(18,5,utf8_decode("Maestría"),'',0,'L');
 
         $pdf->SetFont('Arial','B',10);
-        $pdf->SetXY($x,$y+=5);
+        $pdf->SetXY($x,$y+=6);
         $pdf->Cell(82,5,utf8_decode("Datos de la escuela secundaria de procedencia:"),'',0,'L');
-        $pdf->Rect(20,165,175,15);
+        $pdf->Rect(20,166,175,11);
+
+        $pdf->SetFont('Arial','',9);
+        $pdf->SetXY($x,$y+=5);
+        $pdf->Cell(50,5,utf8_decode("Nombre completo de la institución:"),'',0,'L');
+        $pdf->SetXY($x+50,$y);
+        $pdf->Cell(120,5,utf8_decode(""),'B',0,'L');
+        $pdf->SetXY($x,$y+=5);
+        $pdf->Cell(33,5,utf8_decode("CCT de la secundaria:"),'',0,'L');
+        $pdf->SetXY($x+33,$y);
+        $pdf->Cell(70,5,utf8_decode(""),'B',0,'L');
+        $pdf->SetXY($x+103,$y);
+        $pdf->Cell(40,5,utf8_decode("Promedio general obtenido:"),'',0,'L');
+        $pdf->SetXY($x+143,$y);
+        $pdf->Cell(30,5,utf8_decode(""),'B',0,'L');
+
+        $pdf->SetFont('Arial','B',10);
+        $pdf->SetXY($x,$y+=6);
+        $pdf->Cell(82,5,utf8_decode("Documentación entregada (para uso exclusivo del Colegio)"),'',0,'L');
+
+        $pdf->SetFont('Arial','',9);
+        $pdf->SetXY($x,$y+=5);
+        $pdf->Cell(2,5,utf8_decode("1"),'',0,'C');
+        $pdf->SetXY($x+4,$y);
+        $pdf->Cell(5,5,utf8_decode(""),'BLTR',0,'C');
+        $pdf->Write(5,"*Copia de constancia domiciliaria");
+        $pdf->SetXY($x+68,$y);
+        $pdf->Cell(2,5,utf8_decode("4"),'',0,'C');
+        $pdf->SetXY($x+72,$y);
+        $pdf->Cell(5,5,utf8_decode(""),'BLTR',0,'C');
+        $pdf->Write(5,"*Copia de acta de nacimiento");
+        $pdf->SetXY($x+126,$y);
+        $pdf->Cell(2,5,utf8_decode("7"),'',0,'C');
+        $pdf->SetXY($x+130,$y);
+        $pdf->Cell(5,5,utf8_decode(""),'BLTR',0,'C');
+        $pdf->Write(5,utf8_decode("6 fotografías tamaño infantil"));
+
+        $pdf->SetXY($x,$y+=5);
+        $pdf->Cell(2,5,utf8_decode("2"),'',0,'C');
+        $pdf->SetXY($x+4,$y);
+        $pdf->Cell(5,5,utf8_decode(""),'BLTR',0,'C');
+        $pdf->Write(5,utf8_decode("Comprobante de pago de inscripción"));
+        $pdf->SetXY($x+68,$y);
+        $pdf->Cell(2,5,utf8_decode("5"),'',0,'C');
+        $pdf->SetXY($x+72,$y);
+        $pdf->Cell(5,5,utf8_decode(""),'BLTR',0,'C');
+        $pdf->Write(5,utf8_decode("Certificado médico oficial"));
+        $pdf->SetXY($x+135,$y);
+        $pdf->Cell(40,10,utf8_decode(""),'BLTR',0,'C');
+
+        $pdf->SetXY($x,$y+=5);
+        $pdf->Cell(2,5,utf8_decode("3"),'',0,'C');
+        $pdf->SetXY($x+4,$y);
+        $pdf->Cell(5,5,utf8_decode(""),'BLTR',0,'C');
+        $pdf->Write(5,"*Copia certificado de secundaria");
+        $pdf->SetXY($x+68,$y);
+        $pdf->Cell(2,5,utf8_decode("6"),'',0,'C');
+        $pdf->SetXY($x+72,$y);
+        $pdf->Cell(5,5,utf8_decode(""),'BLTR',0,'C');
+        $pdf->Write(5,utf8_decode("Copia de la CURP"));
+        $pdf->SetXY($x,$y+=5);
+        $pdf->Write(5,"* cotejar con originales");
+        $pdf->SetXY($x+135,$y);
+        $pdf->Cell(40,5,utf8_decode("Revisó y Recibió"),'BLTR',0,'C');
+
+        $pdf->SetXY($x,$y+=10);
+        $pdf->SetFont('Arial','',7);
+        $pdf->Write(5,utf8_decode("Declaro que los datos registrados son correctos y me \n comprometo a cumplir y respetar el reglamento escolar vigente."));
+        $pdf->Write(5,utf8_decode("Estoy de acuerdo en asistir a las reuniones a que se convoque"));
+
+        $pdf->SetXY($x,$y+=20);
+        $pdf->Cell(80,5,utf8_decode(""),'B',0,'C');
+        $pdf->SetXY($x+95,$y);
+        $pdf->Cell(80,5,utf8_decode(""),'B',0,'C');
+        //$pdf->SetFont('Arial','B',11);
+        $pdf->SetXY($x,$y+=8);
+        $pdf->Cell(80,5,utf8_decode("Firma del alumno"),'0',0,'C');
+        $pdf->SetXY($x+97,$y);
+        $pdf->Cell(80,5,utf8_decode("Firma del padre o tutor"),'0',0,'C');
+
+
     $pdf->Output();
 
 
