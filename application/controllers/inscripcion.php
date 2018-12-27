@@ -274,14 +274,22 @@ class inscripcion extends CI_Controller {
 
         $pdf->SetXY($x,$y+=10);
         $pdf->SetFont('Arial','',7);
-        $pdf->Write(5,utf8_decode("Declaro que los datos registrados son correctos y me \n comprometo a cumplir y respetar el reglamento escolar vigente."));
-        $pdf->Write(5,utf8_decode("Estoy de acuerdo en asistir a las reuniones a que se convoque"));
+        $pdf->Cell(80,5,utf8_decode("Declaro que los datos registrados son correctos y me"),'',0,'C');
+        $pdf->SetXY($x+97,$y);
+        $pdf->Cell(80,5,utf8_decode("Estoy de acuerdo en asistir a las reuniones a que se convoque y"),'',0,'C');
+        $pdf->SetXY($x,$y+=3);
+        $pdf->Cell(80,5,utf8_decode("comprometo a cumplir y respetar el reglamento escolar vigente"),'',0,'C');
+        $pdf->SetXY($x+97,$y);
+        $pdf->Cell(80,5,utf8_decode("colaborar para que el comportamiento y aprovechamiento de mi hijo"),'',0,'C');
+        $pdf->SetXY($x+97,$y+=3);
+        $pdf->Cell(80,5,utf8_decode("sea el adecuado, de acuerdo con los reglamentos de la institución"),'',0,'C');
 
         $pdf->SetXY($x,$y+=20);
         $pdf->Cell(80,5,utf8_decode(""),'B',0,'C');
         $pdf->SetXY($x+95,$y);
         $pdf->Cell(80,5,utf8_decode(""),'B',0,'C');
-        //$pdf->SetFont('Arial','B',11);
+
+        $pdf->SetFont('Arial','',10);
         $pdf->SetXY($x,$y+=8);
         $pdf->Cell(80,5,utf8_decode("Firma del alumno"),'0',0,'C');
         $pdf->SetXY($x+97,$y);
