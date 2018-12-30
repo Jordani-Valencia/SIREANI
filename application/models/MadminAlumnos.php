@@ -16,5 +16,9 @@ class MadminAlumnos extends CI_Model
   public function nombre($id){
     return $this->db->query("SELECT nombre_al FROM alumno WHERE id_alumno=$id");
   }
+
+  public function eliminar(){
+    $this->db->query("DELETE FROM alumno");
+  }
 }
 ?>
