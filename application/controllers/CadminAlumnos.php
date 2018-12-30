@@ -9,6 +9,10 @@ class CadminAlumnos extends CI_Controller {
     $this->load->database();
 	}
 
+  public function depurar(){
+      $this->MadminAlumnos->eliminar();
+  }
+
   public function alumnos(){
     $al = $this->MadminAlumnos->obtenerAlumnos();
     $data = array();
@@ -19,7 +23,8 @@ class CadminAlumnos extends CI_Controller {
           $r->nombre_al,
           $r->paterno_al,
           $r->materno_al,
-          "<a href='adminAlumnos/$r->id_alumno' class='btn red accent-3 center'>Editar</a>"
+          "<a href='adminAlumnos/$r->id_alumno' class='btn red accent-3 center'>Editar</a>",
+          "<a href='../generarPDF/index/$r->id_alumno' class='btn red accent-3 center'>Generar PDF</a>"
           );
          }
 
