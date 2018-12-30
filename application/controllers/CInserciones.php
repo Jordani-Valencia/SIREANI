@@ -27,6 +27,10 @@ class CInserciones extends CI_Controller {
       "paterno_al"=>$_POST['paterno1'],
       "materno_al"=>$_POST['materno1'],
       "fecha_nacimiento_al"=>$_POST['nacimiento1'],
+
+      "edad"=>$_POST['edadAlumno'],
+      "civil"=>$_POST['civilAlumno'],
+
       "sexo"=>$_POST['sexo1'],
       "lugar_nacimiento"=>$_POST['lugar1'],
       "entidad"=>$_POST['entidad1'],
@@ -75,7 +79,7 @@ class CInserciones extends CI_Controller {
                         "entreCalle1"=>$_POST['entrec1'],
                         "entreCalle2"=>$_POST['entrec2'],
                         "referencia"=>$_POST['referencia'],
-                        "tel_emergencia"=>$_POST[''],
+                        "tel_emergencia"=>$_POST['emergencia'],
                         "colonia"=>$_POST['colonia1'],
                         "estado"=>$_POST['entidad3'],
                         "municipio"=>$_POST['municipio3'],

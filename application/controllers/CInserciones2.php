@@ -13,7 +13,6 @@ class CInserciones2 extends CI_Controller {
 	public function padre(){
     $alumno=$this->session->userdata('id');
 
-    //
     if ($_POST['nombre5']!=null && $_POST['paterno4']!=null) {
       $arr_tutor= array(
         "alumno" =>$alumno,
@@ -28,6 +27,16 @@ class CInserciones2 extends CI_Controller {
         "entidad"=>isset($_POST['entidad6'])?$_POST['entidad6']:15,
         "pais"=>$_POST['paisTutor'],
         "curp"=>$_POST['curp4'],
+        "edad"=>$_POST['edadTutor'],
+        "civil"=>$_POST['civilTutor'],
+        "correo"=>$_POST['correoTutor'],
+        "facebook"=>$_POST['faceTutor'],
+        "twitter"=>$_POST['TwitterTutor'],
+
+        "nacionalidad"=>$_POST['nacionalidadTutor'],
+        "ocupacion"=>$_POST['ocupacionTutor'],
+        "elector"=>$_POST['electorTutor'],
+
         "trabaja"=>isset($_POST['trabaja4'])?1:0,
         "horas_trabajo"=>isset($_POST['trabaja4'])?$_POST['semana3']:0,
         "grado_estudio"=>isset($_POST['grupo4'])?$_POST['grupo4']:15);
@@ -53,6 +62,16 @@ class CInserciones2 extends CI_Controller {
         "entidad"=>isset($_POST['entidad3'])?$_POST['entidad3']:15,
         "pais"=>$_POST['pais2'],
         "curp"=>$_POST['curp2'],
+        "edad"=>$_POST['edadMadre'],
+        "civil"=>$_POST['civilMadre'],
+        "correo"=>$_POST['correoMadre'],
+        "facebook"=>$_POST['faceMadre'],
+        "twitter"=>$_POST['TwitterMadre'],
+
+        "nacionalidad"=>$_POST['nacionalidadMadre'],
+        "ocupacion"=>$_POST['ocupacionMadre'],
+        "elector"=>$_POST['electorMadre'],
+
         "trabaja"=>$trabaja,
         "horas_trabajo"=>$horas,
         "tel_casa"=>$_POST['telefono2'],
@@ -65,7 +84,7 @@ class CInserciones2 extends CI_Controller {
     if ($_POST['nombre4']!=null && $_POST['paterno3']!=null) {
       $trabaja=isset($_POST['trabaja3'])?1:0;
       $horas=isset($_POST['trabaja3'])?$_POST['semana2']:0;
-
+      
       $arr_padre=array(
         "alumno" =>$alumno,
         "parentezco"=>1,
@@ -79,6 +98,16 @@ class CInserciones2 extends CI_Controller {
         "entidad"=>isset($_POST['entidad4'])?$_POST['entidad4']:15,
         "pais"=>$_POST['pais3'],
         "curp"=>$_POST['curp3'],
+        "edad"=>$_POST['edadPadre'],
+        "civil"=>$_POST['civilPadre'],
+        "correo"=>$_POST['correoPadre'],
+        "facebook"=>$_POST['facePadre'],
+        "twitter"=>$_POST['TwitterPadre'],
+
+        "nacionalidad"=>$_POST['nacionalidadPadre'],
+        "ocupacion"=>$_POST['ocupacionPadre'],
+        "elector"=>$_POST['electorPadre'],
+
         "trabaja"=>$trabaja,
         "tel_casa"=>$_POST['telefono4'],
         "horas_trabajo"=>$horas,

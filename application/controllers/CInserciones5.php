@@ -29,7 +29,11 @@ class CInserciones5 extends CI_Controller {
       "alumno"=>$alumno,
       "tiene_cel"=>isset($_POST['celular4'])?1:0,
       "acceso_int"=>isset($_POST['internet3'])?1:0,
-      "correo"=>$_POST['correo2']);
+      "correo"=>$_POST['correo2'],
+      
+      "facebook"=>$_POST['faceAlumno'],
+      "twitter"=>$_POST['TwitterAlumno']
+    );
     $this->MInserciones5->insertMovil($arr_int);
 
 
