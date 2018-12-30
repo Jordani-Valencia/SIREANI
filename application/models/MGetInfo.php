@@ -8,6 +8,10 @@ class MGetInfo extends CI_Model
       $this->load->database();
   }
 
+  //generarExcel
+  function listado(){
+    return $this->db->get("v_generales_secundaria");
+  }
 //SELECT'S PRIMERA HOJA
   function  get_gral_sec($alumno){
       $this->db->where("id_alumno",$alumno);
@@ -24,6 +28,14 @@ class MGetInfo extends CI_Model
   function get_domicilio($alumno){
     $this->db->where("alumno",$alumno);
     return $this->db->get("v_domicilio")->row();
+  }///////////////////////////////
+  function get_domicilio2($alumno){
+    $this->db->where("alumno",$alumno);
+    return $this->db->get("v_domicilio2")->row();
+  }///////////////////////////////
+  function get_domicilio3($alumno){
+    $this->db->where("alumno",$alumno);
+    return $this->db->get("v_domicilio2");
   }///////////////////////////////
   function get_familiares($alumno){
     $this->db->where("alumno",$alumno);
@@ -77,6 +89,11 @@ class MGetInfo extends CI_Model
   function get_tratamiento($salud){
     $this->db->where("salud",$salud);
     return $this->db->get("tratamiento_medico");
+  }
+
+  function get_enfermedad($alumno){
+    $this->db->where("id_alumno",$alumno);
+    return $this->db->get("v_enfermedad");
   }
   function get_discapacidad($salud){
     $this->db->where("salud",$salud);
