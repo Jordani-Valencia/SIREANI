@@ -2,8 +2,10 @@
     <div class="nav-wrapper">
       <div class="col s12 orange">
         <a href="#!" class="breadcrumb">Inicio</a>
-    	</a>
+        <a href="../generarExcel" class="breadcrumb">Generar Excel</a>
+         <a href="../generarExcel" class="breadcrumb">Vaciar Base de Datos</a>
       </div>
+
     </div>
   </nav>
 
