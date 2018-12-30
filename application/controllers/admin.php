@@ -47,7 +47,9 @@ class Admin extends CI_Controller {
 		$dGenerales['generales']=$this->MGetInfo->get_gral_sec($id);
 		$this->load->view('pantallas/encabezado');
 		$this->load->view('pantallas/navbar');
+
 		$this->load->view('pantallas/actualizarAdmin',$dGenerales);
+
 		$this->load->view('pantallas/footer');
 
 
