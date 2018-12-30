@@ -30,21 +30,28 @@
 				<div class="row">
 					<div class="input-field col s4">
 						<input class="validate" id="nom5" type="text" name="nombre5">
-						<label for="nom5">Nombre</label>
+						<label for="nom5">Nombre(s)</label>
 						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
 					</div>
 
-					<div class="input-field col s4">
+					<div class="input-field col s3">
 						<input class="validate" id="ap4" type="text" name="paterno4">
 						<label for="ap4">Apellido Paterno</label>
 						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
 					</div>
 
-					<div class="input-field col s4">
+					<div class="input-field col s3">
 						<input class="validate" id="am4" type="text" name="materno4">
 						<label for="am4">Apellido Materno</label>
 						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
 					</div>
+<!--adicion 28 de dic  -->
+          <div class="input-field col s2">
+            <input class="validate" id="edadTutor" type="number" min="15" name="edadTutor">
+            <label for="edadTutor">Edad</label>
+            <span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
+          </div>
+
 				</div>
 				<!--Fin Fila4-->
 				<!--Inicio Fila5-->
@@ -73,7 +80,7 @@
 				<!--Fin Fila5-->
 				<!--Inicio Fila6-->
 				<div class="row">
-          <div class="input-field col s4">
+          <div class="input-field col s3">
               <select name="entidad6" id="ent6">
                 <option value="" disabled selected>Elige una opción</option>
 								<option value=1>Aguascalientes</option>
@@ -113,7 +120,7 @@
 			          <span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
     				</div>
 
-					<div class="input-field col s4" id="pais3">
+					<div class="input-field col s3" id="pais3">
     					<select name="paisTutor">
       						<option value="" disabled selected>Elige una opción</option>
       						<option value="Alemania">Alemania</option>
@@ -134,7 +141,28 @@
     					<label>País</label>
     				</div>
 
-    				<div class="input-field col s4">
+            <!--  adicion 28 de dic-->
+            <div class="input-field col s3" id="nacionalidadTutor" name="nacionalidadTutor">
+      					<select name="nacionalidadTutor" id="tres">
+        						<option value="" disabled selected>Elige una opción</option>
+        						<option value="Alemán">Alemán</option>
+        						<option value="Frances">Francés</option>
+        						<option value="Estadounidense">Estadounidense</option>
+        						<option value="Inglés">Inglés</option>
+        						<option value="Mexicano">Mexicano</option>
+        						<option value="Guatelamteco">Guatemalteco</option>
+        						<option value="Hondureno">Hondureño</option>
+        						<option value="Argentino">Argentino</option>
+        						<option value="Brasileno">Brasileño</option>
+        						<option value="Italiano">Italiano</option>
+        						<option value="Japones">Japonés</option>
+        						<option value="Chino">Chino</option>
+        						<option value="Espanol">Español</option>
+  					    </select>
+      					<label>Nacionalidad</label>
+      				</div>
+
+    				<div class="input-field col s3">
 							<input class="validate" id="c" name="curp4" type="text" pattern="([A-Z]{4}([0-9]{2})(0[1-9]|1[0-2])(0[1-9]|1[0-9]|2[0-9]|3[0-1])[HM](AS|BC|BS|CC|CL|CM|CS|CH|DF|DG|GT|GR|HG|JC|MC|MN|MS|NT|NL|OC|PL|QT|QR|SP|SL|SR|TC|TS|TL|VZ|YN|ZS|NE)[A-Z]{3}[0-9A-Z]\d)" data-length="18" maxlength="18" onkeyup="mayus(this);">
 							<label for="c">CURP</label>
 							<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
@@ -234,7 +262,22 @@
 				<!--Fin Fila7-->
 				<!--Inicio Fila8-->
 				<div class="center row">
-					<div class="input-field col s6">
+
+          <div class="input-field col s2" id="civilTutor" name="civilTutor">
+            <select name="civilTutor" id="civilTutor">
+              <option value="Casado">Casado</option>
+              <option value="Soltero">Soltero</option>
+              <option value="Otro">Otro</option>
+            </select>
+            <label>Estado Civil</label>
+          </div>
+          <!-- Adicion 28 de dic -->
+          <div class="input-field col s3">
+            <input class="validate" id="ocupacionTutor" type="text" name="ocupacionTutor">
+            <label for="ocupacionTutor">Ocupación</label>
+          </div>
+
+					<div class="input-field col s3">
 						<h7>¿Trabaja?</h7>
 						 <div class="switch">
 					    <label>No
@@ -244,7 +287,7 @@
 					  	</div>
 	    			</div>
 
-	    			<div class="col s6">
+	    			<div class="col s4">
 						<p class="range-field">
       				<input type="range" id="hrsemana3" min="0" max="48" name="semana3"/>
       				<label for="hrsemana3">Número de horas a la semana</label>
@@ -252,6 +295,33 @@
 					</div>
 				</div>
         <!--  -->
+        <div class="center row">
+          <!-- adicion 28 de dic -->
+          <div class="input-field col s3">
+						<input type="text" class="validate" id="electorTutor" name="electorTutor" >
+						<label for="electorTutor">Clave de Elector</label>
+						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
+					</div>
+
+          <div class="input-field col s3">
+						<input type="email" class="validate" id="co" name="correoTutor" >
+						<label for="correoTutor">Correo electrónico</label>
+						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
+					</div>
+          <!-- adicion 28 de dic -->
+          <div class="input-field col s3">
+    				<input class="validate" id="faceTutor" name="faceTutor" type="text" >
+    				<label for="faceTutor">Facebook</label>
+    				<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
+    			</div>
+          <!-- adicion 28 de dic -->
+    			<div class="input-field col s3">
+    				<input class="validate" id="TwitterTutor" name="TwitterTutor" type="text" >
+    				<label for="TwitterTutor">Twitter</label>
+    				<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
+    			</div>
+
+				</div>
         <!--  -->
 				<!--Inicio Fila 1-->
         <div class="row">
@@ -266,17 +336,23 @@
 						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
 					</div>
 
-					<div class="input-field col s4">
+					<div class="input-field col s3">
 						<input class="validate" id="ap2" type="text" name="paterno2">
 						<label for="ap2">Apellido Paterno</label>
 						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
 					</div>
 
-					<div class="input-field col s4">
+					<div class="input-field col s3">
 						<input class="validate" id="am2" type="text" name="materno2">
 						<label for="am2">Apellido Materno</label>
 						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
 					</div>
+
+          <div class="input-field col s2">
+            <input class="validate" id="edadMadre" type="number" min="15" name="edadMadre" required>
+            <label for="edadMadre">Edad</label>
+            <span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
+          </div>
 				</div>
 				<!--Fin Fila 1-->
 				<!--Inicio Fila 2-->
@@ -306,7 +382,7 @@
 				<!--Fin Fila 2-->
 				<!--Inicio Fila 3-->
 				<div class="row">
-					<div class="input-field col s4">
+					<div class="input-field col s3">
               <select name="entidad3" id="ent3">
                 <option value="" disabled selected>Elige una opción</option>
 								<option value=1>Aguascalientes</option>
@@ -346,7 +422,7 @@
 			          <span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
     				</div>
 
-					<div class="input-field col s4" id="pais2">
+					<div class="input-field col s3" id="pais2">
     					<select name="pais2">
       						<option value="" disabled selected>Elige una opción</option>
       						<option value="Alemania">Alemania</option>
@@ -366,7 +442,28 @@
     					<label>País</label>
     				</div>
 
-						<div class="input-field col s4">
+            <!--  adicion 28 de dic-->
+            <div class="input-field col s3" id="nacionalidadMadre" name="nacionalidadMadre">
+      					<select name="nacionalidadMadre" id="tres">
+        						<option value="" disabled selected>Elige una opción</option>
+        						<option value="Alemán">Alemán</option>
+        						<option value="Frances">Francés</option>
+        						<option value="Estadounidense">Estadounidense</option>
+        						<option value="Inglés">Inglés</option>
+        						<option value="Mexicano">Mexicano</option>
+        						<option value="Guatelamteco">Guatemalteco</option>
+        						<option value="Hondureno">Hondureño</option>
+        						<option value="Argentino">Argentino</option>
+        						<option value="Brasileno">Brasileño</option>
+        						<option value="Italiano">Italiano</option>
+        						<option value="Japones">Japonés</option>
+        						<option value="Chino">Chino</option>
+        						<option value="Espanol">Español</option>
+  					    </select>
+      					<label>Nacionalidad</label>
+      				</div>
+
+						<div class="input-field col s3">
 							<input class="validate" id="cur" name="curp2" type="text" pattern="([A-Z]{4}([0-9]{2})(0[1-9]|1[0-2])(0[1-9]|1[0-9]|2[0-9]|3[0-1])[HM](AS|BC|BS|CC|CL|CM|CS|CH|DF|DG|GT|GR|HG|JC|MC|MN|MS|NT|NL|OC|PL|QT|QR|SP|SL|SR|TC|TS|TL|VZ|YN|ZS|NE)[A-Z]{3}[0-9A-Z]\d)" data-length="18" maxlength="18" onkeyup="mayus(this);">
 							<label for="cur">CURP</label>
 							<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
@@ -466,7 +563,23 @@
 				<!--Fin Fila 4-->
 				<!--Inicio Fila 5-->
 				<div class="row">
-					<div class="input-field col s6 center">
+          <!--  adicion 28 dic-->
+          <div class="input-field col s2" id="civilMadre" name="civilMadre">
+            <select name="civilMadre" id="civilMadre">
+              <option value="Casado">Casado</option>
+              <option value="Soltero">Soltero</option>
+              <option value="Otro">Otro</option>
+            </select>
+            <label>Estado Civil</label>
+          </div>
+
+          <!-- Adicion 28 de dic -->
+          <div class="input-field col s3">
+            <input class="validate" id="ocupacionMadre" type="text" name="ocupacionMadre">
+            <label for="ocupacionMadre">Ocupación</label>
+          </div>
+
+					<div class="input-field col s3 center">
 						<h7>¿Trabaja?</h7>
 							<div class="switch">
 					    		<label>No
@@ -476,7 +589,7 @@
 							</div>
 	    		</div>
 
-	    			<div class="col s6">
+	    			<div class="col s4">
 						<p class="range-field">
       					<input type="range" id="hrsemana" min="0" max="48" name="semana"/>
       					<label for="hrsemana">Número de horas a la semana</label>
@@ -484,27 +597,55 @@
 						</div>
 			</div>
 				<!--Fin Fila 5-->
+
 				<!--Inicio Fila 6-->
 				<div class="row">
-					<div class="input-field col s4">
+          <!-- adicion 28 de dic -->
+          <div class="input-field col s3">
+						<input type="text" class="validate" id="electorMadre" name="electorMadre" >
+						<label for="electorMadre">Clave de Elector</label>
+						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
+					</div>
+
+					<div class="input-field col s3">
 						<input class="validate" id="tel2" type="tel" name="telefono2" data-length="12" maxlength="12">
 						<label for="tel2">Teléfono de casa</label>
 						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
 					</div>
 
-					<div class="input-field col s4">
+					<div class="input-field col s3">
 						<input class="validate" id="tel3" type="tel" name="telefono3" data-length="12" maxlength="12">
 						<label for="tel3">Teléfono de trabajo</label>
 						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
 					</div>
 
-					<div class="input-field col s4">
+					<div class="input-field col s3">
 						<input class="validate" id="cel2" type="tel" name="celular2" data-length="10" maxlength="10">
 						<label for="cel2">Teléfono de celular</label>
 						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
 					</div>
 				</div>
 				<!--Fin Fila 7-->
+        <div class="center row">
+          <div class="input-field col s4">
+						<input type="email" class="validate" id="co" name="correoMadre" >
+						<label for="correoMadre">Correo electrónico</label>
+						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
+					</div>
+          <!-- adicion 28 de dic -->
+          <div class="input-field col s4">
+    				<input class="validate" id="faceMadre" name="faceMadre" type="text" >
+    				<label for="faceMadre">Facebook</label>
+    				<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
+    			</div>
+          <!-- adicion 28 de dic -->
+    			<div class="input-field col s4">
+    				<input class="validate" id="TwitterMadre" name="TwitterMadre" type="text" >
+    				<label for="TwitterMadre">Twitter</label>
+    				<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
+    			</div>
+
+				</div>
 				<!--Encabezado-->
 				<ul class="collection with-header">
 	        	<li class="collection-header grey lighten-2"><h5 class="center">DATOS DEL PADRE</h5></li></ul>
@@ -516,17 +657,23 @@
 						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
 					</div>
 
-					<div class="input-field col s4">
+					<div class="input-field col s3">
 						<input class="validate" id="ap3"  name="paterno3" type="text">
 						<label for="ap3">Apellido Paterno</label>
 						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
 					</div>
 
-					<div class="input-field col s4">
+					<div class="input-field col s3">
 						<input class="validate" id="am3" name="materno3" type="text">
 						<label for="am3">Apellido Materno</label>
 						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
 					</div>
+          <!-- adicion 28 de dic -->
+          <div class="input-field col s2">
+            <input class="validate" id="edadPadre" type="number" min="15" name="edadPadre" required>
+            <label for="edadPadre">Edad</label>
+            <span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
+          </div>
 				</div>
 				<!--Fin Fila 8-->
 				<!--Inicio Fila 9-->
@@ -556,7 +703,7 @@
 				<!--Fin Fila 9-->
 				<!--Inicio Fila 10-->
 				<div class="row">
-					<div class="input-field col s4">
+					<div class="input-field col s3">
             <select class="" name="entidad4" id="tres">
               <option value="" disabled selected>Elige una opción</option>
               <option value=1>Aguascalientes</option>
@@ -596,7 +743,7 @@
 						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
     				</div>
 
-					<div class="input-field col s4">
+					<div class="input-field col s3">
     					<select name="pais3">
       						<option value="" disabled selected>Elige una opción</option>
       						<option value="Alemania">Alemania</option>
@@ -616,7 +763,28 @@
     					<label>País</label>
     				</div>
 
-    				<div class="input-field col s4">
+            <!--  adicion 28 de dic-->
+            <div class="input-field col s3" id="nacionalidadPadre" name="nacionalidadPadre">
+                <select name="nacionalidadPadre" id="tres">
+                    <option value="" disabled selected>Elige una opción</option>
+                    <option value="Alemán">Alemán</option>
+                    <option value="Frances">Francés</option>
+                    <option value="Estadounidense">Estadounidense</option>
+                    <option value="Inglés">Inglés</option>
+                    <option value="Mexicano">Mexicano</option>
+                    <option value="Guatelamteco">Guatemalteco</option>
+                    <option value="Hondureno">Hondureño</option>
+                    <option value="Argentino">Argentino</option>
+                    <option value="Brasileno">Brasileño</option>
+                    <option value="Italiano">Italiano</option>
+                    <option value="Japones">Japonés</option>
+                    <option value="Chino">Chino</option>
+                    <option value="Espanol">Español</option>
+                </select>
+                <label>Nacionalidad</label>
+              </div>
+
+    				<div class="input-field col s3">
 							<input class="validate" id="cu" name="curp3" type="text" pattern="([A-Z]{4}([0-9]{2})(0[1-9]|1[0-2])(0[1-9]|1[0-9]|2[0-9]|3[0-1])[HM](AS|BC|BS|CC|CL|CM|CS|CH|DF|DG|GT|GR|HG|JC|MC|MN|MS|NT|NL|OC|PL|QT|QR|SP|SL|SR|TC|TS|TL|VZ|YN|ZS|NE)[A-Z]{3}[0-9A-Z]\d)" data-length="18" maxlength="18" onkeyup="mayus(this);">
 							<label for="cu">CURP</label>
 							<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
@@ -711,7 +879,23 @@
 				<!--Fin Fila 11-->
 				<!--Inicio Fila 12-->
 				<div class="row">
-					<div class="col s6 center">
+
+          <div class="input-field col s2" id="civilPadre" name="civilPadre">
+            <select name="civilPadre" id="civilPadre">
+              <option value="Casado">Casado</option>
+              <option value="Soltero">Soltero</option>
+              <option value="Otro">Otro</option>
+            </select>
+            <label>Estado Civil</label>
+          </div>
+
+          <!-- Adicion 28 de dic -->
+          <div class="input-field col s3">
+            <input class="validate" id="ocupacionPadre" type="text" name="ocupacionPadre">
+            <label for="ocupacionPadre">Ocupación</label>
+          </div>
+
+					<div class="col s3 center">
 						<h7>¿Trabaja?</h7>
 						 	<div class="switch">
 					    	<label>No
@@ -721,7 +905,7 @@
 					  	</div>
 	    			</div>
 
-	    			<div class="input-field col s6">
+	    			<div class="input-field col s4">
 							<p class="range-field">
       					<input type="range" id="hrsemana2" min="0" max="48" name="semana2"/>
       					<label for="hrsemana2">Número de horas a la semana</label>
@@ -731,25 +915,52 @@
 				<!--Fin Fila 12-->
 				<!--Inicio Fila 13-->
 				<div class="row">
-					<div class="input-field col s4">
+          <!-- adicion 28 de dic -->
+          <div class="input-field col s3">
+						<input type="text" class="validate" id="electorPadre" name="electorPadre" >
+						<label for="electorPadre">Clave de Elector</label>
+						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
+					</div>
+
+					<div class="input-field col s3">
 						<input class="validate" id="tel4" type="tel" name="telefono4" data-length="12" maxlength="12">
 						<label for="tel4">Teléfono de casa</label>
 						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
 					</div>
 
-					<div class="input-field col s4">
+					<div class="input-field col s3">
 						<input class="validate" id="tel5" type="tel" name="telefono5" data-length="12" maxlength="12">
 						<label for="tel5">Teléfono del trabajo</label>
 						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
 					</div>
 
-					<div class="input-field col s4">
+					<div class="input-field col s3">
 						<input class="validate" id="cel3" type="tel" name="celular3" data-length="10" maxlength="10">
 						<label for="cel3">Teléfono de celular</label>
 						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
 					</div>
 				</div>
 				<!--Fin Fila 13-->
+        <div class="center row">
+          <div class="input-field col s4">
+						<input type="email" class="validate" id="co" name="correoPadre" >
+						<label for="correoPadre">Correo electrónico</label>
+						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
+					</div>
+          <!-- adicion 28 de dic -->
+          <div class="input-field col s4">
+    				<input class="validate" id="facePadre" name="facePadre" type="text" >
+    				<label for="facePadre">Facebook</label>
+    				<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
+    			</div>
+          <!-- adicion 28 de dic -->
+    			<div class="input-field col s4">
+    				<input class="validate" id="TwitterPadre" name="TwitterPadre" type="text" >
+    				<label for="TwitterPadre">Twitter</label>
+    				<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
+    			</div>
+
+				</div>
 <!--  -->
 <!--En caso de que el padre, madre o tutor no viva con el alumno se llena este apartado-->
         <ul class="collapsible">

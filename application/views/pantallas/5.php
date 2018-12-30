@@ -44,14 +44,26 @@
 				<!--Fin Fila1-->
 				<!--Inicio Fila2-->
 				<div class="row">
-					<div class="input-field col s12">
+					<div class="input-field col s4">
 						<input type="email" class="validate" id="co" name="correo2" required>
 						<label for="co">Correo electrónico</label>
 						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
 					</div>
+          <!-- adicion 28 de dic -->
+          <div class="input-field col s4">
+    				<input class="validate" id="faceAlumno" name="faceAlumno" type="text" >
+    				<label for="faceAlumno">Facebook</label>
+    				<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
+    			</div>
+          <!-- adicion 28 de dic -->
+    			<div class="input-field col s4">
+    				<input class="validate" id="TwitterAlumno" name="TwitterAlumno" type="text" >
+    				<label for="TwitterAlumno">Twitter</label>
+    				<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
+    			</div>
 				</div>
 				<!--Fin Fila2-->
-				
+
 				<!--Encabezado-->
 				<ul class="collection with-header">
 	        	<li class="collection-header grey lighten-2"><h5 class="center">RELACIONES/ASPECTOS INTERPERSONALES</h5></li></ul>
