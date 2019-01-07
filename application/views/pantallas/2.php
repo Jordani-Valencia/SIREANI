@@ -795,7 +795,7 @@
 				<div class="row">
 					<div class="col s3">
     					<label>
-					        <input class="with-gap" name="grupo0" type="radio" value="1" />
+					        <input class="with-gap" name="grupo2" type="radio" value="1" />
 					        <span>Sin estudios</span><br>
 					      </label>
 

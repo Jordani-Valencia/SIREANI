@@ -455,7 +455,7 @@
 				<!--Fin Fila25-->
 				<!--Inicio Fila26-->
 				<div class="row">
-          <div class="collection green lighten-4 col s4 center"><h6>Libros que haz leído</h6></div>
+          <div class="collection green lighten-4 col s4 center"><h6>Libros que has leído</h6></div>
   					<div class="collection red lighten-4 col s4 center"><h6>Mis película preferidas son</h6></div>
   					<div class="collection blue lighten-4 col s4 center"><h6>¿Cuántos amigos tengo?</h6></div>
 				</div>

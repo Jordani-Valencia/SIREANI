@@ -170,7 +170,7 @@
     					<label>Nacionalidad</label>
     				</div>
 						<!-- adicion 28 de dic -->
-						<div class="input-field col s2" id="civilAlumno" name="civilAlumno">
+						<div class="input-field col s2" id="" name="">
 							<select name="civilAlumno" id="civilAlumno">
 								<option value="Soltero">Soltero</option>
 								<option value="Casado">Casado</option>
