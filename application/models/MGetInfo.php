@@ -68,6 +68,10 @@ class MGetInfo extends CI_Model
     $this->db->where("alumno",$alumno);
     return $this->db->get("v_ingresos_mensuales");
   }
+  function get_domicilioTutor($alumno){
+    $this->db->where("alumno",$alumno);
+    return $this->db->get("domicilio_tutor");
+  }
 
 //SELECT'S TERCER HOJA
   function get_socioeconomico($alumno){
@@ -171,7 +175,7 @@ class MGetInfo extends CI_Model
   }
   function get_opciones_proyecto($proyecto){
     $this->db->where("id_proy_pv",$proyecto);
-    return $this->db->get("proyecto_opcion");
+    return $this->db->get("v_proyecto_opcion");
   }
   function get_perfil($alumno){
     $this->db->where("alumno",$alumno);
