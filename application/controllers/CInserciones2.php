@@ -84,7 +84,7 @@ class CInserciones2 extends CI_Controller {
     if ($_POST['nombre4']!=null && $_POST['paterno3']!=null) {
       $trabaja=isset($_POST['trabaja3'])?1:0;
       $horas=isset($_POST['trabaja3'])?$_POST['semana2']:0;
-      
+
       $arr_padre=array(
         "alumno" =>$alumno,
         "parentezco"=>1,
@@ -201,6 +201,94 @@ class CInserciones2 extends CI_Controller {
 
       print $tabla;
 
+  }
+
+  public function ajaxFamiliar2($alumno){
+
+      $arr_family= array(
+        'paterno'=>$_POST['paterno'],
+        'materno'=>$_POST['materno'],
+        'nombre'=>$_POST['nombre'],
+        'sexo'=>$_POST['sexo'],
+        'edad'=>$_POST['edad'],
+        'ocupacion'=>$_POST['ocupacion'],
+        'parentezco'=>$_POST['parentesco'],
+        'grado_estudio'=>$_POST['grado'],
+        'alumno'=>$alumno);
+
+      $familiares = $this->MInserciones2->insertFamiliar($arr_family);
+      $tabla='
+      <table class="responsive-table" >
+        <thead class="orange">
+          <tr>
+            <th>Apellidos</th>
+            <th>Nombre</th>
+            <th>Sexo</th>
+            <th>Edad</th>
+            <th>Ocupación</th>
+            <th>Parentesco</th>
+            <th>Grado máx de estudios</th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+      ';
+      foreach ($familiares->result() as $row) {
+        $tabla.='
+        <tr>
+          <td>'.$row->apellidos.'</td>
+          <td>'.$row->nombre.'</td>
+          <td>'.$row->sexo.'</td>
+          <td>'.$row->edad.'</td>
+          <td>'.$row->ocupacion.'</td>
+          <td>'.$row->parentezco.'</td>
+          <td>'.$row->grado_estudio.'</td>
+        </tr>
+        ';
+      }
+      $tabla.='
+        </tbody>
+      </table>';
+
+      print $tabla;
+
+  }
+
+  public function ajaxIngresos2($alumno){
+    $arr_family= array(
+      'personas_ingreso'=>$_POST['persona'],
+      'ingreso'=>$_POST['ingreso'],
+      'porcentaje_destinado'=>$_POST['porcentaje'],
+      'alumno'=>$alumno);
+    $ingresos=$this->MInserciones2->insertIngreso($arr_family);
+
+    $tabla='
+    <table class="responsive-table" >
+      <thead class="orange">
+        <tr>
+          <th>Persona con ingresos económicos</th>
+          <th>Ingreso mensual en pesos</th>
+          <th>Porcentaje destinado al gasto familiar</th>
+        </tr>
+      </thead>
+      <tbody>
+
+    ';
+    foreach ($ingresos->result() as $row) {
+      $tabla.='
+      <tr>
+        <td>'.$row->personas_ingreso.'</td>
+        <td>'.$row->opcion.'</td>
+        <td>'.$row->porcentaje_destinado.' %</td>
+      </tr>
+      ';
+    }
+    $tabla.='
+      </tbody>
+    </table>';
+
+    print $tabla;
   }
 
   public function ajaxIngresos(){

@@ -908,6 +908,8 @@ class generarPDF extends CI_Controller {
       $pdf->Cell(59,5,"Ectomorfo o delgado ($p)",'RLB',0,'C');
       $p=$salud->apariencia==3?"X":" ";
       $pdf->Cell(58,5,utf8_decode("Mesomorfo o atlético ($p)"),'RLB',0,'C');
+      // $pdf->SetXY($x,$y+=5);
+      // $pdf->Image('cuerpo.jpg',12,40,30);
       $pdf->SetXY($x,$y+=5);
       $pdf->Cell($ancho,50,'','RLB',0,'C');
 
@@ -2612,10 +2614,11 @@ if ($p==true) {
       foreach ($opciones->result() as $key) {
         if ($key->id_opcion_pv>=8) {
           $p=true;
-
+          $op=$key->opcion;
           break;
         }else{
           $p=false;
+          $op=null;
         }
       }
       $op=$p==true?"X":" ";
@@ -2623,7 +2626,7 @@ if ($p==true) {
       $pdf->Cell($ancho/2,5,utf8_decode('('.$op.') Fué otra de sus opciones'),'RLB',0,'L');
       $pdf->SetXY($x,$y+=5);
 
-      $pdf->Cell($ancho,5,utf8_decode('Otra, especifique: '),'RLB',0,'L');
+      $pdf->Cell($ancho,5,utf8_decode('Otra, especifique: '.$op),'RLB',0,'L');
 
       $pdf->SetXY($x,$y+=5);
       $pdf->Cell($ancho,5,utf8_decode("Sus metas en la escuela son: ".$proyecto->meta_escuela),'RLB',0,'L');

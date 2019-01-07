@@ -66,6 +66,8 @@ class CInserciones extends CI_Controller {
                     "empresa"=> $_POST['empresa1'],
                     "puesto"=> $_POST['ocupacion'],
                     "horario"=> $_POST['horaInicio']."-".$_POST['horaFin'],
+                    "inicio"=> $_POST['horaInicio'],
+                    "hfinal"=> $_POST['horaFin'],
                     "horas_semana"=> $_POST['horas']
                   );
         $this->MInserciones->setTrabajo($trabajo);
