@@ -8,7 +8,7 @@ class generarPDF extends CI_Controller {
 		$this->load->model('MGetInfo');
 		$this->load->library('session');
     $this->load->library('FPDF/fpdf');
-
+    setlocale(LC_TIME,"es_MX");
 
 	}
 
@@ -2754,6 +2754,7 @@ if ($p==true) {
           $ancho=175;
           setlocale(LC_TIME,"es_MX");
           $fecha=strftime("Atlautla, Estado de México a %d de %B de %Y");
+
           $pdf->SetFont('Arial','',14);
           $pdf->SetXY($x,$y);
           $pdf->Cell($ancho,8,utf8_decode("".$fecha),'0',0,'R');
