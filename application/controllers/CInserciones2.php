@@ -203,6 +203,47 @@ class CInserciones2 extends CI_Controller {
 
   }
 
+  public function ajaxFamiliar3($alumno){
+
+    $familiares = $this->MInserciones2->getFamiliar($alumno);
+    $tabla='
+    <table class="responsive-table" >
+      <thead class="orange">
+        <tr>
+          <th>Apellidos</th>
+          <th>Nombre</th>
+          <th>Sexo</th>
+          <th>Edad</th>
+          <th>Ocupación</th>
+          <th>Parentesco</th>
+          <th>Grado máx de estudios</th>
+          <th>Eliminar</th>
+        </tr>
+      </thead>
+
+      <tbody>
+
+    ';
+    foreach ($familiares->result() as $row) {
+      $tabla.="
+      <tr>
+        <td>$row->apellidos</td>
+        <td>$row->nombre</td>
+        <td>$row->sexo</td>
+        <td>$row->edad</td>
+        <td>$row->ocupacion</td>
+        <td>$row->parentezco</td>
+        <td>$row->grado_estudio.'</td>
+        <td><a href='#tablaFamiliares' onclick='eliminar2($row->id_familiar,$alumno)' class='btn red accent-3 center'>Eliminar</a></td>
+      </tr>
+      ";
+    }
+    $tabla.='
+      </tbody>
+    </table>';
+
+    print $tabla;
+  }
   public function ajaxFamiliar2($alumno){
 
       $arr_family= array(
@@ -228,6 +269,7 @@ class CInserciones2 extends CI_Controller {
             <th>Ocupación</th>
             <th>Parentesco</th>
             <th>Grado máx de estudios</th>
+            <th>Eliminar registro</th>
           </tr>
         </thead>
 
@@ -235,17 +277,18 @@ class CInserciones2 extends CI_Controller {
 
       ';
       foreach ($familiares->result() as $row) {
-        $tabla.='
+        $tabla.="
         <tr>
-          <td>'.$row->apellidos.'</td>
-          <td>'.$row->nombre.'</td>
-          <td>'.$row->sexo.'</td>
-          <td>'.$row->edad.'</td>
-          <td>'.$row->ocupacion.'</td>
-          <td>'.$row->parentezco.'</td>
-          <td>'.$row->grado_estudio.'</td>
+          <td>$row->apellidos</td>
+          <td>$row->nombre</td>
+          <td>$row->sexo</td>
+          <td>$row->edad</td>
+          <td>$row->ocupacion</td>
+          <td>$row->parentezco</td>
+          <td>$row->grado_estudio</td>
+          <td><a href='#tablaFamiliares' onclick='eliminar2($row->id_familiar,$alumno)' class='btn red accent-3 center'>Eliminar</a></td>
         </tr>
-        ';
+        ";
       }
       $tabla.='
         </tbody>
@@ -253,6 +296,39 @@ class CInserciones2 extends CI_Controller {
 
       print $tabla;
 
+  }
+
+  public function ajaxIngFamiliar3($alumno){
+    $ingresos=$this->MInserciones2->getInfFami($alumno);
+
+    $tabla='
+    <table class="responsive-table" >
+      <thead class="orange">
+        <tr>
+          <th>Persona con ingresos económicos</th>
+          <th>Ingreso mensual en pesos</th>
+          <th>Porcentaje destinado al gasto familiar</th>
+          <th>Eliminar registro</th>
+        </tr>
+      </thead>
+      <tbody>
+
+    ';
+    foreach ($ingresos->result() as $row) {
+      $tabla.="
+      <tr>
+        <td>$row->personas_ingreso</td>
+        <td>$row->opcion</td>
+        <td>$row->porcentaje_destinado %</td>
+        <td><a href='#tablaIngresos' onclick='eliminariNG($row->id_ingreso_familiar,$alumno)' class='btn red accent-3 center'>Eliminar</a></td>
+      </tr>
+      ";
+    }
+    $tabla.='
+      </tbody>
+    </table>';
+
+    print $tabla;
   }
 
   public function ajaxIngresos2($alumno){
@@ -270,19 +346,21 @@ class CInserciones2 extends CI_Controller {
           <th>Persona con ingresos económicos</th>
           <th>Ingreso mensual en pesos</th>
           <th>Porcentaje destinado al gasto familiar</th>
+          <th>Eliminar registro</th>
         </tr>
       </thead>
       <tbody>
 
     ';
     foreach ($ingresos->result() as $row) {
-      $tabla.='
+      $tabla.="
       <tr>
-        <td>'.$row->personas_ingreso.'</td>
-        <td>'.$row->opcion.'</td>
-        <td>'.$row->porcentaje_destinado.' %</td>
+        <td>$row->personas_ingreso</td>
+        <td>$row->opcion</td>
+        <td>$row->porcentaje_destinado %</td>
+        <td><a href='#tablaIngresos' onclick='eliminariNG($row->id_ingreso_familiar,$alumno)' class='btn red accent-3 center'>Eliminar</a></td>
       </tr>
-      ';
+      ";
     }
     $tabla.='
       </tbody>

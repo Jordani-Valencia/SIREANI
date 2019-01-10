@@ -2870,13 +2870,13 @@
                         <thead class="orange">
                           <tr>
                             <th>Apellidos</th>
-
                             <th>Nombre</th>
                             <th>Sexo</th>
                             <th>Edad</th>
                             <th>Ocupación</th>
                             <th>Parentesco</th>
                             <th>Grado máx de estudios</th>
+                            <th>Eliminar registro</th>
                           </tr>
                         </thead>
 
@@ -2885,7 +2885,6 @@
                           foreach ($familiares->result() as $key) {
                             ?>
                             <tr>
-
                               <td><?=$key->apellidos?></td>
                               <td><?=$key->nombre?></td>
                               <td><?=$key->sexo?></td>
@@ -2893,6 +2892,7 @@
                               <td><?=$key->ocupacion?></td>
                               <td><?=$key->parentezco?></td>
                               <td><?=$key->grado_estudio?></td>
+                              <td><a href="#tablaFamiliares" onclick="eliminar2(<?=$key->id_familiar?>,<?=$alumno?>)" class='btn red accent-3 center'>Eliminar</a></td>
                             </tr>
                             <?php
                           }
@@ -2931,6 +2931,7 @@
                             <th>Persona con ingresos económicos</th>
                             <th>Ingreso mensual en pesos</th>
                             <th>Porcentaje destinado al gasto familiar</th>
+                            <th>Eliminar registro</th>
                           </tr>
                         </thead>
 
@@ -2941,6 +2942,7 @@
                               <td><?=$key->personas_ingreso?></td>
                               <td><?=$key->opcion?></td>
                               <td><?=$key->porcentaje_destinado?> %</td>
+                              <td><a href="#tablaIngresos" onclick="eliminariNG(<?=$key->id_ingreso_familiar?>,<?=$alumno?>)" class='btn red accent-3 center'>Eliminar</a></td>
                             </tr>
                             <?php
                           } ?>
@@ -4689,13 +4691,13 @@
               <!--Inicio Fila29-->
               <div class="row">
                 <div class="collection green lighten-5 input-field col s4">
-                  <input id="textarea8" type="text" value="<?=$gustos->libro3?>" class="materialize-textarea validate" name="libro3" required>
+                  <input id="textarea8" type="text" value="<?=$gustos->libro3?>" class="materialize-textarea validate" name="libro3" >
                   <label for="textarea8">3.- </label>
                   <span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
                 </div>
 
                 <div class="collection red lighten-5 input-field col s4">
-                  <input id="textarea9" type="text" class="materialize-textarea validate" value="<?=$gustos->pelicula3?>" name="pelicula3" required>
+                  <input id="textarea9" type="text" class="materialize-textarea validate" value="<?=$gustos->pelicula3?>" name="pelicula3" >
                   <label for="textarea9">3.- </label>
                   <span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
                 </div>
@@ -4710,13 +4712,13 @@
               <!--Inicio Fila30-->
               <div class="row">
                 <div class="collection green lighten-5 input-field col s4">
-                  <input id="textarea11" type="text" value="<?php echo($gustos->libro4) ?>" class="materialize-textarea validate"  name="libro4" required>
+                  <input id="textarea11" type="text" value="<?php echo($gustos->libro4) ?>" class="materialize-textarea validate"  name="libro4" >
                   <label for="textarea11">4.- </label>
                   <span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
                 </div>
 
                 <div class="collection red lighten-5 input-field col s4">
-                  <input id="textarea12" type="text" class="materialize-textarea validate" value="" name="pelicula4" required>
+                  <input id="textarea12" type="text" class="materialize-textarea validate" value="" name="pelicula4" >
                   <label for="textarea12">4.- </label>
                   <span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
                 </div>

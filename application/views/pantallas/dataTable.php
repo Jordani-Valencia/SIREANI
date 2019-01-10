@@ -28,6 +28,7 @@
         <th>Apellido paterno</th>
         <th>Apellido materno</th>
         <th class="center">Editar</th>
+        <th class="center">Eliminar</th>
         <th>Generar PDF</th>
       </tr>
     </thead>

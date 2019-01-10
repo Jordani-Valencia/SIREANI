@@ -82,7 +82,6 @@ $("#loginF").submit(function(event){
     }
   });
 });
-//
 
 $("#formA1").submit(function (event){
   event.preventDefault();
@@ -163,6 +162,22 @@ $("#formA5").submit(function (event){
     }
   });
 });
+
+function vaciar(){
+  if (confirm("¿Estas seguro de eliminar toda la base de datos?")) {
+    return true;
+  }else{
+    return false;
+  }
+}
+
+function eliminarUno(){
+  if (confirm("¿Estas seguro de eliminar este registro?")) {
+    return true;
+  }else{
+    return false;
+  }
+}
 
 $("#formA6").submit(function (event){
   event.preventDefault();
@@ -264,6 +279,28 @@ function modal1Adm(id){
   }
 }
 
+function eliminar2(id,alumno){
+  $.post(base+"CadminAlumnos/eliminaFamiliar/"+id,function(data){
+
+  });
+
+  $.post(base+"CInserciones2/ajaxFamiliar3/"+alumno,function(data){
+    $("#tablaFamiliares").html(data);
+  });
+
+}
+
+function eliminariNG(id,alumno){
+  $.post(base+"CadminAlumnos/eliminaIngFamiliar/"+id,function(data){
+
+  });
+
+  $.post(base+"CInserciones2/ajaxIngFamiliar3/"+alumno,function(data){
+    $("#tablaIngresos").html(data);
+  });
+
+}
+
 function modal3(){
   var valores=$("#modal33").serialize();
 
@@ -275,10 +312,9 @@ function modal3(){
       alert(resp);
     }
   });
-
   return false;
-
 }
+
   function modal2Adm(id){
     var persona=document.getElementById('ingresos2').value;
     var ingreso=document.getElementById('ingresos3').value;
@@ -329,5 +365,8 @@ function modal3(){
 
   }
 
+}
 
+function cambio(boton){
+    document.getElementById(""+boton).disabled=true;
 }

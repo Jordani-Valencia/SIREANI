@@ -42,6 +42,12 @@ class Admin extends CI_Controller {
 
 	}
 
+	public function delAlumno($id){
+		$this->load->model('MadminAlumnos');
+		$this->MadminAlumnos->deleteAlumno($id);
+		redirect(base_url().'admin/prinAdmin');
+	}
+
 	public function adminAlumnos($id){
 		$this->load->model('MGetInfo');
 

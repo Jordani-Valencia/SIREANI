@@ -1,12 +1,15 @@
 <nav>
     <div class="nav-wrapper">
+
       <div class="col s12 orange">
+        <a class="waves-effect waves-light btn">Stuff</a>
         <a href="#!" class="breadcrumb">Inicio</a>
         <a href="../generarExcel" class="breadcrumb">Generar Excel</a>
-         <a href="../generarExcel" class="breadcrumb">Vaciar Base de Datos</a>
+        <a class="breadcrumb" href="../CadminAlumnos/depurar" onclick="return vaciar()">Vaciar Base de Datos</a>
       </div>
 
     </div>
+
   </nav>
 
 	<div class="row orange lighten-2">

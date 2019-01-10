@@ -11,6 +11,14 @@ class CadminAlumnos extends CI_Controller {
 
   public function depurar(){
       $this->MadminAlumnos->eliminar();
+      redirect(base_url().'admin/prinAdmin');
+  }
+
+  public function eliminaFamiliar($id){
+    $this->MadminAlumnos->delFamiliar($id);
+  }
+  public function eliminaIngFamiliar($id){
+    $this->MadminAlumnos->deliNGFamiliar($id);
   }
 
   public function alumnos(){
@@ -24,6 +32,7 @@ class CadminAlumnos extends CI_Controller {
           $r->paterno_al,
           $r->materno_al,
           "<a href='adminAlumnos/$r->id_alumno' class='btn red accent-3 center'>Editar</a>",
+          "<a href='delAlumno/$r->id_alumno' onclick='return eliminarUno()' class='btn red accent-3 center'>Eliminar</a>",
           "<a href='../generarPDF/index/$r->id_alumno' class='btn red accent-3 center'>Generar PDF</a>"
           );
          }

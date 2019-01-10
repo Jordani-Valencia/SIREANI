@@ -19,7 +19,7 @@
 					<!--Encabezado-->
 	        <li class="collection-header grey lighten-2"><h5 class="center">PROYECTO DE VIDA</h5>
 			<!--Inicio del formulario-->
-			<form action="../CInserciones6/proyVida" method="post" class="col s12">
+			<form action="../CInserciones6/proyVida" onsubmit="cambio('btn6')" method="post" class="col s12">
 				<div class="row"><br>
 					<div class="center col s12"><h5 class="collection">¿Por qué decidió estudiar su bachillerato en CECYTEM? (Seleccione al menos tres opciones)</h5></div>
 				</div>
@@ -345,7 +345,7 @@
 				</div>
 			</div>
 			<div class="row center">
-				<input type="submit" value="Guardar/Siguiente" class="btn btn-large center">
+				<input type="submit" value="Guardar/Siguiente" id="btn6" class="btn btn-large center">
 			</div>
 			<!--Fin del formulario-->
 			</form>

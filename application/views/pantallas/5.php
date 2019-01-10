@@ -15,7 +15,7 @@
 		<div class="row">
 	      <ul class="collection with-header">
 	        <li class="collection-header grey lighten-2"><h5 class="center">TELEFONÍA MÓVIL</h5>
-			<form action="../CInserciones5/sociales" method="post" class="col s12">
+			<form action="../CInserciones5/sociales" method="post" onsubmit="cambio('btn5')" class="col s12">
 				<!--Inicio Fila1-->
 				<div class="row">
 					<br>
@@ -407,7 +407,7 @@
     					</div>
             </div>
       			<div class="row center">
-					<input type="submit" value="Guardar/Siguiente" class="btn btn-large center">
+					<input type="submit" value="Guardar/Siguiente" id="btn5" class="btn btn-large center">
 				</div>
 			</form> <!--Fin del formulario-->
 		</ul>

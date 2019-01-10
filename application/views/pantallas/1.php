@@ -15,7 +15,7 @@
 	        <li class="collection-header grey lighten-2"><h4 class="center">DATOS GENERALES DEL ESTUDIANTE</h4>
 	        	<p class="center">Los datos que proporcione será utilizados únicamente en el área de Orientación</p></li>
 			<!--Inicio del formulario-->
-			<form action="../CInserciones/datosGenerales" method="post" class="col s12" id="form1" onsubmit="return validar()">
+			<form action="../CInserciones/datosGenerales" method="post" class="col s12" id="form1" onsubmit="cambio('btn1')">
 				<!-- Inicio Fila 1-->
 				<div class="row">
 					<div class="input-field col s4">
@@ -491,5 +491,5 @@
 				</div>
 				<!--Fin Fila 11-->
 				<div class="row center">
-			<input type="submit" value="Guardar/Siguiente" class="btn btn-large center">
+			<input type="submit" id="btn1" value="Guardar/Siguiente" class="btn btn-large center" >
 		</div>

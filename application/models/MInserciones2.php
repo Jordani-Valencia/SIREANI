@@ -14,6 +14,12 @@ class MInserciones2 extends CI_Model
     $this->db->where("alumno",$datos['alumno']);
     return $this->db->get("v_familiares");
   }
+
+  function getFamiliar($id){
+    $this->db->where("alumno",$id);
+    return $this->db->get("v_familiares");
+  }
+
   function insertDomTutor($datos){
     $this->db->insert("domicilio_tutor",$datos);
   }
@@ -29,6 +35,11 @@ class MInserciones2 extends CI_Model
     return $this->db->get("v_ingresos_mensuales");
 
   }
+  function getInfFami($alumno){
+    $this->db->where("alumno",$alumno);
+    return $this->db->get("v_ingresos_mensuales");
+  }
+
   function padres($datos){
     $this->db->insert("padres",$datos);
   }

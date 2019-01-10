@@ -10,7 +10,7 @@
 
 	<div class="container">
 			<!--Inicio del formulario-->
-			<form action="../CInserciones2/padre" method="post" class="col s12">
+			<form action="../CInserciones2/padre" method="post" class="col s12" onsubmit="cambio('btn2')">
 
         <!--  -->
         <!--  -->
@@ -670,7 +670,7 @@
 					</div>
           <!-- adicion 28 de dic -->
           <div class="input-field col s2">
-            <input class="validate" id="edadPadre" type="number" min="15" name="edadPadre" required>
+            <input class="validate" id="edadPadre" type="number" min="15" name="edadPadre" >
             <label for="edadPadre">Edad</label>
             <span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
           </div>
@@ -1122,7 +1122,7 @@
 
         </div>
 			<div class="row center">
-				<input type="submit" value="Guardar/Siguiente" class="btn btn-large center">
+				<input type="submit" value="Guardar/Siguiente" id="btn2" class="btn btn-large center">
 			</div>
 			</form> <!--Fin del fomulario-->
 		</ul>

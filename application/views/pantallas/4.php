@@ -15,7 +15,7 @@
 	      <ul class="collection with-header">
 	        <li class="collection-header grey lighten-2"><h5 class="center">EJERICIO Y DEPORTES</h5>
 				<!--Inicio del formulario-->
-				<form action="../CInserciones4/deportes" method="post" class="col s12">
+				<form action="../CInserciones4/deportes" method="post" onsubmit="cambio('btn4')" class="col s12">
 				<!--Inicio Fila1-->
 				<div class="row">
           <br>
@@ -501,13 +501,13 @@
 				<!--Inicio Fila29-->
 				<div class="row">
 					<div class="collection green lighten-5 input-field col s4">
-						<textarea id="textarea8" class="materialize-textarea validate" name="libro3" required></textarea>
+						<textarea id="textarea8" class="materialize-textarea validate" name="libro3" ></textarea>
 			      <label for="textarea8">3.- </label>
 						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
 					</div>
 
 					<div class="collection red lighten-5 input-field col s4">
-						<textarea id="textarea9" class="materialize-textarea validate" name="pelicula3" required></textarea>
+						<textarea id="textarea9" class="materialize-textarea validate" name="pelicula3" ></textarea>
 			      <label for="textarea9">3.- </label>
 						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
 					</div>
@@ -522,13 +522,13 @@
 				<!--Inicio Fila30-->
 				<div class="row">
 					<div class="collection green lighten-5 input-field col s4">
-						<textarea id="textarea11" class="materialize-textarea validate" name="libro4" required></textarea>
+						<textarea id="textarea11" class="materialize-textarea validate" name="libro4" ></textarea>
 			      <label for="textarea11">4.- </label>
 						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
 					</div>
 
 					<div class="collection red lighten-5 input-field col s4">
-						<textarea id="textarea12" class="materialize-textarea validate" name="pelicula4" required></textarea>
+						<textarea id="textarea12" class="materialize-textarea validate" name="pelicula4" ></textarea>
 			      <label for="textarea12">4.- </label>
 						<span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
 					</div>
@@ -831,7 +831,7 @@
 				</div>
 				<!--Fin Fila43-->
 				<div class="row center">
-					<input type="submit" value="Guardar/Siguiente" class="btn btn-large center">
+					<input type="submit" value="Guardar/Siguiente" id="btn4" class="btn btn-large center">
 				</div>
 			</form><!--Fin del formulario-->
 		</ul>

@@ -14,7 +14,7 @@
 	    <ul class="collection with-header">
 	      <li class="collection-header grey lighten-2"><h5 class="center">AMBIENTE SOCIOECONÓMICO</h5>
 
-			<form action="../CInserciones3/ambienteSocioEconomico" method="post" class="col s12">
+			<form action="../CInserciones3/ambienteSocioEconomico" method="post" onsubmit="cambio('btn3')" class="col s12">
 				<!--Inicio Fila 1-->
 				<div class="row"><br>
 					<div class="col s3 center">
@@ -558,7 +558,7 @@
 				</div>
 				<!--Fin Fila23-->
 				<div class="row center">
-					<input type="submit" value="Guardar/Siguiente" class="btn btn-large center">
+					<input type="submit" value="Guardar/Siguiente" id="btn3" class="btn btn-large center">
 				</div>
 			</form> <!--Termina el formulario-->
 		</ul>
