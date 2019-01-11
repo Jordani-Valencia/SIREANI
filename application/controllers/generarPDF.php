@@ -908,9 +908,10 @@ class generarPDF extends CI_Controller {
       $pdf->Cell(59,5,"Ectomorfo o delgado ($p)",'RLB',0,'C');
       $p=$salud->apariencia==3?"X":" ";
       $pdf->Cell(58,5,utf8_decode("Mesomorfo o atlético ($p)"),'RLB',0,'C');
-      // $pdf->SetXY($x,$y+=5);
-      // $pdf->Image('cuerpo.jpg',12,40,30);
       $pdf->SetXY($x,$y+=5);
+      //imagen
+      $pdf->Image('C:\xampp\htdocs\SIREANI\application\views\img\cuerpo.jpg',$x+40,115,100);
+      $pdf->SetXY($x,$y);
       $pdf->Cell($ancho,50,'','RLB',0,'C');
 
       $pdf->SetXY($x,$y+=50);
@@ -1234,7 +1235,7 @@ class generarPDF extends CI_Controller {
               }else{
                 $p=" ";
                 $pdf->Cell(43.75,4,utf8_decode("(  $p  ) Otro, especificar"),'RLB',0,'L');
-
+                break;
               }
             }
             $pdf->SetXY($x,$y+=4);
@@ -2989,7 +2990,7 @@ if ($p==true) {
               $pdf->SetFont('Arial','B',10);
                 $pdf->Cell(195,10,utf8_decode("Solicitud de Inscripción"),0,0,'C');
                 //$pdf->Image('https://es.wikipedia.org/wiki/Estado_de_M%C3%A9xico#/media/File:Coat_of_arms_of_Mexico_State.svg',12,10,30);
-                //$pdf->Image('https://upload.wikimedia.org/wikipedia/commons/e/ec/Cecytem-logo.jpg',175,5,20);
+                $pdf->Image('https://upload.wikimedia.org/wikipedia/commons/e/ec/Cecytem-logo.jpg',175,5,20);
                 $pdf->SetFont('Arial','B',10);
                 $pdf->SetXY(20,25);
                 $pdf->Cell(150,4,utf8_decode("Instrucciones"),'',0,'L');
@@ -3300,7 +3301,7 @@ if ($p==true) {
               $pdf->Cell(195,10,utf8_decode("SOLICITUD PARA LA INCORPORACIÓN DE ESTUDIANTES AL"),0,1,'C');
               $pdf->Cell(195,5,utf8_decode("SEGURO FACULTATIVO DEL REGIMEN DEL SEGURO SOCIAL"),0,0,'C');
 
-              //$pdf->Image('https://i2.wp.com/sieforeretiro.com.mx/wp-content/uploads/2017/11/LOGO-IMSS.jpg',12,40,30);
+              $pdf->Image('https://i2.wp.com/sieforeretiro.com.mx/wp-content/uploads/2017/11/LOGO-IMSS.jpg',12,40,30);
               $pdf->SetFont('Arial','',9);
               $pdf->SetXY($x+95,$y+20);
               $pdf->Cell(80,5,utf8_decode("No. DE CUENTA: "),'',0,'L');
