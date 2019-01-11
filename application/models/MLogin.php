@@ -19,9 +19,9 @@ class MLogin extends CI_Model
     $query =$this->db->get('login');
 
     if ($query->num_rows()>0) {
-      return $query->row();
+      return 1;
     }else{
-      return false;
+      return 0;
     }
   }
 }

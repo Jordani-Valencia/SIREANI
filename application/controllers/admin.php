@@ -9,21 +9,32 @@ class Admin extends CI_Controller {
 		$this->load->library('session');
 	}
 	public function regresar(){
+		$data=[
+			"usuario"=>$res->usuario,
+			"login"=>FALSE
+		];
+
+		 $this->session->set_userdata($data);
 		$this->load->view('principal');
 	}
 
 	public function index()
 	{
+		$data=[
+			"login"=>0
+		];
+
+		 $this->session->set_userdata($data);
+
 		$data= array(
       'username'=> $this->input->post('username'),
-      'pass' =>  crypt($this->input->post('pass'),'hola')
+      'pass' =>  crypt($this->input->post('pass'),'asdfñlkjasdfñlkjasdfñlkj')
+			//'pass' =>  $this->input->post('pass')
     );
     $res = $this->MLogin->seleccionUsuario($data);
-		if ($res) {
+		if ($res==1) {
 			$data=[
-				"id"=>$res->idLogin,
-				"usuario"=>$res->usuario,
-				"login"=>TRUE
+				"login"=>1
 			];
 
 			 $this->session->set_userdata($data);
@@ -35,10 +46,14 @@ class Admin extends CI_Controller {
 	}
 
 	public function prinAdmin(){
-		//$alumno=$this->session->userdata('id');
-		$this->load->view('pantallas/encabezado');
-		$this->load->view('pantallas/principalAdmin');
-		$this->load->view('pantallas/dataTable');
+		if ($this->session->userdata('login')==1) {
+			$this->load->view('pantallas/encabezado');
+			$this->load->view('pantallas/principalAdmin');
+			$this->load->view('pantallas/dataTable');
+
+		}else{
+			redirect(base_url());	
+		}
 
 	}
 
@@ -115,28 +130,14 @@ class Admin extends CI_Controller {
 		$this->load->view('pantallas/actualizarAdmin',$dGenerales);
 
 		$this->load->view('pantallas/footer');
-
-
-
-	// foreach ($res->result() as $r) {
-	// $data[]=array($r->nombre_al);
-	// }
-	// echo "<pre>";
-	// print_r( $data);
-	// echo "</pre>";
-
-		/*$res = $this->MadminAlumnos->nombre($id);
-	foreach ($res->result() as $r) {
-	$data[]=array($r->nombre_al);
-	}
-	echo "<pre>";
-	print_r( $data);
-	echo "</pre>";*/
-
 	}
 
 	public function cerrarSesion(){
-		$this->load->view('pantallas/principal');
-		//$this->session->sess_destroy();
+		$data=[
+			"login"=>0
+		];
+
+		 $this->session->set_userdata($data);
+		 redirect(base_url());
 	}
 }

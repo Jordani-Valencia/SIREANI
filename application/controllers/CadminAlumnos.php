@@ -14,6 +14,14 @@ class CadminAlumnos extends CI_Controller {
       redirect(base_url().'admin/prinAdmin');
   }
 
+  public function cambioC(){
+
+    //$arrContra=array('contrasena' => crypt($_POST['nueva']),'asdfñlkjasdfñlkjasdfñlkj');
+    $arrContra=array('contrasena' =>crypt($_POST['nueva'],'asdfñlkjasdfñlkjasdfñlkj'));
+    $this->MadminAlumnos->cambiarC($arrContra);
+
+  }
+
   public function eliminaFamiliar($id){
     $this->MadminAlumnos->delFamiliar($id);
   }

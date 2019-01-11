@@ -163,6 +163,29 @@ $("#formA5").submit(function (event){
   });
 });
 
+$("#modalContraseñaCambio").submit(function(event){
+  event.preventDefault();
+
+  if (document.getElementById('nueva').value==document.getElementById('nueva2').value ) {
+    $.ajax({
+      url:$(this).attr("action"),
+      type:$(this).attr("method"),
+      data:$(this).serialize(),
+      success:function(resp){
+        if (resp=="error") {
+          M.toast({html:'Datos erroneos'});
+        }else{
+          M.toast({html:'Contraseña actualizada'});
+        }
+      }
+    });
+
+  }else{
+    alert("Las contraseñas no coinciden");
+  }
+
+});
+
 function vaciar(){
   if (confirm("¿Estas seguro de eliminar toda la base de datos?")) {
     return true;

@@ -20,6 +20,11 @@ class MadminAlumnos extends CI_Model
   public function eliminar(){
     $this->db->query("DELETE FROM alumno");
   }
+//hop8xJ0kEee6k
+//hoXSLooj4mvNo
+  public function cambiarC($dato){
+    $this->db->update("login",$dato);
+  }
 
   public function deleteAlumno($id){
     $this->db->where("id_alumno",$id);
