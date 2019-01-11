@@ -47,7 +47,7 @@
 					</div>
 <!--adicion 28 de dic  -->
           <div class="input-field col s2">
-            <input class="validate" id="edadTutor" type="number" min="15" name="edadTutor">
+            <input class="validate" id="edadTutor" type="number" min="15" max="100" name="edadTutor">
             <label for="edadTutor">Edad</label>
             <span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
           </div>
@@ -349,7 +349,7 @@
 					</div>
 
           <div class="input-field col s2">
-            <input class="validate" id="edadMadre" type="number" min="15" name="edadMadre" required>
+            <input class="validate" id="edadMadre" type="number" min="15" max="100" name="edadMadre">
             <label for="edadMadre">Edad</label>
             <span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
           </div>
@@ -670,7 +670,7 @@
 					</div>
           <!-- adicion 28 de dic -->
           <div class="input-field col s2">
-            <input class="validate" id="edadPadre" type="number" min="15" name="edadPadre" >
+            <input class="validate" id="edadPadre" type="number" min="15" max="100" name="edadPadre" >
             <label for="edadPadre">Edad</label>
             <span class="helper-text" data-error="Campo vacío o Incorrecto" data-success="Bien"></span>
           </div>
