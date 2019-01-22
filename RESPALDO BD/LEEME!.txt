@@ -1,0 +1,7 @@
+EL RESPALDO DE LA BASE DE DATOS SE GUARDA EN LA SIGUIENTE RUTA:
+
+C:\xampp\mysql\bin
+
+CON EL SIGUIENTE NOMBRE:
+
+respaldoSireani.sql

@@ -2989,8 +2989,8 @@ if ($p==true) {
               //HOJA 1
               $pdf->SetFont('Arial','B',10);
                 $pdf->Cell(195,10,utf8_decode("Solicitud de Inscripción"),0,0,'C');
-                //$pdf->Image('https://es.wikipedia.org/wiki/Estado_de_M%C3%A9xico#/media/File:Coat_of_arms_of_Mexico_State.svg',12,10,30);
-                $pdf->Image('https://upload.wikimedia.org/wikipedia/commons/e/ec/Cecytem-logo.jpg',175,5,20);
+                $pdf->Image('C:\xampp\htdocs\SIREANI\application\views\img\gobmex.jpg',12,5,50);
+                $pdf->Image('C:\xampp\htdocs\SIREANI\application\views\img\cecytem.gif',175,5,20);
                 $pdf->SetFont('Arial','B',10);
                 $pdf->SetXY(20,25);
                 $pdf->Cell(150,4,utf8_decode("Instrucciones"),'',0,'L');
@@ -3301,7 +3301,8 @@ if ($p==true) {
               $pdf->Cell(195,10,utf8_decode("SOLICITUD PARA LA INCORPORACIÓN DE ESTUDIANTES AL"),0,1,'C');
               $pdf->Cell(195,5,utf8_decode("SEGURO FACULTATIVO DEL REGIMEN DEL SEGURO SOCIAL"),0,0,'C');
 
-              $pdf->Image('https://i2.wp.com/sieforeretiro.com.mx/wp-content/uploads/2017/11/LOGO-IMSS.jpg',12,40,30);
+              $pdf->Image('C:\xampp\htdocs\SIREANI\application\views\img\IMSS.jpg',20,40,15);
+              ////$pdf->Image('C:\xampp\htdocs\SIREANI\application\views\img\cuerpo.jpg',$x+40,115,100);
               $pdf->SetFont('Arial','',9);
               $pdf->SetXY($x+95,$y+20);
               $pdf->Cell(80,5,utf8_decode("No. DE CUENTA: "),'',0,'L');
