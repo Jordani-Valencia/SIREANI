@@ -697,7 +697,7 @@ class generarPDF extends CI_Controller {
 
 
         $pdf->SetXY($x,$y+=17);
-        $pdf->SetFont('Arial','B',10);
+        $pdf->SetFont('Arial','B',9);
         $pdf->Cell($ancho,5,'2/6',0,0,'C');
 /////////////pagina 3
     $pdf->AddPage();
@@ -1057,8 +1057,8 @@ class generarPDF extends CI_Controller {
       }
 
       $pdf->SetXY($x,$y+=10);
-      $pdf->SetFont('Arial','B',10);
-      $pdf->Cell($ancho,5,utf8_decode('3/6'),0,0,'C');
+      $pdf->SetFont('Arial','B',9);
+      $pdf->Cell($ancho,5,utf8_decode('3/6'),'',1,'C');
 
 ////////////////////////////////HOJA 4
       $pdf->AddPage();
@@ -1842,6 +1842,10 @@ class generarPDF extends CI_Controller {
           $p=$internet->otro==1?"X":" ";
           $pdf->Cell(43.75,4,utf8_decode("( $p ) Otro"),'BLRT',0,'L');
 
+          $pdf->SetFont('Arial','B',9);
+          $pdf->SetXY($x,$y+=25);
+          $pdf->Cell($ancho,4,"4/6",'',1,'C'); //cuatro
+
           ////////////////////////HOJA 5
           $pdf->AddPage();
           $x=20;$y=15;
@@ -2523,6 +2527,10 @@ if ($p==true) {
               $pdf->Cell($ancho,5,utf8_decode("¿En qué actividades apoya?"),'BRL',0,'I');
           }
 
+          $pdf->SetFont('Arial','B',9);
+          $pdf->SetXY($x,$y+=6.350);
+          $pdf->Cell($ancho,4,"5/6",'',1,'C'); //cinco
+
     $pdf->AddPage();
     /////////////hoja 6
       $x=20;$y=20;
@@ -2708,6 +2716,7 @@ if ($p==true) {
       $op=$perfil->p15==1?"V":"F";
       $pdf->Cell($ancho-20,6,utf8_decode('15.- Es más importante trabajar que estudiar'),1,0,'L');$pdf->Cell(20,6,$op,1,0,'L');
 
+      $pdf->SetFont('Arial','B',9);
       $pdf->SetXY($x,$y+=50);
       $pdf->Cell($ancho,5,'6/6',0,0,'C');
 
